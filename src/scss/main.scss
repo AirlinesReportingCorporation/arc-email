@@ -3,17 +3,37 @@
 
 .arc-advanced-analytics-page{
   width: 100%;
+
+  span {
+    color: main.$airfield;
+  }
 }
 
 .arc-advanced-analytics-jumbo-container {
   background-color: main.$black;
   background-image: url("https://www2.arccorp.com/globalassets/homepage/redesign/chip-background.png");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center top;
 }
 
 .arc-advanced-h1 {
+  padding-top: 350px;
+  padding-bottom: 75px;
   font-family: main.$arc-font-bold;
   font-size: 66px;
   color: main.$white;
+}
+
+.arc-advanced-analytics-subtitle {
+  padding-top: 40px;
+  color: main.$landing;
+  border-top: 1px solid;
+  font-size: 44px;
+}
+
+.arc-advanced-btn {
+  background-color: main.$airfield;
+  border-color: main.$airfield;
+  width: 217px;
+  margin-bottom: 40px;
 }
