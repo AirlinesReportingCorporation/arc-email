@@ -1,0 +1,487 @@
+//import all arccorp vars
+@use "~arccorp-vars/src/scss/main";
+
+.h-100 {
+  height: 100% !important;
+}
+
+.arc-thirdpary-step-container {
+  &.margin-top {
+    margin-top: 125px;
+  }
+  .gray-half {
+    background: main.$altitude-gray;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    height: 345px;
+  }
+  .tarmac-half {
+    background: main.$tarmac;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-right: 30px;
+    height: 100%;
+  }
+  .half-container {
+    max-width: 540px;
+
+    &.right {
+      margin-right: auto;
+      margin-left: 30px;
+    }
+
+    &.left {
+      //background: lightgoldenrodyellow;
+      margin-left: auto;
+      margin-right: 30px;
+      height: 100%;
+    }
+
+    &.bg-1 {
+      background: url("https://www2.arccorp.com/globalassets/thirdparty/search-side.png")
+        center center no-repeat;
+
+      background-position-y: -40px;
+      min-height: 350px;
+      background-size: cover;
+    }
+
+    &.bg-3 {
+      background: url("https://www2.arccorp.com/globalassets/thirdparty/ticket-side.png")
+        center center no-repeat;
+      min-height: 350px;
+      background-size: cover;
+    }
+  }
+  .row {
+    max-width: 100%;
+  }
+}
+
+.arc-advanced-analytics-card {
+  background: main.$tarmac;
+  padding: 60px;
+  border-radius: 20px;
+  position: relative;
+  //height: 100%;
+  display: flex;
+  align-items: center;
+
+  .arc-advanced-analytics-h2 {
+    font-family: main.$arc-font-semibold;
+  }
+
+  &.gray {
+    background: main.$altitude-gray;
+    padding: 0;
+    height: 345px;
+  }
+
+  &.card-half {
+    margin-top: 30px;
+    max-width: 540px;
+    min-height: 345px;
+  }
+}
+
+.arc-advanced-analytics-card-body {
+  font-size: 28px;
+  line-height: 36px;
+  span {
+    color: main.$white;
+    font-family: main.$arc-font-semibold;
+  }
+  &.smaller {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+.arc-advanced-analytics-card-inner {
+  max-width: 400px;
+  margin: 0 auto;
+  color: main.$landing;
+}
+
+//page styles
+.arc-advanced-analytics-page {
+  background: #f6f6f6;
+  width: 100%;
+}
+
+.arc-advanced-analytics-jumbo-container {
+  background: main.$tarmac;
+  margin-bottom: -102px;
+}
+
+.arc-advanced-analytics-jumbo {
+  margin: 0 auto;
+  max-width: 1230px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-bottom: main.$spacing-2;
+
+  .arc-advanced-analytics-title {
+    padding-left: main.$spacing-4 * 2;
+    margin-top: -102px;
+
+    color: main.$white;
+    .arc-advanced-analytics-gradient {
+      background: -webkit-linear-gradient(
+        180deg,
+        #ffa619,
+        #f77f00 29%,
+        #ff1b71
+      );
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: rgba(0, 0, 0, 0);
+      -moz-text-fill-color: rgba(0, 0, 0, 0) ∫;
+    }
+
+    h1 {
+      font-family: main.$arc-font-bold;
+      color: main.$white;
+      font-weight: normal;
+      font-size: 66px;
+      line-height: 64px;
+      margin-bottom: 25px;
+    }
+  }
+
+  .arc-advanced-analytics-subtitle {
+    color: main.$clearskies;
+    font-family: main.$arc-font-bold;
+    font-weight: normal;
+    font-size: 66px;
+    line-height: 64px;
+    padding: 50px;
+
+    span.highlight {
+      color: main.$tarmac;
+    }
+  }
+
+  .icon-arc-logo {
+    font-size: 44px;
+    align-items: center;
+  }
+}
+
+.arc-third-party-img {
+  max-height: 776px;
+}
+
+.arc-advanced-analytics-step-under {
+  font-size: 28px;
+  text-align: center;
+  font-family: main.$arc-font-semibold;
+  color: main.$overcast;
+  padding: 30px 0;
+  img {
+    margin-right: 17px;
+  }
+}
+
+.arc-advanced-analytics-jumbo-card {
+  background: main.$autopilot;
+  border-radius: main.$border-radius-lg;
+  height: 592px;
+  display: flex;
+  align-items: center;
+  margin-top: main.$spacing-2;
+  margin-bottom: main.$spacing-2;
+
+  &.card-1 {
+    background: url("https://www2.arccorp.com/globalassets/thirdparty/jumbo.png")
+      center center / cover no-repeat;
+  }
+
+  &.card-2 {
+    background: main.$arc-teal;
+  }
+}
+
+.arc-advanced-analytics-section-container {
+  background: #f6f6f6;
+}
+
+.arc-advanced-analytics-ticketing-container {
+  background: main.$tarmac;
+  padding: 90px 70px;
+  border-radius: 20px;
+  margin-top: 160px;
+  margin-bottom: 145px;
+
+  h2 {
+    font-size: 66px;
+    line-height: 1;
+    font-family: main.$arc-font-bold;
+    color: main.$arc-teal;
+
+    span {
+      font-size: 45px;
+    }
+  }
+}
+
+.arc-advanced-analytics-h2 {
+  display: inline-block;
+  color: main.$tarmac;
+  font-size: 72px;
+  font-family: main.$arc-font-bold;
+  margin-bottom: 90px;
+  line-height: auto;
+  background: -webkit-linear-gradient(180deg, #ffa619, #f77f00 29%, #ff1b71);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+  -moz-text-fill-color: rgba(0, 0, 0, 0) ∫;
+
+  &.tarmac {
+    color: main.$tarmac;
+    background: transparent;
+    -webkit-background-clip: none;
+    -moz-background-clip: none;
+    -webkit-text-fill-color: main.$tarmac;
+    -moz-text-fill-color: main.$tarmac;
+  }
+  &.m-60 {
+    margin-bottom: 55px;
+  }
+}
+
+.arc-advanced-analytics-h3 {
+  color: main.$tarmac;
+  font-size: 24px;
+  font-family: main.$arc-font-bold;
+  line-height: 32px;
+  background: -webkit-linear-gradient(180deg, #ffa619, #f77f00 29%, #ff1b71);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+  -moz-text-fill-color: rgba(0, 0, 0, 0) ∫;
+}
+
+.arc-advanced-analytics-left {
+  margin-bottom: 90px;
+}
+
+.arc-advanced-analytics-right {
+  border-top: main.$landing 1px solid;
+  padding-top: 30px;
+  margin-bottom: 90px;
+  margin-left: auto;
+}
+
+.arc-advanced-analytics-icon {
+  margin-right: 25px;
+  margin-bottom: 25px;
+}
+
+.arc-advanced-analytics-copy {
+  font-size: 30px;
+  line-height: 38px;
+  color: main.$landing;
+  max-width: 580px;
+  span {
+    color: main.$white;
+    font-family: main.$arc-font-semibold;
+  }
+}
+
+.arc-advanced-analytics-right-bold {
+  color: main.$landing;
+  font-family: main.$arc-font-bold;
+  font-size: 22px;
+}
+
+.arc-advanced-analytics-source {
+  color: main.$white;
+  font-family: main.$arc-font-bold;
+  font-size: 22px;
+}
+
+.arc-advanced-analytics-source-copy {
+  color: main.$landing;
+  font-size: 22px;
+  line-height: 1;
+  margin-top: 18px;
+  margin-bottom: 28px;
+  max-width: 280px;
+}
+
+.arc-advanced-analytics-datasource {
+  background: main.$tarmac;
+  padding: 40px;
+  min-height: 487px;
+  border-radius: 20px;
+  margin-bottom: 90px;
+}
+
+.arc-advanced-analytics-datasource-title {
+  &.blue {
+    background: -webkit-linear-gradient(180deg, #00c4ff, #44b2be);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: rgba(0, 0, 0, 0);
+    -moz-text-fill-color: rgba(0, 0, 0, 0) ∫;
+  }
+  &.green {
+    background: -webkit-linear-gradient(180deg, #fcbf49, #8ac926);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: rgba(0, 0, 0, 0);
+    -moz-text-fill-color: rgba(0, 0, 0, 0) ∫;
+  }
+
+  &.orange {
+    background: -webkit-linear-gradient(180deg, #fea417, #fcbf49);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: rgba(0, 0, 0, 0);
+    -moz-text-fill-color: rgba(0, 0, 0, 0) ∫;
+  }
+  span {
+    font-size: 18px;
+  }
+  font-family: main.$arc-font-bold;
+  font-size: 22px;
+  line-height: 28px;
+  margin-bottom: 18px;
+  line-height: 1;
+}
+
+.arc-advanced-analytics-datasource-copy {
+  color: main.$landing;
+  margin-bottom: 18px;
+  font-family: main.$arc-font-regular;
+  font-size: 16px;
+  line-height: 22px;
+
+  &.bold {
+    color: main.$white;
+    font-family: main.$arc-font-semibold;
+  }
+}
+
+.arc-advanced-analytics-number {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  margin-left: -60px;
+  justify-content: center;
+  background: main.$arc-teal;
+  color: main.$tarmac;
+  font-family: main.$arc-font-semibold;
+  font-size: 92px;
+  height: 120px;
+  width: 120px;
+  display: flex;
+  align-items: end;
+  border-radius: 50%;
+}
+
+.arc-advanced-analytics-top-copy {
+  font-size: 28px;
+  font-family: main.$arc-font-semibold;
+  color: main.$landing;
+
+}
+
+.margin-160 {
+  margin-bottom: 145px;
+}
+
+@media (max-width: 767.98px) {
+  .arc-advanced-analytics-datasource {
+    min-height: auto;
+  }
+}
+
+@media screen and (max-width: 990.999px) {
+  .arc-advanced-analytics-card,
+  .arc-thirdpary-step-container .half-container,
+  .arc-advanced-analytics-card.card-half {
+    width: auto;
+    max-width: 100%;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+  }
+
+  .arc-thirdpary-step-container .half-container.left {
+    margin: 0 0 1rem;
+  }
+
+  .arc-thirdpary-step-container .gray-half {
+    border-radius: 20px;
+    margin: 30px;
+    height: auto;
+  }
+
+  .arc-thirdpary-step-container .tarmac-half {
+    background: transparent;
+    margin-right: 0;
+  }
+
+  .arc-advanced-analytics-card {
+    margin: 30px;
+  }
+
+  .arc-advanced-analytics-h2 {
+    font-size: 32px;
+    line-height: 1.2;
+
+    &.m-60 {
+      margin-bottom: 15px;
+    }
+  }
+
+  .arc-advanced-analytics-card-body {
+    font-size: 18px;
+    line-height: 1.2;
+
+    &.smaller {
+      font-size: 16px;
+      line-height: 1.2;
+    }
+  }
+
+  .arc-advanced-analytics-step-under {
+    flex-direction: column;
+    line-height: 1;
+    font-size: 18px;
+    div {
+      margin-bottom: 15px;
+      img {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .tarmac-half {
+    margin-bottom: 30px;
+  }
+
+  .arc-thirdpary-step-container .half-container {
+    position: relative;
+    height: auto !important;
+    img {
+      height: auto !important;
+      min-height: 0 !important;
+    }
+    //margin: 15px 15px 30px;
+  }
+
+  .arc-advanced-analytics-card {
+    position: initial;
+  }
+
+  .arc-advanced-analytics-jumbo {
+    text-align: center;
+    .arc-advanced-analytics-title {
+      margin-top: 60px;
+      padding: 0;
+    }
+  }
+}
