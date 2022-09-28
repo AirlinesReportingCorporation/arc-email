@@ -357,7 +357,7 @@ class App extends Component {
           body={
             <div class="row">
               <div className="col-lg-12">
-                <div style={{ maxWidth: "960px", margin: " 0 auto;" }}>
+                <div style={{ maxWidth: "960px", margin: "0 auto" }}>
                   <img
                     className="img-fluid"
                     src="https://www2.arccorp.com/globalassets/products--participation/advanced-data-analytics/ada-trip-chart.png"
