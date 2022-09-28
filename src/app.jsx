@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Stickynav, ProductJumbo, ProductText } from "arccorp-vars";
+import { Stickynav, ProductJumbo, ProductText, ProductCallout } from "arccorp-vars";
 
 class App extends Component {
   constructor() {
@@ -52,7 +52,11 @@ class App extends Component {
           className="ada-solutions"
           eyebrow="Solutions"
           backgroundImage="https://www2.arccorp.com/globalassets/products--participation/advanced-data-analytics/ada-solutions-bg.png"
-          title={<>ARC Total Air Market</>}
+          title={
+            <>
+              <span class="icon-arc-logo" /> Total Air Market
+            </>
+          }
           subtitle={
             <>
               Estimated datasets enable customers to understand total global air
@@ -164,6 +168,7 @@ class App extends Component {
                     <img
                       src="https://www2.arccorp.com/globalassets/products--participation/advanced-data-analytics/quality.png"
                       alt="Quality"
+                      style={{ paddingBottom: "30px" }}
                     />
                     <br />
                     <div className="ada-solutions-icon-title">Quality</div>
@@ -179,6 +184,195 @@ class App extends Component {
               </div>
             </>
           }
+        />
+        <ProductText
+          className="ada-index"
+          backgroundImage="https://www2.arccorp.com/globalassets/products--participation/advanced-data-analytics/ada-index-bg.png"
+          title={
+            <>
+              <span class="icon-arc-logo" /> Quality of Service Index
+            </>
+          }
+          subtitle={
+            <div className="ada-index-copy">
+              Estimated datasets enable customers to understand total global air
+              market size, carrier market shares, traffic distribution, demand
+              growth and fare patterns. The information provided by ARC’s Total
+              Air Market (TAM) data can be used for{" "}
+              <span>strategic planning</span> and{" "}
+              <span className="white">operational management</span> in specific
+              markets.
+            </div>
+          }
+          body={
+            <>
+              <div className="row">
+                <div className="col-lg-12">
+                  <div className="ada-index-body">
+                    <div className="ada-index-body-title">
+                      A combination of attributes are used to calculate expected
+                      QSI Share
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-lg-3">
+                  <div className="ada-index-icon">
+                    <img
+                      src="https://www2.arccorp.com/globalassets/products--participation/advanced-data-analytics/frequency.png"
+                      alt="Service Frequency"
+                      style={{ paddingBottom: "10px" }}
+                    />
+                    <br />
+                    <div className="ada-index-icon-title">
+                      Service Frequency
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-3">
+                  <div className="ada-index-icon">
+                    <img
+                      src="https://www2.arccorp.com/globalassets/products--participation/advanced-data-analytics/stops.png"
+                      alt="Number of Stops"
+                    />
+                    <br />
+                    <div className="ada-index-icon-title">Number of Stops</div>
+                  </div>
+                </div>
+                <div className="col-lg-3">
+                  <div className="ada-index-icon">
+                    <img
+                      src="https://www2.arccorp.com/globalassets/products--participation/advanced-data-analytics/type.png"
+                      alt="Aircraft Type/ Capacity"
+                    />
+                    <br />
+                    <div className="ada-index-icon-title">
+                      Aircraft Type/
+                      <br />
+                      Capacity
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-3">
+                  <div className="ada-index-icon">
+                    <img
+                      src="https://www2.arccorp.com/globalassets/products--participation/advanced-data-analytics/attributes.png"
+                      alt="Addition Important Attributes"
+                    />
+                    <br />
+                    <div className="ada-index-icon-title">
+                      Additional Important <br />
+                      Trip Attributes
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div style={{ maxWidth: "1020px", margin: "0 auto" }}>
+                <div className="row">
+                  <div className="col-lg-4">
+                    <div className="ada-index-icon-info">
+                      <div className="ada-index-icon-info-copy">
+                        Helps airlines predict <span>market share</span> based
+                        on future published schedules.
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-lg-4">
+                    <div className="ada-index-icon-info">
+                      <div className="ada-index-icon-info-copy">
+                        Supports airlines and travel agencies to illustrate{" "}
+                        <span>market competitiveness</span>.
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-lg-4">
+                    <div className="ada-index-icon-info">
+                      <div className="ada-index-icon-info-copy">
+                        Allows airlines to predict{" "}
+                        <span>schedule itineraries</span> passengers prefer
+                        based on relative attractiveness.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </>
+          }
+        />
+        <ProductText
+          className="ada-cabin"
+          backgroundImage="https://www2.arccorp.com/globalassets/products--participation/advanced-data-analytics/ada-cabin-bg.png"
+          title={
+            <>
+              <span class="icon-arc-logo" /> Cabin Class Mapping
+            </>
+          }
+          subtitle={
+            <div className="ada-cabin-copy">
+              The ARC Cabin Class Mapping (CCM) provides users with the{" "}
+              <span className="white">most accurate</span> and up-to-date cabin
+              mapping based on carriers, routes and equipment types.
+              <br />
+              <br />
+              Instead of using legacy industry standards, ARC CCM uses{" "}
+              <span>machine learning</span> processes to identify CCM for
+              carriers. Each segment RBKD is grouped into a cluster and mapped
+              to a Cabin Class.
+            </div>
+          }
+          outerBody={
+            <div>
+              <img
+                style={{ width: "100%" }}
+                src="https://www2.arccorp.com/globalassets/products--participation/advanced-data-analytics/ada-cabin-map.png"
+                alt="Cabin Class Mapping"
+              />
+            </div>
+          }
+        />
+        <ProductText
+          className="ada-trip"
+          backgroundImage="https://www2.arccorp.com/globalassets/products--participation/advanced-data-analytics/ada-trip-bg.png"
+          title={
+            <>
+              <span class="icon-arc-logo" /> Trip Classification Indicator
+            </>
+          }
+          subtitle={
+            <div className="ada-cabin-copy">
+              Insight into passenger behavior and their intent is valuable to
+              our customers. ARC’s Trip Classification Indicator models are
+              built using machine learning algorithms and key ticket attributes
+              to indicate whether a trip is for <span>business or leisure</span>
+              .
+              <br />
+              <br />
+              Using <span className="white">Amazon SageMaker Services</span>,
+              algorithms will be continuously recalibrated to ensure that
+              ever-evolving passenger behavior is captured and incorporated into
+              the model.
+            </div>
+          }
+          body={
+            <div class="row">
+              <div className="col-lg-12">
+                <div style={{ maxWidth: "960px", margin: " 0 auto;" }}>
+                  <img
+                    className="img-fluid"
+                    src="https://www2.arccorp.com/globalassets/products--participation/advanced-data-analytics/ada-trip-chart.png"
+                    alt="Cabin Class Mapping"
+                  />
+                </div>
+              </div>
+            </div>
+          }
+        />
+        <ProductCallout 
+          title="Get Started"
+          subtitle="Put ARC’s advanced data analytics and capabilities to work for your business."
+          cta="Contact Us"
+          ctaLink="https://www2.arccorp.com/about-us/contact-us/"
         />
       </div>
     );

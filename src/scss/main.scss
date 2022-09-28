@@ -25,7 +25,9 @@
   }
 }
 
-.ada-solutions {
+.ada-solutions,
+.ada-index,
+.ada-cabin, .ada-trip {
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -92,8 +94,94 @@
   }
 }
 
+.ada-index {
+  .callout-container {
+    padding-top: 500px;
+  }
+  .product-callout-copy {
+    border-bottom: 1px solid main.$landing;
+    padding-bottom: 120px;
+    margin-bottom: 60px;
+    max-width: 100%;
+  }
+
+  .ada-index-copy {
+    max-width: 815px;
+  }
+
+  .ada-index-body {
+    max-width: 900px;
+    margin: 0 auto 120px;
+  }
+
+  .ada-index-body-title {
+    font-size: 24px;
+    font-family: main.$arc-font-semibold;
+    text-align: center;
+    color: main.$landing;
+  }
+
+  .ada-index-icon {
+    text-align: center;
+  }
+
+  .ada-index-icon-title {
+    font-family: main.$arc-font-semibold;
+    color: main.$white;
+    font-size: 21px;
+    line-height: 24px;
+    padding-top: 15px;
+    padding-bottom: 60px;
+  }
+
+  .ada-index-icon-info {
+    border-top: 1px solid main.$landing;
+    padding-top: 30px;
+    padding-bottom: 60px;
+  }
+
+  .ada-index-icon-info-copy {
+    font-size: 24px;
+    line-height: 28px;
+    color: main.$landing;
+    max-width: 250px;
+
+    span {
+      color: main.$white;
+      font-family: main.$arc-font-semibold;
+    }
+  }
+}
+
+.ada-cabin, .ada-trip {
+  .callout-container {
+    padding-top: 160px;
+  }
+  .product-callout-copy {
+    border-bottom: 1px solid main.$landing;
+    padding-bottom: 120px;
+    margin-bottom: 60px;
+    max-width: 100%;
+  }
+
+  .ada-index-copy {
+    max-width: 815px;
+  }
+}
+
+.ada-trip {
+  .callout-container {
+    padding-top: 400px
+  } 
+}
+
 .advanced-data-analytics-page {
   width: 100%;
+  padding-bottom: 120px;
+
+  .callout-box-container {
+    padding-top: 120px;
+  }
 
   .arc-sticky-inner {
     background: main.$tarmac;
@@ -103,8 +191,15 @@
     color: main.$airfield;
   }
 
+  .callout-box {
+    border-radius: main.$border-radius-lg;
+  }
+
   .product-header {
-    font-family: main.$arc-font-semibold;
+    font-family: main.$arc-font-regular;
+    .icon-arc-logo {
+      font-size: 48px;
+    }
   }
 
   .atd-jumbo {
