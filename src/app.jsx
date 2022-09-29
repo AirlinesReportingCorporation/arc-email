@@ -1,5 +1,10 @@
 import React, { Component } from "react";
-import { Stickynav, ProductJumbo, ProductText, ProductCallout } from "arccorp-vars";
+import {
+  Stickynav,
+  ProductJumbo,
+  ProductText,
+  ProductCallout,
+} from "arccorp-vars";
 
 class App extends Component {
   constructor() {
@@ -205,7 +210,7 @@ class App extends Component {
             </div>
           }
           body={
-            <>
+            <div style={{width: "870px", margin: "0 auto"}}>
               <div className="row">
                 <div className="col-lg-12">
                   <div className="ada-index-body">
@@ -297,7 +302,7 @@ class App extends Component {
                   </div>
                 </div>
               </div>
-            </>
+            </div>
           }
         />
         <ProductText
@@ -325,9 +330,16 @@ class App extends Component {
             <div>
               <img
                 style={{ width: "100%" }}
-                src="https://www2.arccorp.com/globalassets/products--participation/advanced-data-analytics/ada-cabin-map.png"
+                src="https://www2.arccorp.com/globalassets/products--participation/advanced-data-analytics/shadow.png"
                 alt="Cabin Class Mapping"
               />
+              <div style={{background: "#000000;"}}>
+                <img
+                  style={{ width: "100%" }}
+                  src="https://www2.arccorp.com/globalassets/products--participation/advanced-data-analytics/ada-cabin-map.png"
+                  alt="Cabin Class Mapping"
+                />
+              </div>
             </div>
           }
         />
@@ -368,10 +380,16 @@ class App extends Component {
             </div>
           }
         />
-        <ProductCallout 
+        <ProductCallout
           title="Get Started"
           subtitle="Put ARC’s advanced data analytics and capabilities to work for your business."
           cta="Contact Us"
+          img={
+            <img
+              src="https://www2.arccorp.com/globalassets/products--participation/advanced-data-analytics/arc-logo.png"
+              alt="ARC"
+            />
+          }
           ctaLink="https://www2.arccorp.com/about-us/contact-us/"
         />
       </div>

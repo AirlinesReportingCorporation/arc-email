@@ -25,9 +25,15 @@
   }
 }
 
+.callout-container {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
 .ada-solutions,
 .ada-index,
-.ada-cabin, .ada-trip {
+.ada-cabin,
+.ada-trip {
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -153,7 +159,8 @@
   }
 }
 
-.ada-cabin, .ada-trip {
+.ada-cabin,
+.ada-trip {
   .callout-container {
     padding-top: 160px;
   }
@@ -169,22 +176,37 @@
   }
 }
 
+.ada-cabin {
+  .ada-cabin-copy {
+    max-width: 840px;
+  }
+  .product-callout-copy {
+    margin-bottom: 0;
+  }
+  .callout-container {
+    padding-bottom: 0;
+  }
+}
+
 .ada-trip {
   .callout-container {
-    padding-top: 400px
-  } 
+    padding-top: 400px;
+  }
 }
 
 .advanced-data-analytics-page {
   width: 100%;
   padding-bottom: 120px;
 
+  .sticky-nav {
+  }
+
   .callout-box-container {
     padding-top: 120px;
   }
 
   .arc-sticky-inner {
-    background: main.$tarmac;
+    background: rgba(main.$tarmac, 0.85);
   }
 
   .product-eyebrow {
@@ -205,6 +227,7 @@
   .atd-jumbo {
     padding-top: 340px;
     background-position: top center;
+    margin-top: -56px;
 
     .ctaBtn {
       color: main.$tarmac;
@@ -218,8 +241,11 @@
         opacity: 0.8;
       }
     }
-    .product-callout-copy span {
-      color: main.$airfield;
+
+    .product-callout-copy {
+      span {
+        color: main.$airfield;
+      }
     }
   }
 }
