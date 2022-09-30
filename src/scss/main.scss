@@ -236,9 +236,15 @@
   }
 
   .atd-jumbo {
+    background-color: #000000;
     padding-top: 340px;
     background-position: top center;
     margin-top: -56px;
+
+    .product-header {
+      font-family: main.$arc-font-bold;
+      line-height: 1.2;
+    }
 
     .ctaBtn {
       color: main.$tarmac;
