@@ -202,13 +202,7 @@ class App extends Component {
           }
           subtitle={
             <div className="ada-index-copy">
-              Estimated datasets enable customers to understand total global air
-              market size, carrier market shares, traffic distribution, demand
-              growth and fare patterns. The information provided by ARC’s Total
-              Air Market (TAM) data can be used for{" "}
-              <span>strategic planning</span> and{" "}
-              <span className="white">operational management</span> in specific
-              markets.
+              ARC Quality of Service Index (QSI) <span>predicts customer behavior</span> by quantifying the relative attractiveness of flight options by market <span className="white">(O&D City pair)</span> from published airline schedules. 
             </div>
           }
           body={
