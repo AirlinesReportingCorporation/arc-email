@@ -20,6 +20,7 @@ class App extends Component {
             { title: "Overview", url: "#overview" },
             { title: "Solutions", url: "#solutions" },
           ]}
+          rightLink="mailto:dataproducts@arccorp.com"
         ></Stickynav>
         <ProductJumbo
           backgroundImage="https://www2.arccorp.com/globalassets/products--participation/advanced-data-analytics/ada-jumbo.png"
@@ -39,6 +40,7 @@ class App extends Component {
               </span>
             </>
           }
+          ctaLink="mailto:dataproducts@arccorp.com"
         ></ProductJumbo>
         <ProductText
           id="overview"
@@ -393,7 +395,7 @@ class App extends Component {
               alt="ARC"
             />
           }
-          ctaLink="https://www2.arccorp.com/about-us/contact-us/"
+          ctaLink="mailto:dataproducts@arccorp.com"
         />
       </div>
     );
