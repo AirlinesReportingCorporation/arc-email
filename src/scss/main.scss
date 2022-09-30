@@ -107,7 +107,7 @@
   .product-callout-copy {
     border-bottom: 1px solid main.$landing;
     padding-bottom: 120px;
-    margin-bottom: 60px;
+    margin-bottom: 55px;
     max-width: 100%;
   }
 
@@ -117,7 +117,7 @@
 
   .ada-index-body {
     max-width: 900px;
-    margin: 0 auto 120px;
+    margin: 0 auto 60px;
   }
 
   .ada-index-body-title {
@@ -143,7 +143,7 @@
   .ada-index-icon-info {
     border-top: 1px solid main.$landing;
     padding-top: 30px;
-    padding-bottom: 60px;
+    padding-bottom: 5px;
   }
 
   .ada-index-icon-info-copy {
@@ -186,6 +186,14 @@
   .callout-container {
     padding-bottom: 0;
   }
+  .ada-cabin-body-title {
+    z-index: 2;
+    position: relative;
+    font-size: 24px;
+    font-family: main.$arc-font-semibold;
+    text-align: center;
+    color: main.$landing;
+  }
 }
 
 .ada-trip {
@@ -215,6 +223,9 @@
 
   .callout-box {
     border-radius: main.$border-radius-lg;
+    .ctaBtn {
+      margin-bottom: 0;
+    }
   }
 
   .product-header {

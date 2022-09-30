@@ -327,13 +327,14 @@ class App extends Component {
             </div>
           }
           outerBody={
-            <div>
+            <div style={{marginTop: "-140px"}}>
               <img
                 style={{ width: "100%" }}
                 src="https://www2.arccorp.com/globalassets/products--participation/advanced-data-analytics/shadow.png"
                 alt="Cabin Class Mapping"
               />
-              <div style={{background: "#000000;"}}>
+              <div class="ada-cabin-body-title" style={{zIndex: 2}}>A combination of attributes are used to calculate expected QSI Share</div>
+              <div style={{background: "#000000;", marginTop: "-10px"}}>
                 <img
                   style={{ width: "100%" }}
                   src="https://www2.arccorp.com/globalassets/products--participation/advanced-data-analytics/ada-cabin-map.png"
