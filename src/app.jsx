@@ -20,7 +20,7 @@ class App extends Component {
             { title: "Overview", url: "#overview" },
             { title: "Solutions", url: "#solutions" },
           ]}
-          rightLink="mailto:dataproducts@arccorp.com"
+          rightLink="https://www2.arccorp.com/support-training/product-sales-request?Product=Destination_Gateway"
         ></Stickynav>
         <ProductJumbo
           backgroundImage="https://www2.arccorp.com/globalassets/products--participation/advanced-data-analytics/ada-jumbo.png"
@@ -40,7 +40,7 @@ class App extends Component {
               </span>
             </>
           }
-          ctaLink="mailto:dataproducts@arccorp.com"
+          ctaLink="https://www2.arccorp.com/support-training/product-sales-request?Product=Destination_Gateway"
         ></ProductJumbo>
         <ProductText
           id="overview"
@@ -389,7 +389,7 @@ class App extends Component {
               alt="ARC"
             />
           }
-          ctaLink="mailto:dataproducts@arccorp.com"
+          ctaLink="https://www2.arccorp.com/support-training/product-sales-request?Product=Destination_Gateway"
         />
       </div>
     );
