@@ -20,6 +20,7 @@ class App extends Component {
             { title: "Overview", url: "#overview" },
             { title: "Solutions", url: "#solutions" },
           ]}
+          contactUs="Learn More"
           rightLink="https://www2.arccorp.com/support-training/product-sales-request?Product=Advanced_Data_Analytics"
         ></Stickynav>
         <ProductJumbo
