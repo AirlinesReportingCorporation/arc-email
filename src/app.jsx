@@ -171,30 +171,25 @@ function App() {
 
     var tempItems = [...items];
 
+    var newItem = {
+      id: newId,
+      name: blockName,
+      component: "asdf",
+    };
+
     if (activePosition == "top") {
       if (activeAdd == 0) {
-        tempItems = prepend(
-          {
-            id: newId,
-            name: blockName,
-            component: "asdf",
-          },
-          tempItems
-        );
+        tempItems = prepend(newItem, tempItems);
       } else {
-        //splice
+        tempItems.splice(activeAdd, 0, newItem);
       }
     } else if (activePosition == "bottom") {
-      if (activeAdd == items.length - 1) {
-        //append
-      } else {
-        //splice
-      }
+      tempItems.splice(activeAdd + 1, 0, newItem);
     }
 
     setItems(tempItems);
     setItemAddID(newId);
-    
+
     handleClose();
   };
 
