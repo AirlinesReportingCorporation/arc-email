@@ -8,6 +8,8 @@ import React, {
 
 import Modal from "react-bootstrap/Modal";
 import Button from "../components/Button";
+import Header from "../components/Header";
+import Paragraph from "../components/Paragraph";
 
 import {
   DndContext,
@@ -176,6 +178,16 @@ function App() {
       name: blockName,
       component: "asdf",
     };
+
+    if(blockName == "Header") {
+      newItem.component = <Header />;
+    }
+    else if(blockName == "Button") {
+      newItem.component = <Button text="Button Text" />
+    }
+    else if(blockName == "Paragraph Text") {
+      newItem.component = <Paragraph />
+    }
 
     if (activePosition == "top") {
       if (activeAdd == 0) {
