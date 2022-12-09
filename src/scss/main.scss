@@ -1,5 +1,6 @@
 //import all arccorp vars
 @use "~arccorp-vars/dist/scss/main.scss";
+@use "modal";
 
 #app {
   color: #414042;
@@ -30,9 +31,59 @@
   width: 100%;
 }
 
-.sortable-item {
-  padding: 15px;
-  border: 1px solid main.$overcast;
-  cursor: pointer;
+.arc-email-sidebar-container {
+  padding: 30px 0;
 }
 
+.arc-email-sortable-item-container {
+  position: relative;
+}
+
+.arc-email-template-add {
+  width: 24px;
+  height: 24px;
+  background: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 999;
+  cursor: pointer;
+  display: none;
+
+  &.add-top {
+    right: -10px;
+    top: -10px;
+  }
+
+  &.add-bottom {
+    right: -10px;
+    bottom: -10px;
+  }
+
+  &:hover svg {
+    fill: main.$arc-teal;
+  }
+}
+
+.move-handle {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background: main.$overcast;
+  margin-right: 15px;
+  &:hover {
+    background: rgba(main.$overcast, .8)
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    stroke: main.$white;
+  }
+}
+
+.sortable-item {
+  background: main.$fog;
+  //border: 1px solid main.$overcast;
+  cursor: pointer;
+  margin-bottom: 2px;
+}
