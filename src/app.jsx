@@ -157,61 +157,22 @@ function App() {
 
   return (
     <div className="arc-email-page">
-      <div className="container-fluid">
-        <div className="row" style={{ maxWidth: "100%" }}>
-          <div className="col-lg-1">
-            <div className="arc-email-tool-container">
-              <div style={{ padding: "15px 0", width: "32px" }}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z"
-                  />
-                </svg>
+      <div className="">
+        <div className="row no-gutters" style={{ maxWidth: "100%" }}>
+          <div className="col-lg-1 arc-email-tools">
+            <div className="arc-email-tool-container text-center">
+              <div className="arc-email-tool-icon active" style={{ fontSize: "2rem" }}>
+                <i class="fas fa-stream"></i>
               </div>
-              <div style={{ padding: "15px 0", width: "32px" }}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
+              <div className="arc-email-tool-icon " style={{ fontSize: "2rem" }}>
+                <i class="fas fa-download"></i>
               </div>
-              <div style={{ padding: "15px 0", width: "32px" }}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-6 h-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"
-                  />
-                </svg>
+              <div className="arc-email-tool-icon " style={{ fontSize: "2rem" }}>
+                <i class="fas fa-cog"></i>
               </div>
             </div>
           </div>
-          <div className="col-lg-3">
+          <div className="col-lg-3 arc-email-tool-items">
             <div className="arc-email-sidebar-container">
               <DndContext
                 sensors={sensors}

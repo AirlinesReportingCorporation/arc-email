@@ -37,6 +37,7 @@
 
 .arc-email-sortable-item-container {
   position: relative;
+  padding: 0 30px;
 }
 
 .arc-email-template-add {
@@ -108,7 +109,6 @@
     align-items: center;
     justify-content: center;
     width: 96px;
-
   }
 
   .arc-email-component-name {
@@ -129,9 +129,32 @@
   }
 }
 
+.arc-email-tool-container {
+  color: main.$white;
+
+  .arc-email-tool-icon {
+    padding: 30px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .active {
+    background: rgba(main.$white, 0.1);
+  }
+}
+
 .sortable-item {
   background: main.$fog;
   //border: 1px solid main.$overcast;
   cursor: pointer;
   margin-bottom: 2px;
+}
+
+.arc-email-tools {
+  background: main.$tarmac;
+}
+
+.arc-email-tool-items {
+  background: rgba(main.$tarmac, 0.9);
 }
