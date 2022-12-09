@@ -36,8 +36,18 @@
 }
 
 .arc-email-sortable-item-container {
+  font-family: main.$arc-font-semibold;
   position: relative;
   padding: 0 30px;
+}
+
+.arc-email-sidebar-download-container {
+  color: main.$white;
+  padding: 0px 30px 15px;;
+  h2 {
+    color: main.$white;
+    font-family: main.$arc-font-bold;
+  }
 }
 
 .arc-email-template-add {
@@ -51,12 +61,12 @@
   display: none;
 
   &.add-top {
-    right: -10px;
+    right: 15px;
     top: -10px;
   }
 
   &.add-bottom {
-    right: -10px;
+    right: 15px;
     bottom: -10px;
   }
 
@@ -66,8 +76,8 @@
 }
 
 .move-handle {
-  display: flex;
-  align-items: center;
+  cursor: pointer;
+  height: 100%;
   padding: 15px;
   background: rgba(main.$overcast, 0.4);
   color: main.$white;
@@ -83,12 +93,13 @@
 }
 
 .modify-handle {
+  cursor: pointer;
   display: flex;
   align-items: center;
   padding: 15px;
   margin-right: 15px;
   &:hover svg {
-    stroke: rgba(main.$tarmac, 0.8);
+    stroke: rgba(main.$arc-teal, 0.8);
   }
 
   svg {
@@ -147,7 +158,6 @@
 .sortable-item {
   background: main.$fog;
   //border: 1px solid main.$overcast;
-  cursor: pointer;
   margin-bottom: 2px;
 }
 
