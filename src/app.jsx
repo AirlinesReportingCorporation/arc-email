@@ -202,13 +202,22 @@ function App() {
     setItems(tempItems);
     setItemAddID(newId);
 
+    //close add modal
     handleClose();
+
+    //TODO should bring up a the modifyItem modal to edit the newly added block
+
   };
 
   //TODO modifyItem be able to modify a component after adding it to the list, it should be able to figure out what component it is and pull the corresponding custom form to edit
   const modifyItem = (index) => {
     console.log("modify");
   };
+
+  //TODO delete item
+  const deleteItem = () => {
+    //use splice function to remove ad activeItemIndex and items, similar to add Item but removal intead and more simple
+  }
 
   return (
     <div className="arc-email-page">
