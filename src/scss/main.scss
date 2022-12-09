@@ -68,16 +68,64 @@
   display: flex;
   align-items: center;
   padding: 15px;
-  background: main.$overcast;
-  margin-right: 15px;
+  background: rgba(main.$overcast, 0.4);
+  color: main.$white;
   &:hover {
-    background: rgba(main.$overcast, .8)
+    background: rgba(main.$overcast, 0.4);
   }
 
   svg {
     width: 20px;
     height: 20px;
     stroke: main.$white;
+  }
+}
+
+.modify-handle {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin-right: 15px;
+  &:hover svg {
+    stroke: rgba(main.$tarmac, 0.8);
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    stroke: main.$overcast;
+  }
+}
+
+.arc-email-component-add-container {
+  .arc-email-component-icon {
+    border: 1px solid main.$overcast;
+    border-radius: main.$border-radius;
+    padding: 30px;
+    text-align: center;
+    height: 96px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 96px;
+
+  }
+
+  .arc-email-component-name {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  &:hover {
+    cursor: pointer;
+    .arc-email-component-icon {
+      border-color: main.$arc-teal;
+      color: main.$arc-teal;
+    }
+
+    .arc-email-component-name {
+      color: main.$arc-teal;
+    }
   }
 }
 

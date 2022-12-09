@@ -6,8 +6,8 @@ import React, {
   useCallback,
 } from "react";
 
-import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import Button from "../components/Button";
 
 import {
   DndContext,
@@ -30,6 +30,25 @@ import * as ReactDOMServer from "react-dom/server";
 import { SortableItem } from "../components/SortableItem";
 
 function App() {
+  var blockPreviews = [
+    {
+      name: "Header",
+      icon: <i className="fas fa-heading" aria-hidden="true"></i>,
+      component: "",
+    },
+    {
+      name: "Paragraph Text",
+      icon: <i class="fas fa-paragraph"></i>,
+      component: "",
+    },
+    {
+      name: "Button",
+      icon: <i class="fas fa-square"></i>,
+      component: <Button />,
+      props: [{ name: "text" }, { link: "text" }],
+    },
+  ];
+
   const [items, setItems] = useState([
     {
       id: "1",
@@ -99,6 +118,7 @@ function App() {
 
   const email = items.map((item) => <div key={item.id}>{item.id}</div>);
 
+  //useEffect is for functions that need to run on every render
   useEffect(() => {
     const email = items.map((item) => (
       <div key={item.id}>{item.component}</div>
@@ -122,11 +142,24 @@ function App() {
     })
   );
 
+  //TODO addItem(index,position) create a function that will add a component object to the items list either before or after the index depending on the bottom that was clicked
+  // index is the current index of the item you want to add to
+  // position is whehter it will be above or below the current index
+  const addItem = (index, position) => {
+    console.log("add");
+    console.log(index + ":" + position);
+  };
+
+  //TODO modifyItem be able to modify a component after adding it to the list, it should be able to figure out what component it is and pull the corresponding custom form to edit
+  const modifyItem = (index) => {
+    console.log("modify");
+  };
+
   return (
     <div className="arc-email-page">
       <div className="container-fluid">
         <div className="row" style={{ maxWidth: "100%" }}>
-          <div className="col-auto">
+          <div className="col-lg-1">
             <div className="arc-email-tool-container">
               <div style={{ padding: "15px 0", width: "32px" }}>
                 <svg
@@ -178,7 +211,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="col-lg-2">
+          <div className="col-lg-3">
             <div className="arc-email-sidebar-container">
               <DndContext
                 sensors={sensors}
@@ -215,6 +248,7 @@ function App() {
                           />
                         </svg>
                       </div>
+
                       <SortableItem
                         key={item.id}
                         id={item.id}
@@ -252,7 +286,7 @@ function App() {
               srcDoc={markup}
             ></iframe>
           </div>
-          <div className="col-lg-2">
+          <div className="col-lg-12">
             <textarea name="" id="" rows="10" value={markup}></textarea>
           </div>
         </div>
@@ -262,15 +296,26 @@ function App() {
         <Modal.Header closeButton>
           <Modal.Title>Add Email Component</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-        <Modal.Footer>
+        <Modal.Body>
+          <div className="row">
+            {blockPreviews.map((block) => (
+              <div className="col-lg-auto">
+                <div className="arc-email-component-add-container">
+                  <div className="arc-email-component-icon">{block.icon}</div>
+                  <div className="arc-email-component-name">{block.name}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Modal.Body>
+        {/* <Modal.Footer>
           <a className="ctaBtn" onClick={handleClose}>
             Close
           </a>
           <a className="ctaBtn" onClick={handleClose}>
             Save Changes
           </a>
-        </Modal.Footer>
+        </Modal.Footer> */}
       </Modal>
     </div>
   );
