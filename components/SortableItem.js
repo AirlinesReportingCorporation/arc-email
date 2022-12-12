@@ -22,7 +22,7 @@ export function SortableItem(props) {
         <div className="move-handle" {...attributes} {...listeners}>
           <i className="fas fa-grip-vertical"></i>
         </div>
-        <div className="modify-handle">
+        <div className="modify-handle" onClick={()=> props.modifyFunction()}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

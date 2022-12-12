@@ -168,3 +168,13 @@
 .arc-email-tool-items {
   background: rgba(main.$tarmac, 0.9);
 }
+
+.ctaBtn--close {
+  background: main.$nowboarding;
+  border-color: main.$nowboarding;
+
+  &:hover {
+    background: rgba(main.$nowboarding, .8);
+    border-color: rgba(main.$nowboarding, .8);
+  }
+}

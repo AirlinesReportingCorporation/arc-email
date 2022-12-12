@@ -31,6 +31,11 @@ import * as ReactDOMServer from "react-dom/server";
 
 import { SortableItem } from "../components/SortableItem";
 
+function alertMe(items, activeAdd) {
+  console.log(items, activeAdd);
+  alert("You've deleted " + items[activeAdd].name);
+}
+
 function App() {
   var blockPreviews = [
     {
@@ -60,39 +65,7 @@ function App() {
     {
       id: "5",
       name: "Button",
-      component: (
-        <table
-          role="presentation"
-          border="0"
-          cellpadding="0"
-          cellspacing="0"
-          className="btn btn-primary"
-        >
-          <tbody>
-            <tr>
-              <td align="left">
-                <table
-                  role="presentation"
-                  border="0"
-                  cellpadding="0"
-                  cellspacing="0"
-                >
-                  <tbody>
-                    <tr>
-                      <td>
-                        {" "}
-                        <a href="http://htmlemail.io" target="_blank">
-                          Call To Action
-                        </a>{" "}
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      ),
+      component: <Button />,
     },
     {
       id: "6",
@@ -114,17 +87,25 @@ function App() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const [showModify, setShowModify] = useState(false);
+  const handleCloseModify = () => setShowModify(false);
+  const handleShowModify = () => setShowModify(true);
+
   const [activeView, setActiveView] = useState("design");
   const [activeHover, setActiveHover] = useState("");
   const [activeAdd, setActiveAdd] = useState("");
-  const [activePosition, setActivePositon] = useState("");
+  const [activePosition, setActivePosition] = useState("");
   const [hoverRef, isHovered] = useHover();
 
-  const setActiveAddIndex = (index, position) => {
+  const setActiveAddIndex = (index, action) => {
     console.log("active add", index);
     setActiveAdd(index);
-    setActivePositon(position);
-    handleShow();
+    if (action == "top" || action == "bottom") {
+      setActivePosition(action);
+      handleShow();
+    } else if (action == "modify") {
+      handleShowModify();
+    }
   };
 
   const [markup, setMarkup] = useState("");
@@ -179,14 +160,12 @@ function App() {
       component: "asdf",
     };
 
-    if(blockName == "Header") {
+    if (blockName == "Header") {
       newItem.component = <Header />;
-    }
-    else if(blockName == "Button") {
-      newItem.component = <Button text="Button Text" />
-    }
-    else if(blockName == "Paragraph Text") {
-      newItem.component = <Paragraph />
+    } else if (blockName == "Button") {
+      newItem.component = <Button text="Button Text" />;
+    } else if (blockName == "Paragraph Text") {
+      newItem.component = <Paragraph />;
     }
 
     if (activePosition == "top") {
@@ -206,7 +185,6 @@ function App() {
     handleClose();
 
     //TODO should bring up a the modifyItem modal to edit the newly added block
-
   };
 
   //TODO modifyItem be able to modify a component after adding it to the list, it should be able to figure out what component it is and pull the corresponding custom form to edit
@@ -214,10 +192,18 @@ function App() {
     console.log("modify");
   };
 
-  //TODO delete item
   const deleteItem = () => {
-    //use splice function to remove ad activeItemIndex and items, similar to add Item but removal intead and more simple
-  }
+    //use splice function to remove at activeItemIndex and items, similar to add Item but removal intead and more simple
+    
+    var tempItems = [...items];
+    console.log("deleteItems:" + tempItems);
+    tempItems.splice(activeAdd, 1);
+    console.log(tempItems);
+
+    setItems(tempItems);
+    setActiveAdd("");
+    handleCloseModify();
+  };
 
   return (
     <div className="arc-email-page">
@@ -306,7 +292,9 @@ function App() {
                           key={item.id}
                           id={item.id}
                           name={item.name}
+                          modifyFunction={() => setActiveAddIndex(i, "modify")}
                         ></SortableItem>
+
                         <div
                           className="arc-email-template-add add-bottom"
                           style={{
@@ -391,6 +379,41 @@ function App() {
             Save Changes
           </a>
         </Modal.Footer> */}
+      </Modal>
+
+      <Modal show={showModify} onHide={handleCloseModify}>
+        <Modal.Header closeButton>
+          <Modal.Title>Edit Email Component</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <div className="row">
+            <div className="col-lg-12">
+              {activeAdd > 0 ? (
+                items[activeAdd].name == "Button" ? (
+                  <>
+                    <label>Button Link</label>
+                    <input type="text" />
+
+                    <label>Button Text</label>
+                    <input type="text" />
+                  </>
+                ) : (
+                  ""
+                )
+              ) : (
+                ""
+              )}
+            </div>
+          </div>
+        </Modal.Body>
+        <Modal.Footer>
+          <a className="ctaBtn ctaBtn--close" onClick={deleteItem}>
+            <i class="fas fa-trash-alt"></i>
+          </a>
+          <a className="ctaBtn" onClick={handleCloseModify}>
+            Save Changes
+          </a>
+        </Modal.Footer>
       </Modal>
     </div>
   );
