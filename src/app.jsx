@@ -41,46 +41,54 @@ function App() {
     {
       name: "Header",
       icon: <i className="fas fa-heading" aria-hidden="true"></i>,
-      component: "",
+      component: <Header />,
+      props: [["text", "text"]], //name, input
     },
     {
       name: "Paragraph Text",
       icon: <i class="fas fa-paragraph"></i>,
-      component: "",
+      component: <Paragraph />,
+      props: [["text", "text"]],
     },
     {
       name: "Button",
       icon: <i class="fas fa-square"></i>,
       component: <Button />,
-      props: [{ name: "text" }, { link: "text" }],
+      props: [
+        ["text", "text"],
+        ["link", "text"],
+      ],
     },
   ];
+
+  const [activeForm, setActiveForm] = useState();
 
   const [items, setItems] = useState([
     {
       id: "1",
-      name: "tac-header",
-      component: <h1>Title</h1>,
+      name: "Header",
+      component: <Header text="Title 1" />,
     },
     {
       id: "5",
       name: "Button",
-      component: <Button />,
+      component: <Button text="hi" link="https://google.com" />,
     },
     {
       id: "6",
-      name: "tac-header",
+      name: "Paragraph Text",
       component: (
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-          ipsum, illum dicta eveniet nemo nisi odio. Dolorem illo animi, ex
-          eveniet voluptatem quia autem commodi cumque facilis deleniti
-          assumenda quod.
-        </p>
+        <Paragraph
+          text="Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+        Neque iusto voluptatum in beatae. Voluptatum eaque iusto
+        placeat atque provident, error nihil, repellendus qui in
+        cupiditate eum! Magni vero quaerat autem."
+        />
       ),
     },
   ]);
 
+  //console.log(items[1].component.props);
   const [itemAddID, setItemAddID] = useState(1000);
 
   const [show, setShow] = useState(false);
@@ -88,24 +96,30 @@ function App() {
   const handleShow = () => setShow(true);
 
   const [showModify, setShowModify] = useState(false);
-  const handleCloseModify = () => setShowModify(false);
-  const handleShowModify = () => setShowModify(true);
 
   const [activeView, setActiveView] = useState("design");
   const [activeHover, setActiveHover] = useState("");
   const [activeAdd, setActiveAdd] = useState("");
   const [activePosition, setActivePosition] = useState("");
+  const [formProps, setFormProps] = useState({});
   const [hoverRef, isHovered] = useHover();
+  const [formInputs, setFormInputs] = useState("");
+  const [buttonText, buttonLink, setButtonText, setButtonLink] = useState("");
+
+  const handleCloseModify = () => setShowModify(false);
+  const handleShowModify = (index) => {
+    generateFormProps(index);
+  };
 
   const setActiveAddIndex = (index, action) => {
-    console.log("active add", index);
     setActiveAdd(index);
     if (action == "top" || action == "bottom") {
       setActivePosition(action);
       handleShow();
     } else if (action == "modify") {
-      handleShowModify();
+      handleShowModify(index);
     }
+    console.log("active add " + index + ", action: " + action);
   };
 
   const [markup, setMarkup] = useState("");
@@ -126,7 +140,7 @@ function App() {
         '</table> </td> </tr>  </table>   <div class="footer"> footer </div>  </div> </td> <td> </td> </tr> </table> </body> </html>'
     );
 
-    console.log(items);
+    //console.log(items);
   });
 
   const itemIds = useMemo(() => items.map((item) => item.id, [items]));
@@ -187,14 +201,76 @@ function App() {
     //TODO should bring up a the modifyItem modal to edit the newly added block
   };
 
+  const handleInputChange = (event) => {
+    event.persist();
+    setFormProps((formProps) => ({
+      ...formProps,
+      [event.target.name]: event.target.value,
+    }));
+  };
+
+  const generateFormProps = (activeIndex) => {
+    //code to set initial form props
+    var tempFormProps = {};
+
+    if (items[activeIndex]) {
+      var propList =
+        blockPreviews[
+          blockPreviews.findIndex((x) => x.name === items[activeIndex].name)
+        ].props;
+
+      for (let i = 0; i < propList.length; i++) {
+        const element = propList[i][0];
+        tempFormProps[element] = items[activeIndex].component.props[element];
+      }
+    }
+
+    setFormProps(tempFormProps);
+
+    setFormInputs(
+      blockPreviews[
+        blockPreviews.findIndex((x) => x.name === items[activeIndex].name)
+      ].props.map((item, i) => (
+        <>
+          <label>{item[0]}</label>
+          <input
+            name={item[0]}
+            type={item[1]}
+            defaultValue={tempFormProps[item[0]]}
+            value={formProps[i]}
+            onChange={handleInputChange}
+          />
+        </>
+      ))
+    );
+
+    setShowModify(true);
+  };
+
   //TODO modifyItem be able to modify a component after adding it to the list, it should be able to figure out what component it is and pull the corresponding custom form to edit
-  const modifyItem = (index) => {
-    console.log("modify");
+  const modifyItem = (event) => {
+    event.preventDefault();
+    var tempItems = [...items];
+
+    var updatedItem = {
+      id: tempItems[activeAdd].id,
+      name: tempItems[activeAdd].name,
+      component: React.cloneElement(tempItems[activeAdd].component, formProps),
+    };
+
+    console.log(updatedItem);
+
+    tempItems[activeAdd] = updatedItem;
+
+    //replace item list
+    setItems(tempItems);
+
+    handleCloseModify();
   };
 
   const deleteItem = () => {
     //use splice function to remove at activeItemIndex and items, similar to add Item but removal intead and more simple
-    
+
     var tempItems = [...items];
     console.log("deleteItems:" + tempItems);
     tempItems.splice(activeAdd, 1);
@@ -382,38 +458,25 @@ function App() {
       </Modal>
 
       <Modal show={showModify} onHide={handleCloseModify}>
-        <Modal.Header closeButton>
-          <Modal.Title>Edit Email Component</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <div className="row">
-            <div className="col-lg-12">
-              {activeAdd > 0 ? (
-                items[activeAdd].name == "Button" ? (
-                  <>
-                    <label>Button Link</label>
-                    <input type="text" />
-
-                    <label>Button Text</label>
-                    <input type="text" />
-                  </>
-                ) : (
-                  ""
-                )
-              ) : (
-                ""
-              )}
+        <form onSubmit={modifyItem}>
+          <Modal.Header closeButton>
+            <Modal.Title>
+              Edit {items[activeAdd] ? items[activeAdd].name : "Email"}
+              Component
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <div className="row">
+              <div className="col-lg-12">{formInputs}</div>
             </div>
-          </div>
-        </Modal.Body>
-        <Modal.Footer>
-          <a className="ctaBtn ctaBtn--close" onClick={deleteItem}>
-            <i class="fas fa-trash-alt"></i>
-          </a>
-          <a className="ctaBtn" onClick={handleCloseModify}>
-            Save Changes
-          </a>
-        </Modal.Footer>
+          </Modal.Body>
+          <Modal.Footer>
+            <a className="ctaBtn ctaBtn--close" onClick={deleteItem}>
+              <i class="fas fa-trash-alt"></i>
+            </a>
+            <input type="submit" className="ctaBtn" value="Save Changes" />
+          </Modal.Footer>
+        </form>
       </Modal>
     </div>
   );

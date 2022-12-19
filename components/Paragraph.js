@@ -16,10 +16,7 @@ export default function Paragraph(props) {
                 <tr>
                   <td>
                     <p>
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                      Neque iusto voluptatum in beatae. Voluptatum eaque iusto
-                      placeat atque provident, error nihil, repellendus qui in
-                      cupiditate eum! Magni vero quaerat autem.
+                      {props.text}
                     </p>
                   </td>
                 </tr>

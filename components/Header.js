@@ -20,7 +20,7 @@ export default function Header(props) {
               <tbody>
                 <tr>
                   <td>
-                    <h1>Test Header</h1>
+                    <h1>{props.text}</h1>
                   </td>
                 </tr>
               </tbody>
