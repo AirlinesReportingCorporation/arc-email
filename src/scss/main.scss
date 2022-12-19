@@ -78,7 +78,7 @@
 .move-handle {
   cursor: pointer;
   height: 100%;
-  padding: 15px;
+  padding: 10px 15px;
   background: rgba(main.$overcast, 0.4);
   color: main.$white;
   &:hover {
@@ -96,7 +96,7 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  padding: 15px;
+  padding: 10px 15px;
   margin-right: 15px;
   &:hover svg {
     stroke: rgba(main.$arc-teal, 0.8);
@@ -110,6 +110,7 @@
 }
 
 .arc-email-component-add-container {
+  margin-bottom: 30px;
   .arc-email-component-icon {
     border: 1px solid main.$overcast;
     border-radius: main.$border-radius;
