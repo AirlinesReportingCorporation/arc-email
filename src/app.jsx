@@ -13,6 +13,7 @@ import Paragraph from "../components/Paragraph";
 import ARCLogo from "../components/ARCLogo";
 import Spacer from "../components/Spacer";
 import TACJumbo from "../components/TACJumbo";
+import TACLink from "../components/TACLink";
 
 import {
   DndContext,
@@ -66,7 +67,7 @@ function App() {
       icon: (
         <img
           src="https://www2.arccorp.com/globalassets/arc-logos/corporate-logos/arc-logo-l-teal.png"
-          width="32"
+          width="64"
         />
       ),
       component: <ARCLogo />,
@@ -86,6 +87,16 @@ function App() {
         ["background", "text"],
         ["title", "text"],
         ["date", "text"],
+      ],
+    },
+    {
+      name: "TAC Link",
+      icon: <i class="far fa-newspaper"></i>,
+      component: <TACLink />,
+      props: [
+        ["icon", "text"],
+        ["title", "text"],
+        ["link", "text"],
       ],
     },
   ];
@@ -115,9 +126,9 @@ function App() {
       ),
     },
     {
-      id: "7",
-      name: "Spacer",
-      component: <Spacer height="20px" />,
+      id: "8",
+      name: "TAC Link",
+      component: <TACLink height="20px" />,
     },
   ]);
 
@@ -221,6 +232,8 @@ function App() {
       newItem.component = (
         <TACJumbo title="Travel Agent Communcations" date="01/01/2024" />
       );
+    } else if (blockName == "TAC Link") {
+      newItem.component = <TACLink />;
     }
 
     if (activePosition == "top") {

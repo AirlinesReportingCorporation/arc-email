@@ -2,110 +2,95 @@ import React from "react";
 
 export default function TACLink(props) {
   return (
-    <table role="presentation" border="0" cellpadding="0" cellspacing="0">
-      <tbody>
-        <tr>
-          <td align="center">
-            <table
-              role="presentation"
-              border="0"
-              cellpadding="0"
-              cellspacing="0"
-              style={{ textAlign: "center" }}
-            >
-              <tbody>
-                <tr>
-                  <td align="center">
-                    {" "}
-                    <a
-                      href={
-                        props.link ? props.link : "https://www2.arccorp.com"
-                      }
-                      target="_blank"
-                      style={{ display: "block" }}
-                    >
-                      <img
-                        width="650"
-                        style={{
-                          maxWidth: "650px",
-                          width: "100%",
-                          display: "block",
-                        }}
-                        src="https://www2.arccorp.com/globalassets/email-parts/tac-jumbo-top.jpg"
-                      />
-                    </a>{" "}
-                  </td>
-                </tr>
-                <tr>
-                  <td align="center">
-                    <table
-                      role="presentation"
-                      border="0"
-                      cellpadding="0"
-                      cellspacing="0"
-                      background="#189bb0"
+    <>
+      <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="em_height" style={{ height: "30px", fontSize: "0" }}>
+              &nbsp;
+            </td>
+          </tr>
+          <tr>
+            <td width="100" align="center">
+              <img
+                width="45px"
+                src="https://www2.arccorp.com/globalassets/email-parts/creditcard-icon.png"
+              />
+            </td>
+
+            <td align="left">
+              <table
+                role="presentation"
+                border="0"
+                cellpadding="0"
+                cellspacing="0"
+              >
+                <tbody>
+                  <tr>
+                    <td
+                      width="100"
+                      align="left"
                       style={{
-                        textAlign: "center",
-                        width: "600px",
-                        backgroundColor: "#189bb0",
-                        background: "#189bb0",
+                        fontFamily: "Arial, sans-serif",
+                        fontSize: "20px",
+                        lineHeight: "22px",
+                        fontWeight: "Regular",
+                        color: "#2a2b2c",
                       }}
                     >
-                      <tr>
-                        <td
-                          style={{
-                            fontFamily: "Arial, sans-serif",
-                            fontSize: "22px",
-                            lineHeight: "26px",
-                            fontWeight: "Bold",
-                            color: "#ffffff",
-                          }}
-                          valign="top"
-                        >
-                          {props.title
-                            ? props.title
-                            : "Travel Agent Communications"}
-                        </td>
-                      </tr>
-                      <tr>
-                        <td
-                          style={{
-                            fontFamily: "Arial, sans-serif",
-                            fontSize: "15px",
-                            lineHeight: "18px",
-                            fontWeight: "light",
-                            color: "#ffffff",
-                          }}
-                          valign="top"
-                        >
-                          PED {props.date ? props.date : "01/01/2023"}
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td align="center">
-                    {" "}
-                    <a
-                      href={
-                        props.link ? props.link : "https://www2.arccorp.com"
-                      }
-                      target="_blank"
+                      Sky Airline Now Accepts Visa and Mastercard
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      class="em_height"
+                      style={{ height: "10px", fontSize: "0" }}
                     >
-                      <img
-                        width="600"
-                        style={{ maxWidth: "600px", width: "100%" }}
-                        src="https://www2.arccorp.com/globalassets/email-parts/tac-jumbo-bottom.jpg"
-                      />
-                    </a>{" "}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+                      &nbsp;
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="100" align="left">
+                      <a
+                        href={
+                          props.link
+                            ? props.link
+                            : "https://www2.arccorp.com/articles-trends/agency-communications/travel-agent-communications/"
+                        }
+                        style={{
+                          fontFamily: "Arial, sans-serif",
+                          fontSize: "14px",
+                          lineHeight: "18px",
+                          fontWeight: "Bold",
+                          color: "#189bb0",
+                          textDecoration: "none",
+                        }}
+                      >
+                        READ MORE &raquo;
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td class="em_height" style={{ height: "30px", fontSize: "0" }}>
+            &nbsp;
           </td>
         </tr>
-      </tbody>
-    </table>
+        <tr height="1" style={{ height: "1px", lineHeight: "1px" }}>
+          <td
+            height="1"
+            style={{ background: "#aaaaaa;", height: "1px", lineHeight: "1px" }}
+          >
+            &nbsp;
+          </td>
+        </tr>
+      </table>
+    </>
   );
 }
