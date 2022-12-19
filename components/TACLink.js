@@ -32,13 +32,15 @@ export default function TACLink(props) {
                       align="left"
                       style={{
                         fontFamily: "Arial, sans-serif",
-                        fontSize: "20px",
-                        lineHeight: "22px",
-                        fontWeight: "Regular",
+                        fontSize: "16px",
+                        lineHeight: "18px",
+                        fontWeight: "Bold",
                         color: "#2a2b2c",
                       }}
                     >
-                      Sky Airline Now Accepts Visa and Mastercard
+                      {props.title
+                        ? props.title
+                        : "Lorem ipsum dolor sit amet consectetur adipisicing elit."}
                     </td>
                   </tr>
                   <tr>
@@ -52,6 +54,7 @@ export default function TACLink(props) {
                   <tr>
                     <td width="100" align="left">
                       <a
+                        target="_blank"
                         href={
                           props.link
                             ? props.link

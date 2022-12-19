@@ -130,6 +130,16 @@ function App() {
       name: "TAC Link",
       component: <TACLink height="20px" />,
     },
+    {
+      id: "9",
+      name: "TAC Link",
+      component: <TACLink height="20px" />,
+    },
+    {
+      id: "10",
+      name: "TAC Link",
+      component: <TACLink height="20px" />,
+    },
   ]);
 
   //console.log(items[1].component.props);
