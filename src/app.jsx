@@ -33,6 +33,7 @@ import {
 
 import * as ReactDOMServer from "react-dom/server";
 import { SortableItem } from "../components/SortableItem";
+import ARCFooter from "../components/ARCFooter";
 
 function alertMe(items, activeAdd) {
   console.log(items, activeAdd);
@@ -99,6 +100,12 @@ function App() {
         ["link", "text"],
       ],
     },
+    {
+      name: "ARC Footer",
+      icon: <i class="far fa-square"></i>,
+      component: <ARCFooter />,
+      props: [["type", "select"]],
+    },
   ];
 
   const [activeForm, setActiveForm] = useState();
@@ -139,6 +146,11 @@ function App() {
       id: "10",
       name: "TAC Link",
       component: <TACLink height="20px" />,
+    },
+    {
+      id: "11",
+      name: "ARC Footer",
+      component: <ARCFooter type="short"/>,
     },
   ]);
 
@@ -317,6 +329,21 @@ function App() {
               value={formProps[i]}
               onChange={handleInputChange}
             />
+          ) : (
+            ""
+          )}
+          {item[1] === "select" ? (
+            item[0] === "type" ? 
+              <select
+              name={item[0]}
+              defaultValue={tempFormProps[item[0]]}
+              value={formProps[i]}
+              onChange={handleInputChange}>
+                <option value="short">Short</option>
+                <option value="standard">Standard</option>
+              </select>
+              : ""
+            
           ) : (
             ""
           )}
