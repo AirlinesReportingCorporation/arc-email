@@ -14,7 +14,7 @@ export default function TACLink(props) {
             <td width="100" align="center">
               <img
                 width="45px"
-                src="https://www2.arccorp.com/globalassets/email-parts/creditcard-icon.png"
+                src={"https://www2.arccorp.com/globalassets/email-parts/"+ (props.icon ? props.icon : "creditcard") +"-icon.png"}
               />
             </td>
 

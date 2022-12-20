@@ -94,7 +94,7 @@ function App() {
       icon: <i class="far fa-newspaper"></i>,
       component: <TACLink />,
       props: [
-        ["icon", "text"],
+        ["icon", "select"],
         ["title", "text"],
         ["link", "text"],
       ],
@@ -320,6 +320,24 @@ function App() {
           ) : (
             ""
           )}
+          {item[1] === "select" ? (
+            item[0] === "icon"? <select
+            name={item[0]}
+            defaultValue={tempFormProps[item[0]]}
+              value={formProps[i]}
+              onChange={handleInputChange}
+          >
+            <option value="creditcard">Credit Card</option>
+            <option value="events">Events</option>
+            <option value="feesannouncement">Fees Announcement</option>
+            <option value="holidays">Holidays</option>
+            <option value="important">Important</option>
+            <option value="newairline">New Airline</option>
+            <option value="scheduledmaintenance">Scheduled Maintenance</option>
+            <option value="tip">Tip</option>
+          </select>
+         : ""
+          ): ("")}
         </>
       ))
     );
