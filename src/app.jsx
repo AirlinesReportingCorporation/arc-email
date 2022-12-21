@@ -33,6 +33,7 @@ import {
 
 import * as ReactDOMServer from "react-dom/server";
 import { SortableItem } from "../components/SortableItem";
+import TealHeader from "../components/TealHeader";
 
 function alertMe(items, activeAdd) {
   console.log(items, activeAdd);
@@ -99,6 +100,12 @@ function App() {
         ["link", "text"],
       ],
     },
+    {
+      name: "Teal Header",
+      icon: <i class="far fa-newspaper"></i>,
+      component: <TealHeader />,
+      props: [["link", "text"]],
+    },
   ];
 
   const [activeForm, setActiveForm] = useState();
@@ -139,6 +146,11 @@ function App() {
       id: "10",
       name: "TAC Link",
       component: <TACLink height="20px" />,
+    },
+    {
+      id: "11",
+      name: "Teal Header",
+      component: <TealHeader />,
     },
   ]);
 
