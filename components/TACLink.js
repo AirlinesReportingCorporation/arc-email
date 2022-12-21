@@ -67,9 +67,10 @@ export default function TACLink(props) {
                           fontWeight: "Bold",
                           color: "#189bb0",
                           textDecoration: "none",
+                          textTransform: "uppercase"
                         }}
                       >
-                        READ MORE &raquo;
+                        {props.cta ? props.cta : "READ MORE"} <img height="12" src="https://www2.arccorp.com/globalassets/email-parts/caret.png"/>
                       </a>
                     </td>
                   </tr>

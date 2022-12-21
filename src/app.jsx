@@ -97,6 +97,7 @@ function App() {
         ["icon", "text"],
         ["title", "text"],
         ["link", "text"],
+        ["cta", "text"]
       ],
     },
   ];
