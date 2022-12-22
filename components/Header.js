@@ -16,6 +16,9 @@ export default function Header(props) {
               border="0"
               cellpadding="0"
               cellspacing="0"
+              align={props.position}
+              style={{ width: "360px"}}
+              width="350"
             >
               <tbody>
                 <tr>

@@ -7,11 +7,11 @@ export default function Button(props) {
       border="0"
       cellpadding="0"
       cellspacing="0"
-      className="btn btn-primary"
+      className="btn btn-primary email-btn"
     >
       <tbody>
         <tr>
-          <td align="left">
+          <td align={props.position? props.position : "left"}>
             <table
               role="presentation"
               border="0"

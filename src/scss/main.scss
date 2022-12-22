@@ -180,3 +180,10 @@
     border-color: rgba(main.$nowboarding, .8);
   }
 }
+
+table.btn.btn-primary.email-btn a{
+    &:hover {
+    background-color: #189bb0 !important;
+    border-color: #189bb0 !important;
+    }
+}
