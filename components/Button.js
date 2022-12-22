@@ -7,7 +7,7 @@ export default function Button(props) {
       border="0"
       cellpadding="0"
       cellspacing="0"
-      className="btn btn-primary email-btn"
+      className="btn btn-primary"
     >
       <tbody>
         <tr>
@@ -22,7 +22,7 @@ export default function Button(props) {
                 <tr>
                   <td>
                     {" "}
-                    <a href={props.link} target="_blank">
+                    <a className="email-btn" href={props.link} target="_blank">
                       {props.text}
                     </a>{" "}
                   </td>

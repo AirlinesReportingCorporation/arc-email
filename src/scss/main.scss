@@ -181,9 +181,7 @@
   }
 }
 
-table.btn.btn-primary.email-btn a{
-    &:hover {
-    background-color: #189bb0 !important;
-    border-color: #189bb0 !important;
-    }
+a.email-btn:hover {
+  background-color: #189bb0 !important;
+  border-color: #189bb0 !important;
 }
