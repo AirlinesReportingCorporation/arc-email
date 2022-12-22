@@ -34,6 +34,7 @@ import {
 import * as ReactDOMServer from "react-dom/server";
 import { SortableItem } from "../components/SortableItem";
 import TealHeader from "../components/TealHeader";
+import AddressSection from "../components/AddressSection";
 
 function alertMe(items, activeAdd) {
   console.log(items, activeAdd);
@@ -157,6 +158,11 @@ function App() {
       id: "12",
       name: "Header",
       component: <Header position="left"  heading="h1" text="Lorem Ipsum"/>,
+    },
+    {
+      id: "13",
+      name: "AddressSection",
+      component: <AddressSection/>,
     },
   ]);
 
