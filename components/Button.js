@@ -22,7 +22,7 @@ export default function Button(props) {
                 <tr>
                   <td>
                     {" "}
-                    <a className="email-btn" href={props.link} target="_blank">
+                    <a href={props.link} target="_blank">
                       {props.text}
                     </a>{" "}
                   </td>
