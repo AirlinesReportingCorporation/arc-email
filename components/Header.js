@@ -21,9 +21,9 @@ export default function Header(props) {
                 <tr>
                   <td>
                     {props.heading === "h1" ? 
-                    <h1 style={{textAlign: props.position}}>{props.text}</h1> : props.heading === "h2" ? 
-                    <h2 style={{textAlign: props.position}}>{props.text}</h2> : props.heading === "h3" ? 
-                    <h3 style={{textAlign: props.position}}>{props.text}</h3> : ""}
+                    <h1 style={{fontFamily: "Arial, sans-serif", fontWeight: "bold", fontSize: "30px", lineHeight: "34px", textAlign: props.position}}>{props.text}</h1> : props.heading === "h2" ? 
+                    <h2 style={{fontFamily: "Arial, sans-serif", fontSize: "30px", lineHeight: "34px", textAlign: props.position}}>{props.text}</h2> : props.heading === "h3" ? 
+                    <h3 style={{fontFamily: "Arial, sans-serif", fontSize: "20px", lineHeight: "22px", textAlign: props.position}}>{props.text}</h3> : ""}
                   </td>
                 </tr>
               </tbody>
