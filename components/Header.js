@@ -10,7 +10,7 @@ export default function Header(props) {
     >
       <tbody>
         <tr>
-          <td align="left">
+          <td>
             <table
               role="presentation"
               border="0"
@@ -20,7 +20,10 @@ export default function Header(props) {
               <tbody>
                 <tr>
                   <td>
-                    <h1>{props.text}</h1>
+                    {props.heading === "h1" ? 
+                    <h1 style={{textAlign: props.position}}>{props.text}</h1> : props.heading === "h2" ? 
+                    <h2 style={{textAlign: props.position}}>{props.text}</h2> : props.heading === "h3" ? 
+                    <h3 style={{textAlign: props.position}}>{props.text}</h3> : ""}
                   </td>
                 </tr>
               </tbody>

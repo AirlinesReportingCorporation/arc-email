@@ -46,7 +46,7 @@ function App() {
       name: "Header",
       icon: <i className="fas fa-heading" aria-hidden="true"></i>,
       component: <Header />,
-      props: [["text", "text"]], //name, input
+      props: [["text", "text"], ["position", "select"], ["heading", "select"]], //name, input
     },
     {
       name: "Paragraph Text",
@@ -151,6 +151,11 @@ function App() {
       id: "11",
       name: "Teal Header",
       component: <TealHeader />,
+    },
+    {
+      id: "12",
+      name: "Header",
+      component: <Header position="left"  heading="h1" text="Lorem Ipsum"/>,
     },
   ]);
 
@@ -332,6 +337,32 @@ function App() {
           ) : (
             ""
           )}
+          {console.log("Item 1: " + item[1] + "Item 0: " + item[0])}
+          {item[1] === "select" ? 
+          (
+              item[0] === "position" ?
+            <select
+              name={item[0]}
+              defaultValue={tempFormProps[item[0]]}
+              value={formProps[i]}
+              onChange={handleInputChange}
+            >
+              <option value="left">Left</option>
+              <option value="center">Center</option>
+              <option value="right">Right</option>
+            </select> : 
+              item[0] === "heading" ?
+            <select
+              name={item[0]}
+              defaultValue={tempFormProps[item[0]]}
+              value={formProps[i]}
+              onChange={handleInputChange}
+            >
+              <option value="h1">H1</option>
+              <option value="h2">H2</option>
+              <option value="h3">H3</option>
+            </select> : ""
+          ): ""}
         </>
       ))
     );
