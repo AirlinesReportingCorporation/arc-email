@@ -61,6 +61,7 @@ function App() {
       props: [
         ["text", "text"],
         ["link", "text"],
+        ["position", "select"]
       ],
     },
     {
