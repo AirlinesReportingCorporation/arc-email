@@ -124,7 +124,6 @@ export default function TACBottom(props) {
                       fontWeight: "light",
                       color: "#2a2b2c",
                       width: "100%",
-                      paddingBottom: "16px",
                     }}
                     valign="top"
                   >
@@ -137,6 +136,7 @@ export default function TACBottom(props) {
                         textDecoration: "none",
                         verticalAlign: "middle",
                         display: "block",
+                        paddingBottom: "16px",
                       }}
                       href={
                         props.TIP_Link
@@ -287,7 +287,6 @@ export default function TACBottom(props) {
                       fontWeight: "light",
                       color: "#2a2b2c",
                       width: "100%",
-                      paddingBottom: "16px",
                     }}
                     valign="top"
                   >
@@ -300,6 +299,7 @@ export default function TACBottom(props) {
                         textDecoration: "none",
                         verticalAlign: "middle",
                         display: "block",
+                        paddingBottom: "16px",
                       }}
                       href={
                         props.Events_Link
