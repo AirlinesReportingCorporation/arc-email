@@ -380,7 +380,7 @@ export default function TACBottom(props) {
             </table>
           </td>
         </tr>
-        <tr height="59" style={{ height: "59px" }}>
+        <tr width="648" height="59" style={{ width: "648px", height: "59px" }}>
           <td align="center">
             <table
               role="presentation"
