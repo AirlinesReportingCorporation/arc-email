@@ -138,6 +138,8 @@ export default function TACBottom(props) {
                         fontSize: "16px",
                         lineHeight: "18px",
                         textDecoration: "none",
+                        backgroundColor: "#d4d4d4",
+                        background: "#d4d4d4",
                         verticalAlign: "middle",
                         display: "block",
                         paddingBottom: "16px",
@@ -294,6 +296,8 @@ export default function TACBottom(props) {
                       lineHeight: "18px",
                       fontWeight: "light",
                       color: "#2a2b2c",
+                      backgroundColor: "#d4d4d4",
+                      background: "#d4d4d4",
                       width: "100%",
                     }}
                     valign="top"
@@ -308,6 +312,8 @@ export default function TACBottom(props) {
                         verticalAlign: "middle",
                         display: "block",
                         paddingBottom: "16px",
+                        backgroundColor: "#d4d4d4",
+                        background: "#d4d4d4",
                       }}
                       href={
                         props.Events_Link
