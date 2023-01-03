@@ -14,7 +14,11 @@ export default function TACLink(props) {
             <td width="100" align="center">
               <img
                 width="45px"
-                src="https://www2.arccorp.com/globalassets/email-parts/creditcard-icon.png"
+                src={
+                  "https://www2.arccorp.com/globalassets/email-parts/" +
+                  (props.icon ? props.icon : "creditcard") +
+                  "-icon.png"
+                }
               />
             </td>
 
@@ -67,9 +71,16 @@ export default function TACLink(props) {
                           fontWeight: "Bold",
                           color: "#189bb0",
                           textDecoration: "none",
+                          textTransform: "uppercase",
+                          verticalAlign: "middle",
                         }}
                       >
-                        READ MORE &raquo;
+                        {props.cta ? props.cta : "READ MORE"}{" "}
+                        <img
+                          height="10"
+                          
+                          src="https://www2.arccorp.com/globalassets/email-parts/caret.png"
+                        />
                       </a>
                     </td>
                   </tr>

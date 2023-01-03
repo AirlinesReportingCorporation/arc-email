@@ -2,12 +2,7 @@ import React from "react";
 
 export default function ARCLogo(props) {
   return (
-    <table
-      role="presentation"
-      border="0"
-      cellpadding="0"
-      cellspacing="0"
-    >
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0">
       <tbody>
         <tr>
           <td align="center">
@@ -16,7 +11,7 @@ export default function ARCLogo(props) {
               border="0"
               cellpadding="0"
               cellspacing="0"
-              style={{textAlign: "center"}}
+              style={{ textAlign: "center" }}
             >
               <tbody>
                 <tr>
@@ -31,7 +26,11 @@ export default function ARCLogo(props) {
                       <img
                         width="64"
                         style={{ width: "64px" }}
-                        src="https://www2.arccorp.com/globalassets/arc-logos/corporate-logos/arc-logo-l-black.png"
+                        src={
+                          "https://www2.arccorp.com/globalassets/arc-logos/corporate-logos/arc-logo-l-" +
+                          (props.color ? props.color : "teal") +
+                          ".png"
+                        }
                       />
                     </a>{" "}
                   </td>

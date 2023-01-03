@@ -15,6 +15,7 @@ import Spacer from "../components/Spacer";
 import TACJumbo from "../components/TACJumbo";
 import TACLink from "../components/TACLink";
 import ARCFooter from "../components/ARCFooter";
+import TACBottom from "../components/TACBottom";
 
 import {
   DndContext,
@@ -72,7 +73,10 @@ function App() {
         />
       ),
       component: <ARCLogo />,
-      props: [["link", "text"]],
+      props: [
+        ["link", "text"],
+        ["color", "select"],
+      ],
     },
     {
       name: "Spacer",
@@ -95,16 +99,24 @@ function App() {
       icon: <i class="far fa-newspaper"></i>,
       component: <TACLink />,
       props: [
-        ["icon", "text"],
+        ["icon", "select"],
         ["title", "text"],
         ["link", "text"],
+        ["cta", "text"]
       ],
     },
     {
-      name: "ARC Footer",
-      icon: <i class="far fa-square"></i>,
-      component: <ARCFooter />,
-      props: [["type", "select"]],
+      name: "TAC Bottom",
+      icon: <i class="far fa-newspaper"></i>,
+      component: <TACLink />,
+      props: [
+        ["TIP_Title", "text"],
+        ["TIP_Text", "text"],
+        ["TIP_Link", "text"],
+        ["Training_Title", "text"],
+        ["Training_Text", "text"],
+        ["Training_Link", "text"],
+      ],
     },
   ];
 
@@ -114,7 +126,7 @@ function App() {
     {
       id: "1",
       name: "ARC Logo Header",
-      component: <ARCLogo link="https://www2.arccorp.com" />,
+      component: <ARCLogo color="black" link="https://www2.arccorp.com" />,
     },
     {
       id: "5",
@@ -135,18 +147,49 @@ function App() {
     {
       id: "8",
       name: "TAC Link",
-      component: <TACLink height="20px" />,
+      component: (
+        <TACLink
+          link="https://www2.arccorp.com/articles-trends/agency-communications/travel-agent-communications/"
+          title="Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      "
+        />
+      ),
     },
     {
       id: "9",
       name: "TAC Link",
-      component: <TACLink height="20px" />,
+      component: (
+        <TACLink
+          link="https://www2.arccorp.com/articles-trends/agency-communications/travel-agent-communications/"
+          title="Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      "
+        />
+      ),
     },
     {
       id: "10",
       name: "TAC Link",
-      component: <TACLink height="20px" />,
-    }
+      component: (
+        <TACLink
+          link="https://www2.arccorp.com/articles-trends/agency-communications/travel-agent-communications/"
+          title="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        />
+      ),
+    },
+    {
+      id: "11",
+      name: "TAC Bottom",
+      component: (
+        <TACBottom
+          TIP_Title="Tip of the Week"
+          TIP_Text="Lorem ipsum dolor sit amet consectetur "
+          TIP_Link="https://www2.arccorp.com/articles-trends/agency-communications/travel-agent-communications/"
+          Events_Title="Events and Trainings"
+          Events_Text="Stay up to date with the latest industry and knowledge."
+          Events_Link="https://www2.arccorp.com/about-us/events/"
+        />
+      ),
+    },
   ]);
 
   //console.log(items[1].component.props);
@@ -253,6 +296,8 @@ function App() {
       );
     } else if (blockName == "TAC Link") {
       newItem.component = <TACLink />;
+    } else if (blockName == "TAC Bottom") {
+      newItem.component = <TACBottom />;
     }
 
     if (activePosition == "top") {
@@ -306,6 +351,7 @@ function App() {
       ].props.map((item, i) => (
         <>
           <label>{item[0]}</label>
+
           {item[1] === "text" ? (
             <input
               name={item[0]}
@@ -317,6 +363,7 @@ function App() {
           ) : (
             ""
           )}
+
           {item[1] === "textarea" ? (
             <textarea
               name={item[0]}
@@ -330,6 +377,26 @@ function App() {
             ""
           )}
           {item[1] === "select" ? (
+            item[0] === "color" ? (
+              <select
+                name={item[0]}
+                defaultValue={tempFormProps[item[0]]}
+                value={formProps[i]}
+                onChange={handleInputChange}
+              >
+                <option value="teal">Teal</option>
+                <option value="black">Black</option>
+                <option value="white">White</option>
+                <option value="gray">Gray</option>
+              </select>
+            ) : (
+              ""
+            )
+          ) : (
+            ""
+          )}
+
+          {item[1] === "select" ? (
             item[0] === "type" ? (
               <select
                 name={item[0]}
@@ -339,6 +406,32 @@ function App() {
               >
                 <option value="short">Short</option>
                 <option value="standard">Standard</option>
+              </select>
+            ) : (
+              ""
+            )
+          ) : (
+            ""
+          )}
+
+          {item[1] === "select" ? (
+            item[0] === "icon" ? (
+              <select
+                name={item[0]}
+                defaultValue={tempFormProps[item[0]]}
+                value={formProps[i]}
+                onChange={handleInputChange}
+              >
+                <option value="creditcard">Credit Card</option>
+                <option value="events">Events</option>
+                <option value="feesannouncement">Fees Announcement</option>
+                <option value="holidays">Holidays</option>
+                <option value="important">Important</option>
+                <option value="newairline">New Airline</option>
+                <option value="scheduledmaintenance">
+                  Scheduled Maintenance
+                </option>
+                <option value="tip">Tip</option>
               </select>
             ) : (
               ""
