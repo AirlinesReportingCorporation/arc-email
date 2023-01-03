@@ -348,6 +348,163 @@ export default function TACBottom(props) {
           </tr>
         </tbody>
       </table>
+
+      <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td class="em_height" style={{ height: "30px", fontSize: "0" }}>
+            &nbsp;
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table
+              role="presentation"
+              border="0"
+              cellpadding="0"
+              cellspacing="0"
+            >
+              <tr>
+                <td>
+                  <td align="center" height="13" style={{ height: "13px" }}>
+                    <img
+                      src="https://www2.arccorp.com/globalassets/email-parts/tacinfotop.png?1"
+                      width="648"
+                      style={{
+                        width: "648px",
+                        display: "block",
+                      }}
+                    />
+                  </td>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr height="59" style={{ height: "59px" }}>
+          <td align="center">
+            <table
+              role="presentation"
+              border="0"
+              cellpadding="0"
+              cellspacing="0"
+              width="648"
+              background="#189bb0"
+              style={{ backgroundColor: "#189bb0", width: "648px" }}
+            >
+              <tr>
+                <td
+                  style={{
+                    paddingTop: "20px;",
+                    paddingBottom: "20px;",
+                    textAlign: "center",
+                  }}
+                  align="center"
+                >
+                  <span
+                    style={{
+                      fontFamily: "Arial, sans-serif",
+                      fontSize: "12px",
+                      lineHeight: "18px",
+                      fontWeight: "regular",
+                      color: "#ffffff",
+                      textAlign: "center",
+                    }}
+                  >
+                    Customer Care Center
+                  </span>
+                </td>
+                <td
+                  style={{
+                    paddingTop: "20px;",
+                    paddingBottom: "20px;",
+                    textAlign: "center",
+                  }}
+                >
+                  <span
+                    style={{
+                      fontFamily: "Arial, sans-serif",
+                      fontSize: "12px",
+                      lineHeight: "18px",
+                      fontWeight: "regular",
+                      color: "#ffffff",
+                      textAlign: "center",
+                    }}
+                  >
+                    Phone: 1-855-816-8003
+                  </span>
+                </td>
+                <td
+                  style={{
+                    paddingTop: "20px;",
+                    paddingBottom: "20px;",
+                    textAlign: "center",
+                  }}
+                >
+                  <span
+                    style={{
+                      fontFamily: "Arial, sans-serif",
+                      fontSize: "12px",
+                      lineHeight: "18px",
+                      fontWeight: "regular",
+                      color: "#ffffff",
+                      textAlign: "center",
+                    }}
+                  >
+                    Fax: 1-703-816-8039
+                  </span>
+                </td>
+                <td
+                  style={{
+                    paddingTop: "20px;",
+                    paddingBottom: "20px;",
+                    textAlign: "center",
+                  }}
+                >
+                  <a
+                    style={{
+                      fontFamily: "Arial, sans-serif",
+                      fontSize: "12px",
+                      lineHeight: "18px",
+                      fontWeight: "regular",
+                      color: "#ffffff",
+                      textDecoration: "none",
+                      textAlign: "center",
+                    }}
+                    href="mailto:ccchelp@arccorp.com"
+                  >
+                    ccchelp@arccorp.com
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr align="top" height="13" style={{ height: "13px" }}>
+          <td align="top">
+            <table
+              role="presentation"
+              border="0"
+              cellpadding="0"
+              cellspacing="0"
+            >
+              <tr align="top">
+                <td align="top">
+                  <td align="center" height="13" style={{ height: "13px" }}>
+                    <img
+                      src="https://www2.arccorp.com/globalassets/email-parts/tacinfobottom.png?1"
+                      width="648"
+                      style={{
+                        width: "648px",
+                        display: "block",
+                      }}
+                    />
+                  </td>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
     </>
   );
 }
