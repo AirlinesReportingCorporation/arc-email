@@ -44,21 +44,26 @@ export default function TACJumbo(props) {
                       border="0"
                       cellpadding="0"
                       cellspacing="0"
-                      background="#189bb0"
+                      background="#ffffff"
                       style={{
                         textAlign: "center",
                         width: "600px",
-                        backgroundColor: "#189bb0",
-                        background: "#189bb0",
+                        background: "#ffffff",
                       }}
                     >
-                      <tr>
+                      <tr
+                        style={{
+                          width: "600px",
+                        }}
+                      >
                         <td
                           style={{
                             fontFamily: "Arial, sans-serif",
                             fontSize: "22px",
                             lineHeight: "26px",
                             fontWeight: "Bold",
+                            backgroundColor: "#189bb0",
+                            background: "#189bb0",
                             color: "#ffffff",
                           }}
                           valign="top"
@@ -76,6 +81,8 @@ export default function TACJumbo(props) {
                             lineHeight: "18px",
                             fontWeight: "light",
                             color: "#ffffff",
+                            backgroundColor: "#189bb0",
+                            background: "#189bb0",
                           }}
                           valign="top"
                         >

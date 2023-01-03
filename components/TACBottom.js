@@ -44,18 +44,7 @@ export default function TACBottom(props) {
                     background: "#d4d4d4",
                   }}
                 >
-                  <td
-                    style={{
-                      fontFamily: "Arial, sans-serif",
-                      fontSize: "18px",
-                      lineHeight: "18px",
-                      fontWeight: "bold",
-                      color: "#2a2b2c",
-                      width: "100%",
-                      paddingBottom: "10px",
-                    }}
-                    valign="top"
-                  >
+                  <td align="center">
                     <img
                       src="https://www2.arccorp.com/globalassets/email-parts/tip-icon.png"
                       width="50"
@@ -68,6 +57,26 @@ export default function TACBottom(props) {
                         paddingBottom: "10px",
                       }}
                     />
+                  </td>
+                </tr>
+                <tr
+                  style={{
+                    backgroundColor: "#d4d4d4",
+                    background: "#d4d4d4",
+                  }}
+                >
+                  <td
+                    style={{
+                      fontFamily: "Arial, sans-serif",
+                      fontSize: "18px",
+                      lineHeight: "18px",
+                      fontWeight: "bold",
+                      color: "#2a2b2c",
+                      width: "100%",
+                      paddingBottom: "10px",
+                    }}
+                    valign="top"
+                  >
                     {props.TIP_Title ? props.TIP_Title : "Tip of the Week"}
                   </td>
                 </tr>
@@ -148,8 +157,10 @@ export default function TACBottom(props) {
                     <img
                       src="https://www2.arccorp.com/globalassets/email-parts/tacbottombottom.png?1"
                       width="313px"
+                      height="9"
                       style={{
                         width: "313px",
+                        height: "9px",
                         display: "block",
                       }}
                     />
@@ -192,18 +203,7 @@ export default function TACBottom(props) {
                     background: "#d4d4d4",
                   }}
                 >
-                  <td
-                    style={{
-                      fontFamily: "Arial, sans-serif",
-                      fontSize: "18px",
-                      lineHeight: "18px",
-                      fontWeight: "bold",
-                      paddingBottom: "10px",
-                      color: "#2a2b2c",
-                      width: "100%",
-                    }}
-                    valign="top"
-                  >
+                  <td align="center">
                     <img
                       src="https://www2.arccorp.com/globalassets/email-parts/events-icon.png"
                       width="50"
@@ -216,6 +216,26 @@ export default function TACBottom(props) {
                         paddingBottom: "10px",
                       }}
                     />
+                  </td>
+                </tr>
+                <tr
+                  style={{
+                    backgroundColor: "#d4d4d4",
+                    background: "#d4d4d4",
+                  }}
+                >
+                  <td
+                    style={{
+                      fontFamily: "Arial, sans-serif",
+                      fontSize: "18px",
+                      lineHeight: "18px",
+                      fontWeight: "bold",
+                      paddingBottom: "10px",
+                      color: "#2a2b2c",
+                      width: "100%",
+                    }}
+                    valign="top"
+                  >
                     {props.Events_Title
                       ? props.Events_Title
                       : "Events and Trainings"}
@@ -300,8 +320,10 @@ export default function TACBottom(props) {
                     <img
                       src="https://www2.arccorp.com/globalassets/email-parts/tacbottombottom.png?1"
                       width="313px"
+                      height="9"
                       style={{
                         width: "313px",
+                        height: "9px",
                         display: "block",
                       }}
                     />
