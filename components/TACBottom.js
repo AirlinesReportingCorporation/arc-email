@@ -11,7 +11,11 @@ export default function TACBottom(props) {
             </td>
           </tr>
           <tr>
-            <td width="313">
+            <td
+              width="313"
+              height="210"
+              style={{ height: "210px", width: "313px" }}
+            >
               <table
                 role="presentation"
                 border="0"
@@ -171,7 +175,11 @@ export default function TACBottom(props) {
             <td width="20" style={{ width: "20px" }}>
               &nbsp;
             </td>
-            <td width="313">
+            <td
+              width="313"
+              height="210"
+              style={{ height: "210px", width: "313px" }}
+            >
               <table
                 role="presentation"
                 border="0"
