@@ -85,13 +85,20 @@ export default function TACBottom(props) {
                       fontWeight: "light",
                       color: "#2a2b2c",
                       width: "100%",
-                      paddingBottom: "10px",
-                      paddingLeft: "25px",
-                      paddingRight: "25px",
                     }}
                     valign="top"
                   >
-                    {props.TIP_Text ? props.TIP_Text : ""}
+                    <p
+                      style={{
+                        marginBottom: "10px",
+                        paddingLeft: "25px",
+                        paddingRight: "25px",
+                        fontSize: "15px",
+                        lineHeight: "18px",
+                      }}
+                    >
+                      {props.TIP_Text ? props.TIP_Text : ""}
+                    </p>
                   </td>
                 </tr>
                 <tr
@@ -120,7 +127,7 @@ export default function TACBottom(props) {
                         lineHeight: "18px",
                         textDecoration: "none",
                         verticalAlign: "middle",
-                        display: "block"
+                        display: "block",
                       }}
                       href={
                         props.TIP_Link
@@ -228,15 +235,22 @@ export default function TACBottom(props) {
                       fontWeight: "light",
                       color: "#2a2b2c",
                       width: "100%",
-                      paddingBottom: "10px",
-                      paddingLeft: "25px",
-                      paddingRight: "25px",
                     }}
                     valign="top"
                   >
-                    {props.Events_Text
-                      ? props.Events_Text
-                      : "Stay up to to date with the latest industry knowlege"}
+                    <p
+                      style={{
+                        marginBottom: "10px",
+                        paddingLeft: "25px",
+                        paddingRight: "25px",
+                        fontSize: "15px",
+                        lineHeight: "18px",
+                      }}
+                    >
+                      {props.Events_Text
+                        ? props.Events_Text
+                        : "Stay up to to date with the latest industry knowlege"}
+                    </p>
                   </td>
                 </tr>
                 <tr
@@ -265,7 +279,7 @@ export default function TACBottom(props) {
                         lineHeight: "18px",
                         textDecoration: "none",
                         verticalAlign: "middle",
-                        display: "block"
+                        display: "block",
                       }}
                       href={
                         props.Events_Link

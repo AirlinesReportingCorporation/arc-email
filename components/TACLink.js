@@ -99,7 +99,7 @@ export default function TACLink(props) {
         <tr height="1" style={{ height: "1px", lineHeight: "1px" }}>
           <td
             height="1"
-            style={{ background: "#aaaaaa;", height: "1px", lineHeight: "1px" }}
+            style={{ borderBottom: "1px solid #aaaaaa;", height: "1px", lineHeight: "1px" }}
           >
             &nbsp;
           </td>

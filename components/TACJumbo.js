@@ -8,10 +8,11 @@ export default function TACJumbo(props) {
           <td align="center">
             <table
               role="presentation"
+              background="#ffffff"
               border="0"
               cellpadding="0"
               cellspacing="0"
-              style={{ textAlign: "center" }}
+              style={{ textAlign: "center", background: "#ffffff" }}
             >
               <tbody>
                 <tr>
