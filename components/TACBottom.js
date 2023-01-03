@@ -388,6 +388,7 @@ export default function TACBottom(props) {
               cellpadding="0"
               cellspacing="0"
               width="648"
+              height="59"
               background="#189bb0"
               style={{ backgroundColor: "#189bb0", width: "648px" }}
             >
