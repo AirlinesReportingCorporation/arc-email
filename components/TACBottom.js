@@ -468,23 +468,21 @@ export default function TACBottom(props) {
                   cellspacing="0"
                 >
                   <tr>
-                    <td>
-                      <td
-                        align="center"
+                    <td
+                      align="center"
+                      height="12"
+                      width="650"
+                      style={{ height: "12px" }}
+                    >
+                      <img
+                        src="https://www2.arccorp.com/globalassets/email-parts/tacinfotop.png?1"
                         height="13"
                         width="650"
-                        style={{ height: "13px" }}
-                      >
-                        <img
-                          src="https://www2.arccorp.com/globalassets/email-parts/tacinfotop.png?1"
-                          height="13"
-                          width="650"
-                          style={{
-                            width: "650px",
-                            display: "block",
-                          }}
-                        />
-                      </td>
+                        style={{
+                          width: "650px",
+                          display: "block",
+                        }}
+                      />
                     </td>
                   </tr>
                 </table>
