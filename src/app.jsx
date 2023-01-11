@@ -89,6 +89,7 @@ function App() {
       icon: <i class="far fa-square"></i>,
       component: <TACJumbo />,
       props: [
+        ["jumbo", "select"],
         ["background", "text"],
         ["title", "text"],
         ["date", "text"],
@@ -424,6 +425,27 @@ function App() {
                 <option value="scheduledmaintenance">
                   Scheduled Maintenance
                 </option>
+              </select>
+            ) : (
+              ""
+            )
+          ) : (
+            ""
+          )}
+
+          {item[1] === "select" ? (
+            item[0] === "jumbo" ? (
+              <select
+                name={item[0]}
+                defaultValue={tempFormProps[item[0]]}
+                value={formProps[i]}
+                onChange={handleInputChange}
+              >
+                <option value="tac-jumbo-top">Default</option>
+                <option value="option1">option1</option>
+                <option value="option2">option2</option>
+                <option value="option3">option3</option>
+                <option value="option4">option4</option>
               </select>
             ) : (
               ""

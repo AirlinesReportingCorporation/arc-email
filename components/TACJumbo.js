@@ -21,7 +21,7 @@ export default function TACJumbo(props) {
                 width: "650px",
                 display: "block",
               }}
-              src="https://www2.arccorp.com/globalassets/email-parts/tac-jumbo-top.png"
+              src={props.jumbo ? "https://www2.arccorp.com/globalassets/email-parts/" + props.jumbo + ".png" : "https://www2.arccorp.com/globalassets/email-parts/tac-jumbo-top.png"}
             />
           </a>{" "}
         </td>
