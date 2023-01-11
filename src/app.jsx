@@ -17,6 +17,8 @@ import TACLink from "../components/TACLink";
 import ARCFooter from "../components/ARCFooter";
 import TACBottom from "../components/TACBottom";
 
+import { ViewToggle } from "../components/ViewToggle";
+
 import {
   DndContext,
   closestCenter,
@@ -606,7 +608,8 @@ function App() {
                   display: activeView === "settings" ? "block" : "none",
                 }}
               >
-                Settings View
+                <h2>Settings View</h2>
+                {/* <ViewToggle label="Change View" toggled={true}/> */}
               </div>
             </div>
           </div>
