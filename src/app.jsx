@@ -606,10 +606,12 @@ function App() {
                 className="arc-email-sidebar-email-parts"
                 style={{
                   display: activeView === "settings" ? "block" : "none",
+                  color: "#ffffff", 
+                  padding: "0px 30px 15px"
                 }}
               >
-                <h2>Settings View</h2>
-                {/* <ViewToggle label="Change View" toggled={true}/> */}
+                <h2 style={{color: "#fff",fontFamily: "SourceSansPro-Bold, SourceSansPro-Regular, arial, helvetica, sans-serif"}}>Settings View</h2>
+                <ViewToggle label="Change View" toggled={true}/>
               </div>
             </div>
           </div>
