@@ -16,6 +16,7 @@ import TACJumbo from "../components/TACJumbo";
 import TACLink from "../components/TACLink";
 import ARCFooter from "../components/ARCFooter";
 import TACBottom from "../components/TACBottom";
+import StandardHeader from "../components/StandardHeader";
 
 import {
   DndContext,
@@ -118,11 +119,24 @@ function App() {
         ["Training_Link", "text"],
       ],
     },
+    {
+      name: "Standard Header",
+      icon: <i class="far fa-newspaper"></i>,
+      component: <StandardHeader />,
+      props: [
+        ["color", "select"],
+      ],
+    },
   ];
 
   const [activeForm, setActiveForm] = useState();
 
   const [items, setItems] = useState([
+    {
+      id: "14",
+      name: "Standard Header",
+      component: <StandardHeader color="teal"/>
+    },
     {
       id: "1",
       name: "ARC Logo Header",
