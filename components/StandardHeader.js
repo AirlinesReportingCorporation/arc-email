@@ -10,7 +10,7 @@ export default function StandardHeader(props) {
       >
         <table align="center" border="0" cellSpacing="0" cellPadding="0">
           <tbody>
-            <tr height="20">&nbsp;</tr>
+            <tr height="20"></tr>
             <tr>
               <td align="center" valign="top">
                 <table
@@ -95,7 +95,7 @@ export default function StandardHeader(props) {
                 </table>
               </td>
             </tr>
-            <tr height="20">&nbsp;</tr>
+            <tr height="20"></tr>
           </tbody>
         </table>
       </td>
