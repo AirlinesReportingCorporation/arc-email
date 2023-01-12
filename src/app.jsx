@@ -47,7 +47,10 @@ function App() {
       name: "Header",
       icon: <i className="fas fa-heading" aria-hidden="true"></i>,
       component: <Header />,
-      props: [["text", "text"]], //name, input
+      props: [
+        ["text", "text"],
+        ["align", "select"],
+      ], //name, input
     },
     {
       name: "Paragraph Text",
@@ -369,6 +372,8 @@ function App() {
           ) : (
             ""
           )}
+
+          {/* Color for Logo */}
           {item[1] === "select" ? (
             item[0] === "color" ? (
               <select
@@ -389,6 +394,7 @@ function App() {
             ""
           )}
 
+          {/* Type of Footer */}
           {item[1] === "select" ? (
             item[0] === "type" ? (
               <select
@@ -407,6 +413,7 @@ function App() {
             ""
           )}
 
+          {/* Icon for TAC */}
           {item[1] === "select" ? (
             item[0] === "icon" ? (
               <select
@@ -424,6 +431,26 @@ function App() {
                 <option value="scheduledmaintenance">
                   Scheduled Maintenance
                 </option>
+              </select>
+            ) : (
+              ""
+            )
+          ) : (
+            ""
+          )}
+          
+          {/* Position of header */}
+          {item[1] === "select" ? (
+            item[0] === "align" ? (
+              <select
+                name={item[0]}
+                defaultValue={tempFormProps[item[0]]}
+                value={formProps[i]}
+                onChange={handleInputChange}
+              >
+                <option value="left">Left</option>
+                <option value="center">Center</option>
+                <option value="right">Right</option>
               </select>
             ) : (
               ""
