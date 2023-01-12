@@ -207,6 +207,15 @@ function App() {
   const [formInputs, setFormInputs] = useState("");
   const [buttonText, buttonLink, setButtonText, setButtonLink] = useState("");
 
+  // set the state using a hook:
+  const [isToggled, toggle] = useState(false);
+
+  // Function to run when clicked
+  const toggleView = () => {
+    toggle(!isToggled);
+    console.log(isToggled);
+  };
+
   const handleCloseModify = () => setShowModify(false);
   const handleShowModify = (index) => {
     generateFormProps(index);
@@ -606,20 +615,30 @@ function App() {
                 className="arc-email-sidebar-email-parts"
                 style={{
                   display: activeView === "settings" ? "block" : "none",
-                  color: "#ffffff", 
-                  padding: "0px 30px 15px"
+                  color: "#ffffff",
+                  padding: "0px 30px 15px",
                 }}
               >
-                <h2 style={{color: "#fff",fontFamily: "SourceSansPro-Bold, SourceSansPro-Regular, arial, helvetica, sans-serif"}}>Settings View</h2>
-                <ViewToggle label="Change View" toggled={true}/>
+                <h2
+                  style={{
+                    color: "#fff",
+                    fontFamily:
+                      "SourceSansPro-Bold, SourceSansPro-Regular, arial, helvetica, sans-serif",
+                  }}
+                >
+                  Settings View
+                </h2>
+                <ViewToggle onClick={toggleView} toggled={!isToggled} />
               </div>
             </div>
           </div>
           <div className="col-lg-8">
-            <iframe
-              style={{ width: "100%", minHeight: "100vh", border: "none" }}
-              srcDoc={markup}
-            ></iframe>
+            <div className="container" style={{maxWidth: isToggled ? "600px": "100%"}}>
+              <iframe
+                style={{ width: "100%", minHeight: "100vh", border: "none" }}
+                srcDoc={markup}
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>
