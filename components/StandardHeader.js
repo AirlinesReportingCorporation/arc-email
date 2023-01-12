@@ -2,7 +2,7 @@ import React from "react";
 
 export default function StandardHeader(props) {
   return (
-    <tr style={{backgroundColor: props.color == "white" ? "#fff" : "#189bb0"}}>
+    <tr style={{backgroundColor: (props.color == "teal" ? "#189bb0" : props.color)}}>
       <td
         valign="top"
         align="center"
@@ -76,7 +76,7 @@ export default function StandardHeader(props) {
                               <td
                                 align="right"
                                 height="20"
-                                style={{fontFamily:"Arial, sans-serif", fontSize:"12px", color: (props.color == "white" ? "#189bb0" : "#fff"), lineHeight:"14px"}}
+                                style={{fontFamily:"Arial, sans-serif", fontSize:"12px", color: (props.color == "teal" ? "#189bb0" : props.color), lineHeight:"14px"}}
                                 valign="middle"
                               >
                                 <a
