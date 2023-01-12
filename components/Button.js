@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useCallback } from "react";
+import "../src/scss/_buttons.scss";
 
 export default function Button(props) {
   return (
@@ -22,13 +23,13 @@ export default function Button(props) {
                     cellpadding="0"
                     cellspacing="0"
                     align="center"
-                    style={{backgroundColor: "#189bb0", border: "2px solid #189bb0",width:"135px", height: "50px"}}
+                    style={{width: "135px", height: "50px", border: "2px solid #189bb0", backgroundColor: (props.style == "outlineBtn" ?  "#fff" : "#189bb0")}}
                   >
                     <tbody>
                       <tr>
-                        <td align="center" style={{fontFamily: "Arial, sans-serif", fontSize:"13px", color: "#fff"}}>
+                        <td style={{color: (props.style == "outlineBtn" ?  "#189bb0" : "#fff"), fontFamily: "Arial, sans-serif", fontSize: "13px"}} align="center">
                           {" "}
-                          <a href={props.link} style={{textDecoration: "none", color: "#fff", display:"block", lineHeight: "48px",fontWeight: "bold"}} target="_blank">
+                          <a href={props.link} style={{textDecoration: "none",display: "block",lineHeight: "48px",fontWeight: "bold", color: (props.style == "outlineBtn" ?  "#189bb0" : "#fff")}} target="_blank">
                             {props.text}
                           </a>{" "}
                         </td>
