@@ -1,5 +1,4 @@
 import React, { useCallback } from "react";
-import "../src/scss/_buttons.scss";
 
 export default function Button(props) {
   return (
