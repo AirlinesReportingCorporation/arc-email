@@ -633,7 +633,7 @@ function App() {
             </div>
           </div>
           <div className="col-lg-8" style={{backgroundColor: "#f7f5f5"}}>
-            <div className="container" style={{maxWidth: isToggled ? "600px": "100%"}}>
+            <div style={{margin: "0 auto", maxWidth: isToggled ? "450px": "100%"}}>
               <iframe
                 style={{ width: "100%", minHeight: "100vh", border: "none" }}
                 srcDoc={markup}
