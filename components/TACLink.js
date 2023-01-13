@@ -28,13 +28,13 @@ export default function TACLink(props) {
                   width="45"
                   height="45"
                   src={
-                    "https://www2.arccorp.com/globalassets/email-parts/" +
+                    "https://www2.arccorp.com/globalassets/email-parts/icons/" +
                     (props.icon ? props.icon : "creditcard") +
                     "-icon.png"
                   }
                 />
               </td>
-              <td align="left">
+              <td align="left" style={{ lineHeight: "15px" }}>
                 <p
                   style={{
                     fontFamily: "SourceSansPro, Arial, sans-serif",
@@ -50,6 +50,7 @@ export default function TACLink(props) {
                     ? props.title
                     : "Lorem ipsum dolor sit amet consectetur adipisicing elit."}
                 </p>
+                <br />
                 <a
                   target="_blank"
                   href={

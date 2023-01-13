@@ -44,7 +44,7 @@ export default function ARCFooter(props) {
                             alt="IN"
                             height="25"
                             name="in4.png"
-                            src="https://www2.arccorp.com/globalassets/email-parts/linkedin.png"
+                            src="https://www2.arccorp.com/globalassets/email-parts/icons/linkedin_logo.png"
                             style={{
                               display: "block",
                               border: "none",
@@ -78,7 +78,7 @@ export default function ARCFooter(props) {
                           <img
                             height="25"
                             name="tw5.png"
-                            src="https://www2.arccorp.com/globalassets/email-parts/twitter.png"
+                            src="https://www2.arccorp.com/globalassets/email-parts/icons/twitter_logo.png"
                             style={{
                               display: "block",
                               border: "none",
@@ -111,7 +111,7 @@ export default function ARCFooter(props) {
                           <img
                             height="25"
                             name="fb3.png"
-                            src="https://www2.arccorp.com/globalassets/email-parts/facebook.png"
+                            src="https://www2.arccorp.com/globalassets/email-parts/icons/facebook_logo.png"
                             style={{
                               display: "block",
                               border: "none",
@@ -147,7 +147,7 @@ export default function ARCFooter(props) {
                             alt="YouTube"
                             height="25"
                             name="youtube4.png"
-                            src="https://www2.arccorp.com/globalassets/email-parts/youtube.png"
+                            src="https://www2.arccorp.com/globalassets/email-parts/icons/youtube_logo.png"
                             style={{
                               display: "block",
                               border: "none",

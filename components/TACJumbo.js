@@ -21,9 +21,23 @@ export default function TACJumbo(props) {
                 width: "650px",
                 display: "block",
               }}
-              src="https://www2.arccorp.com/globalassets/email-parts/tac-jumbo-top.png"
+              src={
+                props.jumbobackground
+                  ? props.jumbobackground
+                  : "https://www2.arccorp.com/globalassets/email-parts/header/header-012x.jpg"
+              }
             />
           </a>{" "}
+        </td>
+      </tr>
+      <tr>
+        <td
+          class=""
+          style={{
+            height: "30px",
+          }}
+        >
+          &nbsp;
         </td>
       </tr>
       <tr>
@@ -32,13 +46,9 @@ export default function TACJumbo(props) {
           class="em_aside"
           style={{ paddingLeft: "50px", paddingRight: "50px" }}
           valign="top"
-          height="60"
         >
           <table
-            background="#189bb0"
             style={{
-              background: "#189bb0",
-              backgroundColor: "#189bb0",
               width: "600px",
               marginLeft: "auto",
               marginRight: "auto",
@@ -57,12 +67,11 @@ export default function TACJumbo(props) {
                 style={{
                   textAlign: "center",
                   width: "600px",
-                  background: "#189bb0",
                   fontFamily: "SourceSansPro, Arial, sans-serif",
-                  fontSize: "22px",
-                  lineHeight: "26px",
+                  fontSize: "24px",
+                  lineHeight: "35px",
                   fontWeight: "Bold",
-                  color: "#ffffff",
+                  color: "#2a2b2c",
                 }}
               >
                 {props.title ? props.title : "Travel Agent Communications"}
@@ -73,11 +82,10 @@ export default function TACJumbo(props) {
                 height="20"
                 style={{
                   fontFamily: "SourceSansPro, Arial, sans-serif",
-                  fontSize: "15px",
-                  lineHeight: "18px",
+                  fontSize: "18px",
+                  lineHeight: "19px",
                   fontWeight: "regular",
-                  color: "#ffffff",
-                  background: "#189bb0",
+                  color: "#2a2b2c",
                   textAlign: "center",
                 }}
               >
@@ -89,52 +97,30 @@ export default function TACJumbo(props) {
       </tr>
       <tr>
         <td
-          align="center"
-          class="em_aside"
-          style={{ paddingLeft: "50px", paddingRight: "50px", height: "22px" }}
-          valign="top"
-          height="22"
+          class=""
+          style={{
+            height: "15px",
+          }}
+        >
+          &nbsp;
+        </td>
+      </tr>
+      <tr>
+        <td
+          style={{
+            paddingLeft: "25px",
+            paddingRight: "25px",
+          }}
         >
           <table
-            background="#ffffff"
-            style={{
-              background: "#ffffff",
-              backgroundColor: "#ffffff",
-              width: "600px",
-              height: "22px",
-              marginLeft: "auto",
-              marginRight: "auto",
-            }}
-            role="presentation"
-            border="0"
-            height="22"
-            width="600"
             align="center"
+            border="0"
             cellpadding="0"
             cellspacing="0"
+            width="100%"
           >
             <tr>
-              <td align="center" height="22">
-                {" "}
-                <a
-                  href={props.link ? props.link : "https://www2.arccorp.com"}
-                  target="_blank"
-                >
-                  <img
-                    width="600"
-                    height="22"
-                    style={{
-                      maxWidth: "600px",
-                      width: "600px",
-                      height: "22px",
-                      marginLeft: "auto",
-                      marginRight: "auto",
-                      display: "block",
-                    }}
-                    src="https://www2.arccorp.com/globalassets/email-parts/tac-jumbo-bottom.jpg"
-                  />
-                </a>{" "}
-              </td>
+              <td style={{ borderBottom: "1px solid #2a2b2d" }}>&nbsp;</td>
             </tr>
           </table>
         </td>
