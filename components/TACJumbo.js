@@ -34,7 +34,7 @@ export default function TACJumbo(props) {
         <td
           class=""
           style={{
-            height: "30px",
+            height: "25px",
           }}
         >
           &nbsp;
@@ -97,16 +97,6 @@ export default function TACJumbo(props) {
       </tr>
       <tr>
         <td
-          class=""
-          style={{
-            height: "15px",
-          }}
-        >
-          &nbsp;
-        </td>
-      </tr>
-      <tr>
-        <td
           style={{
             paddingLeft: "25px",
             paddingRight: "25px",
@@ -120,7 +110,7 @@ export default function TACJumbo(props) {
             width="100%"
           >
             <tr>
-              <td style={{ borderBottom: "1px solid #2a2b2d" }}>&nbsp;</td>
+              <td style={{ height:"35px", borderBottom: "1px solid #2a2b2d" }}>&nbsp;</td>
             </tr>
           </table>
         </td>
