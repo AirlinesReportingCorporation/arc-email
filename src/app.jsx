@@ -17,6 +17,8 @@ import TACLink from "../components/TACLink";
 import ARCFooter from "../components/ARCFooter";
 import TACBottom from "../components/TACBottom";
 
+import emailTemplates from "./templates";
+
 import {
   DndContext,
   closestCenter,
@@ -186,6 +188,14 @@ function App() {
       ),
     },
   ]);
+
+  const getTemplate = (value) => {
+    console.log(value);
+    console.log(emailTemplates);
+  }
+  useEffect(()=>{
+    getTemplate()
+  },[])
 
   //console.log(items[1].component.props);
   const [itemAddID, setItemAddID] = useState(1000);
