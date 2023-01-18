@@ -274,6 +274,8 @@ function App() {
       newItem.component = <TACLink />;
     } else if (blockName == "TAC Bottom") {
       newItem.component = <TACBottom />;
+    } else if (blockName == "Standard Header") {
+      newItem.component = <StandardHeader color="teal" />;
     }
 
     if (activePosition == "top") {
