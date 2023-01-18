@@ -16,6 +16,7 @@ import TACJumbo from "../components/TACJumbo";
 import TACLink from "../components/TACLink";
 import ARCFooter from "../components/ARCFooter";
 import TACBottom from "../components/TACBottom";
+import { Editor } from "@tinymce/tinymce-react";
 
 import {
   DndContext,
@@ -52,7 +53,7 @@ function App() {
     {
       name: "Paragraph Text",
       icon: <i class="fas fa-paragraph"></i>,
-      component: <Paragraph />,
+      component: <Paragraph text="<p>Lorem Ipsum</p>"/>,
       props: [["text", "textarea"]],
     },
     {
@@ -278,7 +279,7 @@ function App() {
     } else if (blockName == "Button") {
       newItem.component = <Button text="Learn More" />;
     } else if (blockName == "Paragraph Text") {
-      newItem.component = <Paragraph />;
+      newItem.component = <Paragraph text="<p>Lorem Ipsum</p>"/>;
     } else if (blockName == "ARC Logo Header") {
       newItem.component = <ARCLogo />;
     } else if (blockName == "Spacer") {
@@ -313,10 +314,18 @@ function App() {
   };
 
   const handleInputChange = (event) => {
+    console.log(event);
     event.persist();
     setFormProps((formProps) => ({
       ...formProps,
       [event.target.name]: event.target.value,
+    }));
+  };
+
+  const handleTinyMCE = (value, name) => {
+    setFormProps((formProps) => ({
+      ...formProps,
+      [name]: value,
     }));
   };
 
@@ -358,14 +367,24 @@ function App() {
           )}
 
           {item[1] === "textarea" ? (
-            <textarea
-              name={item[0]}
-              type={item[1]}
-              rows="10"
-              defaultValue={tempFormProps[item[0]]}
-              value={formProps[i]}
-              onChange={handleInputChange}
+            <Editor
+            apiKey="vxzm27e0040c8l1dlo5x5m7z3m9rgvfw8s1b1n3eev9eqciv"
+            name={item[0]}
+            initialValue={tempFormProps[item[0]]}
+            init={{
+              height: 300,
+              menubar: false
+            }}
+            onEditorChange={(value) => handleTinyMCE(value, item[0])}
             />
+            // <textarea
+            //   name={item[0]}
+            //   type={item[1]}
+            //   rows="10"
+            //   defaultValue={tempFormProps[item[0]]}
+            //   value={formProps[i]}
+            //   onChange={handleInputChange}
+            // />
           ) : (
             ""
           )}
