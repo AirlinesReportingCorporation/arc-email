@@ -16,11 +16,15 @@ import TACJumbo from "../components/TACJumbo";
 import TACLink from "../components/TACLink";
 import ARCFooter from "../components/ARCFooter";
 import TACBottom from "../components/TACBottom";
+<<<<<<< HEAD
 import { Editor } from "@tinymce/tinymce-react";
 
 import emailTemplates from "./templates";
 
 import { ViewToggle } from "../components/ViewToggle";
+=======
+import StandardHeader from "../components/StandardHeader";
+>>>>>>> standard-header
 
 import {
   DndContext,
@@ -124,10 +128,19 @@ function App() {
         ["Training_Link", "text"],
       ],
     },
+    {
+      name: "Standard Header",
+      icon: <i class="far fa-newspaper"></i>,
+      component: <StandardHeader />,
+      props: [
+        ["color", "select"],
+      ],
+    },
   ];
 
   const [activeForm, setActiveForm] = useState();
 
+<<<<<<< HEAD
   const [items, setItems] = useState(emailTemplates[0].template);
   const [templateSelection, setTemplateSelection] = useState('');
 
@@ -151,6 +164,77 @@ function App() {
       }
     }
   }
+=======
+  const [items, setItems] = useState([
+    {
+      id: "14",
+      name: "Standard Header",
+      component: <StandardHeader color="teal"/>
+    },
+    {
+      id: "1",
+      name: "ARC Logo Header",
+      component: <ARCLogo color="" link="https://www2.arccorp.com" />,
+    },
+    {
+      id: "6",
+      name: "TAC Jumbo",
+      component: (
+        <TACJumbo
+          title="Travel Agent Communications"
+          link="https://www2.arccorp.com/articles-trends/agency-communications/travel-agent-communications/"
+          date="01/01/2023"
+        />
+      ),
+    },
+    {
+      id: "8",
+      name: "TAC Link",
+      component: (
+        <TACLink
+          link="https://www2.arccorp.com/articles-trends/agency-communications/travel-agent-communications/"
+          title="Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      "
+        />
+      ),
+    },
+    {
+      id: "9",
+      name: "TAC Link",
+      component: (
+        <TACLink
+          link="https://www2.arccorp.com/articles-trends/agency-communications/travel-agent-communications/"
+          title="Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      "
+        />
+      ),
+    },
+    {
+      id: "10",
+      name: "TAC Link",
+      component: (
+        <TACLink
+          link="https://www2.arccorp.com/articles-trends/agency-communications/travel-agent-communications/"
+          title="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        />
+      ),
+    },
+    {
+      id: "11",
+      name: "TAC Bottom",
+      component: (
+        <TACBottom
+          TIP_Title="Tip of the Week"
+          TIP_Text="Lorem ipsum dolor sit amet consectetur "
+          TIP_Link="https://www2.arccorp.com/articles-trends/agency-communications/travel-agent-communications/"
+          Events_Title="Events and Trainings"
+          Events_Text="Stay up to date with the latest industry and knowledge."
+          Events_Link="https://www2.arccorp.com/about-us/events/"
+        />
+      ),
+    },
+  ]);
+>>>>>>> standard-header
 
   //console.log(items[1].component.props);
   const [itemAddID, setItemAddID] = useState(1000);
