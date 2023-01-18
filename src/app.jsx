@@ -20,6 +20,8 @@ import { Editor } from "@tinymce/tinymce-react";
 
 import emailTemplates from "./templates";
 
+import { ViewToggle } from "../components/ViewToggle";
+
 import {
   DndContext,
   closestCenter,
@@ -167,6 +169,15 @@ function App() {
   const [hoverRef, isHovered] = useHover();
   const [formInputs, setFormInputs] = useState("");
   const [buttonText, buttonLink, setButtonText, setButtonLink] = useState("");
+
+  // set the state using a hook:
+  const [isToggled, toggle] = useState(false);
+
+  // Function to run when clicked
+  const toggleView = () => {
+    toggle(!isToggled);
+    console.log(isToggled);
+  };
 
   const handleCloseModify = () => setShowModify(false);
   const handleShowModify = (index) => {
@@ -636,9 +647,15 @@ function App() {
                 className="arc-email-sidebar-email-parts"
                 style={{
                   display: activeView === "settings" ? "block" : "none",
+                  color: "#ffffff",
+                  padding: "0px 30px 15px",
                 }}
               >
-                <h2>Settings View</h2>
+                <h2 style={{
+                    color: "#fff",
+                    fontFamily:
+                      "SourceSansPro-Bold, SourceSansPro-Regular, arial, helvetica, sans-serif",
+                  }}>Settings View</h2>
                 <div style={{margin: "0 30px", justifyContent:"center"}}>
                 <p style={{color:"#fff"}}>Choose a template</p>
                 <select name="template" value={templateSelection} onChange={getTemplate}>
@@ -648,14 +665,17 @@ function App() {
                   <option value="template-3">Option 3</option>
                 </select>
                 </div>
+                <ViewToggle onClick={toggleView} toggled={!isToggled} />
               </div>
             </div>
           </div>
-          <div className="col-lg-8">
-            <iframe
-              style={{ width: "100%", minHeight: "100vh", border: "none" }}
-              srcDoc={markup}
-            ></iframe>
+          <div className="col-lg-8" style={{backgroundColor: "#f7f5f5"}}>
+            <div style={{margin: "0 auto", maxWidth: isToggled ? "450px": "100%"}}>
+              <iframe
+                style={{ width: "100%", minHeight: "100vh", border: "none" }}
+                srcDoc={markup}
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>
