@@ -14,6 +14,14 @@ import ARCLogo from "../components/ARCLogo";
 import Spacer from "../components/Spacer";
 import TACJumbo from "../components/TACJumbo";
 import TACLink from "../components/TACLink";
+import ARCFooter from "../components/ARCFooter";
+import TACBottom from "../components/TACBottom";
+import { Editor } from "@tinymce/tinymce-react";
+
+import emailTemplates from "./templates";
+
+import { ViewToggle } from "../components/ViewToggle";
+import StandardHeader from "../components/StandardHeader";
 
 import {
   DndContext,
@@ -52,7 +60,7 @@ function App() {
     {
       name: "Paragraph Text",
       icon: <i class="fas fa-paragraph"></i>,
-      component: <Paragraph />,
+      component: <Paragraph text="<p>Lorem Ipsum</p>"/>,
       props: [["text", "textarea"]],
     },
     {
@@ -62,7 +70,11 @@ function App() {
       props: [
         ["text", "text"],
         ["link", "text"],
+<<<<<<< HEAD
         ["position", "select"]
+=======
+        ["buttonStyle", "select"]
+>>>>>>> c5fdd44ad98066cc1ba868f012668f6791f396ce
       ],
     },
     {
@@ -74,7 +86,10 @@ function App() {
         />
       ),
       component: <ARCLogo />,
-      props: [["link", "text"]],
+      props: [
+        ["link", "text"],
+        ["color", "select"],
+      ],
     },
     {
       name: "Spacer",
@@ -87,7 +102,7 @@ function App() {
       icon: <i class="far fa-square"></i>,
       component: <TACJumbo />,
       props: [
-        ["background", "text"],
+        ["jumbobackground", "select"],
         ["title", "text"],
         ["date", "text"],
       ],
@@ -97,9 +112,31 @@ function App() {
       icon: <i class="far fa-newspaper"></i>,
       component: <TACLink />,
       props: [
-        ["icon", "text"],
+        ["icon", "select"],
         ["title", "text"],
         ["link", "text"],
+        ["cta", "text"],
+      ],
+    },
+    {
+      name: "TAC Bottom",
+      icon: <i class="far fa-newspaper"></i>,
+      component: <TACLink />,
+      props: [
+        ["TIP_Title", "text"],
+        ["TIP_Text", "text"],
+        ["TIP_Link", "text"],
+        ["Training_Title", "text"],
+        ["Training_Text", "text"],
+        ["Training_Link", "text"],
+      ],
+    },
+    {
+      name: "Standard Header",
+      icon: <i class="far fa-newspaper"></i>,
+      component: <StandardHeader />,
+      props: [
+        ["color", "select"],
       ],
     },
     {
@@ -112,6 +149,7 @@ function App() {
 
   const [activeForm, setActiveForm] = useState();
 
+<<<<<<< HEAD
   const [items, setItems] = useState([
     {
       id: "1",
@@ -165,6 +203,31 @@ function App() {
       component: <AddressSection/>,
     },
   ]);
+=======
+  const [items, setItems] = useState(emailTemplates[0].template);
+  const [templateSelection, setTemplateSelection] = useState('');
+
+  const getTemplate = (event) => {
+    var prevTemplateSelection = templateSelection;
+    var selectedTemplate = event.target.value;
+    console.log(emailTemplates);
+    var choice = confirm('Do you want to continue? Any changes will not be saved');
+    if (choice == false) {
+      event.preventDefault()
+      setTemplateSelection(prevTemplateSelection);
+    }
+    else {
+      for (let i = 0; i < emailTemplates.length; i++) {
+        const element = emailTemplates[i];
+        if (element.id === selectedTemplate) {
+          setItems(element.template);
+          setTemplateSelection(element.id);
+          break;
+        }
+      }
+    }
+  }
+>>>>>>> c5fdd44ad98066cc1ba868f012668f6791f396ce
 
   //console.log(items[1].component.props);
   const [itemAddID, setItemAddID] = useState(1000);
@@ -183,6 +246,15 @@ function App() {
   const [hoverRef, isHovered] = useHover();
   const [formInputs, setFormInputs] = useState("");
   const [buttonText, buttonLink, setButtonText, setButtonLink] = useState("");
+
+  // set the state using a hook:
+  const [isToggled, toggle] = useState(false);
+
+  // Function to run when clicked
+  const toggleView = () => {
+    toggle(!isToggled);
+    console.log(isToggled);
+  };
 
   const handleCloseModify = () => setShowModify(false);
   const handleShowModify = (index) => {
@@ -206,16 +278,20 @@ function App() {
 
   //useEffect is for functions that need to run on every render
   useEffect(() => {
-    const email = items.map((item) => (
-      <div key={item.id}>{item.component}</div>
-    ));
+    const email = items.map((item) => item.component);
 
     //console.log(sensors);
 
     setMarkup(
+<<<<<<< HEAD
       '<!doctype html> <html> <head> <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> <title>Simple Transactional Email</title> <style> /* ------------------------------------- GLOBAL RESETS ------------------------------------- */ /*All the styling goes here*/ img { border: none; -ms-interpolation-mode: bicubic; max-width: 100%; } body { background-color: #f6f6f6; font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; line-height: 1.4; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; } table { border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; } table td { font-family: sans-serif; font-size: 14px; vertical-align: top; } /* ------------------------------------- BODY & CONTAINER ------------------------------------- */ .body { background-color: #f6f6f6; width: 100%; } /* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */ .container { display: block; margin: 0 auto !important; /* makes it centered */ max-width: 724px; padding: 10px; width: 724px; } /* This should also be a block element, so that it will fill 100% of the .container */ .content { box-sizing: border-box; display: block; margin: 0 auto; max-width: 724px; padding: 10px; } /* ------------------------------------- HEADER, FOOTER, MAIN ------------------------------------- */ .main { background: #ffffff; border-radius: 3px; width: 100%; } .wrapper { box-sizing: border-box; padding: 25px; } .content-block { padding-bottom: 10px; padding-top: 10px; } .footer { clear: both; margin-top: 10px; text-align: center; width: 100%; } .footer td, .footer p, .footer span, .footer a { color: #999999; font-size: 12px; text-align: center; } /* ------------------------------------- TYPOGRAPHY ------------------------------------- */ h1, h2, h3, h4 { color: #000000; font-family: sans-serif; font-weight: 400; line-height: 1.4; margin: 0; margin-bottom: 30px; } h1 { font-size: 35px; font-weight: 300; text-align: center; text-transform: capitalize; } p, ul, ol { font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; margin-bottom: 15px; } p li, ul li, ol li { list-style-position: inside; margin-left: 5px; } a { color: #189bb0; text-decoration: underline; } /* ------------------------------------- BUTTONS ------------------------------------- */ .btn { box-sizing: border-box; width: 100%; } .btn > tbody > tr > td { padding-bottom: 15px; } .btn table { width: auto; } .btn table td { background-color: #ffffff; border-radius: 5px; text-align: center; } .btn a { background-color: #ffffff; border: solid 1px #189bb0; border-radius: 5px; box-sizing: border-box; color: #189bb0; cursor: pointer; display: inline-block; font-size: 14px; font-weight: bold; margin: 0; padding: 12px 25px; text-decoration: none; text-transform: capitalize; } .btn-primary table td { background-color: #189bb0; } .btn-primary a { background-color: #189bb0; border-color: #189bb0; color: #ffffff; } /* ------------------------------------- OTHER STYLES THAT MIGHT BE USEFUL ------------------------------------- */ .last { margin-bottom: 0; } .first { margin-top: 0; } .align-center { text-align: center; } .align-right { text-align: right; } .align-left { text-align: left; } .clear { clear: both; } .mt0 { margin-top: 0; } .mb0 { margin-bottom: 0; } .preheader { color: transparent; display: none; height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; mso-hide: all; visibility: hidden; width: 0; } .powered-by a { text-decoration: none; } hr { border: 0; border-bottom: 1px solid #f6f6f6; margin: 20px 0; } /* ------------------------------------- RESPONSIVE AND MOBILE FRIENDLY STYLES ------------------------------------- */ @media only screen and (max-width: 724px) { table.body h1 { font-size: 28px !important; margin-bottom: 10px !important; } table.body p, table.body ul, table.body ol, table.body td, table.body span, table.body a { font-size: 16px !important; } table.body .wrapper, table.body .article { padding: 10px !important; } table.body .content { padding: 0 !important; } table.body .container { padding: 0 !important; width: 100% !important; } table.body .main { border-left-width: 0 !important; border-radius: 0 !important; border-right-width: 0 !important; } table.body .btn table { width: 100% !important; } table.body .btn a { width: 100% !important; } table.body .img-responsive { height: auto !important; max-width: 100% !important; width: auto !important; } } /* ------------------------------------- PRESERVE THESE STYLES IN THE HEAD ------------------------------------- */ @media all { .ExternalClass { width: 100%; } .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div { line-height: 100%; } .apple-link a { color: inherit !important; font-family: inherit !important; font-size: inherit !important; font-weight: inherit !important; line-height: inherit !important; text-decoration: none !important; } #MessageViewBody a { color: inherit; text-decoration: none; font-size: inherit; font-family: inherit; font-weight: inherit; line-height: inherit; } .btn-primary table td:hover { background-color: #189bb0 !important; } .btn-primary a:hover { background-color: #189bb0 !important; border-color: #189bb0 !important; } } </style> </head> <body> <span class="preheader">This is preheader text. Some clients will show this text as a preview.</span> <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body"> <tr> <td> </td> <td class="container"> <div class="content">  <table role="presentation" class="main">  <tr> <td class="wrapper"> <table role="presentation" border="0" cellpadding="0" cellspacing="0">' +
+=======
+      '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html   xmlns="http://www.w3.org/1999/xhtml"   xmlns:o="urn:schemas-microsoft-com:office:office"   xmlns:v="urn:schemas-microsoft-com:vml" >   <head>     <title>ARC</title>     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />     <meta http-equiv="X-UA-Compatible" content="IE=edge" />     <meta name="viewport" content="width=device-width, initial-scale=1.0 " />     <meta name="format-detection" content="telephone=no" />     <link       href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900"       rel="stylesheet"     />     <style type="text/css">       body {         margin: 0 !important;         padding: 0 !important;         -webkit-text-size-adjust: 100% !important;         -ms-text-size-adjust: 100% !important;         -webkit-font-smoothing: antialiased !important;       }       img {         border: 0 !important;         outline: none !important;       }       p {         margin: 0px !important;         padding: 0px !important;       }       table {         border-collapse: collapse;         mso-table-lspace: 0px;         mso-table-rspace: 0px;       }       td,       a,       span {         border-collapse: collapse;         mso-line-height-rule: exactly;       }       .ExternalClass * {         line-height: 100%;       }       .em_defaultlink a {         color: inherit !important;         text-decoration: none !important;       }       span.MsoHyperlink {         mso-style-priority: 99;         color: inherit;       }       span.MsoHyperlinkFollowed {         mso-style-priority: 99;         color: inherit;       }       @media only screen and (min-width: 481px) and (max-width: 699px) {         .title_center {           text-align: center;         }         .em_main_table {           width: 100% !important;         }         .em_wrapper {           width: 100% !important;         }         .em_aside {           padding: 0px 20px !important;         }         .em_hide {           display: none !important;         }         .em_full_img img {           width: 100% !important;           height: auto !important;           max-width: none !important;         }         .em_align_cent {           text-align: center !important;         }         .em_height {           height: 20px !important;           font-size: 1px !important;           line-height: 1px !important;         }         .em_pad_top {           padding-top: 20px !important;         }         .em_spacer {           width: 10px !important;         }         .em_pad_bottom {           padding-bottom: 20px !important;         }         .em_hauto {           height: auto !important;         }         span[class="em_divhide"] {           display: none !important;         }       }       @media only screen and (max-width: 480px) {         .title_center {           text-align: center;         }         .address_item {           text-align: center;           display: block;         }         .em_main_table {           width: 100% !important;         }         .em_wrapper {           width: 100% !important;         }         .em_aside {           padding: 0px 20px !important;         }         .em_hide {           display: none !important;         }         .em_full_img img {           width: 100% !important;           height: auto !important;           max-width: none !important;         }         .icon-center {           text-align: center;           text-align: -webkit-center;         }         .icon-center img {           padding-bottom: 10px;         }         .em_align_cent {           text-align: center !important;         }         .em_height {           height: 20px !important;           font-size: 1px !important;           line-height: 1px !important;         }         .em_pad_top {           padding-top: 20px !important;         }         .em_spacer {           width: 10px !important;         }         .em_pad_bottom {           padding-bottom: 20px !important;         }         .em_hauto {           height: auto !important;         }         span[class="em_divhide"] {           display: none !important;         }       }       a[x-apple-data-detectors] {  color: #77d6fc !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; } u + #body a { color: #77d6fc !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; } </style>  <!--[if gte mso 9]>       <xml>         <o:OfficeDocumentSettings>           <o:AllowPNG />           <o:PixelsPerInch>96</o:PixelsPerInch>         </o:OfficeDocumentSettings>       </xml>     <![endif]-->   </head>   <body bgcolor="#f7f5f5" style="margin: 0px; padding: 0px">     <table       bgcolor="#f7f5f5"       border="0"       cellpadding="0"       cellspacing="0"       width="100%"     >       <tbody>         <tr>           <td align="center">             <table               align="center"               bgcolor="#ffffff"               border="0"               cellpadding="0"               cellspacing="0"               class="em_main_table"               style="table-layout: fixed; width: 700px"               width="700"             >' +
+>>>>>>> c5fdd44ad98066cc1ba868f012668f6791f396ce
         ReactDOMServer.renderToStaticMarkup(email) +
-        '</table> </td> </tr>  </table>   <div class="footer"> footer </div>  </div> </td> <td> </td> </tr> </table> </body> </html>'
+        '</table> </td> </tr> <tr> <td align="center"> <table align="center" bgcolor="#f7f5f5" border="0" cellpadding="0" cellspacing="0" class="em_main_table" style="table-layout: fixed; width: 700px" width="700" > <tbody>' +
+        ReactDOMServer.renderToStaticMarkup(<ARCFooter />) +
+        '</tbody> </table> </td> </tr> </tbody> </table><div style="white-space: nowrap; font: 20px courier; color: #ffffff"> <span class="em_divhide" >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span > &nbsp; </div> </body> </html> '
     );
 
     //console.log(items);
@@ -257,7 +333,7 @@ function App() {
     } else if (blockName == "Button") {
       newItem.component = <Button text="Learn More" />;
     } else if (blockName == "Paragraph Text") {
-      newItem.component = <Paragraph />;
+      newItem.component = <Paragraph text="<p>Lorem Ipsum</p>"/>;
     } else if (blockName == "ARC Logo Header") {
       newItem.component = <ARCLogo />;
     } else if (blockName == "Spacer") {
@@ -268,6 +344,10 @@ function App() {
       );
     } else if (blockName == "TAC Link") {
       newItem.component = <TACLink />;
+    } else if (blockName == "TAC Bottom") {
+      newItem.component = <TACBottom />;
+    } else if (blockName == "Standard Header") {
+      newItem.component = <StandardHeader color="teal" />;
     }
 
     if (activePosition == "top") {
@@ -290,10 +370,18 @@ function App() {
   };
 
   const handleInputChange = (event) => {
+    console.log(event);
     event.persist();
     setFormProps((formProps) => ({
       ...formProps,
       [event.target.name]: event.target.value,
+    }));
+  };
+
+  const handleTinyMCE = (value, name) => {
+    setFormProps((formProps) => ({
+      ...formProps,
+      [name]: value,
     }));
   };
 
@@ -321,6 +409,7 @@ function App() {
       ].props.map((item, i) => (
         <>
           <label>{item[0]}</label>
+
           {item[1] === "text" ? (
             <input
               name={item[0]}
@@ -332,15 +421,139 @@ function App() {
           ) : (
             ""
           )}
+
           {item[1] === "textarea" ? (
-            <textarea
-              name={item[0]}
-              type={item[1]}
-              rows="10"
-              defaultValue={tempFormProps[item[0]]}
-              value={formProps[i]}
-              onChange={handleInputChange}
+            <Editor
+            apiKey="vxzm27e0040c8l1dlo5x5m7z3m9rgvfw8s1b1n3eev9eqciv"
+            name={item[0]}
+            initialValue={tempFormProps[item[0]]}
+            init={{
+              height: 300,
+              menubar: false,
+              branding:false,
+              plugins:  'link lists',
+              toolbar: [
+                { name: 'history', items: [ 'undo', 'redo' ] },
+                { name: 'styles', items: [ 'styles' ] },
+                { name: 'lists', items: [ 'numlist', 'bullist' ] },
+                { name: 'indentation', items: [ 'outdent', 'indent' ] },
+                {name: 'link', items: ['link']},
+              ]
+            }}
+            onEditorChange={(value) => handleTinyMCE(value, item[0])}
             />
+            // <textarea
+            //   name={item[0]}
+            //   type={item[1]}
+            //   rows="10"
+            //   defaultValue={tempFormProps[item[0]]}
+            //   value={formProps[i]}
+            //   onChange={handleInputChange}
+            // />
+          ) : (
+            ""
+          )}
+          {item[1] === "select" ? (
+            item[0] === "color" ? (
+              <select
+                name={item[0]}
+                defaultValue={tempFormProps[item[0]]}
+                value={formProps[i]}
+                onChange={handleInputChange}
+              >
+                <option value="teal">Teal</option>
+                <option value="black">Black</option>
+                <option value="white">White</option>
+                <option value="gray">Gray</option>
+              </select>
+            ) : (
+              ""
+            )
+          ) : (
+            ""
+          )}
+
+          {item[1] === "select" ? (
+            item[0] === "type" ? (
+              <select
+                name={item[0]}
+                defaultValue={tempFormProps[item[0]]}
+                value={formProps[i]}
+                onChange={handleInputChange}
+              >
+                <option value="short">Short</option>
+                <option value="standard">Standard</option>
+              </select>
+            ) : (
+              ""
+            )
+          ) : (
+            ""
+          )}
+
+          {item[1] === "select" ? (
+            item[0] === "icon" ? (
+              <select
+                name={item[0]}
+                defaultValue={tempFormProps[item[0]]}
+                value={formProps[i]}
+                onChange={handleInputChange}
+              >
+                <option value="creditcard">Credit Card</option>
+                <option value="annoucement">Announcement</option>
+                <option value="holidays">Holidays</option>
+                <option value="newairline">New Airline</option>
+                <option value="scheduled">Scheduled</option>
+              </select>
+            ) : (
+              ""
+            )
+          ) : (
+            ""
+          )}
+          {/* Style of Button */}
+          {item[1] === "select" ? (
+            item[0] === "buttonStyle" ? (
+              <select
+                name={item[0]}
+                defaultValue={tempFormProps[item[0]]}
+                value={formProps[i]}
+                onChange={handleInputChange}
+              >
+                <option value="solidBtn">Solid</option>
+                <option value="outlineBtn">Outline</option>
+              </select>
+            ) : (
+              ""
+            )
+          ) : (
+            ""
+          )}
+
+          {item[1] === "select" ? (
+            item[0] === "jumbobackground" ? (
+              <select
+                name={item[0]}
+                defaultValue={tempFormProps[item[0]]}
+                value={formProps[i]}
+                onChange={handleInputChange}
+              >
+                <option value="https://www2.arccorp.com/globalassets/email-parts/header/header-012x.jpg">
+                  1
+                </option>
+                <option value="https://www2.arccorp.com/globalassets/email-parts/header/header-022x.jpg">
+                  2
+                </option>
+                <option value="https://www2.arccorp.com/globalassets/email-parts/header/header-032x.jpg">
+                  3
+                </option>
+                <option value="https://www2.arccorp.com/globalassets/email-parts/header/header-042x.jpg">
+                  4
+                </option>
+              </select>
+            ) : (
+              ""
+            )
           ) : (
             ""
           )}
@@ -543,17 +756,35 @@ function App() {
                 className="arc-email-sidebar-email-parts"
                 style={{
                   display: activeView === "settings" ? "block" : "none",
+                  color: "#ffffff",
+                  padding: "0px 30px 15px",
                 }}
               >
-                Settings View
+                <h2 style={{
+                    color: "#fff",
+                    fontFamily:
+                      "SourceSansPro-Bold, SourceSansPro-Regular, arial, helvetica, sans-serif",
+                  }}>Settings View</h2>
+                <div style={{margin: "0 30px", justifyContent:"center"}}>
+                <p style={{color:"#fff"}}>Choose a template</p>
+                <select name="template" value={templateSelection} onChange={getTemplate}>
+                  <option>-- Choose a template --</option>
+                  <option value="tac-template">TAC</option>
+                  <option value="other-template">Option 2</option>
+                  <option value="template-3">Option 3</option>
+                </select>
+                </div>
+                <ViewToggle onClick={toggleView} toggled={!isToggled} />
               </div>
             </div>
           </div>
-          <div className="col-lg-8">
-            <iframe
-              style={{ width: "100%", minHeight: "100vh", border: "none" }}
-              srcDoc={markup}
-            ></iframe>
+          <div className="col-lg-8" style={{backgroundColor: "#f7f5f5"}}>
+            <div style={{margin: "0 auto", maxWidth: isToggled ? "450px": "100%"}}>
+              <iframe
+                style={{ width: "100%", minHeight: "100vh", border: "none" }}
+                srcDoc={markup}
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>
