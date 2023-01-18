@@ -124,78 +124,30 @@ function App() {
 
   const [activeForm, setActiveForm] = useState();
 
-  const [items, setItems] = useState([
-    {
-      id: "1",
-      name: "ARC Logo Header",
-      component: <ARCLogo color="" link="https://www2.arccorp.com" />,
-    },
-    {
-      id: "6",
-      name: "TAC Jumbo",
-      component: (
-        <TACJumbo
-          title="Travel Agent Communications"
-          link="https://www2.arccorp.com/articles-trends/agency-communications/travel-agent-communications/"
-          date="01/01/2023"
-        />
-      ),
-    },
-    {
-      id: "8",
-      name: "TAC Link",
-      component: (
-        <TACLink
-          link="https://www2.arccorp.com/articles-trends/agency-communications/travel-agent-communications/"
-          title="Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      "
-        />
-      ),
-    },
-    {
-      id: "9",
-      name: "TAC Link",
-      component: (
-        <TACLink
-          link="https://www2.arccorp.com/articles-trends/agency-communications/travel-agent-communications/"
-          title="Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      "
-        />
-      ),
-    },
-    {
-      id: "10",
-      name: "TAC Link",
-      component: (
-        <TACLink
-          link="https://www2.arccorp.com/articles-trends/agency-communications/travel-agent-communications/"
-          title="Lorem ipsum dolor sit amet consectetur adipisicing elit."
-        />
-      ),
-    },
-    {
-      id: "11",
-      name: "TAC Bottom",
-      component: (
-        <TACBottom
-          TIP_Title="Tip of the Week"
-          TIP_Text="Lorem ipsum dolor sit amet consectetur "
-          TIP_Link="https://www2.arccorp.com/articles-trends/agency-communications/travel-agent-communications/"
-          Events_Title="Events and Trainings"
-          Events_Text="Stay up to date with the latest industry and knowledge."
-          Events_Link="https://www2.arccorp.com/about-us/events/"
-        />
-      ),
-    },
-  ]);
+  const [items, setItems] = useState(emailTemplates[0].template);
+  const [templateSelection, setTemplateSelection] = useState('');
 
-  const getTemplate = (value) => {
-    console.log(value);
+  const getTemplate = (event) => {
+    var prevTemplateSelection = templateSelection;
+    var selectedTemplate = event.target.value;
     console.log(emailTemplates);
+    var choice = confirm('Do you want to continue? Any changes will not be saved');
+    if (choice == false) {
+      event.preventDefault()
+      setTemplateSelection(prevTemplateSelection);
+    }
+    else {
+      for (let i = 0; i < emailTemplates.length; i++) {
+        const element = emailTemplates[i];
+        if (element.id === selectedTemplate) {
+          setItems(element.template);
+          setTemplateSelection(element.id);
+          break;
+        }
+      }
+    }
   }
-  useEffect(()=>{
-    getTemplate()
-  },[])
+
 
   //console.log(items[1].component.props);
   const [itemAddID, setItemAddID] = useState(1000);
@@ -616,7 +568,16 @@ function App() {
                   display: activeView === "settings" ? "block" : "none",
                 }}
               >
-                Settings View
+                <h2>Settings View</h2>
+                <div style={{margin: "0 30px", justifyContent:"center"}}>
+                <p style={{color:"#fff"}}>Choose a template</p>
+                <select name="template" value={templateSelection} onChange={getTemplate}>
+                  <option>-- Choose a template --</option>
+                  <option value="tac-template">TAC</option>
+                  <option value="other-template">Option 2</option>
+                  <option value="template-3">Option 3</option>
+                </select>
+                </div>
               </div>
             </div>
           </div>
