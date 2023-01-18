@@ -373,7 +373,16 @@ function App() {
             initialValue={tempFormProps[item[0]]}
             init={{
               height: 300,
-              menubar: false
+              menubar: false,
+              branding:false,
+              plugins:  'link lists',
+              toolbar: [
+                { name: 'history', items: [ 'undo', 'redo' ] },
+                { name: 'styles', items: [ 'styles' ] },
+                { name: 'lists', items: [ 'numlist', 'bullist' ] },
+                { name: 'indentation', items: [ 'outdent', 'indent' ] },
+                {name: 'link', items: ['link']},
+              ]
             }}
             onEditorChange={(value) => handleTinyMCE(value, item[0])}
             />
