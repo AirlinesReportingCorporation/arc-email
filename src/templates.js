@@ -4,6 +4,10 @@ import ARCLogo from "../components/ARCLogo";
 import TACJumbo from "../components/TACJumbo";
 import TACLink from "../components/TACLink";
 import TACBottom from "../components/TACBottom";
+import StandardHeader from "../components/StandardHeader";
+import Paragraph from "../components/Paragraph";
+import Button from "../components/Button";
+import AddressSection from "../components/AddressSection";
 
 const emailTemplates = [
     {
@@ -75,69 +79,36 @@ const emailTemplates = [
           ],
     },
     {
-        name: 'Option 2',
-        id: 'other-template',
+        name: 'Operational',
+        id: 'operational',
         template: [
             {
-              id: "1",
-              name: "ARC Logo Header",
-              component: <ARCLogo color="" link="https://www2.arccorp.com" />,
+              id: "2",
+              name: "Standard Header",
+              component: <StandardHeader color="teal" />,
             },
             {
-              id: "6",
-              name: "TAC Jumbo",
+              id: "3",
+              name: "Paragraph Text",
               component: (
-                <TACJumbo
-                  title="Travel Agent Communications - Option 2"
-                  link="https://www2.arccorp.com/articles-trends/agency-communications/travel-agent-communications/"
-                  date="01/01/2023"
+                <Paragraph text='<h1 style="text-align: center;">Place story two headline<br class="em_hide">in this position</h1>
+                <p>&nbsp;</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dolor nisl, gravida semper faucibus non, interdum sed metus. Etiam consequat lacus arcu, sed accumsan tellus imperdiet nec. Cras nec lectus vel sem dignissim volutpat. Etiam sodales bibendum ipsum, vel tristique tortor commodo at. Vivamus tempor mauris non turpis suscipit, ac lacinia leo condimentum. Vestibulum nec sollicitudin sapien, sit amet bibendum est. Vivamus magna libero, semper vitae sem sit amet, scelerisque scelerisque nulla.<br><br>Suspendisse semper eros eget iaculis venenatis. Integer ultricies tempus sem id tempor. Fusce maximus ullamcorper tortor, sed varius purus porta sit amet. Vivamus in nunc sodales, sagittis augue sit amet, sollicitudin augue. Nulla sit amet lacus neque. Nullam nec risus nunc. Curabitur id lorem ac mi pharetra laoreet.</p>'
                 />
               ),
             },
             {
-              id: "8",
-              name: "TAC Link",
+              id: "4",
+              name: "Button",
               component: (
-                <TACLink
-                  link="https://www2.arccorp.com/articles-trends/agency-communications/travel-agent-communications/"
-                  title="Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              "
-                />
+                <Button text="LEARN MORE"/>
               ),
             },
             {
-              id: "9",
-              name: "TAC Link",
+              id: "5",
+              name: "Address Footer",
               component: (
-                <TACLink
-                  link="https://www2.arccorp.com/articles-trends/agency-communications/travel-agent-communications/"
-                  title="Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              "
-                />
-              ),
-            },
-            {
-              id: "10",
-              name: "TAC Link",
-              component: (
-                <TACLink
-                  link="https://www2.arccorp.com/articles-trends/agency-communications/travel-agent-communications/"
-                  title="Lorem ipsum dolor sit amet consectetur adipisicing elit."
-                />
-              ),
-            },
-            {
-              id: "11",
-              name: "TAC Bottom",
-              component: (
-                <TACBottom
-                  TIP_Title="Tip of the Week"
-                  TIP_Text="Lorem ipsum dolor sit amet consectetur "
-                  TIP_Link="https://www2.arccorp.com/articles-trends/agency-communications/travel-agent-communications/"
-                  Events_Title="Events and Trainings"
-                  Events_Text="Stay up to date with the latest industry and knowledge."
-                  Events_Link="https://www2.arccorp.com/about-us/events/"
-                />
+                <AddressSection/>
               ),
             },
           ],

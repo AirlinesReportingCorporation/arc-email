@@ -2,39 +2,6 @@ import React, { useCallback } from "react";
 
 export default function Button(props) {
   return (
-<<<<<<< HEAD
-    <table
-      role="presentation"
-      border="0"
-      cellpadding="0"
-      cellspacing="0"
-      className="btn btn-primary"
-    >
-      <tbody>
-        <tr>
-          <td align={props.position? props.position : "left"}>
-            <table
-              role="presentation"
-              border="0"
-              cellpadding="0"
-              cellspacing="0"
-            >
-              <tbody>
-                <tr>
-                  <td>
-                    {" "}
-                    <a href={props.link} target="_blank">
-                      {props.text}
-                    </a>{" "}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-=======
       <tr>
         <td style={{ paddingLeft: "25px", paddingRight: "25px", paddingTop:"5px", paddingBottom: "5px"}}>
           <table
@@ -75,6 +42,5 @@ export default function Button(props) {
           </table>
         </td>
       </tr>
->>>>>>> c5fdd44ad98066cc1ba868f012668f6791f396ce
   );
 }
