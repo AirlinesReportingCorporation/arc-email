@@ -140,6 +140,7 @@ function App() {
 
   const [items, setItems] = useState(emailTemplates[0].template);
   const [templateSelection, setTemplateSelection] = useState("");
+  const [footerSelection, setFooterSelection] = useState('');
 
   const getTemplate = (event) => {
     var prevTemplateSelection = templateSelection;
@@ -162,6 +163,11 @@ function App() {
       }
     }
   };
+
+  const changeFooter = (event) => {
+    setFooterSelection(event.target.value);
+    console.log(event.target.value)
+  }
 
   //console.log(items[1].component.props);
   const [itemAddID, setItemAddID] = useState(1000);
@@ -220,7 +226,7 @@ function App() {
       '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html   xmlns="http://www.w3.org/1999/xhtml"   xmlns:o="urn:schemas-microsoft-com:office:office"   xmlns:v="urn:schemas-microsoft-com:vml" >   <head>     <title>ARC</title>     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />     <meta http-equiv="X-UA-Compatible" content="IE=edge" />     <meta name="viewport" content="width=device-width, initial-scale=1.0 " />     <meta name="format-detection" content="telephone=no" />     <link       href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900"       rel="stylesheet"     />     <style type="text/css">       body {         margin: 0 !important;         padding: 0 !important;         -webkit-text-size-adjust: 100% !important;         -ms-text-size-adjust: 100% !important;         -webkit-font-smoothing: antialiased !important;       }       img {         border: 0 !important;         outline: none !important;       }       p {         margin: 0px !important;         padding: 0px !important;       }       table {         border-collapse: collapse;         mso-table-lspace: 0px;         mso-table-rspace: 0px;       }       td,       a,       span {         border-collapse: collapse;         mso-line-height-rule: exactly;       }       .ExternalClass * {         line-height: 100%;       }       .em_defaultlink a {         color: inherit !important;         text-decoration: none !important;       }       span.MsoHyperlink {         mso-style-priority: 99;         color: inherit;       }       span.MsoHyperlinkFollowed {         mso-style-priority: 99;         color: inherit;       }       @media only screen and (min-width: 481px) and (max-width: 699px) {         .title_center {           text-align: center;         }         .em_main_table {           width: 100% !important;         }         .em_wrapper {           width: 100% !important;         }         .em_aside {           padding: 0px 20px !important;         }         .em_hide {           display: none !important;         }         .em_full_img img {           width: 100% !important;           height: auto !important;           max-width: none !important;         }         .em_align_cent {           text-align: center !important;         }         .em_height {           height: 20px !important;           font-size: 1px !important;           line-height: 1px !important;         }         .em_pad_top {           padding-top: 20px !important;         }         .em_spacer {           width: 10px !important;         }         .em_pad_bottom {           padding-bottom: 20px !important;         }         .em_hauto {           height: auto !important;         }         span[class="em_divhide"] {           display: none !important;         }       }       @media only screen and (max-width: 480px) {         .title_center {           text-align: center;         }         .address_item {           text-align: center;           display: block;         }         .em_main_table {           width: 100% !important;         }         .em_wrapper {           width: 100% !important;         }         .em_aside {           padding: 0px 20px !important;         }         .em_hide {           display: none !important;         }         .em_full_img img {           width: 100% !important;           height: auto !important;           max-width: none !important;         }         .icon-center {           text-align: center;           text-align: -webkit-center;         }         .icon-center img {           padding-bottom: 10px;         }         .em_align_cent {           text-align: center !important;         }         .em_height {           height: 20px !important;           font-size: 1px !important;           line-height: 1px !important;         }         .em_pad_top {           padding-top: 20px !important;         }         .em_spacer {           width: 10px !important;         }         .em_pad_bottom {           padding-bottom: 20px !important;         }         .em_hauto {           height: auto !important;         }         span[class="em_divhide"] {           display: none !important;         }       }       a[x-apple-data-detectors] {  color: #77d6fc !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; } u + #body a { color: #77d6fc !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; } </style>  <!--[if gte mso 9]>       <xml>         <o:OfficeDocumentSettings>           <o:AllowPNG />           <o:PixelsPerInch>96</o:PixelsPerInch>         </o:OfficeDocumentSettings>       </xml>     <![endif]-->   </head>   <body bgcolor="#f7f5f5" style="margin: 0px; padding: 0px">     <table       bgcolor="#f7f5f5"       border="0"       cellpadding="0"       cellspacing="0"       width="100%"     >       <tbody>         <tr>           <td align="center">             <table               align="center"               bgcolor="#ffffff"               border="0"               cellpadding="0"               cellspacing="0"               class="em_main_table"               style="table-layout: fixed; width: 700px"               width="700"             >' +
         ReactDOMServer.renderToStaticMarkup(email) +
         '</table> </td> </tr> <tr> <td align="center"> <table align="center" bgcolor="#f7f5f5" border="0" cellpadding="0" cellspacing="0" class="em_main_table" style="table-layout: fixed; width: 700px" width="700" > <tbody>' +
-        ReactDOMServer.renderToStaticMarkup(<ARCFooter />) +
+        ReactDOMServer.renderToStaticMarkup(<ARCFooter footer={footerSelection}/>) +
         '</tbody> </table> </td> </tr> </tbody> </table><div style="white-space: nowrap; font: 20px courier; color: #ffffff"> <span class="em_divhide" >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span > &nbsp; </div> </body> </html> '
     );
 
@@ -278,7 +284,7 @@ function App() {
       newItem.component = <TACBottom />;
     } else if (blockName == "Standard Header") {
       newItem.component = <StandardHeader color="teal" />;
-    }
+    } 
 
     if (activePosition == "top") {
       if (activeAdd == 0) {
@@ -702,6 +708,18 @@ function App() {
                     <option value="tac-template">TAC</option>
                     <option value="other-template">Option 2</option>
                     <option value="template-3">Option 3</option>
+                  </select>
+                </div>
+                <div style={{ margin: "0 30px", justifyContent: "center" }}>
+                  <p style={{ color: "#fff" }}>Change Footer Length</p>
+                  <select
+                    name="footer"
+                    value={footerSelection}
+                    onChange={changeFooter}
+                  >
+                    <option>-- Choose a footer --</option>
+                    <option value="short">Short</option>
+                    <option value="long">Long</option>
                   </select>
                 </div>
                 <ViewToggle onClick={toggleView} toggled={!isToggled} />
