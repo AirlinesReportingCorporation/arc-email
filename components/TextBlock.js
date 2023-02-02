@@ -3,7 +3,7 @@ import React from "react";
 export default function Paragraph(props) {
   return (
     <tr>
-      <td style={{ paddingLeft: "50px", paddingRight: "50px" }}>
+      <td>
         <table role="presentation" border="0" cellpadding="0" cellspacing="0">
           <tbody>
             <tr>
@@ -16,7 +16,7 @@ export default function Paragraph(props) {
                 >
                   <tbody>
                     <tr>
-                      <td dangerouslySetInnerHTML={{ __html: props.text }}></td>
+                      <td style={{ paddingLeft: props.padding, paddingRight: props.padding }} dangerouslySetInnerHTML={{ __html: props.text }}></td>
                     </tr>
                   </tbody>
                 </table>

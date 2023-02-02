@@ -9,7 +9,7 @@ import React, {
 import Modal from "react-bootstrap/Modal";
 import Button from "../components/Button";
 import Header from "../components/Header";
-import Paragraph from "../components/Paragraph";
+import TextBlock from "../components/TextBlock";
 import ARCLogo from "../components/ARCLogo";
 import Spacer from "../components/Spacer";
 import TACJumbo from "../components/TACJumbo";
@@ -56,10 +56,13 @@ function App() {
       props: [["text", "text"]], //name, input
     },
     {
-      name: "Paragraph Text",
+      name: "Text Block",
       icon: <i class="fas fa-paragraph"></i>,
-      component: <Paragraph text="<p>Lorem Ipsum</p>"/>,
-      props: [["text", "textarea"]],
+      component: <TextBlock text="<p>Lorem Ipsum</p>" padding="25px" />,
+      props: [
+        ["text", "textarea"],
+        ["padding", "select"],
+      ],
     },
     {
       name: "Button",
@@ -68,7 +71,7 @@ function App() {
       props: [
         ["text", "text"],
         ["link", "text"],
-        ["buttonStyle", "select"]
+        ["buttonStyle", "select"],
       ],
     },
     {
@@ -129,27 +132,26 @@ function App() {
       name: "Standard Header",
       icon: <i class="far fa-newspaper"></i>,
       component: <StandardHeader />,
-      props: [
-        ["color", "select"],
-      ],
+      props: [["color", "select"]],
     },
   ];
 
   const [activeForm, setActiveForm] = useState();
 
   const [items, setItems] = useState(emailTemplates[0].template);
-  const [templateSelection, setTemplateSelection] = useState('');
+  const [templateSelection, setTemplateSelection] = useState("");
 
   const getTemplate = (event) => {
     var prevTemplateSelection = templateSelection;
     var selectedTemplate = event.target.value;
     console.log(emailTemplates);
-    var choice = confirm('Do you want to continue? Any changes will not be saved');
+    var choice = confirm(
+      "Do you want to continue? Any changes will not be saved"
+    );
     if (choice == false) {
-      event.preventDefault()
+      event.preventDefault();
       setTemplateSelection(prevTemplateSelection);
-    }
-    else {
+    } else {
       for (let i = 0; i < emailTemplates.length; i++) {
         const element = emailTemplates[i];
         if (element.id === selectedTemplate) {
@@ -159,7 +161,7 @@ function App() {
         }
       }
     }
-  }
+  };
 
   //console.log(items[1].component.props);
   const [itemAddID, setItemAddID] = useState(1000);
@@ -260,8 +262,8 @@ function App() {
       newItem.component = <Header />;
     } else if (blockName == "Button") {
       newItem.component = <Button text="Learn More" />;
-    } else if (blockName == "Paragraph Text") {
-      newItem.component = <Paragraph text="<p>Lorem Ipsum</p>"/>;
+    } else if (blockName == "Text Block") {
+      newItem.component = <TextBlock text="<p>Lorem Ipsum</p>" />;
     } else if (blockName == "ARC Logo Header") {
       newItem.component = <ARCLogo />;
     } else if (blockName == "Spacer") {
@@ -352,24 +354,25 @@ function App() {
 
           {item[1] === "textarea" ? (
             <Editor
-            apiKey="vxzm27e0040c8l1dlo5x5m7z3m9rgvfw8s1b1n3eev9eqciv"
-            name={item[0]}
-            initialValue={tempFormProps[item[0]]}
-            init={{
-              height: 300,
-              menubar: false,
-              branding:false,
-              plugins:  'link lists',
-              toolbar: [
-                { name: 'history', items: [ 'undo', 'redo' ] },
-                { name: 'styles', items: [ 'styles' ] },
-                { name: 'lists', items: [ 'numlist', 'bullist' ] },
-                { name: 'indentation', items: [ 'outdent', 'indent' ] },
-                {name: 'link', items: ['link']},
-              ]
-            }}
-            onEditorChange={(value) => handleTinyMCE(value, item[0])}
+              apiKey="vxzm27e0040c8l1dlo5x5m7z3m9rgvfw8s1b1n3eev9eqciv"
+              name={item[0]}
+              initialValue={tempFormProps[item[0]]}
+              init={{
+                height: 300,
+                menubar: false,
+                branding: false,
+                plugins: "link lists",
+                toolbar: [
+                  { name: "history", items: ["undo", "redo"] },
+                  { name: "styles", items: ["styles"] },
+                  { name: "lists", items: ["numlist", "bullist"] },
+                  { name: "indentation", items: ["outdent", "indent"] },
+                  { name: "link", items: ["link"] },
+                ],
+              }}
+              onEditorChange={(value) => handleTinyMCE(value, item[0])}
             />
+          ) : (
             // <textarea
             //   name={item[0]}
             //   type={item[1]}
@@ -378,7 +381,6 @@ function App() {
             //   value={formProps[i]}
             //   onChange={handleInputChange}
             // />
-          ) : (
             ""
           )}
           {item[1] === "select" ? (
@@ -411,6 +413,24 @@ function App() {
               >
                 <option value="short">Short</option>
                 <option value="standard">Standard</option>
+              </select>
+            ) : (
+              ""
+            )
+          ) : (
+            ""
+          )}
+
+          {item[1] === "select" ? (
+            item[0] === "padding" ? (
+              <select
+                name={item[0]}
+                defaultValue={tempFormProps[item[0]]}
+                value={formProps[i]}
+                onChange={handleInputChange}
+              >
+                <option value="25px">25px</option>
+                <option value="50px">50px</option>
               </select>
             ) : (
               ""
@@ -662,26 +682,39 @@ function App() {
                   padding: "0px 30px 15px",
                 }}
               >
-                <h2 style={{
+                <h2
+                  style={{
                     color: "#fff",
                     fontFamily:
                       "SourceSansPro-Bold, SourceSansPro-Regular, arial, helvetica, sans-serif",
-                  }}>Settings View</h2>
-                <div style={{margin: "0 30px", justifyContent:"center"}}>
-                <p style={{color:"#fff"}}>Choose a template</p>
-                <select name="template" value={templateSelection} onChange={getTemplate}>
-                  <option>-- Choose a template --</option>
-                  <option value="tac-template">TAC</option>
-                  <option value="other-template">Option 2</option>
-                  <option value="template-3">Option 3</option>
-                </select>
+                  }}
+                >
+                  Settings View
+                </h2>
+                <div style={{ margin: "0 30px", justifyContent: "center" }}>
+                  <p style={{ color: "#fff" }}>Choose a template</p>
+                  <select
+                    name="template"
+                    value={templateSelection}
+                    onChange={getTemplate}
+                  >
+                    <option>-- Choose a template --</option>
+                    <option value="tac-template">TAC</option>
+                    <option value="other-template">Option 2</option>
+                    <option value="template-3">Option 3</option>
+                  </select>
                 </div>
                 <ViewToggle onClick={toggleView} toggled={!isToggled} />
               </div>
             </div>
           </div>
-          <div className="col-lg-8" style={{backgroundColor: "#f7f5f5"}}>
-            <div style={{margin: "0 auto", maxWidth: isToggled ? "450px": "100%"}}>
+          <div className="col-lg-8" style={{ backgroundColor: "#f7f5f5" }}>
+            <div
+              style={{
+                margin: "0 auto",
+                maxWidth: isToggled ? "450px" : "100%",
+              }}
+            >
               <iframe
                 style={{ width: "100%", minHeight: "100vh", border: "none" }}
                 srcDoc={markup}
