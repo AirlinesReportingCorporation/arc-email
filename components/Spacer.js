@@ -14,7 +14,9 @@ export default function Spacer(props) {
           "mso-table-lspace": "0pt",
           "mso-table-rspace": "0pt",
           "mso-line-height-rule": "exactly",
-          "line-height": props.height ? props.height.replace("px", "") : "60" + "px",
+          "line-height": props.height
+            ? props.height.replace("px", "") + "px"
+            : "60" + "px",
         }}
       >
         &nbsp;
