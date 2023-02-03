@@ -4,7 +4,20 @@ export default function TACLink(props) {
   return (
     <>
       <tr>
-        <td class="em_height" style={{ height: "30px", fontSize: "0" }}>
+        <td
+          class="em_height"
+          align="left"
+          valign="top"
+          width="100%"
+          height="30"
+          style={{
+            "border-collapse": "collapse",
+            "mso-table-lspace": "0pt",
+            "mso-table-rspace": "0pt",
+            "mso-line-height-rule": "exactly",
+            "line-height": "30px",
+          }}
+        >
           &nbsp;
         </td>
       </tr>
@@ -35,22 +48,47 @@ export default function TACLink(props) {
                 />
               </td>
               <td align="left" style={{ lineHeight: "10px" }}>
-                <p
-                  style={{
-                    fontFamily: "SourceSansPro, Arial, sans-serif",
-                    fontSize: "18px",
-                    lineHeight: "20px",
-                    fontWeight: "Bold",
-                    color: "#2a2b2c",
-                    marginBottom: "8px",
-                    padding: 0,
-                  }}
-                >
-                  {props.title
-                    ? props.title
-                    : "Lorem ipsum dolor sit amet consectetur adipisicing elit."}
-                </p>
-                <br />
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <p
+                          style={{
+                            fontFamily: "SourceSansPro, Arial, sans-serif",
+                            fontSize: "18px",
+                            lineHeight: "20px",
+                            fontWeight: "Bold",
+                            color: "#2a2b2c",
+                            marginBottom: "8px",
+                            padding: 0,
+                          }}
+                        >
+                          {props.title
+                            ? props.title
+                            : "Lorem ipsum dolor sit amet consectetur adipisicing elit."}
+                        </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        class="em_height"
+                        align="left"
+                        valign="top"
+                        width="100%"
+                        height="8"
+                        style={{
+                          "border-collapse": "collapse",
+                          "mso-table-lspace": "0pt",
+                          "mso-table-rspace": "0pt",
+                          "mso-line-height-rule": "exactly",
+                          "line-height": "8px",
+                        }}
+                      >
+                        &nbsp;
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
                 <a
                   target="_blank"
                   href={
@@ -82,10 +120,23 @@ export default function TACLink(props) {
         </td>
       </tr>
       <tr>
-        <td class="em_height" style={{ height: "15px", fontSize: "0" }}>
-          &nbsp;
-        </td>
-      </tr>
+    <td
+      class="em_height"
+      align="left"
+      valign="top"
+      width="100%"
+      height="15"
+      style={{
+        "border-collapse": "collapse",
+        "mso-table-lspace": "0pt",
+        "mso-table-rspace": "0pt",
+        "mso-line-height-rule": "exactly",
+        "line-height": "15px",
+      }}
+    >
+      &nbsp;
+    </td>
+  </tr>
 
       <tr>
         <td

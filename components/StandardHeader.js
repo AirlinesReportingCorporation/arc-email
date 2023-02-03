@@ -2,7 +2,11 @@ import React from "react";
 
 export default function StandardHeader(props) {
   return (
-    <tr style={{backgroundColor: (props.color == "teal" ? "#189bb0" : props.color)}}>
+    <tr
+      style={{
+        backgroundColor: props.color == "teal" ? "#189bb0" : props.color,
+      }}
+    >
       <td
         valign="top"
         align="center"
@@ -10,7 +14,24 @@ export default function StandardHeader(props) {
       >
         <table align="center" border="0" cellSpacing="0" cellPadding="0">
           <tbody>
-            <tr height="20"></tr>
+            <tr>
+              <td
+                class="em_height"
+                align="left"
+                valign="top"
+                width="100%"
+                height="20"
+                style={{
+                  "border-collapse": "collapse",
+                  "mso-table-lspace": "0pt",
+                  "mso-table-rspace": "0pt",
+                  "mso-line-height-rule": "exactly",
+                  "line-height": "20px",
+                }}
+              >
+                &nbsp;
+              </td>
+            </tr>
             <tr>
               <td align="center" valign="top">
                 <table
@@ -76,12 +97,29 @@ export default function StandardHeader(props) {
                               <td
                                 align="right"
                                 height="20"
-                                style={{fontFamily:"Arial, sans-serif", fontSize:"12px", color: (props.color == "teal" ? "#189bb0" : props.color), lineHeight:"14px"}}
+                                style={{
+                                  fontFamily: "Arial, sans-serif",
+                                  fontSize: "12px",
+                                  color:
+                                    props.color == "teal"
+                                      ? "#189bb0"
+                                      : props.color,
+                                  lineHeight: "14px",
+                                }}
                                 valign="middle"
                               >
                                 <a
                                   href="https://www2.arccorp.com/articles-trends/the-latest/"
-                                  style={{fontFamily:"Arial, sans-serif", fontSize:"12px", color: (props.color == "white" ? "#189bb0" : "#fff"), lineHeight:"14px", textDecoration:"none"}}
+                                  style={{
+                                    fontFamily: "Arial, sans-serif",
+                                    fontSize: "12px",
+                                    color:
+                                      props.color == "white"
+                                        ? "#189bb0"
+                                        : "#fff",
+                                    lineHeight: "14px",
+                                    textDecoration: "none",
+                                  }}
                                 >
                                   THE INTELLIGENCE BEHIND AIR TRAVEL
                                 </a>
@@ -95,7 +133,24 @@ export default function StandardHeader(props) {
                 </table>
               </td>
             </tr>
-            <tr height="20"></tr>
+            <tr>
+              <td
+                class="em_height"
+                align="left"
+                valign="top"
+                width="100%"
+                height="20"
+                style={{
+                  "border-collapse": "collapse",
+                  "mso-table-lspace": "0pt",
+                  "mso-table-rspace": "0pt",
+                  "mso-line-height-rule": "exactly",
+                  "line-height": "20px",
+                }}
+              >
+                &nbsp;
+              </td>
+            </tr>
           </tbody>
         </table>
       </td>

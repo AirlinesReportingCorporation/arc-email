@@ -19,7 +19,20 @@ export default function TACBottom(props) {
           >
             <tbody>
               <tr>
-                <td class="" height="30">
+                <td
+                  class="em_height"
+                  align="left"
+                  valign="top"
+                  width="100%"
+                  height="30"
+                  style={{
+                    "border-collapse": "collapse",
+                    "mso-table-lspace": "0pt",
+                    "mso-table-rspace": "0pt",
+                    "mso-line-height-rule": "exactly",
+                    "line-height": "30px",
+                  }}
+                >
                   &nbsp;
                 </td>
               </tr>
@@ -371,9 +384,17 @@ export default function TACBottom(props) {
           <table role="presentation" border="0" cellpadding="0" cellspacing="0">
             <tr>
               <td
-                class=""
+                class="em_height"
+                align="left"
+                valign="top"
+                width="100%"
+                height="30"
                 style={{
-                  height: "30px",
+                  "border-collapse": "collapse",
+                  "mso-table-lspace": "0pt",
+                  "mso-table-rspace": "0pt",
+                  "mso-line-height-rule": "exactly",
+                  "line-height": "30px",
                 }}
               >
                 &nbsp;
@@ -485,15 +506,22 @@ export default function TACBottom(props) {
             </tr>
             <tr>
               <td
-                class=""
+                class="em_height"
+                align="left"
+                valign="top"
+                width="100%"
+                height="30"
                 style={{
-                  height: "30px",
+                  "border-collapse": "collapse",
+                  "mso-table-lspace": "0pt",
+                  "mso-table-rspace": "0pt",
+                  "mso-line-height-rule": "exactly",
+                  "line-height": "30px",
                 }}
               >
                 &nbsp;
               </td>
             </tr>
-            
           </table>
         </td>
       </tr>

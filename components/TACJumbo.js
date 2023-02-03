@@ -31,14 +31,24 @@ export default function TACJumbo(props) {
         </td>
       </tr>
       <tr>
-        <td
-          class=""
-          style={{
-            height: "25px",
-          }}
-        >
-          &nbsp;
-        </td>
+        <tr>
+          <td
+            class="em_height"
+            align="left"
+            valign="top"
+            width="100%"
+            height="25"
+            style={{
+              "border-collapse": "collapse",
+              "mso-table-lspace": "0pt",
+              "mso-table-rspace": "0pt",
+              "mso-line-height-rule": "exactly",
+              "line-height": "25px",
+            }}
+          >
+            &nbsp;
+          </td>
+        </tr>
       </tr>
       <tr>
         <td
@@ -110,7 +120,23 @@ export default function TACJumbo(props) {
             width="100%"
           >
             <tr>
-              <td style={{ height:"35px", borderBottom: "1px solid #2a2b2d" }}>&nbsp;</td>
+              <td
+                class="em_height"
+                align="left"
+                valign="top"
+                width="100%"
+                height="35"
+                style={{
+                  "border-collapse": "collapse",
+                  "mso-table-lspace": "0pt",
+                  "mso-table-rspace": "0pt",
+                  "mso-line-height-rule": "exactly",
+                  "line-height": "35px",
+                  "border-bottom": "1px solid #2a2b2c",
+                }}
+              >
+                &nbsp;
+              </td>
             </tr>
           </table>
         </td>
