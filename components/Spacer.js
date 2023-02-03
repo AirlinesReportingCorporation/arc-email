@@ -9,7 +9,6 @@ export default function Spacer(props) {
         valign="top"
         width="100%"
         height={props.height ? props.height.replace("px", "") : "60"}
-        colspan="3"
         style={{
           "border-collapse": "collapse",
           "mso-table-lspace": "0pt",
