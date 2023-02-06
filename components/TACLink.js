@@ -34,7 +34,7 @@ export default function TACLink(props) {
                   }
                 />
               </td>
-              <td align="left" style={{ lineHeight: "10px" }}>
+              <td align="left" style={{ lineHeight: "16px" }}>
                 <p
                   style={{
                     fontFamily: "SourceSansPro, Arial, sans-serif",
