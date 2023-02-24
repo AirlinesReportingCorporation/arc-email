@@ -717,7 +717,6 @@ function App() {
                     value={footerSelection}
                     onChange={changeFooter}
                   >
-                    <option>-- Choose a footer --</option>
                     <option value="short">Short</option>
                     <option value="long">Long</option>
                   </select>
