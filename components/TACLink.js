@@ -34,48 +34,81 @@ export default function TACLink(props) {
                   }
                 />
               </td>
-              <td align="left" style={{ lineHeight: "16px" }}>
-                <p
-                  style={{
-                    fontFamily: "SourceSansPro, Arial, sans-serif",
-                    fontSize: "18px",
-                    lineHeight: "20px",
-                    fontWeight: "Bold",
-                    color: "#2a2b2c",
-                    marginBottom: "8px",
-                    padding: 0,
-                  }}
+              <td align="left">
+                <table
+                  align="center"
+                  border="0"
+                  cellpadding="0"
+                  cellspacing="0"
+                  width="100%"
                 >
-                  {props.title
-                    ? props.title
-                    : "Lorem ipsum dolor sit amet consectetur adipisicing elit."}
-                </p>
-                <br />
-                <a
-                  target="_blank"
-                  href={
-                    props.link
-                      ? props.link
-                      : "https://www2.arccorp.com/articles-trends/agency-communications/travel-agent-communications/"
-                  }
-                  style={{
-                    fontFamily: "SourceSansPro, Arial, sans-serif",
-                    fontSize: "14px",
-                    lineHeight: "18px",
-                    fontWeight: "Bold",
-                    color: "#189bb0",
-                    textDecoration: "none",
-                    textTransform: "uppercase",
-                    verticalAlign: "middle",
-                  }}
-                >
-                  {props.cta ? props.cta : "READ MORE"}{" "}
-                  <img
-                    height="10"
-                    width="6.36"
-                    src="https://www2.arccorp.com/globalassets/email-parts/caret.png"
-                  />
-                </a>
+                  <tr>
+                    <td>
+                      <p
+                        style={{
+                          fontFamily: "SourceSansPro, Arial, sans-serif",
+                          fontSize: "18px",
+                          lineHeight: "20px",
+                          fontWeight: "Bold",
+                          color: "#2a2b2c",
+                          marginBottom: "8px",
+                          padding: 0,
+                        }}
+                      >
+                        {props.title
+                          ? props.title
+                          : "Lorem ipsum dolor sit amet consectetur adipisicing elit."}
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      class="em_height"
+                      align="left"
+                      valign="top"
+                      width="100%"
+                      height="6"
+                      style={{
+                        "border-collapse": "collapse",
+                        "mso-table-lspace": "0pt",
+                        "mso-table-rspace": "0pt",
+                        "mso-line-height-rule": "exactly",
+                        "line-height": "6px",
+                      }}
+                    >
+                      &nbsp;
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        target="_blank"
+                        href={
+                          props.link
+                            ? props.link
+                            : "https://www2.arccorp.com/articles-trends/agency-communications/travel-agent-communications/"
+                        }
+                        style={{
+                          fontFamily: "SourceSansPro, Arial, sans-serif",
+                          fontSize: "14px",
+                          lineHeight: "18px",
+                          fontWeight: "Bold",
+                          color: "#189bb0",
+                          textDecoration: "none",
+                          textTransform: "uppercase",
+                          verticalAlign: "middle",
+                        }}
+                      >
+                        {props.cta ? props.cta : "READ MORE"}{" "}
+                        <img
+                          height="10"
+                          width="6.36"
+                          src="https://www2.arccorp.com/globalassets/email-parts/caret.png"
+                        />
+                      </a>
+                    </td>
+                  </tr>
+                </table>
               </td>
             </tr>
           </table>

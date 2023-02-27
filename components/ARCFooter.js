@@ -247,6 +247,7 @@ export default function ARCFooter(props) {
                           >
                             <strong>www.arccorp.com</strong>
                           </a>
+                          {props.footer == 'long'? <>
                           <br />
                           <br />
                           ARC accelerates the growth of global air travel by
@@ -269,6 +270,7 @@ export default function ARCFooter(props) {
                             <strong> www.arccorp.com</strong>
                           </a>
                           .
+                        </> : <></>}
                           <br />
                           <br />© Airlines Reporting Corporation (ARC). All
                           rights reserved.

@@ -32,20 +32,38 @@ export default function TACBottom(props) {
                     cellpadding="0"
                     cellspacing="0"
                     width="315"
-                    height="210"
                     style={{
                       textAlign: "center",
                       backgroundColor: "#d4d4d4",
                       background: "#d4d4d4",
                     }}
                   >
+
+<tr>
+                      <td
+                        class="em_height"
+                        align="left"
+                        valign="top"
+                        width="100%"
+                        height="20"
+                        style={{
+                          "border-collapse": "collapse",
+                          "mso-table-lspace": "0pt",
+                          "mso-table-rspace": "0pt",
+                          "mso-line-height-rule": "exactly",
+                          "line-height": "20px",
+                        }}
+                      >
+                        &nbsp;
+                      </td>
+                    </tr>
                     <tr
                       style={{
                         backgroundColor: "#d4d4d4",
                         background: "#d4d4d4",
                       }}
                     >
-                      <td align="center" height="73">
+                      <td align="center">
                         <img
                           src="https://www2.arccorp.com/globalassets/email-parts/tip-icon.png"
                           width="50"
@@ -61,6 +79,25 @@ export default function TACBottom(props) {
                       </td>
                     </tr>
 
+                    <tr>
+                      <td
+                        class="em_height"
+                        align="left"
+                        valign="top"
+                        width="100%"
+                        height="10"
+                        style={{
+                          "border-collapse": "collapse",
+                          "mso-table-lspace": "0pt",
+                          "mso-table-rspace": "0pt",
+                          "mso-line-height-rule": "exactly",
+                          "line-height": "10px",
+                        }}
+                      >
+                        &nbsp;
+                      </td>
+                    </tr>
+
                     <tr
                       style={{
                         backgroundColor: "#d4d4d4",
@@ -68,11 +105,9 @@ export default function TACBottom(props) {
                       }}
                     >
                       <td
-                        height="25"
                         style={{
                           fontFamily: "SourceSansPro, Arial, sans-serif",
                           fontSize: "18px",
-                          height: "25px",
                           lineHeight: "18px",
                           fontWeight: "bold",
                           color: "#2a2b2c",
@@ -83,6 +118,25 @@ export default function TACBottom(props) {
                         valign="middle"
                       >
                         {props.TIP_Title ? props.TIP_Title : "Tip of the Week"}
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td
+                        class="em_height"
+                        align="left"
+                        valign="top"
+                        width="100%"
+                        height="10"
+                        style={{
+                          "border-collapse": "collapse",
+                          "mso-table-lspace": "0pt",
+                          "mso-table-rspace": "0pt",
+                          "mso-line-height-rule": "exactly",
+                          "line-height": "10px",
+                        }}
+                      >
+                        &nbsp;
                       </td>
                     </tr>
 
@@ -103,7 +157,6 @@ export default function TACBottom(props) {
                           paddingRight: "50px",
                           paddingLeft: "50px",
                         }}
-                        height="45"
                         valign="center"
                       >
                         <p
@@ -121,6 +174,25 @@ export default function TACBottom(props) {
                       </td>
                     </tr>
 
+                    <tr>
+                      <td
+                        class="em_height"
+                        align="left"
+                        valign="top"
+                        width="100%"
+                        height="10"
+                        style={{
+                          "border-collapse": "collapse",
+                          "mso-table-lspace": "0pt",
+                          "mso-table-rspace": "0pt",
+                          "mso-line-height-rule": "exactly",
+                          "line-height": "10px",
+                        }}
+                      >
+                        &nbsp;
+                      </td>
+                    </tr>
+
                     <tr
                       style={{
                         backgroundColor: "#d4d4d4",
@@ -128,11 +200,9 @@ export default function TACBottom(props) {
                       }}
                     >
                       <td
-                        height="30"
                         style={{
                           fontFamily: "SourceSansPro, Arial, sans-serif",
                           fontSize: "16px",
-                          height: "30px",
                           lineHeight: "18px",
                           fontWeight: "light",
                           color: "#2a2b2c",
@@ -165,24 +235,26 @@ export default function TACBottom(props) {
                       </td>
                     </tr>
 
-                    <tr
-                      bgColor="#d4d4d4"
-                      style={{
-                        backgroundColor: "#d4d4d4",
-                        background: "#d4d4d4",
-                      }}
-                    >
+                    <tr>
                       <td
-                        bgColor="#d4d4d4"
+                        class="em_height"
+                        align="left"
+                        valign="top"
+                        width="100%"
+                        height="20"
                         style={{
-                          backgroundColor: "#d4d4d4",
-                          background: "#d4d4d4",
+                          "border-collapse": "collapse",
+                          "mso-table-lspace": "0pt",
+                          "mso-table-rspace": "0pt",
+                          "mso-line-height-rule": "exactly",
+                          "line-height": "20px",
                         }}
-                        height="19"
                       >
                         &nbsp;
                       </td>
                     </tr>
+
+                    
                   </table>
                 </td>
 
@@ -198,20 +270,38 @@ export default function TACBottom(props) {
                     cellpadding="0"
                     cellspacing="0"
                     width="315"
-                    height="210"
                     style={{
                       textAlign: "center",
                       backgroundColor: "#d4d4d4",
                       background: "#d4d4d4",
                     }}
                   >
+
+<tr>
+                      <td
+                        class="em_height"
+                        align="left"
+                        valign="top"
+                        width="100%"
+                        height="20"
+                        style={{
+                          "border-collapse": "collapse",
+                          "mso-table-lspace": "0pt",
+                          "mso-table-rspace": "0pt",
+                          "mso-line-height-rule": "exactly",
+                          "line-height": "20px",
+                        }}
+                      >
+                        &nbsp;
+                      </td>
+                    </tr>
                     <tr
                       style={{
                         backgroundColor: "#d4d4d4",
                         background: "#d4d4d4",
                       }}
                     >
-                      <td align="center" height="73">
+                      <td align="center">
                         <img
                           src="https://www2.arccorp.com/globalassets/email-parts/events-icon.png"
                           width="50"
@@ -227,6 +317,25 @@ export default function TACBottom(props) {
                       </td>
                     </tr>
 
+                    <tr>
+                      <td
+                        class="em_height"
+                        align="left"
+                        valign="top"
+                        width="100%"
+                        height="10"
+                        style={{
+                          "border-collapse": "collapse",
+                          "mso-table-lspace": "0pt",
+                          "mso-table-rspace": "0pt",
+                          "mso-line-height-rule": "exactly",
+                          "line-height": "10px",
+                        }}
+                      >
+                        &nbsp;
+                      </td>
+                    </tr>
+
                     <tr
                       style={{
                         backgroundColor: "#d4d4d4",
@@ -234,7 +343,6 @@ export default function TACBottom(props) {
                       }}
                     >
                       <td
-                        height="25"
                         style={{
                           fontFamily: "SourceSansPro, Arial, sans-serif",
                           fontSize: "18px",
@@ -250,6 +358,25 @@ export default function TACBottom(props) {
                         {props.Training_Title
                           ? props.Training_Title
                           : "Events and Trainings"}
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td
+                        class="em_height"
+                        align="left"
+                        valign="top"
+                        width="100%"
+                        height="10"
+                        style={{
+                          "border-collapse": "collapse",
+                          "mso-table-lspace": "0pt",
+                          "mso-table-rspace": "0pt",
+                          "mso-line-height-rule": "exactly",
+                          "line-height": "10px",
+                        }}
+                      >
+                        &nbsp;
                       </td>
                     </tr>
 
@@ -270,7 +397,6 @@ export default function TACBottom(props) {
                           paddingLeft: "30px",
                           paddingRight: "30px",
                         }}
-                        height="45"
                         valign="center"
                       >
                         <p
@@ -293,6 +419,25 @@ export default function TACBottom(props) {
                       </td>
                     </tr>
 
+                    <tr>
+                      <td
+                        class="em_height"
+                        align="left"
+                        valign="top"
+                        width="100%"
+                        height="10"
+                        style={{
+                          "border-collapse": "collapse",
+                          "mso-table-lspace": "0pt",
+                          "mso-table-rspace": "0pt",
+                          "mso-line-height-rule": "exactly",
+                          "line-height": "10px",
+                        }}
+                      >
+                        &nbsp;
+                      </td>
+                    </tr>
+
                     <tr
                       style={{
                         backgroundColor: "#d4d4d4",
@@ -300,7 +445,6 @@ export default function TACBottom(props) {
                       }}
                     >
                       <td
-                        height="30"
                         style={{
                           fontFamily: "SourceSansPro, Arial, sans-serif",
                           fontSize: "16px",
@@ -336,20 +480,20 @@ export default function TACBottom(props) {
                       </td>
                     </tr>
 
-                    <tr
-                      bgColor="#d4d4d4"
-                      style={{
-                        backgroundColor: "#d4d4d4",
-                        background: "#d4d4d4",
-                      }}
-                    >
+                    <tr>
                       <td
-                        bgColor="#d4d4d4"
+                        class="em_height"
+                        align="left"
+                        valign="top"
+                        width="100%"
+                        height="20"
                         style={{
-                          backgroundColor: "#d4d4d4",
-                          background: "#d4d4d4",
+                          "border-collapse": "collapse",
+                          "mso-table-lspace": "0pt",
+                          "mso-table-rspace": "0pt",
+                          "mso-line-height-rule": "exactly",
+                          "line-height": "20px",
                         }}
-                        height="19"
                       >
                         &nbsp;
                       </td>
@@ -493,7 +637,6 @@ export default function TACBottom(props) {
                 &nbsp;
               </td>
             </tr>
-            
           </table>
         </td>
       </tr>
