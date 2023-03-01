@@ -109,7 +109,7 @@ const emailTemplates = [
               id: "5",
               name: "Address Footer",
               component: (
-                <AddressSection/>
+                <AddressSection color="teal"/>
               ),
             },
           ],

@@ -145,7 +145,8 @@ function App() {
     {
       name: "Address Footer",
       icon: <i class="far fa-newspaper"></i>,
-      component: <AddressSection />
+      component: <AddressSection />,
+      props: [["color", "select"]],
     }
   ];
 
@@ -298,7 +299,7 @@ function App() {
     } else if (blockName == "Standard Header") {
       newItem.component = <StandardHeader color="teal" />;
     } else if (blockName == "Address Footer") {
-      newItem.component = <AddressSection/>;
+      newItem.component = <AddressSection color="teal"/>;
     }
 
     if (activePosition == "top") {

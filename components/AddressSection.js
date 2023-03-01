@@ -2,7 +2,7 @@ import React from "react";
 
 export default function AddressSection(props) {
   return (
-    <tr>
+    <tr style={{backgroundColor: (props.color == "teal" ? "#189bb0" : props.color)}}>
       <td align="center">
         <table
           role="presentation"
@@ -11,16 +11,15 @@ export default function AddressSection(props) {
           cellspacing="0"
           style={{
             textAlign: "center",
-            width: "100%"
+            width: "100%",
           }}
         >
           <tbody>
             <tr>
               <td
                 align="center"
-                bgcolor="#189bb0"
                 class="em_aside"
-                style={{ paddingLeft: "24px", paddingRight: "24px" }}
+                style={{ paddingLeft: "24px", paddingRight: "24px"}}
                 valign="top"
               >
                 <table
@@ -52,7 +51,7 @@ export default function AddressSection(props) {
                                 style={{
                                   fontFamily: "Arial, sans-serif",
                                   fontSize: "11px",
-                                  color: "#ffffff",
+                                  color: (props.color == "white" ? "#189bb0" : "#fff"),
                                   lineHeight: "14px",
                                 }}
                                 valign="top"
@@ -74,7 +73,7 @@ export default function AddressSection(props) {
                                   class="address_item"
                                   style={{
                                     textDecoration: "none",
-                                    color: "#ffffff !important",
+                                    color: (props.color == "white" ? "#189bb0 !important" : "#fff !important") 
                                   }}
                                 >
                                   ccchelp@arccorp.com
