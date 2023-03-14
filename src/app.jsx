@@ -17,6 +17,7 @@ import TACLink from "../components/TACLink";
 import ARCFooter from "../components/ARCFooter";
 import TACBottom from "../components/TACBottom";
 import { Editor } from "@tinymce/tinymce-react";
+import AerogramLogo from "../components/AerogramLogo";
 
 import emailTemplates from "./templates";
 
@@ -147,6 +148,11 @@ function App() {
       icon: <i class="far fa-newspaper"></i>,
       component: <AddressSection />,
       props: [["color", "select"]],
+    },
+    {
+      name: "Aerogram Header",
+      icon: (<img source="https://www2.arccorp.com/globalassets/email/aerogram-logo.jpg" width={"64"}></img>),
+      component: <AerogramLogo />,
     }
   ];
 
@@ -300,6 +306,8 @@ function App() {
       newItem.component = <StandardHeader color="teal" />;
     } else if (blockName == "Address Footer") {
       newItem.component = <AddressSection color="teal"/>;
+    }  else if (blockName == "Aerogram Header") {
+      newItem.component = <AerogramLogo />;
     }
 
     if (activePosition == "top") {
@@ -754,6 +762,7 @@ function App() {
                   >
                     <option value="short">Short</option>
                     <option value="long">Long</option>
+                    <option value="aerogram">Aerogram</option>
                   </select>
                 </div>
                 <ViewToggle onClick={toggleView} toggled={!isToggled} />

@@ -247,30 +247,62 @@ export default function ARCFooter(props) {
                           >
                             <strong>www.arccorp.com</strong>
                           </a>
-                          {props.footer == 'long'? <>
-                          <br />
-                          <br />
-                          ARC accelerates the growth of global air travel by
-                          delivering forward-looking travel data, flexible
-                          distribution services and other innovative industry
-                          solutions. We are a leading travel intelligence
-                          company that possesses the world’s largest, most
-                          comprehensive global airline ticket dataset, including
-                          more than 15 billion passenger flights representing
-                          490 airlines and 230 countries and territories. Our
-                          solutions and expertise strengthen economies and
-                          enrich lives by connecting stakeholders across the
-                          travel ecosystem. For more information, please visit
-                          <a
-                            href="https://www.arccorp.com"
-                            name="www_arccorp_com"
-                            style={{ color: "#189bb0", textDecoration: "none" }}
-                            xt="SPCLICK"
-                          >
-                            <strong> www.arccorp.com</strong>
-                          </a>
-                          .
-                        </> : <></>}
+                          {props.footer == "long" ||
+                          props.footer == "aerogram" ? (
+                            <>
+                              {props.footer == "aerogram" ? (
+                                <>
+                                  {" "}
+                                  <br />
+                                  <br />
+                                  ARC is providing the content in the above
+                                  hyperlinks on the behalf of ARC travel
+                                  suppliers. ARC uses reasonable care in
+                                  compiling and presenting the content of this
+                                  email and the associated hyperlinks, but ARC
+                                  gives no guarantee that the content is
+                                  complete, accurate, error or virus free or up
+                                  to date. Please note, the information
+                                  contained in this email or in the hyperlinks
+                                  is not the sole source of information from ARC
+                                  travel suppliers and may not include all fare
+                                  rules/ticketing rules. Therefore, ARC
+                                  recommends travel agents take care to read all
+                                  information published by ARC travel suppliers.
+                                </>
+                              ) : (
+                                ""
+                              )}
+                              <br />
+                              <br />
+                              ARC accelerates the growth of global air travel by
+                              delivering forward-looking travel data, flexible
+                              distribution services and other innovative
+                              industry solutions. We are a leading travel
+                              intelligence company that possesses the world’s
+                              largest, most comprehensive global airline ticket
+                              dataset, including more than 15 billion passenger
+                              flights representing 490 airlines and 230
+                              countries and territories. Our solutions and
+                              expertise strengthen economies and enrich lives by
+                              connecting stakeholders across the travel
+                              ecosystem. For more information, please visit
+                              <a
+                                href="https://www.arccorp.com"
+                                name="www_arccorp_com"
+                                style={{
+                                  color: "#189bb0",
+                                  textDecoration: "none",
+                                }}
+                                xt="SPCLICK"
+                              >
+                                <strong> www.arccorp.com</strong>
+                              </a>
+                              .
+                            </>
+                          ) : (
+                            <></>
+                          )}
                           <br />
                           <br />© Airlines Reporting Corporation (ARC). All
                           rights reserved.
