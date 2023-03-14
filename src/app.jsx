@@ -44,6 +44,7 @@ import * as ReactDOMServer from "react-dom/server";
 import { SortableItem } from "../components/SortableItem";
 import TealHeader from "../components/TealHeader";
 import AddressSection from "../components/AddressSection";
+import AeroImage from "../components/AeroImage";
 
 function alertMe(items, activeAdd) {
   console.log(items, activeAdd);
@@ -151,8 +152,13 @@ function App() {
     },
     {
       name: "Aerogram Header",
-      icon: (<img source="https://www2.arccorp.com/globalassets/email/aerogram-logo.jpg" width={"64"}></img>),
+      icon: (<img source="https://www2.arccorp.com/globalassets/email/aerogram-logo.jpg" height={"25"}></img>),
       component: <AerogramLogo />,
+    },
+    {
+      name: "Aerogram Image",
+      icon: <i class="far fa-image"/>,
+      component: <AeroImage />
     }
   ];
 

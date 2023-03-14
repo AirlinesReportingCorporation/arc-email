@@ -24,9 +24,9 @@ export default function AerogramLogo(props) {
                 >
                   <img
                     alt="ARC"
-                    height="78"
+                    height="23"
                     name="ARC-logo-header"
-                    src="https://www2.arccorp.com/globalassets/email/aerogram-logo.jpg"
+                    src="https://www2.arccorp.com/globalassets/email/aerogram-icon.png"
                     style={{
                       display: "block",
                       border: "none",
@@ -66,7 +66,7 @@ export default function AerogramLogo(props) {
                 >
                   <img
                     alt="ARC"
-                    height="78"
+                    height="75"
                     name="ARC-logo-header"
                     src="https://www2.arccorp.com/globalassets/email/aerogram-arc.jpg"
                     style={{
