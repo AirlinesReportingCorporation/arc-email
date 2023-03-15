@@ -154,11 +154,13 @@ function App() {
       name: "Aerogram Header",
       icon: (<img source="https://www2.arccorp.com/globalassets/email/aerogram-logo.jpg" height={"25"}></img>),
       component: <AerogramLogo />,
+      props: []
     },
     {
       name: "Aerogram Image",
       icon: <i class="far fa-image"/>,
-      component: <AeroImage />
+      component: <AeroImage />,
+      props: []
     }
   ];
 
