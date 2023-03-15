@@ -35,6 +35,7 @@ export default function AerogramLogo(props) {
                       lineHeight: "27px",
                       color: "#000000",
                       paddingLeft: "25px",
+                      paddingTop: "25px"
                     }}
                     title="ARC"
                     width="148"

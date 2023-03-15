@@ -8,6 +8,9 @@ import StandardHeader from "../components/StandardHeader";
 import TextBlock from "../components/TextBlock";
 import Button from "../components/Button";
 import AddressSection from "../components/AddressSection";
+import AerogramLogo from "../components/AerogramLogo";
+import Spacer from "../components/Spacer";
+import AeroImage from "../components/AeroImage";
 
 const emailTemplates = [
     {
@@ -113,7 +116,49 @@ const emailTemplates = [
               ),
             },
           ],
-    }
+    },
+    {
+      name: 'AeroGram',
+      id: 'aerogram',
+      template: [
+          {
+            id: "12",
+            name: "Aerogram Header",
+            component: <AerogramLogo/>,
+          },{
+            id: "13",
+            name: "Aerogram Image",
+            component: (
+              <AeroImage/>
+            ),
+          },
+          {
+            id: "14",
+            name: "Spacer",
+            component: (
+              <Spacer height="30"/>
+            ),
+          },
+          {
+            id: "15",
+            name: "Text Block",
+            component: (
+              <TextBlock text='<h1 style="text-align: center;">Place story two headline<br class="em_hide">in this position</h1>
+              <p>&nbsp;</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dolor nisl, gravida semper faucibus non, interdum sed metus. Etiam consequat lacus arcu, sed accumsan tellus imperdiet nec. Cras nec lectus vel sem dignissim volutpat. Etiam sodales bibendum ipsum, vel tristique tortor commodo at. Vivamus tempor mauris non turpis suscipit, ac lacinia leo condimentum. Vestibulum nec sollicitudin sapien, sit amet bibendum est. Vivamus magna libero, semper vitae sem sit amet, scelerisque scelerisque nulla.<br><br>Suspendisse semper eros eget iaculis venenatis. Integer ultricies tempus sem id tempor. Fusce maximus ullamcorper tortor, sed varius purus porta sit amet. Vivamus in nunc sodales, sagittis augue sit amet, sollicitudin augue. Nulla sit amet lacus neque. Nullam nec risus nunc. Curabitur id lorem ac mi pharetra laoreet.</p>'
+              padding="50px"
+              />
+            ),
+          },
+          {
+            id: "16",
+            name: "Spacer",
+            component: (
+              <Spacer height="30"/>
+            ),
+          },
+        ],
+  }
 ];
 
 export default emailTemplates;

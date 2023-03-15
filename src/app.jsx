@@ -314,6 +314,8 @@ function App() {
       newItem.component = <AddressSection color="teal"/>;
     }  else if (blockName == "Aerogram Header") {
       newItem.component = <AerogramLogo />;
+    } else if (blockName == "Aerogram Image") {
+      newItem.component = <AeroImage />;
     }
 
     if (activePosition == "top") {
@@ -756,7 +758,7 @@ function App() {
                   <option>-- Choose a template --</option>
                   <option value="tac-template">TAC</option>
                   <option value="operational">Operational</option>
-                  <option value="template-3">Option 3</option>
+                  <option value="aerogram">AeroGram</option>
                 </select>
                 </div>
                 <div style={{ margin: "0 30px", justifyContent: "center" }}>
