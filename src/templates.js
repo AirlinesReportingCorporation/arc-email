@@ -154,7 +154,7 @@ const emailTemplates = [
             id: "16",
             name: "Spacer",
             component: (
-              <Spacer height="30"/>
+              <Spacer height="60px"/>
             ),
           },
         ],

@@ -186,6 +186,9 @@ function App() {
         if (element.id === selectedTemplate) {
           setItems(element.template);
           setTemplateSelection(element.id);
+          if (selectedTemplate == "aerogram") {
+            setFooterSelection("aerogram")
+          }
           break;
         }
       }
