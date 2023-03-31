@@ -18,6 +18,7 @@ import ARCFooter from "../components/ARCFooter";
 import TACBottom from "../components/TACBottom";
 import { Editor } from "@tinymce/tinymce-react";
 import AerogramLogo from "../components/AerogramLogo";
+import Image from "../components/Image";
 
 import emailTemplates from "./templates";
 
@@ -161,6 +162,12 @@ function App() {
       icon: <i class="far fa-image"/>,
       component: <AeroImage />,
       props: []
+    },
+    {
+      name: "Image",
+      icon: <i class="far fa-image"/>,
+      component: <Image />,
+      props:[["height", "select"], ["link", "text"]]
     }
   ];
 
@@ -321,6 +328,8 @@ function App() {
       newItem.component = <AerogramLogo />;
     } else if (blockName == "Aerogram Image") {
       newItem.component = <AeroImage />;
+    } else if (blockName == "Image") {
+      newItem.component = <Image height="400" />;
     }
 
     if (activePosition == "top") {
@@ -574,6 +583,23 @@ function App() {
               <option value="h3">H3</option>
             </select> : ""
           ): ""}
+          {item[1] === "select" ? (
+            item[0] === "height" ? (
+              <select
+                name={item[0]}
+                defaultValue={tempFormProps[item[0]]}
+                value={formProps[i]}
+                onChange={handleInputChange}
+              >
+                <option value="400">400</option>
+                <option value="268">268</option>
+              </select>
+            ) : (
+              ""
+            )
+          ) : (
+            ""
+          )}
         </>
       ))
     );
