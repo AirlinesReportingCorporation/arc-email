@@ -153,7 +153,7 @@ function App() {
     },
     {
       name: "Aerogram Header",
-      icon: (<img source="https://www2.arccorp.com/globalassets/email/aerogram-logo.jpg" height={"25"}></img>),
+      icon: (<img src="https://www2.arccorp.com/globalassets/email/aerogram-logo.jpg"></img>),
       component: <AerogramLogo />,
       props: []
     },
