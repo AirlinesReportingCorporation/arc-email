@@ -19,6 +19,7 @@ import TACBottom from "../components/TACBottom";
 import { Editor } from "@tinymce/tinymce-react";
 import AerogramLogo from "../components/AerogramLogo";
 import Image from "../components/Image";
+import Webinar from "../components/Webinar";
 
 import emailTemplates from "./templates";
 
@@ -168,6 +169,12 @@ function App() {
       icon: <i class="far fa-image"/>,
       component: <Image />,
       props:[["height", "select"], ["link", "text"]]
+    },
+    {
+      name: "Webinar",
+      icon: <i class="far fa-image"/>,
+      component: <Webinar />,
+      props:[["title", "text"], ["date", "text"], ["time", "text"], ["link", "text"]]
     }
   ];
 
@@ -330,6 +337,9 @@ function App() {
       newItem.component = <AeroImage />;
     } else if (blockName == "Image") {
       newItem.component = <Image height="400" />;
+    } else if (blockName == "Webinar") {
+      newItem.component = <Webinar webinarTitle="ARC Fraud Awareness Webinar:
+      Travel Industry Fraud & Scams" webinarDate="Mon, April 3" webinarTime="3pm" webinarLink="www2.arccorp.com" />;
     }
 
     if (activePosition == "top") {
