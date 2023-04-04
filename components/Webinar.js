@@ -18,7 +18,10 @@ export default function Webinar(props) {
         >
           <tbody>
             <tr>
-              <td width="112" style={{ textAlign: "center", verticalAlign: "top" }}>
+              <td
+                width="112"
+                style={{ textAlign: "center", verticalAlign: "top" }}
+              >
                 <img
                   height="104"
                   src="http://contentz.mkt8039.com/ra/2023/30008/03/22191414/SEP-15-icon.png"
@@ -42,16 +45,24 @@ export default function Webinar(props) {
                   <br />
                   <span style={{ fontSize: "15px" }}>{props.webinarTime}</span>
                   <br />
-                  <a
-                    href={props.webinarLink}
-                    name="__12"
-                    style={{ textDecoration: "none", color: "#189bb0", fontSize: "12px" }}
-                    target="_blank"
-                    xt="SPCLICK"
-                  >
-                    READ MORE &nbsp;&nbsp;
-                    <span style={{ fontSize: "16px" }}>›</span>
-                  </a>
+                  {!props.linkCopy ? (
+                    ""
+                  ) : (
+                    <a
+                      href={props.webinarLink}
+                      name="__12"
+                      style={{
+                        textDecoration: "none",
+                        color: "#189bb0",
+                        fontSize: "12px",
+                      }}
+                      target="_blank"
+                      xt="SPCLICK"
+                    >
+                      {props.linkCopy} &nbsp;&nbsp;
+                      <span style={{ fontSize: "16px" }}>›</span>
+                    </a>
+                  )}
                 </p>
               </td>
             </tr>

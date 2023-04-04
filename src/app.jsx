@@ -174,7 +174,7 @@ function App() {
       name: "Webinar",
       icon: <i class="far fa-image"/>,
       component: <Webinar />,
-      props:[["title", "text"], ["date", "text"], ["time", "text"], ["link", "text"]]
+      props:[["title", "text"], ["date", "text"], ["time", "text"], ["link copy", "text"], ["link", "text"]]
     }
   ];
 
@@ -800,6 +800,7 @@ function App() {
                   <option value="tac-template">TAC</option>
                   <option value="operational">Operational</option>
                   <option value="aerogram">AeroGram</option>
+                  <option value="webinar">Webinar</option>
                 </select>
                 </div>
                 <div style={{ margin: "0 30px", justifyContent: "center" }}>

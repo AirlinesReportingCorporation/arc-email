@@ -11,6 +11,8 @@ import AddressSection from "../components/AddressSection";
 import AerogramLogo from "../components/AerogramLogo";
 import Spacer from "../components/Spacer";
 import AeroImage from "../components/AeroImage";
+import Image from "../components/Image";
+import Webinar from "../components/Webinar";
 
 const emailTemplates = [
     {
@@ -158,7 +160,70 @@ const emailTemplates = [
             ),
           },
         ],
-  }
+    },
+    {
+      name: 'Webinar',
+      id: 'webinar',
+      template: [
+          {
+            id: "17",
+            name: "Standard Header",
+            component: <StandardHeader color="white"/>,
+          },{
+            id: "18",
+            name: "Image",
+            component: (
+              <Image height="268"/>
+            ),
+          },
+          {
+            id: "19",
+            name: "Spacer",
+            component: (
+              <Spacer height="30"/>
+            ),
+          },
+          {
+            id: "20",
+            name: "Text Block",
+            component: (
+              <TextBlock text='<h1 style="text-align: center;">Place story two headline<br class="em_hide">in this position</h1>
+              <p>&nbsp;</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dolor nisl, gravida semper faucibus non, interdum sed metus. Etiam consequat lacus arcu, sed accumsan tellus imperdiet nec. Cras nec lectus vel sem dignissim volutpat. Etiam sodales bibendum ipsum, vel tristique tortor commodo at. Vivamus tempor mauris non turpis suscipit, ac lacinia leo condimentum. Vestibulum nec sollicitudin sapien, sit amet bibendum est. Vivamus magna libero, semper vitae sem sit amet, scelerisque scelerisque nulla.<br><br>Suspendisse semper eros eget iaculis venenatis. Integer ultricies tempus sem id tempor. Fusce maximus ullamcorper tortor, sed varius purus porta sit amet. Vivamus in nunc sodales, sagittis augue sit amet, sollicitudin augue. Nulla sit amet lacus neque. Nullam nec risus nunc. Curabitur id lorem ac mi pharetra laoreet.</p>'
+              padding="50px"
+              />
+            ),
+          },
+          {
+            id: "21",
+            name: "Spacer",
+            component: (
+              <Spacer height="30"/>
+            ),
+          },
+          {
+            id: "22",
+            name: "Webinar",
+            component: (
+              <Webinar webinarTitle="Webinar Title" webinarDate="Monday, January 1, 2023" webinarTime="2 - 3 p.m. EDT" linkCopy="Remove me to hide this Link"/>
+            ),
+          },
+          {
+            id: "23",
+            name: "Button",
+            component: (
+              <Button text="REGISTER NOW"/>
+            ),
+          },
+          {
+            id: "24",
+            name: "Spacer",
+            component: (
+              <Spacer height="30"/>
+            ),
+          }
+        ],
+    }
 ];
 
 export default emailTemplates;
