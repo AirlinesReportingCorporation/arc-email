@@ -177,6 +177,9 @@ function App() {
   const [templateSelection, setTemplateSelection] = useState("");
   const [footerSelection, setFooterSelection] = useState('');
 
+  console.log(JSON.parse(localStorage.getItem('tempTemplate')))
+  // localStorage.getItem('tempTemplate') ? setItems(JSON.parse(localStorage.getItem('tempTemplate'))) : useState(emailTemplates[0].template)
+
   const getTemplate = (event) => {
     var prevTemplateSelection = templateSelection;
     var selectedTemplate = event.target.value;
@@ -342,6 +345,7 @@ function App() {
       tempItems.splice(activeAdd + 1, 0, newItem);
     }
 
+    console.log(tempItems)
     setItems(tempItems);
     setItemAddID(newId);
 
@@ -624,7 +628,8 @@ function App() {
 
     //replace item list
     setItems(tempItems);
-
+    console.log(tempItems)
+    localStorage.setItem('tempTemplate', JSON.stringify(tempItems))
     handleCloseModify();
   };
 
