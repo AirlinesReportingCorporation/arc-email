@@ -174,7 +174,7 @@ function App() {
       name: "Webinar",
       icon: <i class="far fa-image"/>,
       component: <Webinar />,
-      props:[["title", "text"], ["date", "text"], ["time", "text"], ["link copy", "text"], ["link", "text"]]
+      props:[["title", "text"], ["date", "text"], ["time", "text"], ["link_copy", "text"], ["link", "text"]]
     }
   ];
 

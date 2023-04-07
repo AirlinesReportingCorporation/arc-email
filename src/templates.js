@@ -205,7 +205,7 @@ const emailTemplates = [
             id: "22",
             name: "Webinar",
             component: (
-              <Webinar webinarTitle="Webinar Title" webinarDate="Monday, January 1, 2023" webinarTime="2 - 3 p.m. EDT" linkCopy="Remove me to hide this Link"/>
+              <Webinar title="Webinar Title" date="Monday, January 1, 2023" time="2 - 3 p.m. EDT" link_copy="Remove me to hide this Link"/>
             ),
           },
           {

@@ -38,18 +38,18 @@ export default function Webinar(props) {
                   }}
                 >
                   <span style={{ fontSize: "18px" }}>
-                    <b>{props.webinarTitle}</b>
+                    <b>{props.title}</b>
                   </span>
                   <br />
-                  <span style={{ fontSize: "15px" }}>{props.webinarDate}</span>
+                  <span style={{ fontSize: "15px" }}>{props.date}</span>
                   <br />
-                  <span style={{ fontSize: "15px" }}>{props.webinarTime}</span>
+                  <span style={{ fontSize: "15px" }}>{props.time}</span>
                   <br />
-                  {!props.linkCopy ? (
+                  {!props.link_copy ? (
                     ""
                   ) : (
                     <a
-                      href={props.webinarLink}
+                      href={props.link}
                       name="__12"
                       style={{
                         textDecoration: "none",
@@ -59,7 +59,7 @@ export default function Webinar(props) {
                       target="_blank"
                       xt="SPCLICK"
                     >
-                      {props.linkCopy} &nbsp;&nbsp;
+                      {props.link_copy} &nbsp;&nbsp;
                       <span style={{ fontSize: "16px" }}>›</span>
                     </a>
                   )}
