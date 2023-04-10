@@ -260,6 +260,7 @@ function App() {
   };
 
   const [markup, setMarkup] = useState("");
+  const [emlIndex, setemlIndex] = useState(0);
 
   const email = items.map((item, i) => <div key={item.id}>{item.id}</div>);
 
@@ -312,14 +313,15 @@ function App() {
     var linkText = document.createTextNode("fileLink");
     a.appendChild(linkText);
     a.href = encodedUri;
-    a.id = "fileLink";
+    a.id = "fileLink" + emlIndex;
     a.download = "emailTemplate.emltpl";
     a.style = "display:none;"; //hidden link
 
     //console.log(encodedUri);
 
     document.getElementById("app").appendChild(a);
-    document.getElementById("fileLink").click(); //click the link
+    document.getElementById("fileLink" + emlIndex).click(); //click the link
+    setemlIndex(emlIndex + 1);
   };
 
   //TODO addItem(index) create a function that will add a component object to the items list either before or after the index depending on the bottom that was clicked
