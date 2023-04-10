@@ -5,6 +5,8 @@ import React, {
   useRef,
   useCallback,
 } from "react";
+import { serialize, deserialize } from "react-serialize";
+
 
 import Modal from "react-bootstrap/Modal";
 import Button from "../components/Button";
@@ -172,13 +174,10 @@ function App() {
   ];
 
   const [activeForm, setActiveForm] = useState();
-
+  
   const [items, setItems] = useState(emailTemplates[0].template);
   const [templateSelection, setTemplateSelection] = useState("");
   const [footerSelection, setFooterSelection] = useState('');
-
-  console.log(JSON.parse(localStorage.getItem('tempTemplate')))
-  // localStorage.getItem('tempTemplate') ? setItems(JSON.parse(localStorage.getItem('tempTemplate'))) : useState(emailTemplates[0].template)
 
   const getTemplate = (event) => {
     var prevTemplateSelection = templateSelection;
@@ -194,6 +193,7 @@ function App() {
       for (let i = 0; i < emailTemplates.length; i++) {
         const element = emailTemplates[i];
         if (element.id === selectedTemplate) {
+          console.log(element.template)
           setItems(element.template);
           setTemplateSelection(element.id);
           if (selectedTemplate == "aerogram") {
@@ -204,6 +204,10 @@ function App() {
       }
     }
   };
+
+
+  
+
 
   const changeFooter = (event) => {
     setFooterSelection(event.target.value);
@@ -270,9 +274,14 @@ function App() {
         ReactDOMServer.renderToStaticMarkup(<ARCFooter footer={footerSelection}/>) +
         '</tbody> </table> </td> </tr> </tbody> </table><div style="white-space: nowrap; font: 20px courier; color: #ffffff"> <span class="em_divhide" >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span > &nbsp; </div> </body> </html> '
     );
-
+    saveLocal();
     //console.log(items);
   });
+
+  // Grab the saved data
+  useEffect(() => {
+    // getLocal();
+  }, [])
 
   const itemIds = useMemo(() => items.map((item) => item.id, [items]));
 
@@ -345,7 +354,6 @@ function App() {
       tempItems.splice(activeAdd + 1, 0, newItem);
     }
 
-    console.log(tempItems)
     setItems(tempItems);
     setItemAddID(newId);
 
@@ -628,18 +636,39 @@ function App() {
 
     //replace item list
     setItems(tempItems);
-    console.log(tempItems)
-    localStorage.setItem('tempTemplate', JSON.stringify(tempItems))
     handleCloseModify();
   };
+
+  const saveLocal = () => {
+    // console.log(serialize(items))
+    // get current items and make a copy
+    // var tempItems = [...items];
+    var test = <div><ARCLogo /></div>
+    // loop through the copy and serialize each component property
+    // for (let index = 0; index < tempItems.length; index++) {
+    //   const element = tempItems[index];
+    //   element.component = serialize(element.component);
+    // }
+    console.log(test)
+    // localStorage.setItem('tempTemplate', serialize(test));
+  }
+    // set saved template:
+    // const getLocal = () => {
+    // let lastSaved = JSON.parse(localStorage.getItem('tempTemplate'));
+    // for (let index = 0; index < lastSaved.length; index++) {
+    //   const element = lastSaved[index];
+    //   element.component = deserialize(element.component);
+    // }
+    // console.log(lastSaved)
+    // }
 
   const deleteItem = () => {
     //use splice function to remove at activeItemIndex and items, similar to add Item but removal intead and more simple
 
     var tempItems = [...items];
-    console.log("deleteItems:" + tempItems);
+    // console.log("deleteItems:" + tempItems);
     tempItems.splice(activeAdd, 1);
-    console.log(tempItems);
+    // console.log(tempItems);
 
     setItems(tempItems);
     setActiveAdd("");
