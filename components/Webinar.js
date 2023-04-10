@@ -45,6 +45,8 @@ export default function Webinar(props) {
                   <br />
                   <span style={{ fontSize: "15px" }}>{props.time}</span>
                   <br />
+                  <span style={{ paddingTop: "15px", fontFamily: "Arial, helvetica,sans-serif" }} dangerouslySetInnerHTML={{ __html: props.body }}></span>
+
                   {!props.link_copy ? (
                     ""
                   ) : (
