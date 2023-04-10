@@ -29,6 +29,15 @@
 
 .arc-email-page {
   width: 100%;
+
+  h3 {
+    color: #ffffff;
+  }
+
+  .emlExportBtn {
+    cursor: pointer;
+    margin-top: 0;
+  }
 }
 
 .arc-email-sidebar-container {
