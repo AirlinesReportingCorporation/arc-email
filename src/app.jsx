@@ -382,10 +382,9 @@ function App() {
     } else if (blockName == "Aerogram Image") {
       newItem.componentSave = ["AeroImage", {}];
     } else if (blockName == "Image") {
-      newItem.component = <Image height="400" />;
+      newItem.componentSave = ["Image", {height:"400"}];
     } else if (blockName == "Webinar") {
-      newItem.component = <Webinar webinarTitle="ARC Fraud Awareness Webinar:
-      Travel Industry Fraud & Scams" webinarDate="Mon, April 3" webinarTime="3pm" webinarLink="www2.arccorp.com" />;
+      newItem.component = ["Webinar", {title: "ARC Fraud Awareness Webinar:Travel Industry Fraud & Scams", date: "Mon, April 3", time:"3pm", link_copy:"", webinarLink:"www2.arccorp.com"}];
     }
 
     if (activePosition == "top") {
