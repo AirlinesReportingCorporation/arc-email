@@ -67,9 +67,8 @@ var componentsMap = {
   TACJumbo: TACJumbo,
   TACBottom: TACBottom,
   TealHeader: TealHeader,
-  TextBlock: TextBlock
-  
-  
+  TextBlock: TextBlock,
+  Webinar: Webinar
 };
 
 function alertMe(items, activeAdd) {
