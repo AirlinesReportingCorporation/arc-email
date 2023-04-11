@@ -383,7 +383,7 @@ function App() {
     } else if (blockName == "Image") {
       newItem.componentSave = ["Image", {height:"400"}];
     } else if (blockName == "Webinar") {
-      newItem.component = ["Webinar", {title: "ARC Fraud Awareness Webinar:Travel Industry Fraud & Scams", date: "Mon, April 3", time:"3pm", link_copy:"", webinarLink:"www2.arccorp.com"}];
+      newItem.componentSave = ["Webinar", {title: "ARC Fraud Awareness Webinar:Travel Industry Fraud & Scams", date: "Mon, April 3", time:"3pm", link_copy:"", webinarLink:"www2.arccorp.com"}];
     }
 
     if (activePosition == "top") {
