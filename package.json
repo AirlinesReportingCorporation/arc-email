@@ -33,6 +33,7 @@
         "@heroicons/react": "^2.0.13",
         "@tinymce/tinymce-react": "^4.3.0",
         "arccorp-vars": "^0.2.1",
+        "jsx-to-string": "^1.4.0",
         "node-polyfill-webpack-plugin": "^1.1.4",
         "react": "^16.13.1",
         "react-app-polyfill": "^1.0.6",
