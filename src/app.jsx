@@ -5,6 +5,8 @@ import React, {
   useRef,
   useCallback,
 } from "react";
+import { serialize, deserialize } from "react-serialize";
+import jsxToString from "jsx-to-string";
 
 import Modal from "react-bootstrap/Modal";
 import Button from "../components/Button";
@@ -25,6 +27,8 @@ import emailTemplates from "./templates";
 
 import { ViewToggle } from "../components/ViewToggle";
 import StandardHeader from "../components/StandardHeader";
+
+import { useLocalStorage } from "../components/useLocalStorage";
 
 import {
   DndContext,
@@ -47,6 +51,25 @@ import { SortableItem } from "../components/SortableItem";
 import TealHeader from "../components/TealHeader";
 import AddressSection from "../components/AddressSection";
 import AeroImage from "../components/AeroImage";
+
+var componentsMap = {
+  AddressSection: AddressSection,
+  AerogramLogo: AerogramLogo,
+  AeroImage: AeroImage,
+  ARCFooter: ARCFooter,
+  ARCLogo: ARCLogo,
+  Button: Button, 
+  Header: Header,
+  Image: Image,
+  Spacer: Spacer,
+  StandardHeader: StandardHeader,
+  TACLink: TACLink,
+  TACJumbo: TACJumbo,
+  TACBottom: TACBottom,
+  TealHeader: TealHeader,
+  TextBlock: TextBlock,
+  Webinar: Webinar
+};
 
 function alertMe(items, activeAdd) {
   console.log(items, activeAdd);
@@ -178,7 +201,7 @@ function App() {
     },
     {
       name: "Webinar",
-      icon: <i class="far fa-image"/>,
+      icon: <i className="far fa-image"/>,
       component: <Webinar />,
       props:[["title", "text"], ["date", "text"], ["time", "text"],["body", "textarea" ], ["link_copy", "text"], ["link", "text"]]
     }
@@ -186,7 +209,11 @@ function App() {
 
   const [activeForm, setActiveForm] = useState();
 
-  const [items, setItems] = useState(emailTemplates[0].template);
+  const [items, setItems] = useLocalStorage(
+    "tempTemplate",
+    emailTemplates[0].template
+  );
+
   const [templateSelection, setTemplateSelection] = useState("");
   const [footerSelection, setFooterSelection] = useState("");
 
@@ -204,6 +231,7 @@ function App() {
       for (let i = 0; i < emailTemplates.length; i++) {
         const element = emailTemplates[i];
         if (element.id === selectedTemplate) {
+          console.log(element.template);
           setItems(element.template);
           setTemplateSelection(element.id);
           if (selectedTemplate == "aerogram") {
@@ -266,11 +294,22 @@ function App() {
   const [markup, setMarkup] = useState("");
   const [emlIndex, setemlIndex] = useState(0);
 
-  const email = items.map((item, i) => <div key={item.id}>{item.id}</div>);
+  const email = items
+    ? items.map((item, i) => <div key={item.id}>{item.id}</div>)
+    : "";
 
   //useEffect is for functions that need to run on every render
   useEffect(() => {
-    const email = items.map((item) => item.component);
+    var email = "";
+
+    if (items) {
+      email = items.map((item) =>
+        React.createElement(
+          componentsMap[item.componentSave[0]],
+          item.componentSave[1]
+        )
+      );
+    }
 
     //console.log(sensors);
 
@@ -347,40 +386,37 @@ function App() {
     var newItem = {
       id: newId,
       name: blockName,
-      component: "asdf",
+      componentSave: "asdf",
     };
 
     if (blockName == "Header") {
-      newItem.component = <Header />;
+      newItem.componentSave = ["Header", {}];
     } else if (blockName == "Button") {
-      newItem.component = <Button text="Learn More" />;
+      newItem.componentSave = ["Button", { text: "Learn More" }];
     } else if (blockName == "Text Block") {
-      newItem.component = <TextBlock text="<p>Lorem Ipsum</p>" />;
+      newItem.componentSave = ["TextBlock", { text: "<p>Lorem Ipsum</p>" }];
     } else if (blockName == "ARC Logo Header") {
-      newItem.component = <ARCLogo />;
+      newItem.componentSave = ["ARCLogo", {color: "teal"}];
     } else if (blockName == "Spacer") {
       newItem.component = <Spacer height="60px" />;
     } else if (blockName == "TAC Jumbo") {
-      newItem.component = (
-        <TACJumbo title="Travel Agent Communcations" date="01/01/2024" />
-      );
+      newItem.componentSave = ["TACJumbo", { title: "<p>Travel Agent Communcations</p>", date: "01/01/2024" }];
     } else if (blockName == "TAC Link") {
-      newItem.component = <TACLink />;
+      newItem.componentSave = ["TACLink", {}];
     } else if (blockName == "TAC Bottom") {
-      newItem.component = <TACBottom />;
+      newItem.componentSave = ["TACBottom", {}];
     } else if (blockName == "Standard Header") {
-      newItem.component = <StandardHeader color="teal" />;
+      newItem.componentSave = ["StandardHeader", { color: "teal" }];
     } else if (blockName == "Address Footer") {
-      newItem.component = <AddressSection color="teal" />;
+      newItem.componentSave = ["AddressSection", { color: "teal" }];
     } else if (blockName == "Aerogram Header") {
-      newItem.component = <AerogramLogo />;
+      newItem.componentSave = ["AerogramLogo", {}];
     } else if (blockName == "Aerogram Image") {
-      newItem.component = <AeroImage />;
+      newItem.componentSave = ["AeroImage", {}];
     } else if (blockName == "Image") {
-      newItem.component = <Image height="400" />;
+      newItem.componentSave = ["Image", {height:"400"}];
     } else if (blockName == "Webinar") {
-      newItem.component = <Webinar webinarTitle="ARC Fraud Awareness Webinar:
-      Travel Industry Fraud & Scams" webinarDate="Mon, April 3" webinarTime="3pm" webinarLink="www2.arccorp.com" />;
+      newItem.componentSave = ["Webinar", {title: "ARC Fraud Awareness Webinar:Travel Industry Fraud & Scams", date: "Mon, April 3", time:"3pm", link_copy:"", webinarLink:"www2.arccorp.com"}];
     }
 
     if (activePosition == "top") {
@@ -430,7 +466,8 @@ function App() {
 
       for (let i = 0; i < propList.length; i++) {
         const element = propList[i][0];
-        tempFormProps[element] = items[activeIndex].component.props[element];
+        console.log(element);
+        tempFormProps[element] = items[activeIndex].componentSave[1][element];
       }
     }
 
@@ -441,7 +478,8 @@ function App() {
         blockPreviews.findIndex((x) => x.name === items[activeIndex].name)
       ].props.map((item, i) => (
         <>
-          <label>{item[0]}</label>
+          <label key={i}>{item[0]}</label>
+          {console.log(item)}
 
           {item[1] === "text" ? (
             <input
@@ -667,10 +705,11 @@ function App() {
     event.preventDefault();
     var tempItems = [...items];
 
+    console.log(tempItems);
     var updatedItem = {
       id: tempItems[activeAdd].id,
       name: tempItems[activeAdd].name,
-      component: React.cloneElement(tempItems[activeAdd].component, formProps),
+      componentSave: [tempItems[activeAdd].componentSave[0], formProps],
     };
 
     console.log(updatedItem);
@@ -679,7 +718,6 @@ function App() {
 
     //replace item list
     setItems(tempItems);
-
     handleCloseModify();
   };
 
@@ -687,9 +725,9 @@ function App() {
     //use splice function to remove at activeItemIndex and items, similar to add Item but removal intead and more simple
 
     var tempItems = [...items];
-    console.log("deleteItems:" + tempItems);
+    // console.log("deleteItems:" + tempItems);
     tempItems.splice(activeAdd, 1);
-    console.log(tempItems);
+    // console.log(tempItems);
 
     setItems(tempItems);
     setActiveAdd("");
