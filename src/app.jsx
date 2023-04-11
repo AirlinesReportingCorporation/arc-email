@@ -59,11 +59,15 @@ function App() {
       name: "Header",
       icon: <i className="fas fa-heading" aria-hidden="true"></i>,
       component: <Header />,
-      props: [["text", "text"], ["position", "select"], ["heading", "select"]], //name, input
+      props: [
+        ["text", "text"],
+        ["position", "select"],
+        ["heading", "select"],
+      ], //name, input
     },
     {
       name: "Text Block",
-      icon: <i class="fas fa-paragraph"></i>,
+      icon: <i className="fas fa-paragraph"></i>,
       component: <TextBlock text="<p>Lorem Ipsum</p>" padding="25px" />,
       props: [
         ["text", "textarea"],
@@ -72,7 +76,7 @@ function App() {
     },
     {
       name: "Button",
-      icon: <i class="fas fa-square"></i>,
+      icon: <i className="fas fa-square"></i>,
       component: <Button />,
       props: [
         ["text", "text"],
@@ -96,13 +100,13 @@ function App() {
     },
     {
       name: "Spacer",
-      icon: <i class="far fa-square"></i>,
+      icon: <i className="far fa-square"></i>,
       component: <Spacer />,
       props: [["height", "text"]],
     },
     {
       name: "TAC Jumbo",
-      icon: <i class="far fa-square"></i>,
+      icon: <i className="far fa-square"></i>,
       component: <TACJumbo />,
       props: [
         ["jumbobackground", "select"],
@@ -112,7 +116,7 @@ function App() {
     },
     {
       name: "TAC Link",
-      icon: <i class="far fa-newspaper"></i>,
+      icon: <i className="far fa-newspaper"></i>,
       component: <TACLink />,
       props: [
         ["icon", "select"],
@@ -123,7 +127,7 @@ function App() {
     },
     {
       name: "TAC Bottom",
-      icon: <i class="far fa-newspaper"></i>,
+      icon: <i className="far fa-newspaper"></i>,
       component: <TACLink />,
       props: [
         ["TIP_Title", "text"],
@@ -136,37 +140,39 @@ function App() {
     },
     {
       name: "Standard Header",
-      icon: <i class="far fa-newspaper"></i>,
+      icon: <i className="far fa-newspaper"></i>,
       component: <StandardHeader />,
       props: [["color", "select"]],
     },
     {
       name: "Teal Header",
-      icon: <i class="far fa-newspaper"></i>,
+      icon: <i className="far fa-newspaper"></i>,
       component: <TealHeader />,
       props: [["link", "text"]],
     },
     {
       name: "Address Footer",
-      icon: <i class="far fa-newspaper"></i>,
+      icon: <i className="far fa-newspaper"></i>,
       component: <AddressSection />,
       props: [["color", "select"]],
     },
     {
       name: "Aerogram Header",
-      icon: (<img src="https://www2.arccorp.com/globalassets/email/aerogram-logo.jpg"></img>),
+      icon: (
+        <img src="https://www2.arccorp.com/globalassets/email/aerogram-logo.jpg"></img>
+      ),
       component: <AerogramLogo />,
-      props: []
+      props: [],
     },
     {
       name: "Aerogram Image",
-      icon: <i class="far fa-image"/>,
+      icon: <i className="far fa-image" />,
       component: <AeroImage />,
-      props: []
+      props: [],
     },
     {
       name: "Image",
-      icon: <i class="far fa-image"/>,
+      icon: <i className="far fa-image" />,
       component: <Image />,
       props:[["height", "select"], ["link", "text"]]
     },
@@ -182,7 +188,7 @@ function App() {
 
   const [items, setItems] = useState(emailTemplates[0].template);
   const [templateSelection, setTemplateSelection] = useState("");
-  const [footerSelection, setFooterSelection] = useState('');
+  const [footerSelection, setFooterSelection] = useState("");
 
   const getTemplate = (event) => {
     var prevTemplateSelection = templateSelection;
@@ -201,7 +207,7 @@ function App() {
           setItems(element.template);
           setTemplateSelection(element.id);
           if (selectedTemplate == "aerogram") {
-            setFooterSelection("aerogram")
+            setFooterSelection("aerogram");
           }
           break;
         }
@@ -211,8 +217,8 @@ function App() {
 
   const changeFooter = (event) => {
     setFooterSelection(event.target.value);
-    console.log(event.target.value)
-  }
+    console.log(event.target.value);
+  };
 
   //console.log(items[1].component.props);
   const [itemAddID, setItemAddID] = useState(1000);
@@ -258,6 +264,7 @@ function App() {
   };
 
   const [markup, setMarkup] = useState("");
+  const [emlIndex, setemlIndex] = useState(0);
 
   const email = items.map((item, i) => <div key={item.id}>{item.id}</div>);
 
@@ -268,10 +275,12 @@ function App() {
     //console.log(sensors);
 
     setMarkup(
-      '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html   xmlns="http://www.w3.org/1999/xhtml"   xmlns:o="urn:schemas-microsoft-com:office:office"   xmlns:v="urn:schemas-microsoft-com:vml" >   <head>     <title>ARC</title>     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />     <meta http-equiv="X-UA-Compatible" content="IE=edge" />     <meta name="viewport" content="width=device-width, initial-scale=1.0 " />     <meta name="format-detection" content="telephone=no" />     <link       href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900"       rel="stylesheet"     />     <style type="text/css">       body {         margin: 0 !important;         padding: 0 !important;         -webkit-text-size-adjust: 100% !important;         -ms-text-size-adjust: 100% !important;         -webkit-font-smoothing: antialiased !important;       }       img {         border: 0 !important;         outline: none !important;       }       p {         margin: 0px !important;         padding: 0px !important;       }       table {         border-collapse: collapse;         mso-table-lspace: 0px;         mso-table-rspace: 0px;       }       td,       a,       span {         border-collapse: collapse;         mso-line-height-rule: exactly;       }       .ExternalClass * {         line-height: 100%;       }       .em_defaultlink a {         color: inherit !important;         text-decoration: none !important;       }       span.MsoHyperlink {         mso-style-priority: 99;         color: inherit;       }       span.MsoHyperlinkFollowed {         mso-style-priority: 99;         color: inherit;       }       @media only screen and (min-width: 481px) and (max-width: 699px) {         .title_center {           text-align: center;         }         .em_main_table {           width: 100% !important;         }         .em_wrapper {           width: 100% !important;         }         .em_aside {           padding: 0px 20px !important;         }         .em_hide {           display: none !important;         }         .em_full_img img {           width: 100% !important;           height: auto !important;           max-width: none !important;         }         .em_align_cent {           text-align: center !important;         }         .em_height {           height: 20px !important;           font-size: 1px !important;           line-height: 1px !important;         }         .em_pad_top {           padding-top: 20px !important;         }         .em_spacer {           width: 10px !important;         }         .em_pad_bottom {           padding-bottom: 20px !important;         }         .em_hauto {           height: auto !important;         }         span[class="em_divhide"] {           display: none !important;         }       }       @media only screen and (max-width: 480px) {         .title_center {           text-align: center;         }         .address_item {           text-align: center;           display: block;         }         .em_main_table {           width: 100% !important;         }         .em_wrapper {           width: 100% !important;         }         .em_aside {           padding: 0px 20px !important;         }         .em_hide {           display: none !important;         }         .em_full_img img {           width: 100% !important;           height: auto !important;           max-width: none !important;         }         .icon-center {           text-align: center;           text-align: -webkit-center;         }         .icon-center img {           padding-bottom: 10px;         }         .em_align_cent {           text-align: center !important;         }         .em_height {           height: 20px !important;           font-size: 1px !important;           line-height: 1px !important;         }         .em_pad_top {           padding-top: 20px !important;         }         .em_spacer {           width: 10px !important;         }         .em_pad_bottom {           padding-bottom: 20px !important;         }         .em_hauto {           height: auto !important;         }         span[class="em_divhide"] {           display: none !important;         }       }       a[x-apple-data-detectors] {  color: #77d6fc !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; } u + #body a { color: #77d6fc !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; } </style>  <!--[if gte mso 9]>       <xml>         <o:OfficeDocumentSettings>           <o:AllowPNG />           <o:PixelsPerInch>96</o:PixelsPerInch>         </o:OfficeDocumentSettings>       </xml>     <![endif]-->   </head>   <body bgcolor="#f7f5f5" style="margin: 0px; padding: 0px">     <table       bgcolor="#f7f5f5"       border="0"       cellpadding="0"       cellspacing="0"       width="100%"     >       <tbody>         <tr>           <td align="center">             <table               align="center"               bgcolor="#ffffff"               border="0"               cellpadding="0"               cellspacing="0"               class="em_main_table"               style="table-layout: fixed; width: 700px"               width="700"             >' +
+      '<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html   xmlns="http://www.w3.org/1999/xhtml"   xmlns:o="urn:schemas-microsoft-com:office:office"   xmlns:v="urn:schemas-microsoft-com:vml" >   <head>     <title>ARC</title>     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />     <meta http-equiv="X-UA-Compatible" content="IE=edge" />     <meta name="viewport" content="width=device-width, initial-scale=1.0 " />     <meta name="format-detection" content="telephone=no" />     <link       href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900"       rel="stylesheet"     />     <style type="text/css">       body {         margin: 0 !important;         padding: 0 !important;         -webkit-text-size-adjust: 100% !important;         -ms-text-size-adjust: 100% !important;         -webkit-font-smoothing: antialiased !important;       }       img {         border: 0 !important;         outline: none !important;       }       p {         margin: 0px !important;         padding: 0px !important;       }       table {         border-collapse: collapse;         mso-table-lspace: 0px;         mso-table-rspace: 0px;       }       td,       a,       span {         border-collapse: collapse;         mso-line-height-rule: exactly;       }       .ExternalClass * {         line-height: 100%;       }       .em_defaultlink a {         color: inherit !important;         text-decoration: none !important;       }       span.MsoHyperlink {         mso-style-priority: 99;         color: inherit;       }       span.MsoHyperlinkFollowed {         mso-style-priority: 99;         color: inherit;       }       @media only screen and (min-width: 481px) and (max-width: 699px) {         .title_center {           text-align: center;         }         .em_main_table {           width: 100% !important;         }         .em_wrapper {           width: 100% !important;         }         .em_aside {           padding: 0px 20px !important;         }         .em_hide {           display: none !important;         }         .em_full_img img {           width: 100% !important;           height: auto !important;           max-width: none !important;         }         .em_align_cent {           text-align: center !important;         }         .em_height {           height: 20px !important;           font-size: 1px !important;           line-height: 1px !important;         }         .em_pad_top {           padding-top: 20px !important;         }         .em_spacer {           width: 10px !important;         }         .em_pad_bottom {           padding-bottom: 20px !important;         }         .em_hauto {           height: auto !important;         }         span[class="em_divhide"] {           display: none !important;         }       }       @media only screen and (max-width: 480px) {         .title_center {           text-align: center;         }         .address_item {           text-align: center;           display: block;         }         .em_main_table {           width: 100% !important;         }         .em_wrapper {           width: 100% !important;         }         .em_aside {           padding: 0px 20px !important;         }         .em_hide {           display: none !important;         }         .em_full_img img {           width: 100% !important;           height: auto !important;           max-width: none !important;         }         .icon-center {           text-align: center;           text-align: -webkit-center;         }         .icon-center img {           padding-bottom: 10px;         }         .em_align_cent {           text-align: center !important;         }         .em_height {           height: 20px !important;           font-size: 1px !important;           line-height: 1px !important;         }         .em_pad_top {           padding-top: 20px !important;         }         .em_spacer {           width: 10px !important;         }         .em_pad_bottom {           padding-bottom: 20px !important;         }         .em_hauto {           height: auto !important;         }         span[class="em_divhide"] {           display: none !important;         }       }       a[x-apple-data-detectors] {  color: #77d6fc !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; } u + #body a { color: #77d6fc !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; } </style>  <!--[if gte mso 9]>       <xml>         <o:OfficeDocumentSettings>           <o:AllowPNG />           <o:PixelsPerInch>96</o:PixelsPerInch>         </o:OfficeDocumentSettings>       </xml>     <![endif]-->   </head>   <body bgcolor="#f7f5f5" style="margin: 0px; padding: 0px">     <table       bgcolor="#f7f5f5"       border="0"       cellpadding="0"       cellspacing="0"       width="100%"     >       <tbody>         <tr>           <td align="center">             <table               align="center"               bgcolor="#ffffff"               border="0"               cellpadding="0"               cellspacing="0"               class="em_main_table"               style="table-layout: fixed; width: 700px"               width="700"             >' +
         ReactDOMServer.renderToStaticMarkup(email) +
         '</table> </td> </tr> <tr> <td align="center"> <table align="center" bgcolor="#f7f5f5" border="0" cellpadding="0" cellspacing="0" class="em_main_table" style="table-layout: fixed; width: 700px" width="700" > <tbody>' +
-        ReactDOMServer.renderToStaticMarkup(<ARCFooter footer={footerSelection}/>) +
+        ReactDOMServer.renderToStaticMarkup(
+          <ARCFooter footer={footerSelection} />
+        ) +
         '</tbody> </table> </td> </tr> </tbody> </table><div style="white-space: nowrap; font: 20px courier; color: #ffffff"> <span class="em_divhide" >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span > &nbsp; </div> </body> </html> '
     );
 
@@ -286,6 +295,38 @@ function App() {
       coordinateGetter: sortableKeyboardCoordinates,
     })
   );
+
+  const emlExport = () => {
+    var emlContent = "data:message/rfc822 eml;charset=utf-8,";
+    emlContent += "To: " + "test@test.com" + "\n";
+    emlContent += "Subject: " + "" + "\n";
+    emlContent += "X-Unsent: 1" + "\n";
+    emlContent += "Content-Type: text/html;charset=utf-8" + "\n";
+    emlContent += "" + "\n";
+    emlContent += markup.replace(/\n/g, "");
+
+    console.log(emlContent);
+
+    var textFile = {};
+    var data = new Blob([emlContent], { type: "text/html" });
+    textFile = window.URL.createObjectURL(data);
+
+    var encodedUri = textFile; //encode spaces etc like a url
+    console.log(encodedUri);
+    var a = document.createElement("a"); //make a link in document
+    var linkText = document.createTextNode("fileLink");
+    a.appendChild(linkText);
+    a.href = encodedUri;
+    a.id = "fileLink" + emlIndex;
+    a.download = "emailTemplate.emltpl";
+    a.style = "display:none;"; //hidden link
+
+    //console.log(encodedUri);
+
+    document.getElementById("app").appendChild(a);
+    document.getElementById("fileLink" + emlIndex).click(); //click the link
+    setemlIndex(emlIndex + 1);
+  };
 
   //TODO addItem(index) create a function that will add a component object to the items list either before or after the index depending on the bottom that was clicked
   // index is the current index of the item you want to add to
@@ -330,8 +371,8 @@ function App() {
     } else if (blockName == "Standard Header") {
       newItem.component = <StandardHeader color="teal" />;
     } else if (blockName == "Address Footer") {
-      newItem.component = <AddressSection color="teal"/>;
-    }  else if (blockName == "Aerogram Header") {
+      newItem.component = <AddressSection color="teal" />;
+    } else if (blockName == "Aerogram Header") {
       newItem.component = <AerogramLogo />;
     } else if (blockName == "Aerogram Image") {
       newItem.component = <AeroImage />;
@@ -568,31 +609,35 @@ function App() {
             ""
           )}
           {console.log("Item 1: " + item[1] + "Item 0: " + item[0])}
-          {item[1] === "select" ? 
-          (
-              item[0] === "position" ?
-            <select
-              name={item[0]}
-              defaultValue={tempFormProps[item[0]]}
-              value={formProps[i]}
-              onChange={handleInputChange}
-            >
-              <option value="left">Left</option>
-              <option value="center">Center</option>
-              <option value="right">Right</option>
-            </select> : 
-              item[0] === "heading" ?
-            <select
-              name={item[0]}
-              defaultValue={tempFormProps[item[0]]}
-              value={formProps[i]}
-              onChange={handleInputChange}
-            >
-              <option value="h1">H1</option>
-              <option value="h2">H2</option>
-              <option value="h3">H3</option>
-            </select> : ""
-          ): ""}
+          {item[1] === "select" ? (
+            item[0] === "position" ? (
+              <select
+                name={item[0]}
+                defaultValue={tempFormProps[item[0]]}
+                value={formProps[i]}
+                onChange={handleInputChange}
+              >
+                <option value="left">Left</option>
+                <option value="center">Center</option>
+                <option value="right">Right</option>
+              </select>
+            ) : item[0] === "heading" ? (
+              <select
+                name={item[0]}
+                defaultValue={tempFormProps[item[0]]}
+                value={formProps[i]}
+                onChange={handleInputChange}
+              >
+                <option value="h1">H1</option>
+                <option value="h2">H2</option>
+                <option value="h3">H3</option>
+              </select>
+            ) : (
+              ""
+            )
+          ) : (
+            ""
+          )}
           {item[1] === "select" ? (
             item[0] === "height" ? (
               <select
@@ -666,7 +711,7 @@ function App() {
                 style={{ fontSize: "2rem" }}
                 onClick={() => setActiveView("design")}
               >
-                <i class="fas fa-stream"></i>
+                <i className="fas fa-stream"></i>
               </div>
               <div
                 className={
@@ -677,7 +722,7 @@ function App() {
                 style={{ fontSize: "2rem" }}
                 onClick={() => setActiveView("download")}
               >
-                <i class="fas fa-download"></i>
+                <i className="fas fa-download"></i>
               </div>
               <div
                 className={
@@ -688,7 +733,7 @@ function App() {
                 style={{ fontSize: "2rem" }}
                 onClick={() => setActiveView("settings")}
               >
-                <i class="fas fa-cog"></i>
+                <i className="fas fa-cog"></i>
               </div>
             </div>
           </div>
@@ -773,6 +818,15 @@ function App() {
                 }}
               >
                 <h2>Download Code</h2>
+
+                <h3>OUTLOOK TEMPLATE</h3>
+
+                <p>Save this email to send through your Outlook email.</p>
+                <btn class="ctaBtn emlExportBtn" onClick={emlExport}>
+                  Export as Outlook Template
+                </btn>
+
+                <h3>ACOUSTIC</h3>
                 <p>
                   Copy the code below to your clipboard and upload to the HTML
                   section of Acoustic.
@@ -879,7 +933,7 @@ function App() {
           </Modal.Body>
           <Modal.Footer>
             <a className="ctaBtn ctaBtn--close" onClick={deleteItem}>
-              <i class="fas fa-trash-alt"></i>
+              <i className="fas fa-trash-alt"></i>
             </a>
             <input type="submit" className="ctaBtn" value="Save Changes" />
           </Modal.Footer>
