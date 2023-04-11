@@ -21,6 +21,7 @@ import TACBottom from "../components/TACBottom";
 import { Editor } from "@tinymce/tinymce-react";
 import AerogramLogo from "../components/AerogramLogo";
 import Image from "../components/Image";
+import Webinar from "../components/Webinar";
 
 import emailTemplates from "./templates";
 
@@ -197,11 +198,14 @@ function App() {
       name: "Image",
       icon: <i class="far fa-image" />,
       component: <Image />,
-      props: [
-        ["height", "select"],
-        ["link", "text"],
-      ],
+      props:[["height", "select"], ["link", "text"]]
     },
+    {
+      name: "Webinar",
+      icon: <i class="far fa-image"/>,
+      component: <Webinar />,
+      props:[["title", "text"], ["date", "text"], ["time", "text"],["body", "textarea" ], ["link_copy", "text"], ["link", "text"]]
+    }
   ];
 
   const [activeForm, setActiveForm] = useState();
@@ -378,7 +382,10 @@ function App() {
     } else if (blockName == "Aerogram Image") {
       newItem.componentSave = ["AeroImage", {}];
     } else if (blockName == "Image") {
-      newItem.componentSave = ["Image", { height: "400px" }];
+      newItem.component = <Image height="400" />;
+    } else if (blockName == "Webinar") {
+      newItem.component = <Webinar webinarTitle="ARC Fraud Awareness Webinar:
+      Travel Industry Fraud & Scams" webinarDate="Mon, April 3" webinarTime="3pm" webinarLink="www2.arccorp.com" />;
     }
 
     if (activePosition == "top") {
@@ -837,22 +844,16 @@ function App() {
                     color: "#fff",
                     fontFamily:
                       "SourceSansPro-Bold, SourceSansPro-Regular, arial, helvetica, sans-serif",
-                  }}
-                >
-                  Settings View
-                </h2>
-                <div style={{ margin: "0 30px", justifyContent: "center" }}>
-                  <p style={{ color: "#fff" }}>Choose a template</p>
-                  <select
-                    name="template"
-                    value={templateSelection}
-                    onChange={getTemplate}
-                  >
-                    <option>-- Choose a template --</option>
-                    <option value="tac-template">TAC</option>
-                    <option value="operational">Operational</option>
-                    <option value="aerogram">AeroGram</option>
-                  </select>
+                  }}>Settings View</h2>
+                <div style={{margin: "0 30px", justifyContent:"center"}}>
+                <p style={{color:"#fff"}}>Choose a template</p>
+                <select name="template" value={templateSelection} onChange={getTemplate}>
+                  <option>-- Choose a template --</option>
+                  <option value="tac-template">TAC</option>
+                  <option value="operational">Operational</option>
+                  <option value="aerogram">AeroGram</option>
+                  <option value="webinar">Webinar</option>
+                </select>
                 </div>
                 <div style={{ margin: "0 30px", justifyContent: "center" }}>
                   <p style={{ color: "#fff" }}>Change Footer Length</p>
