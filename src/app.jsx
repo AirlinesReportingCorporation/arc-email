@@ -27,6 +27,8 @@ import emailTemplates from "./templates";
 import { ViewToggle } from "../components/ViewToggle";
 import StandardHeader from "../components/StandardHeader";
 
+import { useLocalStorage } from "../components/useLocalStorage";
+
 import {
   DndContext,
   closestCenter,
@@ -48,6 +50,26 @@ import { SortableItem } from "../components/SortableItem";
 import TealHeader from "../components/TealHeader";
 import AddressSection from "../components/AddressSection";
 import AeroImage from "../components/AeroImage";
+
+var componentsMap = {
+  AddressSection: AddressSection,
+  AerogramLogo: AerogramLogo,
+  AeroImage: AeroImage,
+  ARCFooter: ARCFooter,
+  ARCLogo: ARCLogo,
+  Button: Button, 
+  Header: Header,
+  Image: Image,
+  Spacer: Spacer,
+  StandardHeader: StandardHeader,
+  TACLink: TACLink,
+  TACJumbo: TACJumbo,
+  TACBottom: TACBottom,
+  TealHeader: TealHeader,
+  TextBlock: TextBlock
+  
+  
+};
 
 function alertMe(items, activeAdd) {
   console.log(items, activeAdd);
@@ -184,7 +206,11 @@ function App() {
 
   const [activeForm, setActiveForm] = useState();
 
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useLocalStorage(
+    "tempTemplate",
+    emailTemplates[0].template
+  );
+
   const [templateSelection, setTemplateSelection] = useState("");
   const [footerSelection, setFooterSelection] = useState("");
 
@@ -264,20 +290,22 @@ function App() {
 
   const [markup, setMarkup] = useState("");
 
-  const email = items.map((item, i) => <div key={item.id}>{item.id}</div>);
-
-  // Grab the saved data
-  useEffect(() => {
-    getLocal();
-  }, []);
-
-  useEffect(()=>{
-    saveLocal();
-  }, [items])
+  const email = items
+    ? items.map((item, i) => <div key={item.id}>{item.id}</div>)
+    : "";
 
   //useEffect is for functions that need to run on every render
   useEffect(() => {
-    const email = items.map((item) => item.component);
+    var email = "";
+
+    if (items) {
+      email = items.map((item) =>
+        React.createElement(
+          componentsMap[item.componentSave[0]],
+          item.componentSave[1]
+        )
+      );
+    }
 
     //console.log(sensors);
 
@@ -291,7 +319,7 @@ function App() {
         '</tbody> </table> </td> </tr> </tbody> </table><div style="white-space: nowrap; font: 20px courier; color: #ffffff"> <span class="em_divhide" >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span > &nbsp; </div> </body> </html> '
     );
 
-    //console.log(items);saveLocal();
+    //console.log(items);
   });
 
   const itemIds = useMemo(() => items.map((item) => item.id, [items]));
@@ -322,37 +350,35 @@ function App() {
     var newItem = {
       id: newId,
       name: blockName,
-      component: "asdf",
+      componentSave: "asdf",
     };
 
     if (blockName == "Header") {
-      newItem.component = <Header />;
+      newItem.componentSave = ["Header", {}];
     } else if (blockName == "Button") {
-      newItem.component = <Button text="Learn More" />;
+      newItem.componentSave = ["Button", { text: "Learn More" }];
     } else if (blockName == "Text Block") {
-      newItem.component = <TextBlock text="<p>Lorem Ipsum</p>" />;
+      newItem.componentSave = ["TextBlock", { text: "<p>Lorem Ipsum</p>" }];
     } else if (blockName == "ARC Logo Header") {
-      newItem.component = <ARCLogo />;
+      newItem.componentSave = ["ARCLogo", {color: "teal"}];
     } else if (blockName == "Spacer") {
       newItem.component = <Spacer height="60px" />;
     } else if (blockName == "TAC Jumbo") {
-      newItem.component = (
-        <TACJumbo title="Travel Agent Communcations" date="01/01/2024" />
-      );
+      newItem.componentSave = ["TACJumbo", { title: "<p>Travel Agent Communcations</p>", date: "01/01/2024" }];
     } else if (blockName == "TAC Link") {
-      newItem.component = <TACLink />;
+      newItem.componentSave = ["TACLink", {}];
     } else if (blockName == "TAC Bottom") {
-      newItem.component = <TACBottom />;
+      newItem.componentSave = ["TACBottom", {}];
     } else if (blockName == "Standard Header") {
-      newItem.component = <StandardHeader color="teal" />;
+      newItem.componentSave = ["StandardHeader", { color: "teal" }];
     } else if (blockName == "Address Footer") {
-      newItem.component = <AddressSection color="teal" />;
+      newItem.componentSave = ["AddressSection", { color: "teal" }];
     } else if (blockName == "Aerogram Header") {
-      newItem.component = <AerogramLogo />;
+      newItem.componentSave = ["AerogramLogo", {}];
     } else if (blockName == "Aerogram Image") {
-      newItem.component = <AeroImage />;
+      newItem.componentSave = ["AeroImage", {}];
     } else if (blockName == "Image") {
-      newItem.component = <Image height="400" />;
+      newItem.componentSave = ["Image", { height: "400px" }];
     }
 
     if (activePosition == "top") {
@@ -402,7 +428,8 @@ function App() {
 
       for (let i = 0; i < propList.length; i++) {
         const element = propList[i][0];
-        tempFormProps[element] = items[activeIndex].component.props[element];
+        console.log(element);
+        tempFormProps[element] = items[activeIndex].componentSave[1][element];
       }
     }
 
@@ -413,7 +440,8 @@ function App() {
         blockPreviews.findIndex((x) => x.name === items[activeIndex].name)
       ].props.map((item, i) => (
         <>
-          <label>{item[0]}</label>
+          <label key={i}>{item[0]}</label>
+          {console.log(item)}
 
           {item[1] === "text" ? (
             <input
@@ -639,10 +667,11 @@ function App() {
     event.preventDefault();
     var tempItems = [...items];
 
+    console.log(tempItems);
     var updatedItem = {
       id: tempItems[activeAdd].id,
       name: tempItems[activeAdd].name,
-      component: React.cloneElement(tempItems[activeAdd].component, formProps),
+      componentSave: [tempItems[activeAdd].componentSave[0], formProps],
     };
 
     console.log(updatedItem);
@@ -652,46 +681,6 @@ function App() {
     //replace item list
     setItems(tempItems);
     handleCloseModify();
-  };
-
-  const saveLocal = () => {
-    // console.log(serialize(items))
-    // get current items and make a copy
-    var lastSaved = JSON.parse(localStorage.getItem("tempTemplate"));
-
-    var tempItems = [...items];
-    // loop through the copy and serialize each component property
-    for (let index = 0; index < tempItems.length; index++) {
-      const element = tempItems[index];
-
-      var componentName = element.component.type.name;
-      var componentProps = element.component.props;
-      element.componentSave = [componentName, componentProps];
-      console.log(componentName);
-    }
-
-    localStorage.setItem("tempTemplate", JSON.stringify(tempItems));
-  };
-  // set saved template:
-  const getLocal = () => {
-    console.log(localStorage.getItem("tempTemplate"));
-    var lastSaved = JSON.parse(localStorage.getItem("tempTemplate"));
-
-    if (lastSaved) {
-      var tempSaved = [...lastSaved];
-      for (let index = 0; index < lastSaved.length; index++) {
-        const element = lastSaved[index];
-        const tempComponent = element.componentSave;
-        element.component = React.createElement(
-          tempComponent[0],
-          tempComponent[1]
-        );
-      }
-
-      setItems(tempSaved);
-    } else {
-      setItems(emailTemplates[0].template);
-    }
   };
 
   const deleteItem = () => {
