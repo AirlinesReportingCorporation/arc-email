@@ -367,6 +367,38 @@ function App() {
     setemlIndex(emlIndex + 1);
   };
 
+  const oftExport = () => {
+    var emlContent = "data:message/rfc822 oft;charset=utf-8,";
+    emlContent += "To: " + "test@test.com" + "\n";
+    emlContent += "Subject: " + "" + "\n";
+    emlContent += "X-Unsent: 1" + "\n";
+    emlContent += "Content-Type: text/html;charset=utf-8" + "\n";
+    emlContent += "" + "\n";
+    emlContent += markup.replace(/\n/g, "");
+
+    console.log(emlContent);
+
+    var textFile = {};
+    var data = new Blob([emlContent], { type: "text/html" });
+    textFile = window.URL.createObjectURL(data);
+
+    var encodedUri = textFile; //encode spaces etc like a url
+    console.log(encodedUri);
+    var a = document.createElement("a"); //make a link in document
+    var linkText = document.createTextNode("fileLink");
+    a.appendChild(linkText);
+    a.href = encodedUri;
+    a.id = "fileLink" + emlIndex;
+    a.download = "emailTemplate.oft";
+    a.style = "display:none;"; //hidden link
+
+    //console.log(encodedUri);
+
+    document.getElementById("app").appendChild(a);
+    document.getElementById("fileLink" + emlIndex).click(); //click the link
+    setemlIndex(emlIndex + 1);
+  };
+
   //TODO addItem(index) create a function that will add a component object to the items list either before or after the index depending on the bottom that was clicked
   // index is the current index of the item you want to add to
   const addItem = (blockName) => {
@@ -860,8 +892,13 @@ function App() {
                 <h3>OUTLOOK TEMPLATE</h3>
 
                 <p>Save this email to send through your Outlook email.</p>
+
+                <btn class="ctaBtn emlExportBtn" onClick={oftExport}>
+                  Windows: Export as Outlook Template
+                </btn>
+
                 <btn class="ctaBtn emlExportBtn" onClick={emlExport}>
-                  Export as Outlook Template
+                  Mac: Export as Outlook Template
                 </btn>
 
                 <h3>ACOUSTIC</h3>
