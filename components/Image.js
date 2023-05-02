@@ -16,8 +16,9 @@ export default function Image(props) {
         >
           <img
             class="em_full_img"
+            width="700"
             style={{
-              maxWidth: "700px",
+              width: "700px",
               display: "block",
             }}
             src={imgSrc}
