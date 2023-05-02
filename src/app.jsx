@@ -197,7 +197,7 @@ function App() {
       name: "Image",
       icon: <i className="far fa-image" />,
       component: <Image />,
-      props:[["height", "select"], ["link", "text"]]
+      props:[["height", "select"], ["link", "text"], ["ctaLink", "text"]]
     },
     {
       name: "Webinar",
