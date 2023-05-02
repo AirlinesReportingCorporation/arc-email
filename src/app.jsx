@@ -368,7 +368,7 @@ function App() {
   };
 
   const oftExport = () => {
-    var emlContent = "data:message/rfc822 oft;charset=utf-8,";
+    var emlContent = "data:message/rfc822 eml;charset=utf-8,";
     emlContent += "To: " + "test@test.com" + "\n";
     emlContent += "Subject: " + "" + "\n";
     emlContent += "X-Unsent: 1" + "\n";
@@ -389,7 +389,7 @@ function App() {
     a.appendChild(linkText);
     a.href = encodedUri;
     a.id = "fileLink" + emlIndex;
-    a.download = "emailTemplate.oft";
+    a.download = "emailTemplate.eml";
     a.style = "display:none;"; //hidden link
 
     //console.log(encodedUri);
