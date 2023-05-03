@@ -8,6 +8,7 @@ import React, {
 import { serialize, deserialize } from "react-serialize";
 import jsxToString from "jsx-to-string";
 
+import ReactModal from "react-modal";
 import Modal from "react-bootstrap/Modal";
 import Button from "../components/Button";
 import Header from "../components/Header";
@@ -58,7 +59,7 @@ var componentsMap = {
   AeroImage: AeroImage,
   ARCFooter: ARCFooter,
   ARCLogo: ARCLogo,
-  Button: Button, 
+  Button: Button,
   Header: Header,
   Image: Image,
   Spacer: Spacer,
@@ -68,7 +69,7 @@ var componentsMap = {
   TACBottom: TACBottom,
   TealHeader: TealHeader,
   TextBlock: TextBlock,
-  Webinar: Webinar
+  Webinar: Webinar,
 };
 
 function alertMe(items, activeAdd) {
@@ -197,14 +198,25 @@ function App() {
       name: "Image",
       icon: <i className="far fa-image" />,
       component: <Image />,
-      props:[["height", "select"], ["link", "text"], ["ctaLink", "text"]]
+      props: [
+        ["height", "select"],
+        ["link", "text"],
+        ["ctaLink", "text"],
+      ],
     },
     {
       name: "Webinar",
-      icon: <i className="far fa-image"/>,
+      icon: <i className="far fa-image" />,
       component: <Webinar />,
-      props:[["title", "text"], ["date", "text"], ["time", "text"],["body", "textarea" ], ["link_copy", "text"], ["link", "text"]]
-    }
+      props: [
+        ["title", "text"],
+        ["date", "text"],
+        ["time", "text"],
+        ["body", "textarea"],
+        ["link_copy", "text"],
+        ["link", "text"],
+      ],
+    },
   ];
 
   const [activeForm, setActiveForm] = useState();
@@ -428,11 +440,14 @@ function App() {
     } else if (blockName == "Text Block") {
       newItem.componentSave = ["TextBlock", { text: "<p>Lorem Ipsum</p>" }];
     } else if (blockName == "ARC Logo Header") {
-      newItem.componentSave = ["ARCLogo", {color: "teal"}];
+      newItem.componentSave = ["ARCLogo", { color: "teal" }];
     } else if (blockName == "Spacer") {
       newItem.component = <Spacer height="60px" />;
     } else if (blockName == "TAC Jumbo") {
-      newItem.componentSave = ["TACJumbo", { title: "<p>Travel Agent Communcations</p>", date: "01/01/2024" }];
+      newItem.componentSave = [
+        "TACJumbo",
+        { title: "<p>Travel Agent Communcations</p>", date: "01/01/2024" },
+      ];
     } else if (blockName == "TAC Link") {
       newItem.componentSave = ["TACLink", {}];
     } else if (blockName == "TAC Bottom") {
@@ -446,9 +461,18 @@ function App() {
     } else if (blockName == "Aerogram Image") {
       newItem.componentSave = ["AeroImage", {}];
     } else if (blockName == "Image") {
-      newItem.componentSave = ["Image", {height:"400"}];
+      newItem.componentSave = ["Image", { height: "400" }];
     } else if (blockName == "Webinar") {
-      newItem.componentSave = ["Webinar", {title: "ARC Fraud Awareness Webinar:Travel Industry Fraud & Scams", date: "Mon, April 3", time:"3pm", link_copy:"", webinarLink:"www2.arccorp.com"}];
+      newItem.componentSave = [
+        "Webinar",
+        {
+          title: "ARC Fraud Awareness Webinar:Travel Industry Fraud & Scams",
+          date: "Mon, April 3",
+          time: "3pm",
+          link_copy: "",
+          webinarLink: "www2.arccorp.com",
+        },
+      ];
     }
 
     if (activePosition == "top") {
@@ -921,16 +945,23 @@ function App() {
                     color: "#fff",
                     fontFamily:
                       "SourceSansPro-Bold, SourceSansPro-Regular, arial, helvetica, sans-serif",
-                  }}>Settings View</h2>
-                <div style={{margin: "0 30px", justifyContent:"center"}}>
-                <p style={{color:"#fff"}}>Choose a template</p>
-                <select name="template" value={templateSelection} onChange={getTemplate}>
-                  <option>-- Choose a template --</option>
-                  <option value="tac-template">TAC</option>
-                  <option value="operational">Operational</option>
-                  <option value="aerogram">AeroGram</option>
-                  <option value="webinar">Webinar</option>
-                </select>
+                  }}
+                >
+                  Settings View
+                </h2>
+                <div style={{ margin: "0 30px", justifyContent: "center" }}>
+                  <p style={{ color: "#fff" }}>Choose a template</p>
+                  <select
+                    name="template"
+                    value={templateSelection}
+                    onChange={getTemplate}
+                  >
+                    <option>-- Choose a template --</option>
+                    <option value="tac-template">TAC</option>
+                    <option value="operational">Operational</option>
+                    <option value="aerogram">AeroGram</option>
+                    <option value="webinar">Webinar</option>
+                  </select>
                 </div>
                 <div style={{ margin: "0 30px", justifyContent: "center" }}>
                   <p style={{ color: "#fff" }}>Change Footer Length</p>
@@ -964,56 +995,50 @@ function App() {
         </div>
       </div>
 
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Add Email Component</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <div className="row">
-            {blockPreviews.map((block) => (
-              <div className="col-lg-auto">
-                <div
-                  className="arc-email-component-add-container"
-                  onClick={() => addItem(block.name)}
-                >
-                  <div className="arc-email-component-icon">{block.icon}</div>
-                  <div className="arc-email-component-name">{block.name}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </Modal.Body>
-        {/* <Modal.Footer>
-          <a className="ctaBtn" onClick={handleClose}>
-            Close
-          </a>
-          <a className="ctaBtn" onClick={handleClose}>
-            Save Changes
-          </a>
-        </Modal.Footer> */}
-      </Modal>
+      <ReactModal isOpen={show} onRequestClose={handleClose}>
+        <div onClick={handleClose} className="modal-close text-right">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <div>Add Email Component</div>
 
-      <Modal show={showModify} onHide={handleCloseModify}>
+        <div className="row">
+          {blockPreviews.map((block) => (
+            <div className="col-lg-auto">
+              <div
+                className="arc-email-component-add-container"
+                onClick={() => addItem(block.name)}
+              >
+                <div className="arc-email-component-icon">{block.icon}</div>
+                <div className="arc-email-component-name">{block.name}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </ReactModal>
+
+      <ReactModal isOpen={showModify} onRequestClose={handleCloseModify}>
         <form onSubmit={modifyItem}>
-          <Modal.Header closeButton>
-            <Modal.Title>
-              Edit {items[activeAdd] ? items[activeAdd].name + " " : "Email "}
-              Component
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
+          <div onClick={handleCloseModify} className="modal-close text-right">
+            <i class="fa fa-times" aria-hidden="true"></i>
+          </div>
+
+          <div>
+            Edit {items[activeAdd] ? items[activeAdd].name + " " : "Email "}
+            Component
+          </div>
+
+          <div>
             <div className="row">
               <div className="col-lg-12">{formInputs}</div>
             </div>
-          </Modal.Body>
-          <Modal.Footer>
-            <a className="ctaBtn ctaBtn--close" onClick={deleteItem}>
-              <i className="fas fa-trash-alt"></i>
-            </a>
-            <input type="submit" className="ctaBtn" value="Save Changes" />
-          </Modal.Footer>
+          </div>
+
+          <a className="ctaBtn ctaBtn--close" onClick={deleteItem}>
+            <i className="fas fa-trash-alt"></i>
+          </a>
+          <input type="submit" className="ctaBtn" value="Save Changes" />
         </form>
-      </Modal>
+      </ReactModal>
     </div>
   );
 
