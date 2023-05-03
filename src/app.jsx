@@ -996,47 +996,54 @@ function App() {
       </div>
 
       <ReactModal isOpen={show} onRequestClose={handleClose}>
-        <div onClick={handleClose} className="modal-close text-right">
-          <i class="fa fa-times" aria-hidden="true"></i>
+        <div className="modal-header">
+          <div className="modal-title">Add Email Component</div>
+          <div onClick={handleClose} className="modal-close text-right">
+            <i class="fa fa-times" aria-hidden="true"></i>
+          </div>
         </div>
-        <div>Add Email Component</div>
 
-        <div className="row">
-          {blockPreviews.map((block) => (
-            <div className="col-lg-auto">
-              <div
-                className="arc-email-component-add-container"
-                onClick={() => addItem(block.name)}
-              >
-                <div className="arc-email-component-icon">{block.icon}</div>
-                <div className="arc-email-component-name">{block.name}</div>
+        <div className="modal-body">
+          <div className="row">
+            {blockPreviews.map((block) => (
+              <div className="col-lg-auto">
+                <div
+                  className="arc-email-component-add-container"
+                  onClick={() => addItem(block.name)}
+                >
+                  <div className="arc-email-component-icon">{block.icon}</div>
+                  <div className="arc-email-component-name">{block.name}</div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </ReactModal>
 
       <ReactModal isOpen={showModify} onRequestClose={handleCloseModify}>
         <form onSubmit={modifyItem}>
-          <div onClick={handleCloseModify} className="modal-close text-right">
-            <i class="fa fa-times" aria-hidden="true"></i>
+          <div className="modal-header">
+            <div className="modal-title">
+              Edit {items[activeAdd] ? items[activeAdd].name + " " : "Email "}
+              Component
+            </div>
+            <div onClick={handleCloseModify} className="modal-close text-right">
+              <i class="fa fa-times" aria-hidden="true"></i>
+            </div>
           </div>
 
-          <div>
-            Edit {items[activeAdd] ? items[activeAdd].name + " " : "Email "}
-            Component
-          </div>
-
-          <div>
+          <div className="modal-body">
             <div className="row">
               <div className="col-lg-12">{formInputs}</div>
             </div>
           </div>
 
-          <a className="ctaBtn ctaBtn--close" onClick={deleteItem}>
-            <i className="fas fa-trash-alt"></i>
-          </a>
-          <input type="submit" className="ctaBtn" value="Save Changes" />
+          <div className="modal-footer">
+            <a className="ctaBtn ctaBtn--close" onClick={deleteItem}>
+              <i className="fas fa-trash-alt"></i>
+            </a>
+            <input type="submit" className="ctaBtn" value="Save Changes" />
+          </div>
         </form>
       </ReactModal>
     </div>
