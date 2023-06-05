@@ -57,9 +57,10 @@
     left: 50% !important;
     right: auto !important;
     bottom: auto !important;
-    marginright: -50%;
+    margin-right: -50%;
     transform: translate(-50%, -50%) !important;
     border: none;
+    // max-height: 100vh;
   }
 }
 

@@ -58,7 +58,7 @@ export default function Button(props) {
                         align="center"
                       >
                         <a
-                          href={props.link}
+                          href={props.link ? props.link : "https://www2.arccorp.com/"}
                           style={{
                             textDecoration: "none",
                             display: "block",
