@@ -28,7 +28,7 @@ export default function Webinar(props) {
                   width="112"
                 />
               </td>
-              <td>
+              <td style={{fontFamily: "Arial, helvetica, sans-serif"}}>
                 <p
                   style={{
                     fontFamily: "Arial, sans-serif",
