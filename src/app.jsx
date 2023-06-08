@@ -442,7 +442,7 @@ function App() {
     } else if (blockName == "ARC Logo Header") {
       newItem.componentSave = ["ARCLogo", { color: "teal" }];
     } else if (blockName == "Spacer") {
-      newItem.component = <Spacer height="60px" />;
+      newItem.componentSave = ["Spacer", { height: "60px" }];
     } else if (blockName == "TAC Jumbo") {
       newItem.componentSave = [
         "TACJumbo",
