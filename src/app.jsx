@@ -227,7 +227,7 @@ function App() {
   );
 
   const [templateSelection, setTemplateSelection] = useState("");
-  const [footerSelection, setFooterSelection] = useState("");
+  const [footerSelection, setFooterSelection] = useState("long");
 
   const getTemplate = (event) => {
     var prevTemplateSelection = templateSelection;
