@@ -92,7 +92,7 @@ function App() {
     {
       name: "Text Block",
       icon: <i className="fas fa-paragraph"></i>,
-      component: <TextBlock text="<p>Lorem Ipsum</p>" padding="25px" />,
+      component: <TextBlock />,
       props: [
         ["text", "textarea"],
         ["padding", "select"],
@@ -108,92 +108,92 @@ function App() {
         ["buttonStyle", "select"],
       ],
     },
-    {
-      name: "ARC Logo Header",
-      icon: (
-        <img
-          src="https://www2.arccorp.com/globalassets/arc-logos/corporate-logos/arc-logo-l-teal.png"
-          width="64"
-        />
-      ),
-      component: <ARCLogo />,
-      props: [
-        ["link", "text"],
-        ["color", "select"],
-      ],
-    },
+    // {
+    //   name: "ARC Logo Header",
+    //   icon: (
+    //     <img
+    //       src="https://www2.arccorp.com/globalassets/arc-logos/corporate-logos/arc-logo-l-teal.png"
+    //       width="64"
+    //     />
+    //   ),
+    //   component: <ARCLogo />,
+    //   props: [
+    //     ["link", "text"],
+    //     ["color", "select"],
+    //   ],
+    // },
     {
       name: "Spacer",
       icon: <i className="far fa-square"></i>,
       component: <Spacer />,
       props: [["height", "text"]],
     },
-    {
-      name: "TAC Jumbo",
-      icon: <i className="far fa-square"></i>,
-      component: <TACJumbo />,
-      props: [
-        ["jumbobackground", "select"],
-        ["title", "text"],
-        ["date", "text"],
-      ],
-    },
-    {
-      name: "TAC Link",
-      icon: <i className="far fa-newspaper"></i>,
-      component: <TACLink />,
-      props: [
-        ["icon", "select"],
-        ["title", "text"],
-        ["link", "text"],
-        ["cta", "text"],
-      ],
-    },
-    {
-      name: "TAC Bottom",
-      icon: <i className="far fa-newspaper"></i>,
-      component: <TACLink />,
-      props: [
-        ["TIP_Title", "text"],
-        ["TIP_Text", "text"],
-        ["TIP_Link", "text"],
-        ["Training_Title", "text"],
-        ["Training_Text", "text"],
-        ["Training_Link", "text"],
-      ],
-    },
-    {
-      name: "Standard Header",
-      icon: <i className="far fa-newspaper"></i>,
-      component: <StandardHeader />,
-      props: [["color", "select"]],
-    },
-    {
-      name: "Teal Header",
-      icon: <i className="far fa-newspaper"></i>,
-      component: <TealHeader />,
-      props: [["link", "text"]],
-    },
-    {
-      name: "Address Footer",
-      icon: <i className="far fa-newspaper"></i>,
-      component: <AddressSection />,
-      props: [["color", "select"]],
-    },
-    {
-      name: "Aerogram Header",
-      icon: (
-        <img src="https://www2.arccorp.com/globalassets/email/aerogram-logo.jpg"></img>
-      ),
-      component: <AerogramLogo />,
-      props: [],
-    },
-    {
-      name: "Aerogram Image",
-      icon: <i className="far fa-image" />,
-      component: <AeroImage />,
-      props: [],
-    },
+    // {
+    //   name: "TAC Jumbo",
+    //   icon: <i className="far fa-square"></i>,
+    //   component: <TACJumbo />,
+    //   props: [
+    //     ["jumbobackground", "select"],
+    //     ["title", "text"],
+    //     ["date", "text"],
+    //   ],
+    // },
+    // {
+    //   name: "TAC Link",
+    //   icon: <i className="far fa-newspaper"></i>,
+    //   component: <TACLink />,
+    //   props: [
+    //     ["icon", "select"],
+    //     ["title", "text"],
+    //     ["link", "text"],
+    //     ["cta", "text"],
+    //   ],
+    // },
+    // {
+    //   name: "TAC Bottom",
+    //   icon: <i className="far fa-newspaper"></i>,
+    //   component: <TACLink />,
+    //   props: [
+    //     ["TIP_Title", "text"],
+    //     ["TIP_Text", "text"],
+    //     ["TIP_Link", "text"],
+    //     ["Training_Title", "text"],
+    //     ["Training_Text", "text"],
+    //     ["Training_Link", "text"],
+    //   ],
+    // },
+    // {
+    //   name: "Standard Header",
+    //   icon: <i className="far fa-newspaper"></i>,
+    //   component: <StandardHeader />,
+    //   props: [["color", "select"]],
+    // },
+    // {
+    //   name: "Teal Header",
+    //   icon: <i className="far fa-newspaper"></i>,
+    //   component: <TealHeader />,
+    //   props: [["link", "text"]],
+    // },
+    // {
+    //   name: "Address Footer",
+    //   icon: <i className="far fa-newspaper"></i>,
+    //   component: <AddressSection />,
+    //   props: [["color", "select"]],
+    // },
+    // {
+    //   name: "Aerogram Header",
+    //   icon: (
+    //     <img src="https://www2.arccorp.com/globalassets/email/aerogram-logo.jpg"></img>
+    //   ),
+    //   component: <AerogramLogo />,
+    //   props: [],
+    // },
+    // {
+    //   name: "Aerogram Image",
+    //   icon: <i className="far fa-image" />,
+    //   component: <AeroImage />,
+    //   props: [],
+    // },
     {
       name: "Image",
       icon: <i className="far fa-image" />,
@@ -204,19 +204,19 @@ function App() {
         ["ctaLink", "text"],
       ],
     },
-    {
-      name: "Webinar",
-      icon: <i className="far fa-image" />,
-      component: <Webinar />,
-      props: [
-        ["title", "text"],
-        ["date", "text"],
-        ["time", "text"],
-        ["body", "textarea"],
-        ["link_copy", "text"],
-        ["link", "text"],
-      ],
-    },
+    // {
+    //   name: "Webinar",
+    //   icon: <i className="far fa-image" />,
+    //   component: <Webinar />,
+    //   props: [
+    //     ["title", "text"],
+    //     ["date", "text"],
+    //     ["time", "text"],
+    //     ["body", "textarea"],
+    //     ["link_copy", "text"],
+    //     ["link", "text"],
+    //   ],
+    // },
   ];
 
   const [activeForm, setActiveForm] = useState();
@@ -246,8 +246,8 @@ function App() {
           console.log(element.template);
           setItems(element.template);
           setTemplateSelection(element.id);
-          if (selectedTemplate == "aerogram") {
-            setFooterSelection("aerogram");
+          if (selectedTemplate == "board-template") {
+            setFooterSelection("long");
           }
           break;
         }
@@ -438,7 +438,7 @@ function App() {
     } else if (blockName == "Button") {
       newItem.componentSave = ["Button", { text: "Learn More" }];
     } else if (blockName == "Text Block") {
-      newItem.componentSave = ["TextBlock", { text: "<p>Lorem Ipsum</p>" }];
+      newItem.componentSave = ["TextBlock", { text: "<p>Lorem Ipsum</p>", padding:"25px" }];
     } else if (blockName == "ARC Logo Header") {
       newItem.componentSave = ["ARCLogo", { color: "teal" }];
     } else if (blockName == "Spacer") {
@@ -957,10 +957,7 @@ function App() {
                     onChange={getTemplate}
                   >
                     <option>-- Choose a template --</option>
-                    <option value="tac-template">TAC</option>
-                    <option value="operational">Operational</option>
-                    <option value="aerogram">AeroGram</option>
-                    <option value="webinar">Webinar</option>
+                    <option value="board-template">Board</option>
                   </select>
                 </div>
                 <div style={{ margin: "0 30px", justifyContent: "center" }}>
