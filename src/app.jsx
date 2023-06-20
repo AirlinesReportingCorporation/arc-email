@@ -49,7 +49,6 @@ import {
 
 import * as ReactDOMServer from "react-dom/server";
 import { SortableItem } from "../components/SortableItem";
-import TealHeader from "../components/TealHeader";
 import AddressSection from "../components/AddressSection";
 import AeroImage from "../components/AeroImage";
 
@@ -67,7 +66,6 @@ var componentsMap = {
   TACLink: TACLink,
   TACJumbo: TACJumbo,
   TACBottom: TACBottom,
-  TealHeader: TealHeader,
   TextBlock: TextBlock,
   Webinar: Webinar,
 };
@@ -92,7 +90,7 @@ function App() {
     {
       name: "Text Block",
       icon: <i className="fas fa-paragraph"></i>,
-      component: <TextBlock text="<p>Lorem Ipsum</p>" padding="25px" />,
+      component: <TextBlock />,
       props: [
         ["text", "textarea"],
         ["padding", "select"],
@@ -167,12 +165,6 @@ function App() {
       icon: <i className="far fa-newspaper"></i>,
       component: <StandardHeader />,
       props: [["color", "select"]],
-    },
-    {
-      name: "Teal Header",
-      icon: <i className="far fa-newspaper"></i>,
-      component: <TealHeader />,
-      props: [["link", "text"]],
     },
     {
       name: "Address Footer",
@@ -435,10 +427,11 @@ function App() {
 
     if (blockName == "Header") {
       newItem.componentSave = ["Header", {}];
-    } else if (blockName == "Button") {
+    }
+     else if (blockName == "Button") {
       newItem.componentSave = ["Button", { text: "Learn More" }];
     } else if (blockName == "Text Block") {
-      newItem.componentSave = ["TextBlock", { text: "<p>Lorem Ipsum</p>" }];
+      newItem.componentSave = ["TextBlock", { text: "<p>Lorem Ipsum</p>", padding:"25px" }];
     } else if (blockName == "ARC Logo Header") {
       newItem.componentSave = ["ARCLogo", { color: "teal" }];
     } else if (blockName == "Spacer") {
