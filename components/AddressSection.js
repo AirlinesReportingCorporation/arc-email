@@ -18,7 +18,7 @@ export default function AddressSection(props) {
             <tr>
               <td
                 align="center"
-                class="em_aside"
+                className="em_aside"
                 style={{ paddingLeft: "24px", paddingRight: "24px"}}
                 valign="top"
               >
@@ -31,7 +31,7 @@ export default function AddressSection(props) {
                 >
                   <tbody>
                     <tr>
-                      <td class="em_height" height="40">
+                      <td className="em_height" height="40">
                         &nbsp;
                       </td>
                     </tr>
@@ -56,21 +56,21 @@ export default function AddressSection(props) {
                                 }}
                                 valign="top"
                               >
-                                <span class="address_item">
+                                <span className="address_item">
                                   <strong>Customer Care Center</strong>
                                 </span>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <span class="address_item">
+                                <span className="address_item">
                                   Phone&nbsp;1-855-816-8003
                                 </span>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <span class="address_item">
+                                <span className="address_item">
                                   Fax&nbsp;1-703-816-8039
                                 </span>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <a
                                   href="mailto:ccchelp@arccorp.com"
-                                  class="address_item"
+                                  className="address_item"
                                   style={{
                                     textDecoration: "none",
                                     color: (props.color == "white" ? "#189bb0 !important" : "#fff !important") 
@@ -85,7 +85,7 @@ export default function AddressSection(props) {
                       </td>
                     </tr>
                     <tr>
-                      <td class="em_height" height="40">
+                      <td className="em_height" height="40">
                         &nbsp;
                       </td>
                     </tr>

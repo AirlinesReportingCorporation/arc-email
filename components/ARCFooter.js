@@ -25,7 +25,7 @@ export default function ARCFooter(props) {
                 >
                   <tbody>
                     <tr>
-                      <td class="em_height" style={{ height: "20" }}>
+                      <td className="em_height" style={{ height: "20" }}>
                         &nbsp;
                       </td>
                     </tr>
@@ -163,7 +163,7 @@ export default function ARCFooter(props) {
                       </td>
                     </tr>
                     <tr>
-                      <td class="em_height" style={{ height: "10" }}>
+                      <td className="em_height" style={{ height: "10" }}>
                         &nbsp;
                       </td>
                     </tr>

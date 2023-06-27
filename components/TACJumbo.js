@@ -17,7 +17,6 @@ export default function TACJumbo(props) {
             <img
               width="650"
               style={{
-                maxWidth: "650px",
                 width: "650px",
                 display: "block",
               }}

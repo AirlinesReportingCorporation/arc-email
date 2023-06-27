@@ -4,7 +4,7 @@ export default function ARCLogo(props) {
   return (
     <>
       <tr>
-        <td class="em_height" height="20">
+        <td className="em_height" height="20">
           &nbsp;
         </td>
       </tr>
@@ -44,7 +44,7 @@ export default function ARCLogo(props) {
         </td>
       </tr>
       <tr>
-        <td class="em_height" height="20">
+        <td className="em_height" height="20">
           &nbsp;
         </td>
       </tr>

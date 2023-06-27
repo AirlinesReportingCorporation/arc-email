@@ -841,6 +841,7 @@ function App() {
                   >
                     {items.map((item, i) => (
                       <div
+                      key={i}
                         className="arc-email-sortable-item-container"
                         onMouseOver={() => setActiveHover(item.id)}
                         onMouseOut={() => setActiveHover("")}
@@ -910,11 +911,11 @@ function App() {
 
                 <p>Save this email to send through your Outlook email.</p>
 
-                <btn class="ctaBtn emlExportBtn" onClick={oftExport}>
+                <btn className="ctaBtn emlExportBtn" onClick={oftExport}>
                   Windows: Export as Outlook Template
                 </btn>
 
-                <btn class="ctaBtn emlExportBtn" onClick={emlExport}>
+                <btn className="ctaBtn emlExportBtn" onClick={emlExport}>
                   Mac: Export as Outlook Template
                 </btn>
 
@@ -992,14 +993,14 @@ function App() {
         <div className="modal-header">
           <div className="modal-title">Add Email Component</div>
           <div onClick={handleClose} className="modal-close text-right">
-            <i class="fa fa-times" aria-hidden="true"></i>
+            <i className="fa fa-times" aria-hidden="true"></i>
           </div>
         </div>
 
         <div className="modal-body">
           <div className="row">
-            {blockPreviews.map((block) => (
-              <div className="col-lg-auto">
+            {blockPreviews.map((block, i) => (
+              <div key={i} className="col-lg-auto">
                 <div
                   className="arc-email-component-add-container"
                   onClick={() => addItem(block.name)}
@@ -1021,7 +1022,7 @@ function App() {
               Component
             </div>
             <div onClick={handleCloseModify} className="modal-close text-right">
-              <i class="fa fa-times" aria-hidden="true"></i>
+              <i className="fa fa-times" aria-hidden="true"></i>
             </div>
           </div>
 

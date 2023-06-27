@@ -2,103 +2,157 @@ import React from "react";
 
 export default function StandardHeader(props) {
   return (
-    <tr style={{backgroundColor: (props.color == "teal" ? "#189bb0" : props.color)}}>
-      <td
-        valign="top"
-        align="center"
-        style={{ paddingLeft: "34px", paddingRight: "34px" }}
+    <>
+      <tr
+        style={{
+          backgroundColor: props.color == "teal" ? "#189bb0" : props.color,
+        }}
       >
-        <table align="center" border="0" cellSpacing="0" cellPadding="0">
-          <tbody>
-            <tr height="20"></tr>
-            <tr>
-              <td align="center" valign="top">
-                <table
-                  align="left"
-                  border="0"
-                  cellSpacing="0"
-                  cellPadding="0"
-                  width="629px"
-                >
-                  <tbody>
-                    <tr>
-                      <td width="478" align="center" valign="top">
-                        <table
-                          align="left"
-                          border="0"
-                          cellSpacing="0"
-                          cellPadding="0"
-                          width="96"
-                        >
-                          <tbody>
-                            <tr>
-                              <td align="center" valign="top">
-                                <a
-                                  href="https://www2.arccorp.com"
-                                  style={{ textDecoration: "none" }}
-                                  target="_blank"
+        <td
+          align="center"
+          className="em_aside"
+          style={{ paddingLeft: "34px", paddingRight: "34px" }}
+          valign="top"
+        >
+          <table
+            align="center"
+            border="0"
+            cellPadding="0"
+            cellSpacing="0"
+            width="100%"
+          >
+            <tbody>
+              <tr>
+                <td className="em_height" height="20">
+                  &nbsp;
+                </td>
+              </tr>
+              <tr>
+                <td align="center" valign="top">
+                  <table
+                    align="left"
+                    border="0"
+                    cellPadding="0"
+                    cellSpacing="0"
+                    className="em_wrapper"
+                    style={{ width: "629px" }}
+                    width="629"
+                  >
+                    <tbody>
+                      <tr>
+                        <td width="314" align="center" valign="top">
+                          <table
+                            align="left"
+                            border="0"
+                            cellPadding="0"
+                            cellSpacing="0"
+                            className="em_wrapper"
+                            style={{ width: "96px" }}
+                            width="96"
+                          >
+                            <tbody>
+                              <tr>
+                                <td
+                                  align="center"
+                                  className="em_pad_bottom"
+                                  valign="top"
                                 >
-                                  {/* If white is selected use the blue logo, otherwise use the white one */}
-                                  <img
-                                    alt="ARC Logo"
-                                    height="20"
-                                    width="52"
-                                    name="ARC-logo-header.pgn"
-                                    style={{
-                                      display: "block",
-                                      border: "none",
-                                      fontFamily: "Arial, sans-serif",
-                                      fontSize: "16px",
-                                      lineHeight: "27px",
-                                    }}
-                                    src={
+                                  <a
+                                    href="https://www2.arccorp.com/"
+                                    name="www2_arccorp_com_"
+                                    style={{ textDecoration: "none" }}
+                                    target="_blank"
+                                  >
+                                    <img
+                                      alt="ARC"
+                                      height="20"
+                                      name="ARC-logo-header"
+                                      src={
+                                        props.color == "white"
+                                          ? "https://www2.arccorp.com/globalassets/email/ARC-logo-header.jpg"
+                                          : "https://www2.arccorp.com/globalassets/email/ARC-logo-header.png"
+                                      }
+                                      style={{
+                                        display: "block",
+                                        border: "none",
+                                        fontFamily: "Arial, sans-serif",
+                                        fontSize: "16px",
+                                        lineHeight: "27px",
+                                        color: "#000000",
+                                      }}
+                                      title="ARC"
+                                      width="52"
+                                    />
+                                  </a>
+                                </td>
+                                <td className="em_hide" width="25">
+                                  &nbsp;
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                        <td width="314" align="right" valign="top">
+                          <table
+                            align="right"
+                            border="0"
+                            cellPadding="0"
+                            cellSpacing="0"
+                            className="em_wrapper"
+                            width="314"
+                          >
+                            <tbody>
+                              <tr>
+                                <td
+                                  className="title_center"
+                                  align="right"
+                                  height="20"
+                                  style={{
+                                    fontFamily: "Arial, sans-serif",
+                                    fontSize: "12px",
+                                    color:
                                       props.color == "white"
-                                        ? "https://www2.arccorp.com/globalassets/email/ARC-logo-header.jpg"
-                                        : "https://www2.arccorp.com/globalassets/email/ARC-logo-header.png"
-                                    }
-                                  ></img>
-                                </a>
-                              </td>
-                              <td class="em_hide" width="25">
-                                &nbsp;
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                        <table
-                          align="right"
-                          border="0"
-                          cellSpacing="0"
-                          cellPadding="0"
-                        >
-                          <tbody>
-                            <tr>
-                              <td
-                                align="right"
-                                height="20"
-                                style={{fontFamily:"Arial, sans-serif", fontSize:"12px", color: (props.color == "teal" ? "#189bb0" : props.color), lineHeight:"14px"}}
-                                valign="middle"
-                              >
-                                <a
-                                  href="https://www2.arccorp.com/articles-trends/the-latest/"
-                                  style={{fontFamily:"Arial, sans-serif", fontSize:"12px", color: (props.color == "white" ? "#189bb0" : "#fff"), lineHeight:"14px", textDecoration:"none"}}
+                                        ? "#189bb0"
+                                        : "#fff",
+                                    lineHeight: "14px",
+                                    textAlign: "right",
+                                  }}
+                                  valign="middle"
                                 >
-                                  THE INTELLIGENCE BEHIND AIR TRAVEL
-                                </a>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </td>
-            </tr>
-            <tr height="20"></tr>
-          </tbody>
-        </table>
-      </td>
-    </tr>
+                                  <a
+                                    style={{
+                                      fontFamily: "Arial, sans-serif",
+                                      fontSize: "12px",
+                                      color:
+                                        props.color === "white"
+                                          ? "#189bb0"
+                                          : "#ffffff",
+                                      lineHeight: "14px",
+                                      textDecoration: "none",
+                                    }}
+                                    href="https://www2.arccorp.com/articles-trends/the-latest/"
+                                  >
+                                    THE INTELLIGENCE BEHIND AIR TRAVEL
+                                  </a>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td className="em_height" height="20">
+                  &nbsp;
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </>
   );
 }

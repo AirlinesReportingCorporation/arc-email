@@ -9,13 +9,13 @@ export default function AerogramLogo(props) {
           border="0"
           cellpadding="0"
           cellspacing="0"
-          class="em_wrapper"
+          className="em_wrapper"
           style={{ width: "96px" }}
           width="96"
         >
           <tbody>
             <tr>
-              <td align="center" class="em_pad_bottom" valign="top">
+              <td align="center" className="em_pad_bottom" valign="top">
                 <a
                   href="https://www2.arccorp.com/"
                   name="www2_arccorp_com_"
@@ -42,7 +42,7 @@ export default function AerogramLogo(props) {
                   ></img>
                 </a>
               </td>
-              <td class="em_hide" width="25">
+              <td className="em_hide" width="25">
                 &nbsp;
               </td>
             </tr>
@@ -54,11 +54,11 @@ export default function AerogramLogo(props) {
           border="0"
           cellpadding="0"
           cellspacing="0"
-          class="em_wrapper"
+          className="em_wrapper"
         >
           <tbody>
             <tr>
-              <td align="center" class="em_pad_bottom" valign="top">
+              <td align="center" className="em_pad_bottom" valign="top">
                 <a
                   href="https://www2.arccorp.com/"
                   name="www2_arccorp_com_"
