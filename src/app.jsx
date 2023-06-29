@@ -114,7 +114,10 @@ function App() {
       name: "Twocolumn",
       icon: <i className="fas fa-square"></i>,
       component: <Twocolumn />,
-      props: [["text", "textarea"],["text2", "textarea"]],
+      props: [
+        ["text", "textarea"],
+        ["text2", "textarea"],
+      ],
     },
     // {
     //   name: "ARC Logo Header",
@@ -448,7 +451,11 @@ function App() {
     } else if (blockName == "Twocolumn") {
       newItem.componentSave = [
         "Twocolumn",
-        { text: "<p>Lorem Ipsum</p>", text2: "<h2>Board Director News</h2><p>We are pleased to formally announce the appointment of Rob Brown, Managing Director, B2B Strategy & Services, Southwest Airlines, to ARC’s Board. Rob brings a wealth of industry experience across key areas within the Board’s purview–strategy, risk, and operational oversight.<br/>Welcome Rob!  </p>" },
+        {
+          text: "<p>Lorem Ipsum</p>",
+          text2:
+            "<h2>Board Director News</h2><p>We are pleased to formally announce the appointment of Rob Brown, Managing Director, B2B Strategy & Services, Southwest Airlines, to ARC’s Board. Rob brings a wealth of industry experience across key areas within the Board’s purview–strategy, risk, and operational oversight.<br/>Welcome Rob!  </p>",
+        },
       ];
     } else if (blockName == "Text Block") {
       newItem.componentSave = [
@@ -859,29 +866,29 @@ function App() {
           </div>
           <div className="col-lg-3 arc-email-tool-items">
             <div className="arc-email-sidebar-container">
-              <div class="arc-email-sidebar-instructions">
-                <h3>Email Parts</h3>
-                This area contains all the parts of your email.{" "}
-                <ul>
-                  <li>
-                    Click the <strong>pencil</strong> icon next to each part to
-                    edit its contents.{" "}
-                  </li>
-                  <li>
-                    <strong>Hover</strong> over a section to reveal a{" "}
-                    <strong>+</strong> icon to add new parts to the email. Click
-                    the icon to add it in that location.{" "}
-                  </li>
-                  <li>
-                    Click and drag the handle the left of the part to move the
-                    part around in the email.
-                  </li>
-                </ul>
-              </div>
               <div
                 className="arc-email-sidebar-email-parts"
                 style={{ display: activeView === "design" ? "block" : "none" }}
               >
+                <div class="arc-email-sidebar-instructions">
+                  <h2>Email Parts</h2>
+                  This area contains all the parts of your email.{" "}
+                  <ul>
+                    <li>
+                      Click the <strong>pencil</strong> icon next to each part
+                      to edit its contents.{" "}
+                    </li>
+                    <li>
+                      <strong>Hover</strong> over a section to reveal a{" "}
+                      <strong>+</strong> icon to add new parts to the email.
+                      Click the icon to add it in that location.{" "}
+                    </li>
+                    <li>
+                      Click and drag the handle the left of the part to move the
+                      part around in the email.
+                    </li>
+                  </ul>
+                </div>
                 <DndContext
                   sensors={sensors}
                   collisionDetection={closestCenter}

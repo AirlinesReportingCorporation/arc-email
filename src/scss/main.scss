@@ -60,7 +60,7 @@
 
 .arc-email-sidebar-download-container {
   color: main.$white;
-  padding: 0px 30px 15px;;
+  padding: 0px 30px 15px;
   h2 {
     color: main.$white;
     font-family: main.$arc-font-bold;
@@ -186,6 +186,10 @@
 
 .arc-email-tool-items {
   background: rgba(main.$tarmac, 0.9);
+  h2 {
+    color: main.$white;
+    font-family: main.$arc-font-bold;
+  }
 }
 
 .ctaBtn--close {
@@ -193,7 +197,7 @@
   border-color: main.$nowboarding;
 
   &:hover {
-    background: rgba(main.$nowboarding, .8);
-    border-color: rgba(main.$nowboarding, .8);
+    background: rgba(main.$nowboarding, 0.8);
+    border-color: rgba(main.$nowboarding, 0.8);
   }
 }
