@@ -230,7 +230,7 @@ function App() {
   const [activeForm, setActiveForm] = useState();
 
   const [items, setItems] = useLocalStorage(
-    "tempTemplate",
+    "tempTemplateBoard",
     emailTemplates[0].template
   );
 
