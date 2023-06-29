@@ -23,6 +23,7 @@ import { Editor } from "@tinymce/tinymce-react";
 import AerogramLogo from "../components/AerogramLogo";
 import Image from "../components/Image";
 import Webinar from "../components/Webinar";
+import Twocolumn from "../components/Twocolumn";
 
 import emailTemplates from "./templates";
 
@@ -70,6 +71,7 @@ var componentsMap = {
   TealHeader: TealHeader,
   TextBlock: TextBlock,
   Webinar: Webinar,
+  Twocolumn: Twocolumn,
 };
 
 function alertMe(items, activeAdd) {
@@ -107,6 +109,12 @@ function App() {
         ["link", "text"],
         ["buttonStyle", "select"],
       ],
+    },
+    {
+      name: "Twocolumn",
+      icon: <i className="fas fa-square"></i>,
+      component: <Twocolumn />,
+      props: [["text", "textarea"],["text2", "textarea"]],
     },
     // {
     //   name: "ARC Logo Header",
@@ -437,8 +445,16 @@ function App() {
       newItem.componentSave = ["Header", {}];
     } else if (blockName == "Button") {
       newItem.componentSave = ["Button", { text: "Learn More" }];
+    } else if (blockName == "Twocolumn") {
+      newItem.componentSave = [
+        "Twocolumn",
+        { text: "<p>Lorem Ipsum</p>", text2: "<h2>Board Director News</h2><p>We are pleased to formally announce the appointment of Rob Brown, Managing Director, B2B Strategy & Services, Southwest Airlines, to ARC’s Board. Rob brings a wealth of industry experience across key areas within the Board’s purview–strategy, risk, and operational oversight.<br/>Welcome Rob!  </p>" },
+      ];
     } else if (blockName == "Text Block") {
-      newItem.componentSave = ["TextBlock", { text: "<p>Lorem Ipsum</p>", padding:"25px" }];
+      newItem.componentSave = [
+        "TextBlock",
+        { text: "<p>Lorem Ipsum</p>", padding: "25px" },
+      ];
     } else if (blockName == "ARC Logo Header") {
       newItem.componentSave = ["ARCLogo", { color: "teal" }];
     } else if (blockName == "Spacer") {
@@ -550,25 +566,35 @@ function App() {
           )}
 
           {item[1] === "textarea" ? (
-            <Editor
-              apiKey="rxgjtgwy00je8q2vhiw6sczk5wa2ttcgnwsyp2i23bk81nah"
-              name={item[0]}
-              initialValue={tempFormProps[item[0]]}
-              init={{
-                height: 300,
-                menubar: false,
-                branding: false,
-                plugins: "link lists",
-                toolbar: [
-                  { name: "history", items: ["undo", "redo"] },
-                  { name: "styles", items: ["styles"] },
-                  { name: "lists", items: ["numlist", "bullist"] },
-                  { name: "indentation", items: ["outdent", "indent"] },
-                  { name: "link", items: ["link"] },
-                ],
-              }}
-              onEditorChange={(value) => handleTinyMCE(value, item[0])}
-            />
+            <>
+              <p>
+                To add an image, drag from a folder on you computer into the
+                text area below.
+              </p>
+              <Editor
+                apiKey="rxgjtgwy00je8q2vhiw6sczk5wa2ttcgnwsyp2i23bk81nah"
+                name={item[0]}
+                initialValue={tempFormProps[item[0]]}
+                init={{
+                  height: 300,
+                  menubar: false,
+                  branding: false,
+                  plugins: "link lists image",
+                  automatic_uploads: true,
+                  file_picker_types: "file image media",
+                  toolbar: [
+                    { name: "history", items: ["undo", "redo"] },
+                    { name: "styles", items: ["styles"] },
+                    { name: "lists", items: ["numlist", "bullist"] },
+                    { name: "indentation", items: ["outdent", "indent"] },
+                    { name: "link", items: ["link"] },
+                    { name: "image", items: ["image"] },
+                  ],
+                  images_upload_url: "",
+                }}
+                onEditorChange={(value) => handleTinyMCE(value, item[0])}
+              />
+            </>
           ) : (
             // <textarea
             //   name={item[0]}
@@ -833,6 +859,25 @@ function App() {
           </div>
           <div className="col-lg-3 arc-email-tool-items">
             <div className="arc-email-sidebar-container">
+              <div class="arc-email-sidebar-instructions">
+                <h3>Email Parts</h3>
+                This area contains all the parts of your email.{" "}
+                <ul>
+                  <li>
+                    Click the <strong>pencil</strong> icon next to each part to
+                    edit its contents.{" "}
+                  </li>
+                  <li>
+                    <strong>Hover</strong> over a section to reveal a{" "}
+                    <strong>+</strong> icon to add new parts to the email. Click
+                    the icon to add it in that location.{" "}
+                  </li>
+                  <li>
+                    Click and drag the handle the left of the part to move the
+                    part around in the email.
+                  </li>
+                </ul>
+              </div>
               <div
                 className="arc-email-sidebar-email-parts"
                 style={{ display: activeView === "design" ? "block" : "none" }}
@@ -904,6 +949,14 @@ function App() {
                     ))}
                   </SortableContext>
                 </DndContext>
+
+                <div class="arc-email-sidebar-instructions mt-3">
+                  <h3>Download Email</h3>
+                  <p>
+                    Download your email by click the download button in the
+                    sidebar to the left.
+                  </p>
+                </div>
               </div>
               <div
                 className="arc-email-sidebar-download-container"
@@ -917,20 +970,27 @@ function App() {
 
                 <p>Save this email to send through your Outlook email.</p>
 
-                <btn class="ctaBtn emlExportBtn" onClick={oftExport}>
-                  Windows: Export as Outlook Template
-                </btn>
-
-                <btn class="ctaBtn emlExportBtn" onClick={emlExport}>
-                  Mac: Export as Outlook Template
-                </btn>
-
-                <h3>ACOUSTIC</h3>
                 <p>
-                  Copy the code below to your clipboard and upload to the HTML
-                  section of Acoustic.
+                  If you are using a Windows computer with Outlook, download the
+                  email template using the link below.
                 </p>
-                <textarea name="" id="" rows="10" value={markup}></textarea>
+                <btn class="ctaBtn emlExportBtn" onClick={oftExport}>
+                  Export for Windows
+                </btn>
+
+                <p>
+                  If you are using a Mac computer with Outlook, download the
+                  email template using the link below.
+                </p>
+                <btn class="ctaBtn emlExportBtn" onClick={emlExport}>
+                  Export for Mac
+                </btn>
+
+                <h3>Sending the Email</h3>
+                <p>
+                  Click the file you downloaded, and it will open your email
+                  within Outlook to send.
+                </p>
               </div>
               <div
                 className="arc-email-sidebar-email-parts"

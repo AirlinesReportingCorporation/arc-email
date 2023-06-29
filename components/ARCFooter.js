@@ -7,6 +7,24 @@ export default function ARCFooter(props) {
         <table role="presentation" border="0" cellpadding="0" cellspacing="0">
           <tbody>
             <tr>
+              <td
+                class="em_height"
+                align="left"
+                valign="top"
+                width="100%"
+                height={"40"}
+                style={{
+                  "border-collapse": "collapse",
+                  "mso-table-lspace": "0pt",
+                  "mso-table-rspace": "0pt",
+                  "mso-line-height-rule": "exactly",
+                  "line-height": "40px",
+                }}
+              >
+                &nbsp;
+              </td>
+            </tr>
+            <tr>
               <td align="center">
                 <table
                   role="presentation"
@@ -24,11 +42,6 @@ export default function ARCFooter(props) {
                   height="25"
                 >
                   <tbody>
-                    <tr>
-                      <td class="em_height" style={{ height: "20" }}>
-                        &nbsp;
-                      </td>
-                    </tr>
                     <tr>
                       <td
                         align="center"
@@ -187,15 +200,6 @@ export default function ARCFooter(props) {
                           }}
                           valign="top"
                         >
-                          <a
-                            href="#LPWEBFORMOPTOUT"
-                            name="Unsubscribe"
-                            style={{ color: "#189bb0", textDecoration: "none" }}
-                            xt="LPWEBFORMOPTOUT"
-                            xtwebform="7620755"
-                          >
-                            <strong>Unsubscribe</strong>
-                          </a>
                           <br />
                           <br />
                           ARC&nbsp;&nbsp;&nbsp;&nbsp;3000 Wilson Blvd., Suite
@@ -226,15 +230,6 @@ export default function ARCFooter(props) {
                           width="650"
                           valign="top"
                         >
-                          <a
-                            style={{ color: "#189bb0", textDecoration: "none" }}
-                            href="#SPONECLICKOPTOUT"
-                            name="__26"
-                            xt="SPONECLICKOPTOUT"
-                          >
-                            <strong>Unsubscribe</strong>
-                          </a>
-                          <br />
                           <br />
                           ARC&nbsp;&nbsp;&nbsp;&nbsp;3000 Wilson Blvd., Suite
                           300&nbsp;&nbsp;&nbsp;&nbsp;Arlington, VA
