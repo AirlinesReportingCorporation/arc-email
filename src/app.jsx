@@ -431,7 +431,7 @@ function App() {
      else if (blockName == "Button") {
       newItem.componentSave = ["Button", { text: "Learn More" }];
     } else if (blockName == "Text Block") {
-      newItem.componentSave = ["TextBlock", { text: "<p>Lorem Ipsum</p>", padding:"25px" }];
+      newItem.componentSave = ["TextBlock", { text: '<p style="text-align: left">Lorem Ipsum</p>', padding:"25px" }];
     } else if (blockName == "ARC Logo Header") {
       newItem.componentSave = ["ARCLogo", { color: "teal" }];
     } else if (blockName == "Spacer") {
