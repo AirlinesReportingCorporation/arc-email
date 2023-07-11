@@ -2,7 +2,11 @@ import React from "react";
 
 export default function TextBlock(props) {
   return (
-    <tr>
+    <tr
+      style={{
+        backgroundColor: props.color == "teal" ? "#189bb0" : props.color,
+      }}
+    >
       <td>
         <table role="presentation" border="0" cellpadding="0" cellspacing="0">
           <tbody>

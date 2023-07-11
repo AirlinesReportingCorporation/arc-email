@@ -60,7 +60,9 @@ export default function StandardHeader(props) {
                                   <a
                                     href="https://www2.arccorp.com/"
                                     name="www2_arccorp_com_"
-                                    style={{ textDecoration: "none" }}
+                                    style={{
+                                      textDecoration: "none !important",
+                                    }}
                                     target="_blank"
                                   >
                                     <img
@@ -113,26 +115,53 @@ export default function StandardHeader(props) {
                                     color:
                                       props.color == "white"
                                         ? "#189bb0"
-                                        : "#fff",
+                                        : "#FFFFFF",
                                     lineHeight: "14px",
                                     textAlign: "right",
                                   }}
                                   valign="middle"
                                 >
                                   <a
+                                    name="THE INTELLIGENCE BEHIND AIR TRAVEL"
                                     style={{
                                       fontFamily: "Arial, sans-serif",
                                       fontSize: "12px",
                                       color:
                                         props.color === "white"
                                           ? "#189bb0"
-                                          : "#ffffff",
+                                          : "#FFFFFF !important",
                                       lineHeight: "14px",
-                                      textDecoration: "none",
+                                      textDecoration: "none !important",
                                     }}
                                     href="https://www2.arccorp.com/articles-trends/the-latest/"
                                   >
-                                    THE INTELLIGENCE BEHIND AIR TRAVEL
+                                    <span
+                                      style={{
+                                        fontFamily: "Arial, sans-serif",
+                                        fontSize: "12px",
+                                        color:
+                                          props.color === "white"
+                                            ? "#189bb0"
+                                            : "#FFFFFF !important",
+                                        lineHeight: "14px",
+                                        textDecoration: "none !important",
+                                      }}
+                                    >
+                                      <font
+                                        style={{
+                                          fontFamily: "Arial, sans-serif",
+                                          fontSize: "12px",
+                                          color:
+                                            props.color === "white"
+                                              ? "#189bb0"
+                                              : "#FFFFFF !important",
+                                          lineHeight: "14px",
+                                          textDecoration: "none !important",
+                                        }}
+                                      >
+                                        THE INTELLIGENCE BEHIND AIR TRAVEL
+                                      </font>
+                                    </span>
                                   </a>
                                 </td>
                               </tr>

@@ -2,7 +2,11 @@ import React from "react";
 
 export default function Spacer(props) {
   return (
-    <tr>
+    <tr
+      style={{
+        backgroundColor: props.color == "teal" ? "#189bb0" : props.color,
+      }}
+    >
       <td
         class="em_height"
         align="left"

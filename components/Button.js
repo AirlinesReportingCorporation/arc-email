@@ -6,7 +6,7 @@ export default function Button(props) {
       <td
         style={{
           paddingLeft: "25px",
-          paddingRight: "25px"
+          paddingRight: "25px",
         }}
       >
         <table
@@ -19,7 +19,7 @@ export default function Button(props) {
         >
           <tbody>
             <tr>
-              <td class="em_height" height="40" style={{lineHeight: "40px"}}>
+              <td class="em_height" height="40" style={{ lineHeight: "40px" }}>
                 &nbsp;
               </td>
             </tr>
@@ -41,7 +41,11 @@ export default function Button(props) {
                 >
                   <tbody>
                     <tr>
-                      <td class="em_height" height="16" style={{lineHeight: "16px"}}>
+                      <td
+                        class="em_height"
+                        height="16"
+                        style={{ lineHeight: "16px" }}
+                      >
                         &nbsp;
                       </td>
                     </tr>
@@ -58,7 +62,12 @@ export default function Button(props) {
                         align="center"
                       >
                         <a
-                          href={props.link ? props.link : "https://www2.arccorp.com/"}
+                          name="ctaLink"
+                          href={
+                            props.link
+                              ? props.link
+                              : "https://www2.arccorp.com/"
+                          }
                           style={{
                             textDecoration: "none",
                             display: "block",
@@ -76,7 +85,11 @@ export default function Button(props) {
                       </td>
                     </tr>
                     <tr>
-                      <td class="em_height" height="16" style={{lineHeight: "16px"}}>
+                      <td
+                        class="em_height"
+                        height="16"
+                        style={{ lineHeight: "16px" }}
+                      >
                         &nbsp;
                       </td>
                     </tr>
@@ -85,7 +98,7 @@ export default function Button(props) {
               </td>
             </tr>
             <tr>
-              <td class="em_height" height="40" style={{lineHeight: "40px"}}>
+              <td class="em_height" height="40" style={{ lineHeight: "40px" }}>
                 &nbsp;
               </td>
             </tr>
