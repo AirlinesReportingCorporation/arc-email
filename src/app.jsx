@@ -5,11 +5,8 @@ import React, {
   useRef,
   useCallback,
 } from "react";
-import { serialize, deserialize } from "react-serialize";
-import jsxToString from "jsx-to-string";
 
 import ReactModal from "react-modal";
-import Modal from "react-bootstrap/Modal";
 import Button from "../components/Button";
 import Header from "../components/Header";
 import TextBlock from "../components/TextBlock";
@@ -23,6 +20,7 @@ import { Editor } from "@tinymce/tinymce-react";
 import AerogramLogo from "../components/AerogramLogo";
 import Image from "../components/Image";
 import Webinar from "../components/Webinar";
+import Twocolumn from "../components/Twocolumn";
 
 import emailTemplates from "./templates";
 
@@ -68,6 +66,7 @@ var componentsMap = {
   TACBottom: TACBottom,
   TextBlock: TextBlock,
   Webinar: Webinar,
+  Twocolumn: Twocolumn,
 };
 
 function alertMe(items, activeAdd) {
@@ -207,6 +206,15 @@ function App() {
         ["body", "textarea"],
         ["link_copy", "text"],
         ["link", "text"],
+      ],
+    },
+    {
+      name: "Twocolumn",
+      icon: <i className="fas fa-square"></i>,
+      component: <Twocolumn />,
+      props: [
+        ["text", "textarea"],
+        ["text2", "textarea"],
       ],
     },
   ];
@@ -427,11 +435,16 @@ function App() {
 
     if (blockName == "Header") {
       newItem.componentSave = ["Header", {}];
-    }
-     else if (blockName == "Button") {
+    } else if (blockName == "Button") {
       newItem.componentSave = ["Button", { text: "Learn More" }];
     } else if (blockName == "Text Block") {
-      newItem.componentSave = ["TextBlock", { text: '<p style="text-align: left">Lorem Ipsum</p>', padding:"25px" }];
+      newItem.componentSave = [
+        "TextBlock",
+        {
+          text: '<p style="text-align: left">Lorem Ipsum</p>',
+          padding: "25px",
+        },
+      ];
     } else if (blockName == "ARC Logo Header") {
       newItem.componentSave = ["ARCLogo", { color: "teal" }];
     } else if (blockName == "Spacer") {
@@ -464,6 +477,14 @@ function App() {
           time: "3pm",
           link_copy: "",
           webinarLink: "www2.arccorp.com",
+        },
+      ];
+    } else if (blockName == "Twocolumn") {
+      newItem.componentSave = [
+        "Twocolumn",
+        {
+          text: "<h2>Title 1</h2><p>Lorem Ipsum</p>",
+          text2: "<h2>Title 1</h2><p>Lorem Ipsum</p>",
         },
       ];
     }
@@ -551,14 +572,18 @@ function App() {
                 height: 300,
                 menubar: false,
                 branding: false,
-                plugins: "link lists",
+                plugins: "link lists image",
+                automatic_uploads: true,
+                file_picker_types: "file image media",
                 toolbar: [
                   { name: "history", items: ["undo", "redo"] },
                   { name: "styles", items: ["styles"] },
                   { name: "lists", items: ["numlist", "bullist"] },
                   { name: "indentation", items: ["outdent", "indent"] },
                   { name: "link", items: ["link"] },
+                  { name: "image", items: ["image"] },
                 ],
+                images_upload_url: "",
               }}
               onEditorChange={(value) => handleTinyMCE(value, item[0])}
             />
@@ -841,7 +866,7 @@ function App() {
                   >
                     {items.map((item, i) => (
                       <div
-                      key={i}
+                        key={i}
                         className="arc-email-sortable-item-container"
                         onMouseOver={() => setActiveHover(item.id)}
                         onMouseOut={() => setActiveHover("")}
