@@ -10,8 +10,10 @@ export default function Twocolumn(props) {
               align="left"
               class="em_align_cent"
               valign="top"
+              width="50%"
               style={{
                 fontFamily: "Arial, helvetica,sans-serif",
+                width: "50%"
               }}
               dangerouslySetInnerHTML={{ __html: props.text }}
             ></td>
@@ -19,8 +21,10 @@ export default function Twocolumn(props) {
               align="left"
               class="em_align_cent"
               valign="top"
+              width="50%"
               style={{
                 fontFamily: "Arial, helvetica,sans-serif",
+                width: "50%"
               }}
               dangerouslySetInnerHTML={{ __html: props.text2 }}
             ></td>

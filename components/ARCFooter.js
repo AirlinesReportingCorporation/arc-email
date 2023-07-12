@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function ARCFooter(props) {
+  console.log(props);
   return (
     <tr>
       <td align="center" valign="top">
@@ -176,7 +177,7 @@ export default function ARCFooter(props) {
                 <table>
                   <tbody>
                     <tr>
-                      {props.type === "short" ? (
+                      {props.footer === "short" || props.footer == "nosubscribe" ? (
                         <td
                           align="center"
                           style={{
@@ -187,15 +188,22 @@ export default function ARCFooter(props) {
                           }}
                           valign="top"
                         >
-                          <a
-                            href="#LPWEBFORMOPTOUT"
-                            name="Unsubscribe"
-                            style={{ color: "#189bb0", textDecoration: "none" }}
-                            xt="LPWEBFORMOPTOUT"
-                            xtwebform="7620755"
-                          >
-                            <strong>Unsubscribe</strong>
-                          </a>
+                          {props.footer == "nosubscribe" ? (
+                            console.log("hello")
+                          ) : (
+                            <a
+                              href="#LPWEBFORMOPTOUT"
+                              name="Unsubscribe"
+                              style={{
+                                color: "#189bb0",
+                                textDecoration: "none",
+                              }}
+                              xt="LPWEBFORMOPTOUT"
+                              xtwebform="7620755"
+                            >
+                              <strong>Unsubscribe</strong>
+                            </a>
+                          )}
                           <br />
                           <br />
                           ARC&nbsp;&nbsp;&nbsp;&nbsp;3000 Wilson Blvd., Suite
@@ -226,14 +234,22 @@ export default function ARCFooter(props) {
                           width="650"
                           valign="top"
                         >
-                          <a
-                            style={{ color: "#189bb0", textDecoration: "none" }}
-                            href="#SPONECLICKOPTOUT"
-                            name="__26"
-                            xt="SPONECLICKOPTOUT"
-                          >
-                            <strong>Unsubscribe</strong>
-                          </a>
+                          {props.footer == "nosubscribe" ? (
+                            ""
+                          ) : (
+                            <a
+                              href="#LPWEBFORMOPTOUT"
+                              name="Unsubscribe"
+                              style={{
+                                color: "#189bb0",
+                                textDecoration: "none",
+                              }}
+                              xt="LPWEBFORMOPTOUT"
+                              xtwebform="7620755"
+                            >
+                              <strong>Unsubscribe</strong>
+                            </a>
+                          )}
                           <br />
                           <br />
                           ARC&nbsp;&nbsp;&nbsp;&nbsp;3000 Wilson Blvd., Suite

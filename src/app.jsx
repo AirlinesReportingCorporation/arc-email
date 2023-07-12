@@ -254,6 +254,9 @@ function App() {
           if (selectedTemplate == "aerogram") {
             setFooterSelection("aerogram");
           }
+          if (selectedTemplate == "nosubscribe") {
+            setFooterSelection("nosubscribe");
+          }
           break;
         }
       }
@@ -998,6 +1001,7 @@ function App() {
                   >
                     <option value="short">Short</option>
                     <option value="long">Long</option>
+                    <option value="nosubscribe">Short, no subscribe</option>
                     <option value="aerogram">Aerogram</option>
                   </select>
                 </div>
