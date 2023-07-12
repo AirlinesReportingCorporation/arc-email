@@ -221,6 +221,7 @@ function App() {
 
   const [templateSelection, setTemplateSelection] = useState("");
   const [footerSelection, setFooterSelection] = useState("");
+  const [unsubSelection, setUnsubSelection] = useState("false");
 
   const getTemplate = (event) => {
     var prevTemplateSelection = templateSelection;
@@ -255,6 +256,11 @@ function App() {
     setFooterSelection(event.target.value);
     console.log(event.target.value);
   };
+
+  const changeUnsub = (event) => {
+    setUnsubSelection(event.target.value);
+    console.log(event.target.value);
+  }
 
   //console.log(items[1].component.props);
   const [itemAddID, setItemAddID] = useState(1000);
@@ -326,7 +332,7 @@ function App() {
         ReactDOMServer.renderToStaticMarkup(email) +
         '</table> </td> </tr> <tr> <td align="center"> <table align="center" bgcolor="#f7f5f5" border="0" cellpadding="0" cellspacing="0" class="em_main_table" style="table-layout: fixed; width: 700px" width="700" > <tbody>' +
         ReactDOMServer.renderToStaticMarkup(
-          <ARCFooter footer={footerSelection} />
+          <ARCFooter footer={footerSelection} unsub={unsubSelection} />
         ) +
         '</tbody> </table> </td> </tr> </tbody> </table><div style="white-space: nowrap; font: 20px courier; color: #ffffff"> <span class="em_divhide" >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span > &nbsp; </div> </body> </html> '
     );
@@ -428,7 +434,7 @@ function App() {
       name: blockName,
       componentSave: "asdf",
     };
-    
+
     if (blockName == "Button") {
       newItem.componentSave = ["Button", { text: "Learn More" }];
     } else if (blockName == "Text Block") {
@@ -919,6 +925,45 @@ function App() {
                     ))}
                   </SortableContext>
                 </DndContext>
+                <br/>
+                <hr/>
+                <div style={{ margin: "0 30px", justifyContent: "center" }}>
+                  <p style={{ color: "#fff" }}>Choose a template</p>
+                  <select
+                    name="template"
+                    value={templateSelection}
+                    onChange={getTemplate}
+                  >
+                    <option>-- Choose a template --</option>
+                    <option value="tac-template">TAC</option>
+                    <option value="operational">Operational</option>
+                    <option value="aerogram">AeroGram</option>
+                    <option value="webinar">Webinar</option>
+                  </select>
+                </div>
+                <div style={{ margin: "0 30px", justifyContent: "center" }}>
+                  <p style={{ color: "#fff" }}>Change Footer Length</p>
+                  <select
+                    name="footer"
+                    value={footerSelection}
+                    onChange={changeFooter}
+                  >
+                    <option value="short">Short</option>
+                    <option value="long">Long</option>
+                    <option value="aerogram">Aerogram</option>
+                  </select>
+                </div>
+                <div style={{ margin: "0 30px", justifyContent: "center" }}>
+                  <p style={{ color: "#fff" }}>Remove Footer Unsubscribe?</p>
+                  <select
+                    name="unsub"
+                    value={unsubSelection}
+                    onChange={changeUnsub}
+                  >
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                  </select>
+                </div>
               </div>
               <div
                 className="arc-email-sidebar-download-container"
@@ -964,33 +1009,6 @@ function App() {
                 >
                   Settings View
                 </h2>
-                <div style={{ margin: "0 30px", justifyContent: "center" }}>
-                  <p style={{ color: "#fff" }}>Choose a template</p>
-                  <select
-                    name="template"
-                    value={templateSelection}
-                    onChange={getTemplate}
-                  >
-                    <option>-- Choose a template --</option>
-                    <option value="tac-template">TAC</option>
-                    <option value="operational">Operational</option>
-                    <option value="aerogram">AeroGram</option>
-                    <option value="webinar">Webinar</option>
-                  </select>
-                </div>
-                <div style={{ margin: "0 30px", justifyContent: "center" }}>
-                  <p style={{ color: "#fff" }}>Change Footer Length</p>
-                  <select
-                    name="footer"
-                    value={footerSelection}
-                    onChange={changeFooter}
-                  >
-                    <option value="short">Short</option>
-                    <option value="long">Long</option>
-                    <option value="nosubscribe">Short, no subscribe</option>
-                    <option value="aerogram">Aerogram</option>
-                  </select>
-                </div>
                 <ViewToggle onClick={toggleView} toggled={!isToggled} />
               </div>
             </div>

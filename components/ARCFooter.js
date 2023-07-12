@@ -2,6 +2,7 @@ import React from "react";
 
 export default function ARCFooter(props) {
   console.log(props);
+  console.log('remove unsub? '+props.unsub)
   return (
     <tr>
       <td align="center" valign="top">
@@ -177,7 +178,8 @@ export default function ARCFooter(props) {
                 <table>
                   <tbody>
                     <tr>
-                      {props.footer === "short" || props.footer == "nosubscribe" ? (
+                      {/*short */}
+                      {props.footer === "short" ? (
                         <td
                           align="center"
                           style={{
@@ -188,8 +190,8 @@ export default function ARCFooter(props) {
                           }}
                           valign="top"
                         >
-                          {props.footer == "nosubscribe" ? (
-                            console.log("hello")
+                          {props.unsub == "true" ? (
+                            console.log(props.unsub)
                           ) : (
                             <a
                               href="#LPWEBFORMOPTOUT"
@@ -234,8 +236,8 @@ export default function ARCFooter(props) {
                           width="650"
                           valign="top"
                         >
-                          {props.footer == "nosubscribe" ? (
-                            ""
+                          {props.unsub == "true" ? (
+                            console.log(props.unsub)
                           ) : (
                             <a
                               href="#LPWEBFORMOPTOUT"
@@ -263,10 +265,8 @@ export default function ARCFooter(props) {
                           >
                             <strong>www.arccorp.com</strong>
                           </a>
-                          {props.footer == "long" ||
-                          props.footer == "aerogram" ? (
-                            <>
-                              {props.footer == "aerogram" ? (
+                          {/* Aerogram Footer */}
+                          {props.footer == "aerogram" ? (
                                 <>
                                   {" "}
                                   <br />
@@ -289,6 +289,9 @@ export default function ARCFooter(props) {
                               ) : (
                                 ""
                               )}
+                              {/* Long footer */}
+                          {props.footer == "long" ? (
+                            <>
                               <br />
                               <br />
                               ARC accelerates the growth of global air travel by
