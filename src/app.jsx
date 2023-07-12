@@ -8,7 +8,6 @@ import React, {
 
 import ReactModal from "react-modal";
 import Button from "../components/Button";
-import Header from "../components/Header";
 import TextBlock from "../components/TextBlock";
 import ARCLogo from "../components/ARCLogo";
 import Spacer from "../components/Spacer";
@@ -57,7 +56,6 @@ var componentsMap = {
   ARCFooter: ARCFooter,
   ARCLogo: ARCLogo,
   Button: Button,
-  Header: Header,
   Image: Image,
   Spacer: Spacer,
   StandardHeader: StandardHeader,
@@ -76,16 +74,6 @@ function alertMe(items, activeAdd) {
 
 function App() {
   var blockPreviews = [
-    {
-      name: "Header",
-      icon: <i className="fas fa-heading" aria-hidden="true"></i>,
-      component: <Header />,
-      props: [
-        ["text", "text"],
-        ["position", "select"],
-        ["heading", "select"],
-      ], //name, input
-    },
     {
       name: "Text Block",
       icon: <i className="fas fa-paragraph"></i>,
@@ -440,10 +428,8 @@ function App() {
       name: blockName,
       componentSave: "asdf",
     };
-
-    if (blockName == "Header") {
-      newItem.componentSave = ["Header", {}];
-    } else if (blockName == "Button") {
+    
+    if (blockName == "Button") {
       newItem.componentSave = ["Button", { text: "Learn More" }];
     } else if (blockName == "Text Block") {
       newItem.componentSave = [
