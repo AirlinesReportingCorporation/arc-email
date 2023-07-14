@@ -216,12 +216,21 @@ function App() {
 
   const [items, setItems] = useLocalStorage(
     "tempTemplate",
-    emailTemplates[0].template
+    emailTemplates[0].template,
   );
+
+  const [footer, setFooter] = useLocalStorage(
+    "tempFooter",
+    "short"
+  )
+  const [unsub, setUnsub] = useLocalStorage(
+    "tempUnsub",
+    "false"
+  )
 
   const [templateSelection, setTemplateSelection] = useState("");
   const [footerSelection, setFooterSelection] = useState("");
-  const [unsubSelection, setUnsubSelection] = useState("false");
+  const [unsubSelection, setUnsubSelection] = useState("");
 
   const getTemplate = (event) => {
     var prevTemplateSelection = templateSelection;
@@ -241,9 +250,11 @@ function App() {
           setItems(element.template);
           setTemplateSelection(element.id);
           if (selectedTemplate == "aerogram") {
+            setFooter("aerogram")
             setFooterSelection("aerogram");
           }
           if (selectedTemplate == "nosubscribe") {
+            setFooter("aerogram")
             setFooterSelection("nosubscribe");
           }
           break;
@@ -253,11 +264,13 @@ function App() {
   };
 
   const changeFooter = (event) => {
+    setFooter(event.target.value)
     setFooterSelection(event.target.value);
     console.log(event.target.value);
   };
 
   const changeUnsub = (event) => {
+    setUnsub(event.target.value);
     setUnsubSelection(event.target.value);
     console.log(event.target.value);
   }
@@ -323,6 +336,12 @@ function App() {
           item.componentSave[1]
         )
       );
+      if(footer) {
+        setFooterSelection(footer)
+      }
+      if(unsub) {
+        setUnsubSelection(unsub)
+      }
     }
 
     //console.log(sensors);
