@@ -249,14 +249,10 @@ function App() {
           console.log(element.template);
           setItems(element.template);
           setTemplateSelection(element.id);
-          if (selectedTemplate == "aerogram") {
-            setFooter("aerogram")
-            setFooterSelection("aerogram");
-          }
-          if (selectedTemplate == "nosubscribe") {
-            setFooter("aerogram")
-            setFooterSelection("nosubscribe");
-          }
+          console.log(element)
+          console.log(element.footer)
+          setFooter(element.footer);
+          setFooterSelection(element.footer);
           break;
         }
       }

@@ -9,8 +9,8 @@ const emailTemplates = [
         componentSave: ["ARCLogo", { link: "https://www2.arccorp.com" }],
       },
     ],
+    footer: "long",
   },
-
   {
     name: "TAC",
     id: "tac-template",
@@ -83,6 +83,7 @@ const emailTemplates = [
         ],
       },
     ],
+    footer: "long",
   },
   {
     name: "Operational",
@@ -115,6 +116,7 @@ const emailTemplates = [
         componentSave: ["AddressSection", { color: "teal" }],
       },
     ],
+    footer: "short",
   },
   {
     name: "AeroGram",
@@ -152,6 +154,7 @@ const emailTemplates = [
         componentSave: ["Spacer", { height: "60" }],
       },
     ],
+    footer: "aerogram",
   },
   {
     name: "Webinar",
@@ -212,6 +215,7 @@ const emailTemplates = [
         componentSave: ["Spacer", { height: "30" }],
       },
     ],
+    footer: "long",
   },
 ];
 
