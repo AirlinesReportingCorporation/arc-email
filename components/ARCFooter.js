@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ARCFooter(props) {
   console.log(props);
-  console.log('remove unsub? '+props.unsub)
+  console.log("remove unsub? " + props.unsub);
   return (
     <tr>
       <td align="center" valign="top">
@@ -177,52 +177,10 @@ export default function ARCFooter(props) {
               <td>
                 <table>
                   <tbody>
+                    {/* Unsub toggle */}
                     <tr>
-                      {/*short */}
-                      {props.footer === "short" ? (
-                        <td
-                          align="center"
-                          style={{
-                            fontFamily: "Arial, sans-serif",
-                            fontSize: "11px",
-                            color: "#a2a3a5",
-                            lineHeight: "14px",
-                          }}
-                          valign="top"
-                        >
-                          {props.unsub == "true" ? (
-                            console.log(props.unsub)
-                          ) : (
-                            <a
-                              href="#LPWEBFORMOPTOUT"
-                              name="Unsubscribe"
-                              style={{
-                                color: "#189bb0",
-                                textDecoration: "none",
-                              }}
-                              xt="LPWEBFORMOPTOUT"
-                              xtwebform="7620755"
-                            >
-                              <strong>Unsubscribe</strong>
-                            </a>
-                          )}
-                          <br />
-                          <br />
-                          ARC&nbsp;&nbsp;&nbsp;&nbsp;3000 Wilson Blvd., Suite
-                          300&nbsp;&nbsp;&nbsp;&nbsp;Arlington, VA
-                          22201&nbsp;&nbsp;&nbsp;&nbsp;USA&nbsp;&nbsp;&nbsp;&nbsp;
-                          <a
-                            href="https://www.arccorp.com"
-                            name="www_arccorp_com"
-                            style={{ color: "#189bb0", textDecoration: "none" }}
-                            xt="SPCLICK"
-                          >
-                            <strong>www.arccorp.com</strong>
-                          </a>
-                          <br />
-                          <br />© Airlines Reporting Corporation (ARC). All
-                          rights reserved.
-                        </td>
+                      {props.unsub == "true" ? (
+                        console.log(props.unsub)
                       ) : (
                         <td
                           align="center"
@@ -233,27 +191,39 @@ export default function ARCFooter(props) {
                             lineHeight: "14px",
                             width: "650px",
                           }}
-                          width="650"
                           valign="top"
                         >
-                          {props.unsub == "true" ? (
-                            console.log(props.unsub)
-                          ) : (
-                            <a
-                              href="#LPWEBFORMOPTOUT"
-                              name="Unsubscribe"
-                              style={{
-                                color: "#189bb0",
-                                textDecoration: "none",
-                              }}
-                              xt="LPWEBFORMOPTOUT"
-                              xtwebform="7620755"
-                            >
-                              <strong>Unsubscribe</strong>
-                            </a>
-                          )}
-                          <br />
-                          <br />
+                          <a
+                            href="#LPWEBFORMOPTOUT"
+                            name="Unsubscribe"
+                            style={{
+                              color: "#189bb0",
+                              textDecoration: "none",
+                            }}
+                            xt="LPWEBFORMOPTOUT"
+                            xtwebform="7620755"
+                          >
+                            <strong>Unsubscribe</strong>
+                          </a>
+                          <br/>
+                          <br/>
+                        </td>
+                      )}
+                    </tr>
+                    {/* Options */}
+                    <tr>
+                      {/*short */}
+                      {props.footer === "short" && (
+                        <td
+                          align="center"
+                          style={{
+                            fontFamily: "Arial, sans-serif",
+                            fontSize: "11px",
+                            color: "#a2a3a5",
+                            lineHeight: "14px",
+                          }}
+                          valign="top"
+                        >
                           ARC&nbsp;&nbsp;&nbsp;&nbsp;3000 Wilson Blvd., Suite
                           300&nbsp;&nbsp;&nbsp;&nbsp;Arlington, VA
                           22201&nbsp;&nbsp;&nbsp;&nbsp;USA&nbsp;&nbsp;&nbsp;&nbsp;
@@ -265,68 +235,115 @@ export default function ARCFooter(props) {
                           >
                             <strong>www.arccorp.com</strong>
                           </a>
-                          {/* Aerogram Footer */}
-                          {props.footer == "aerogram" ? (
-                                <>
-                                  {" "}
-                                  <br />
-                                  <br />
-                                  ARC is providing the content in the above
-                                  hyperlinks on the behalf of ARC travel
-                                  suppliers. ARC uses reasonable care in
-                                  compiling and presenting the content of this
-                                  email and the associated hyperlinks, but ARC
-                                  gives no guarantee that the content is
-                                  complete, accurate, error or virus free or up
-                                  to date. Please note, the information
-                                  contained in this email or in the hyperlinks
-                                  is not the sole source of information from ARC
-                                  travel suppliers and may not include all fare
-                                  rules/ticketing rules. Therefore, ARC
-                                  recommends travel agents take care to read all
-                                  information published by ARC travel suppliers.
-                                </>
-                              ) : (
-                                ""
-                              )}
-                              {/* Long footer */}
-                          {props.footer == "long" ? (
-                            <>
-                              <br />
-                              <br />
-                              ARC accelerates the growth of global air travel by
-                              delivering forward-looking travel data, flexible
-                              distribution services and other innovative
-                              industry solutions. We are a leading travel
-                              intelligence company that possesses the world’s
-                              largest, most comprehensive global airline ticket
-                              dataset, including more than 15 billion passenger
-                              flights representing 490 airlines and 230
-                              countries and territories. Our solutions and
-                              expertise strengthen economies and enrich lives by
-                              connecting stakeholders across the travel
-                              ecosystem. For more information, please visit
-                              <a
-                                href="https://www.arccorp.com"
-                                name="www_arccorp_com"
-                                style={{
-                                  color: "#189bb0",
-                                  textDecoration: "none",
-                                }}
-                                xt="SPCLICK"
-                              >
-                                <strong> www.arccorp.com</strong>
-                              </a>
-                              .
-                            </>
-                          ) : (
-                            <></>
-                          )}
-                          <br />
-                          <br />© Airlines Reporting Corporation (ARC). All
-                          rights reserved.
                         </td>
                       )}
+                      {/* Aerogram Footer */}
+                      {props.footer == "aerogram" && (
+                        <td
+                          align="center"
+                          style={{
+                            fontFamily: "Arial, sans-serif",
+                            fontSize: "11px",
+                            color: "#a2a3a5",
+                            lineHeight: "14px",
+                            width: "650px",
+                          }}
+                          valign="top"
+                        >
+                          ARC&nbsp;&nbsp;&nbsp;&nbsp;3000 Wilson Blvd., Suite
+                          300&nbsp;&nbsp;&nbsp;&nbsp;Arlington, VA
+                          22201&nbsp;&nbsp;&nbsp;&nbsp;USA&nbsp;&nbsp;&nbsp;&nbsp;
+                          <a
+                            href="https://www.arccorp.com"
+                            name="www_arccorp_com"
+                            style={{ color: "#189bb0", textDecoration: "none" }}
+                            xt="SPCLICK"
+                          >
+                            <strong>www.arccorp.com</strong>
+                          </a>
+                          <br />
+                          <br />
+                          ARC is providing the content in the above hyperlinks
+                          on the behalf of ARC travel suppliers. ARC uses
+                          reasonable care in compiling and presenting the
+                          content of this email and the associated hyperlinks,
+                          but ARC gives no guarantee that the content is
+                          complete, accurate, error or virus free or up to date.
+                          Please note, the information contained in this email
+                          or in the hyperlinks is not the sole source of
+                          information from ARC travel suppliers and may not
+                          include all fare rules/ticketing rules. Therefore, ARC
+                          recommends travel agents take care to read all
+                          information published by ARC travel suppliers.
+                        </td>
+                      )}
+                      {/* Long footer */}
+                      {props.footer == "long" && (
+                        <td
+                          align="center"
+                          style={{
+                            fontFamily: "Arial, sans-serif",
+                            fontSize: "11px",
+                            color: "#a2a3a5",
+                            lineHeight: "14px",
+                            width: "650px",
+                          }}
+                          valign="top"
+                        >
+                          ARC&nbsp;&nbsp;&nbsp;&nbsp;3000 Wilson Blvd., Suite
+                          300&nbsp;&nbsp;&nbsp;&nbsp;Arlington, VA
+                          22201&nbsp;&nbsp;&nbsp;&nbsp;USA&nbsp;&nbsp;&nbsp;&nbsp;
+                          <a
+                            href="https://www.arccorp.com"
+                            name="www_arccorp_com"
+                            style={{ color: "#189bb0", textDecoration: "none" }}
+                            xt="SPCLICK"
+                          >
+                            <strong>www.arccorp.com</strong>
+                          </a>
+                          <br />
+                          <br />
+                          ARC accelerates the growth of global air travel by
+                          delivering forward-looking travel data, flexible
+                          distribution services and other innovative industry
+                          solutions. We are a leading travel intelligence
+                          company that possesses the world’s largest, most
+                          comprehensive global airline ticket dataset, including
+                          more than 15 billion passenger flights representing
+                          490 airlines and 230 countries and territories. Our
+                          solutions and expertise strengthen economies and
+                          enrich lives by connecting stakeholders across the
+                          travel ecosystem. For more information, please visit
+                          <a
+                            href="https://www.arccorp.com"
+                            name="www_arccorp_com"
+                            style={{
+                              color: "#189bb0",
+                              textDecoration: "none",
+                            }}
+                            xt="SPCLICK"
+                          >
+                            <strong> www.arccorp.com</strong>
+                          </a>
+                          .
+                        </td>
+                      )}
+                    </tr>
+                    {/* copyright */}
+                    <tr>
+                      <td
+                        align="center"
+                        style={{
+                          fontFamily: "Arial, sans-serif",
+                          fontSize: "11px",
+                          color: "#a2a3a5",
+                          lineHeight: "14px",
+                        }}
+                        valign="top"
+                      >
+                        <br />© Airlines Reporting Corporation (ARC). All rights
+                        reserved.
+                      </td>
                     </tr>
                   </tbody>
                 </table>
