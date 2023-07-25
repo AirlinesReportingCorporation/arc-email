@@ -107,6 +107,7 @@ function App() {
       props: [
         ["text", "text"],
         ["link", "text"],
+        ["buttonwidth", "select"],
         ["buttonStyle", "select"],
       ],
     },
@@ -700,6 +701,26 @@ function App() {
               >
                 <option value="solidBtn">Solid</option>
                 <option value="outlineBtn">Outline</option>
+              </select>
+            ) : (
+              ""
+            )
+          ) : (
+            ""
+          )}
+
+          {item[1] === "select" ? (
+            item[0] === "buttonwidth" ? (
+              <select
+                name={item[0]}
+                defaultValue={tempFormProps[item[0]]}
+                value={formProps[i]}
+                onChange={handleInputChange}
+              >
+                <option value="130px">Small</option>
+                <option value="230px">Medium</option>
+                <option value="330px">Large</option>
+                <option value="430px">XL</option>
               </select>
             ) : (
               ""
