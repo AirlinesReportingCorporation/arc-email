@@ -590,6 +590,7 @@ function App() {
                   plugins: "link lists image",
                   automatic_uploads: true,
                   file_picker_types: "file image media",
+                  contextmenu: "copy paste | link image inserttable | cell row column deletetable",
                   toolbar: [
                     { name: "history", items: ["undo", "redo"] },
                     { name: "styles", items: ["styles"] },
@@ -597,6 +598,7 @@ function App() {
                     { name: "indentation", items: ["outdent", "indent"] },
                     { name: "link", items: ["link"] },
                     { name: "image", items: ["image"] },
+                    
                   ],
                   images_upload_url: "",
                 }}
