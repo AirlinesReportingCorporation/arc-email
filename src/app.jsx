@@ -590,16 +590,17 @@ function App() {
                   plugins: "link lists image",
                   automatic_uploads: true,
                   file_picker_types: "file image media",
-                  contextmenu: "copy paste | link image inserttable | cell row column deletetable",
+                  contextmenu:
+                    "copy paste | link image inserttable | cell row column deletetable",
                   toolbar: [
                     { name: "history", items: ["undo", "redo"] },
-                    { name: "styles", items: ["styles"] },
+                    { name: "styles", items: ["styles", "fontsize"] },
                     { name: "lists", items: ["numlist", "bullist"] },
                     { name: "indentation", items: ["outdent", "indent"] },
                     { name: "link", items: ["link"] },
                     { name: "image", items: ["image"] },
-                    
                   ],
+                  font_size_formats: "8px 10px 12px 16px 14px 18px 24px 36px",
                   images_upload_url: "",
                 }}
                 onEditorChange={(value) => handleTinyMCE(value, item[0])}
