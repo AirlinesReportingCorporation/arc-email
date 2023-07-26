@@ -584,6 +584,20 @@ function App() {
                 name={item[0]}
                 initialValue={tempFormProps[item[0]]}
                 init={{
+                  paste_auto_cleanup_on_paste: true,
+                  paste_remove_styles: true,
+                  paste_remove_styles_if_webkit: true,
+                  paste_strip_class_attributes: "all",
+                  forced_root_block: false,
+                  style_formats: [
+                    {
+                      title: "Paragraph",
+                      format: "p",
+                      styles: { margin: "0" },
+                    },
+                    { title: "Heading 1", format: "h1" },
+                    { title: "Heading 2", format: "h2" },
+                  ],
                   height: 300,
                   menubar: false,
                   branding: false,
@@ -602,13 +616,17 @@ function App() {
                   ],
                   font_size_formats: "8px 10px 12px 16px 14px 18px 24px 36px",
                   images_upload_url: "",
-                  style_formats: {
-                    inline: "p",
-                    styles: { "Margin-bottom": "0" },
+                  paste_preprocess: function(plugin, args) {
+                    console.log(args.content);
+                    var str = args.content.replace(/<p>/g, "").replace(/<\/p>/g, "<br/>");
+                    console.log(str);
+                    args.content = str;
                   },
-                  forced_root_block: "",
                   force_br_newlines: true,
                   force_p_newlines: false,
+                  convert_newlines_to_brs : true,
+                  newline_behavior: "linebreak",
+                  
                 }}
                 onEditorChange={(value) => handleTinyMCE(value, item[0])}
               />
