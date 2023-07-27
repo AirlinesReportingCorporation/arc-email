@@ -141,7 +141,7 @@ function App() {
     {
       name: "TAC Bottom",
       icon: <i className="far fa-newspaper"></i>,
-      component: <TACLink />,
+      component: <TACBottom />,
       props: [
         ["TIP_Title", "text"],
         ["TIP_Text", "text"],
@@ -149,6 +149,9 @@ function App() {
         ["Training_Title", "text"],
         ["Training_Text", "text"],
         ["Training_Link", "text"],
+        ["Fraud_Title", "text"],
+        ["Fraud_Text", "text"],
+        ["Fraud_Link", "text"],
       ],
     },
     {
@@ -216,17 +219,11 @@ function App() {
 
   const [items, setItems] = useLocalStorage(
     "tempTemplate",
-    emailTemplates[0].template,
+    emailTemplates[0].template
   );
 
-  const [footer, setFooter] = useLocalStorage(
-    "tempFooter",
-    "short"
-  )
-  const [unsub, setUnsub] = useLocalStorage(
-    "tempUnsub",
-    "false"
-  )
+  const [footer, setFooter] = useLocalStorage("tempFooter", "short");
+  const [unsub, setUnsub] = useLocalStorage("tempUnsub", "false");
 
   const [templateSelection, setTemplateSelection] = useState("");
   const [footerSelection, setFooterSelection] = useState("");
@@ -249,8 +246,8 @@ function App() {
           console.log(element.template);
           setItems(element.template);
           setTemplateSelection(element.id);
-          console.log(element)
-          console.log(element.footer)
+          console.log(element);
+          console.log(element.footer);
           setFooter(element.footer);
           setFooterSelection(element.footer);
           break;
@@ -260,7 +257,7 @@ function App() {
   };
 
   const changeFooter = (event) => {
-    setFooter(event.target.value)
+    setFooter(event.target.value);
     setFooterSelection(event.target.value);
     console.log(event.target.value);
   };
@@ -269,7 +266,7 @@ function App() {
     setUnsub(event.target.value);
     setUnsubSelection(event.target.value);
     console.log(event.target.value);
-  }
+  };
 
   //console.log(items[1].component.props);
   const [itemAddID, setItemAddID] = useState(1000);
@@ -332,11 +329,11 @@ function App() {
           item.componentSave[1]
         )
       );
-      if(footer) {
-        setFooterSelection(footer)
+      if (footer) {
+        setFooterSelection(footer);
       }
-      if(unsub) {
-        setUnsubSelection(unsub)
+      if (unsub) {
+        setUnsubSelection(unsub);
       }
     }
 
@@ -473,7 +470,24 @@ function App() {
     } else if (blockName == "TAC Link") {
       newItem.componentSave = ["TACLink", {}];
     } else if (blockName == "TAC Bottom") {
-      newItem.componentSave = ["TACBottom", {}];
+      newItem.componentSave = [
+        "TACBottom",
+        {
+          TIP_Title: "Tip of the Week",
+          TIP_Text: "Lorem ipsum dolor sit amet consectetur",
+          TIP_Link:
+            "https://www2.arccorp.com/articles-trends/agency-communications/travel-agent-communications/",
+          Training_Title: "Events and Trainings",
+          Training_Text:
+            "Stay up to date with the latest industry and knowledge.",
+          Training_Link: "https://www2.arccorp.com/about-us/events/",
+          Fraud_Title: "Fraud Alert",
+          Fraud_Text:
+            "Cybercrime is on the Rise | Phishing Email Schemes Continue",
+          Fraud_Link:
+            "https://www2.arccorp.com/support-training/fraud-prevention/schemes/",
+        },
+      ];
     } else if (blockName == "Standard Header") {
       newItem.componentSave = ["StandardHeader", { color: "teal" }];
     } else if (blockName == "Address Footer") {
@@ -940,8 +954,8 @@ function App() {
                     ))}
                   </SortableContext>
                 </DndContext>
-                <br/>
-                <hr/>
+                <br />
+                <hr />
                 <div style={{ margin: "0 30px", justifyContent: "center" }}>
                   <p style={{ color: "#fff" }}>Choose a template</p>
                   <select

@@ -75,10 +75,14 @@ const emailTemplates = [
             TIP_Text: "Lorem ipsum dolor sit amet consectetur",
             TIP_Link:
               "https://www2.arccorp.com/articles-trends/agency-communications/travel-agent-communications/",
-            Events_Title: "Events and Trainings",
-            Events_Text:
+            Training_Title: "Events and Trainings",
+            Training_Text:
               "Stay up to date with the latest industry and knowledge.",
-            Events_Link: "https://www2.arccorp.com/about-us/events/",
+            Training_Link: "https://www2.arccorp.com/about-us/events/",
+            Fraud_Title: "Fraud Alert",
+            Fraud_Text:
+              "Cybercrime is on the Rise | Phishing Email Schemes Continue",
+            Fraud_Link: "https://www2.arccorp.com/support-training/fraud-prevention/schemes/",
           },
         ],
       },
