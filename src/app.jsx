@@ -20,6 +20,7 @@ import AerogramLogo from "../components/AerogramLogo";
 import Image from "../components/Image";
 import Webinar from "../components/Webinar";
 import Twocolumn from "../components/Twocolumn";
+import HTML from "../components/HTML";
 
 import emailTemplates from "./templates";
 
@@ -65,6 +66,7 @@ var componentsMap = {
   TextBlock: TextBlock,
   Webinar: Webinar,
   Twocolumn: Twocolumn,
+  HTML: HTML,
 };
 
 function alertMe(items, activeAdd) {
@@ -189,6 +191,8 @@ function App() {
         ["link", "text"],
         ["ctaLink", "text"],
         ["color", "select"],
+        ["padding", "select"],
+        ["width", "text"],
       ],
     },
     {
@@ -211,6 +215,15 @@ function App() {
       props: [
         ["text", "textarea"],
         ["text2", "textarea"],
+      ],
+    },
+    {
+      name: "HTML",
+      icon: <i className="fas fa-paragraph"></i>,
+      component: <HTML />,
+      props: [
+        ["data", "textarea"],
+        ["align", "select"],
       ],
     },
   ];
@@ -517,6 +530,13 @@ function App() {
           text2: "<h2>Title 1</h2><p>Lorem Ipsum</p>",
         },
       ];
+    } else if (blockName == "HTML") {
+      newItem.componentSave = [
+        "HTML",
+        {
+          data: "<h2>Title 1</h2><p>Lorem Ipsum</p>",
+        },
+      ];
     }
 
     if (activePosition == "top") {
@@ -594,29 +614,71 @@ function App() {
           )}
 
           {item[1] === "textarea" ? (
-            <Editor
-              apiKey="rxgjtgwy00je8q2vhiw6sczk5wa2ttcgnwsyp2i23bk81nah"
-              name={item[0]}
-              initialValue={tempFormProps[item[0]]}
-              init={{
-                height: 300,
-                menubar: false,
-                branding: false,
-                plugins: "link lists image",
-                automatic_uploads: true,
-                file_picker_types: "file image media",
-                toolbar: [
-                  { name: "history", items: ["undo", "redo"] },
-                  { name: "styles", items: ["styles"] },
-                  { name: "lists", items: ["numlist", "bullist"] },
-                  { name: "indentation", items: ["outdent", "indent"] },
-                  { name: "link", items: ["link"] },
-                  { name: "image", items: ["image"] },
-                ],
-                images_upload_url: "",
-              }}
-              onEditorChange={(value) => handleTinyMCE(value, item[0])}
-            />
+            item[0] === "data" ? (
+              <textarea name={item[0]} onChange={handleInputChange}>
+                {tempFormProps[item[0]]}
+              </textarea>
+            ) : (
+              <Editor
+                apiKey="rxgjtgwy00je8q2vhiw6sczk5wa2ttcgnwsyp2i23bk81nah"
+                name={item[0]}
+                initialValue={tempFormProps[item[0]]}
+                init={{
+                  paste_auto_cleanup_on_paste: true,
+                  paste_remove_styles: true,
+                  paste_remove_styles_if_webkit: true,
+                  paste_strip_class_attributes: "all",
+                  forced_root_block: false,
+                  style_formats: [
+                    {
+                      title: "Paragraph",
+                      format: "p",
+                      styles: { margin: "0" },
+                    },
+                    { title: "Heading 1", format: "h1" },
+                    { title: "Heading 2", format: "h2" },
+                    { title: "", }
+                  ],
+                  height: 300,
+                  menubar: false,
+                  branding: false,
+                  plugins: "link lists image",
+                  automatic_uploads: true,
+                  file_picker_types: "file image media",
+                  contextmenu:
+                    "copy paste | link image inserttable | cell row column deletetable",
+                  toolbar: [
+                    { name: "history", items: ["undo", "redo"] },
+                    { name: "styles", items: ["styles", "fontsize", "forecolor", "align", "lineheight"] },
+                    { name: "lists", items: ["numlist", "bullist"] },
+                    { name: "indentation", items: ["outdent", "indent"] },
+                    { name: "link", items: ["link"] },
+                    { name: "image", items: ["image"] },
+                  ],
+                  color_map: [
+                    '2a2b2c', 'Black',
+                    'DDDDDD', 'Gray',
+                    'FFFFFF', 'White',
+                    '189bb0', 'Teal',
+                  ],
+                  font_size_formats: "8px 10px 12px 16px 14px 18px 20px 24px 36px",
+                  images_upload_url: "",
+                  paste_preprocess: function (plugin, args) {
+                    console.log(args.content);
+                    var str = args.content
+                      .replace(/<p>/g, "")
+                      .replace(/<\/p>/g, "<br/>");
+                    console.log(str);
+                    args.content = str;
+                  },
+                  force_br_newlines: true,
+                  force_p_newlines: false,
+                  convert_newlines_to_brs: true,
+                  newline_behavior: "linebreak",
+                }}
+                onEditorChange={(value) => handleTinyMCE(value, item[0])}
+              />
+            )
           ) : (
             // <textarea
             //   name={item[0]}
@@ -628,6 +690,7 @@ function App() {
             // />
             ""
           )}
+
           {item[1] === "select" ? (
             item[0] === "color" ? (
               <select
@@ -641,6 +704,25 @@ function App() {
                 <option value="white">White</option>
                 <option value="gray">Gray</option>
                 <option value="#f3f3f3">Light Gray</option>
+              </select>
+            ) : (
+              ""
+            )
+          ) : (
+            ""
+          )}
+
+          {item[1] === "select" ? (
+            item[0] === "align" ? (
+              <select
+                name={item[0]}
+                defaultValue={tempFormProps[item[0]]}
+                value={formProps[i]}
+                onChange={handleInputChange}
+              >
+                <option value="left">Left</option>
+                <option value="center">Center</option>
+                <option value="right">right</option>
               </select>
             ) : (
               ""
@@ -675,6 +757,7 @@ function App() {
                 value={formProps[i]}
                 onChange={handleInputChange}
               >
+                <option value="0">0</option>
                 <option value="25px">25px</option>
                 <option value="50px">50px</option>
               </select>

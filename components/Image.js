@@ -1,7 +1,8 @@
 import React from "react";
 
 export default function Image(props) {
-  let imgSrc = props.link ? props.link : "";
+  var imgSrc = props.link ? props.link : "";
+  var padding = props.padding ? props.padding : 0;
   if (!props.link) {
     if (props.height == 400) {
       imgSrc = "https://www2.arccorp.com/globalassets/email/hero_700x400.jpg";
@@ -16,19 +17,20 @@ export default function Image(props) {
     <tr
       style={{
         backgroundColor: props.color == "teal" ? "#189bb0" : props.color,
+        paddingLeft: padding,
+        paddingRight: padding,
       }}
     >
-      <td>
+      <td align="center">
         <a
           href={props.ctaLink ? props.ctaLink : "https://www2.arccorp.com"}
           target="_blank"
         >
           <img
             class="em_full_img"
-            width="100%"
-            
+            width={props.width ? props.width : "100%"}
             style={{
-              width: "100%",
+              width: props.width ? props.width : "100%",
               height: "auto",
               display: "block",
             }}
