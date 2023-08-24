@@ -129,9 +129,9 @@ export default function TACBottom(props) {
                                 }}
                                 valign="middle"
                               >
-                                {props.Fraud_Title
-                                  ? props.Fraud_Title
-                                  : "Fraud Alert"}
+                                {props.TIP_Title
+                                  ? props.TIP_Title
+                                  : "Tip of the Week"}
                               </p>
                             </td>
                             <tr>
@@ -163,8 +163,8 @@ export default function TACBottom(props) {
                                     lineHeight: "18px",
                                   }}
                                 >
-                                  {props.Fraud_Text
-                                    ? props.Fraud_Text
+                                  {props.TIP_Text
+                                    ? props.TIP_Text
                                     : "Lorem Ipsum Dolor Sit Amet"}
                                 </p>
                               </td>
@@ -393,7 +393,7 @@ export default function TACBottom(props) {
                         }}
                         valign="middle"
                       >
-                        {props.TIP_Title ? props.TIP_Title : "Tip of the Week"}
+                        {props.Fraud_Title ? props.Fraud_Title : "Fraud Alert"}
                       </td>
                     </tr>
 
@@ -443,8 +443,8 @@ export default function TACBottom(props) {
                             lineHeight: "18px",
                           }}
                         >
-                          {props.TIP_Text
-                            ? props.TIP_Text
+                          {props.Fraud_Text
+                            ? props.Fraud_Text
                             : "Lorem Ipsum Dolor Sit Amet"}
                         </p>
                       </td>
