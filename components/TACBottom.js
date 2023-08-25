@@ -79,7 +79,7 @@ export default function TACBottom(props) {
                     >
                       <td align="center" width="100">
                         <img
-                          src="https://www2.arccorp.com/globalassets/email/fraudprevention_matrix2_231x170.png"
+                          src="https://www2.arccorp.com/globalassets/email-parts/tip-icon.png"
                           width="50"
                           height="48.36"
                           style={{
@@ -202,9 +202,9 @@ export default function TACBottom(props) {
                                     padding: "0",
                                   }}
                                   href={
-                                    props.Fraud_Link
-                                      ? props.Fraud_Link
-                                      : "https://www2.arccorp.com/support-training/fraud-prevention/schemes/"
+                                    props.TIP_Link
+                                      ? props.TIP_Link
+                                      : "https://www2.arccorp.com/articles-trends/agency-communications/travel-agent-communications/"
                                   }
                                 >
                                   LEARN MORE{" "}
@@ -341,7 +341,7 @@ export default function TACBottom(props) {
                     >
                       <td align="center">
                         <img
-                          src="https://www2.arccorp.com/globalassets/email-parts/tip-icon.png"
+                          src="https://www2.arccorp.com/globalassets/email/fraudprevention_matrix2_231x170.png"
                           width="50"
                           height="48.36"
                           style={{
@@ -496,9 +496,9 @@ export default function TACBottom(props) {
                             padding: "0",
                           }}
                           href={
-                            props.TIP_Link
-                              ? props.TIP_Link
-                              : "https://www2.arccorp.com/articles-trends/agency-communications/travel-agent-communications/"
+                            props.Fraud_Link
+                              ? props.Fraud_Link
+                              : "https://www2.arccorp.com/support-training/fraud-prevention/schemes/"
                           }
                         >
                           LEARN MORE{" "}
