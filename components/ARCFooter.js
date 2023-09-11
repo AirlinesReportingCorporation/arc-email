@@ -138,7 +138,7 @@ export default function ARCFooter(props) {
                       <td align="center" valign="top">
                         <a
                           href="https://www.youtube.com/channel/UCWHZsoCDNhjorop892EVETw/"
-                          name="youtube-social"
+                          name="youtube_social"
                           style={{ textDecoration: "none" }}
                           target="_blank"
                           xt="SPCLICK"
