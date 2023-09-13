@@ -703,7 +703,6 @@ function App() {
                 <option value="black">Black</option>
                 <option value="white">White</option>
                 <option value="gray">Gray</option>
-                <option value="#f3f3f3">Light Gray</option>
               </select>
             ) : (
               ""

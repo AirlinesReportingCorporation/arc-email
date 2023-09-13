@@ -70,9 +70,9 @@ export default function StandardHeader(props) {
                                       height="20"
                                       name="ARC-logo-header"
                                       src={
-                                        props.color == "white"
-                                          ? "https://www2.arccorp.com/globalassets/email/ARC-logo-header.jpg"
-                                          : "https://www2.arccorp.com/globalassets/email/ARC-logo-header.png"
+                                        "https://www2.arccorp.com/globalassets/arc-logos/corporate-logos/arc-logo-l-" +
+                                        (props.color == "white" ? "teal": "white") +
+                                        ".png"
                                       }
                                       style={{
                                         display: "block",
