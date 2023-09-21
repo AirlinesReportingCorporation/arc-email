@@ -120,7 +120,7 @@ const emailTemplates = [
         componentSave: ["AddressSection", { color: "teal" }],
       },
     ],
-    footer: "short",
+    footer: "operational",
   },
   {
     name: "AeroGram",

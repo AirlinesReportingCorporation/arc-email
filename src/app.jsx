@@ -1053,7 +1053,7 @@ function App() {
                   </select>
                 </div>
                 <div style={{ margin: "0 30px", justifyContent: "center" }}>
-                  <p style={{ color: "#fff" }}>Change Footer Length</p>
+                  <p style={{ color: "#fff" }}>Change Footer Type</p>
                   <select
                     name="footer"
                     value={footerSelection}
@@ -1062,6 +1062,7 @@ function App() {
                     <option value="short">Short</option>
                     <option value="long">Long</option>
                     <option value="aerogram">Aerogram</option>
+                    <option value="operational">Operational</option>
                   </select>
                 </div>
                 <div style={{ margin: "0 30px", justifyContent: "center" }}>

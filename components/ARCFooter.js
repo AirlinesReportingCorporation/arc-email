@@ -382,6 +382,65 @@ export default function ARCFooter(props) {
                         </tr>
                       </>
                     )}
+
+{props.footer == "operational" && (
+                      <>
+                        <tr>
+                          <td
+                            align="center"
+                            style={{
+                              fontFamily: "Arial, sans-serif",
+                              fontSize: "11px",
+                              color: "#a2a3a5",
+                              lineHeight: "14px",
+                              width: "650px",
+                            }}
+                            valign="top"
+                          >
+                            ARC&nbsp;&nbsp;&nbsp;&nbsp;3000 Wilson Blvd., Suite
+                            300&nbsp;&nbsp;&nbsp;&nbsp;Arlington, VA
+                            22201&nbsp;&nbsp;&nbsp;&nbsp;USA&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a
+                              href="https://www.arccorp.com"
+                              name="www_arccorp_com"
+                              style={{
+                                color: "#189bb0",
+                                textDecoration: "none",
+                              }}
+                              xt="SPCLICK"
+                            >
+                              <strong>www.arccorp.com</strong>
+                            </a>
+                            
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            align="center"
+                            style={{
+                              fontFamily: "Arial, sans-serif",
+                              fontSize: "11px",
+                              color: "#a2a3a5",
+                              lineHeight: "14px",
+                              width: "650px",
+                            }}
+                            valign="top"
+                          >
+                            <br />
+                            This is an Airlines Reporting Corporation (ARC)
+                            operations email regarding your travel agency's
+                            participation with ARC. Even if you are opted out of
+                            ARC marketing communications, you may still receive
+                            operations emails on occasion regarding necessary
+                            updates or changes that are important for your
+                            travel agency's participation with ARC. To manage
+                            your communication preferences, including
+                            unsubscribing from promotional emails from ARC,
+                            please click here.
+                          </td>
+                        </tr>
+                      </>
+                    )}
                     {/* copyright */}
                     <tr>
                       <td
