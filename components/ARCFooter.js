@@ -15,17 +15,17 @@ export default function ARCFooter(props) {
                   cellspacing="0"
                   style={{
                     textAlign: "center",
-                    width: "160px",
+                    width: "250px",
                     height: "25px",
                     marginLeft: "auto",
                     marginRight: "auto",
                   }}
-                  width="160"
-                  height="25"
+                  width="250"
+                  height="45"
                 >
                   <tbody>
                     <tr>
-                      <td className="em_height" style={{ height: "20" }}>
+                      <td className="em_height" style={{ height: "45" }}>
                         &nbsp;
                       </td>
                     </tr>
@@ -33,7 +33,6 @@ export default function ARCFooter(props) {
                       <td
                         align="center"
                         valign="top"
-                        style={{ textAlign: "center" }}
                       >
                         <a
                           href="https://www.linkedin.com/company/arc"
@@ -42,19 +41,19 @@ export default function ARCFooter(props) {
                         >
                           <img
                             alt="IN"
-                            height="25"
+                            height="45"
                             name="in4.png"
-                            src="https://www2.arccorp.com/globalassets/email-parts/icons/linkedin_logo.png"
+                            src="https://www2.arccorp.com/globalassets/email/etc/linkedin.png"
                             style={{
                               display: "block",
                               border: "none",
                               fontFamily: "Arial, sans-serif",
                               fontSize: "12px",
-                              lineHeight: "18px",
+                              lineHeight: "45px",
                               color: "#000000",
                             }}
                             title="IN"
-                            width="25"
+                            width="45"
                           />
                         </a>
                       </td>
@@ -76,18 +75,18 @@ export default function ARCFooter(props) {
                           xt="SPCLICK"
                         >
                           <img
-                            height="25"
+                            height="45"
                             name="tw5.png"
-                            src="https://www2.arccorp.com/globalassets/email-parts/icons/twitter_logo.png"
+                            src="https://www2.arccorp.com/globalassets/email/etc/twitter.png"
                             style={{
                               display: "block",
                               border: "none",
                               fontFamily: "Arial, sans-serif",
                               fontSize: "12px",
-                              lineHeight: "18px",
+                              lineHeight: "45px",
                               color: "#000000",
                             }}
-                            width="25"
+                            width="45"
                           />
                         </a>
                       </td>
@@ -109,19 +108,19 @@ export default function ARCFooter(props) {
                           xt="SPCLICK"
                         >
                           <img
-                            height="25"
+                            height="45"
                             name="fb3.png"
-                            src="https://www2.arccorp.com/globalassets/email-parts/icons/facebook_logo.png"
+                            src="https://www2.arccorp.com/globalassets/email/etc/facebook.png"
                             style={{
                               display: "block",
                               border: "none",
                               fontFamily: "Arial, sans-serif",
                               fontSize: "12px",
-                              lineHeight: "18px",
+                              lineHeight: "45px",
                               color: "#000000",
                             }}
                             title="FB"
-                            width="25"
+                            width="45"
                           />
                         </a>
                       </td>
@@ -135,33 +134,8 @@ export default function ARCFooter(props) {
                           width="1"
                         />
                       </td>
-                      <td align="center" valign="top">
-                        <a
-                          href="https://www.youtube.com/channel/UCWHZsoCDNhjorop892EVETw/"
-                          name="youtube_social"
-                          style={{ textDecoration: "none" }}
-                          target="_blank"
-                          xt="SPCLICK"
-                        >
-                          <img
-                            alt="YouTube"
-                            height="25"
-                            name="youtube4.png"
-                            src="https://www2.arccorp.com/globalassets/email-parts/icons/youtube_logo.png"
-                            style={{
-                              display: "block",
-                              border: "none",
-                              fontFamily: "Arial, sans-serif",
-                              fontSize: "12px",
-                              lineHeight: "18px",
-                              color: "#000000",
-                            }}
-                            title="YouTube"
-                            width="25"
-                          />
-                        </a>
-                      </td>
                     </tr>
+                    
                     <tr>
                       <td className="em_height" style={{ height: "10" }}>
                         &nbsp;
@@ -176,6 +150,15 @@ export default function ARCFooter(props) {
                 <table>
                   <tbody>
                     {/* Unsub  */}
+                    <tr>
+                      <td colSpan={6} style={{ fontFamily: "Arial, helvetica,sans-serif" }}>
+                        <h2 style={{"textAlign":"center","lineHeight":"1"}}>
+                          <span style={{"fontSize":"18px","color":"rgb(41, 175, 216)"}}>
+                            #ElevateTravelConnect #ETC24
+                          </span>
+                        </h2>
+                      </td>
+                    </tr>
 
                     {props.unsub == "true" ? (
                       console.log(props.unsub)
@@ -383,7 +366,7 @@ export default function ARCFooter(props) {
                       </>
                     )}
 
-{props.footer == "operational" && (
+                    {props.footer == "operational" && (
                       <>
                         <tr>
                           <td
@@ -411,7 +394,6 @@ export default function ARCFooter(props) {
                             >
                               <strong>www.arccorp.com</strong>
                             </a>
-                            
                           </td>
                         </tr>
                         <tr>
