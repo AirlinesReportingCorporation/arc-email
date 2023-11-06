@@ -10,10 +10,12 @@ const emailTemplates = [
       },
     ],
     footer: "long",
+    backgroundColor: "#f5f5f5",
   },
   {
     name: "TAC",
     id: "tac-template",
+    backgroundColor: "#f5f5f5",
     template: [
       {
         id: "1",
@@ -82,7 +84,8 @@ const emailTemplates = [
             Fraud_Title: "Fraud Alert",
             Fraud_Text:
               "Cybercrime is on the Rise | Phishing Email Schemes Continue",
-            Fraud_Link: "https://www2.arccorp.com/support-training/fraud-prevention/schemes/",
+            Fraud_Link:
+              "https://www2.arccorp.com/support-training/fraud-prevention/schemes/",
           },
         ],
       },
@@ -92,6 +95,7 @@ const emailTemplates = [
   {
     name: "Operational",
     id: "operational",
+    backgroundColor: "#f5f5f5",
     template: [
       {
         id: "2",
@@ -125,6 +129,7 @@ const emailTemplates = [
   {
     name: "AeroGram",
     id: "aerogram",
+    backgroundColor: "#f5f5f5",
     template: [
       {
         id: "12",
@@ -163,6 +168,7 @@ const emailTemplates = [
   {
     name: "Webinar",
     id: "webinar",
+    backgroundColor: "#f5f5f5",
     template: [
       {
         id: "17",
@@ -220,6 +226,77 @@ const emailTemplates = [
       },
     ],
     footer: "long",
+  },
+  {
+    name: "ETC",
+    id: "etc",
+    template: [
+      {
+        id: 6,
+        name: "ETC Header",
+        componentSave: [
+          "ETCHeader",
+          {
+            color: "teal",
+          },
+        ],
+      },
+      {
+        id: 1,
+        name: "Image",
+        componentSave: [
+          "Image",
+          {
+            height: "400",
+            link: "https://www2.arccorp.com/globalassets/email/elevate/etc-register-now.png",
+            ctaLink: "https://elevate-travelconnect.com/",
+            color: "#212A76",
+          },
+        ],
+      },
+      {
+        id: 2,
+        name: "Spacer",
+        componentSave: [
+          "Spacer",
+          {
+            height: "10px",
+            color: "White",
+          },
+        ],
+      },
+      {
+        id: "3",
+        name: "Text Block",
+        componentSave: [
+          "TextBlock",
+          {
+            text: '<h1 style="text-align: center;">[First Name],&nbsp;you&nbsp;can now register to attend Elevate + TravelConnect!</h1>\n<p style="text-align: center;">&nbsp;</p>\n<p style="text-align: center;">ATPCO and ARC are thrilled to bring you this jointly hosted conference on April 9-11, 2024, in Washington, DC. Register before January 31, 2024, to receive the advanced discounted rate!&nbsp;<br><br><a href="https://elevate-travelconnect.com/"><img src="https://www2.arccorp.com/globalassets/email/elevate/registernow.png" alt=""></a><br><br>From two times the amount of networking opportunities to over 22 hours of programming planned by over 60 speakers, this is the can&rsquo;t-miss event for the industry. You&rsquo;ll explore a new world of industry thought leadership, offers, orders, data, distribution, payments, and more&mdash;all under one roof!&nbsp;<br><br><a href="https://www.youtube.com/watch?v=PrGLmh6g8wg"><img src="https://www2.arccorp.com/globalassets/email/elevate/videstill.jpeg" alt="" width="486" height="275"></a></p>',
+            padding: "50px",
+            color: "white",
+          },
+        ],
+      },
+      {
+        id: 4,
+        name: "Spacer",
+        componentSave: ["Spacer", { height: "60px", color: "White" }],
+      },
+      {
+        id: 5,
+        name: "Text Block",
+        componentSave: [
+          "TextBlock",
+          {
+            text: '<h1 style="text-align: center; line-height: 1;"><span style="font-size: 24px; color: rgb(0, 0, 0);"><span style="color: rgb(255, 201, 18);"><a style="color: rgb(255, 201, 18);" href="https://elevate-travelconnect.com/"><span style="text-decoration: underline;">Register for the event</span></a> </span><span style="color: rgb(255, 255, 255);">before January 31, 2024, </span><br><span style="color: rgb(255, 255, 255);">to receive the advanced discounted rate.</span></span></h1>\n<p style="text-align: center;">&nbsp;</p>\n<p style="text-align: center;"><span style="color: rgb(255, 255, 255);">We look forward to seeing you at the conference, where you will gain <br>new perspectives and take home actionable insights!&nbsp;</span><br><br><br><a href="https://elevate-travelconnect.com/"><span style="color: rgb(255, 255, 255);"><img src="https://www2.arccorp.com/globalassets/email/etc/seeyouthere-illustration.png" alt=""></span></a><br><br><br><br><br></p>',
+            padding: "25px",
+            color: "#29AFD8",
+          },
+        ],
+      },
+    ],
+    footer: "etc",
+    backgroundColor: "#212A76",
   },
 ];
 

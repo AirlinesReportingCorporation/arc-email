@@ -26,6 +26,7 @@ import emailTemplates from "./templates";
 
 import { ViewToggle } from "../components/ViewToggle";
 import StandardHeader from "../components/StandardHeader";
+import ETCHeader from "../components/ETCHeader";
 
 import { useLocalStorage } from "../components/useLocalStorage";
 
@@ -66,6 +67,7 @@ var componentsMap = {
   TextBlock: TextBlock,
   Webinar: Webinar,
   Twocolumn: Twocolumn,
+  ETCHeader: ETCHeader,
   HTML: HTML,
 };
 
@@ -226,6 +228,13 @@ function App() {
         ["align", "select"],
       ],
     },
+    {
+      name: "ETC Header",
+      icon: (
+        <img src="https://www2.arccorp.com/globalassets/email/elevate/ARC-logo-Email.png"></img>
+      ),
+      component: <ETCHeader />,
+    },
   ];
 
   const [activeForm, setActiveForm] = useState();
@@ -240,6 +249,11 @@ function App() {
 
   const [templateSelection, setTemplateSelection] = useState("");
   const [footerSelection, setFooterSelection] = useState("");
+
+  const [emailbackgroundColor, setEmailbackgroundColor] = useLocalStorage(
+    "emailBackgroundColor",
+    "#f5f5f5"
+  );
   const [unsubSelection, setUnsubSelection] = useState("");
 
   const getTemplate = (event) => {
@@ -256,13 +270,19 @@ function App() {
       for (let i = 0; i < emailTemplates.length; i++) {
         const element = emailTemplates[i];
         if (element.id === selectedTemplate) {
-          console.log(element.template);
           setItems(element.template);
           setTemplateSelection(element.id);
-          console.log(element);
-          console.log(element.footer);
-          setFooter(element.footer);
-          setFooterSelection(element.footer);
+
+          element.footer ? setFooter(element.footer) : setFooter("short");
+          setFooterSelection(
+            element.footer ? setFooter(element.footer) : setFooter("short")
+          );
+
+          setEmailbackgroundColor(
+            element.backgroundColor
+              ? element.backgroundColor
+              : emailbackgroundColor
+          );
           break;
         }
       }
@@ -353,9 +373,15 @@ function App() {
     //console.log(sensors);
 
     setMarkup(
-      '<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html   xmlns="http://www.w3.org/1999/xhtml"   xmlns:o="urn:schemas-microsoft-com:office:office"   xmlns:v="urn:schemas-microsoft-com:vml" >   <head>     <title>ARC</title>     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />     <meta http-equiv="X-UA-Compatible" content="IE=edge" />     <meta name="viewport" content="width=device-width, initial-scale=1.0 " />     <meta name="format-detection" content="telephone=no" />     <link       href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900"       rel="stylesheet"     />     <style type="text/css">       body {         margin: 0 !important;         padding: 0 !important;         -webkit-text-size-adjust: 100% !important;         -ms-text-size-adjust: 100% !important;         -webkit-font-smoothing: antialiased !important;       }       img {         border: 0 !important;         outline: none !important;       }       p {         margin: 0px !important;         padding: 0px !important;       }       table {         border-collapse: collapse;         mso-table-lspace: 0px;         mso-table-rspace: 0px;       }       td,       a,       span {         border-collapse: collapse;         mso-line-height-rule: exactly;       }       .ExternalClass * {         line-height: 100%;       }       .em_defaultlink a {         color: inherit !important;         text-decoration: none !important;       }       span.MsoHyperlink {         mso-style-priority: 99;         color: inherit;       }       span.MsoHyperlinkFollowed {         mso-style-priority: 99;         color: inherit;       }       @media only screen and (min-width: 481px) and (max-width: 699px) {         .title_center {           text-align: center;         }         .em_main_table {           width: 100% !important;         }         .em_wrapper {           width: 100% !important;         }         .em_aside {           padding: 0px 20px !important;         }         .em_hide {           display: none !important;         }         .em_full_img img {           width: 100% !important;           height: auto !important;           max-width: none !important;         }         .em_align_cent {           text-align: center !important;         }         .em_height {           height: 20px !important;           font-size: 1px !important;           line-height: 1px !important;         }         .em_pad_top {           padding-top: 20px !important;         }         .em_spacer {           width: 10px !important;         }         .em_pad_bottom {           padding-bottom: 20px !important;         }         .em_hauto {           height: auto !important;         }         span[class="em_divhide"] {           display: none !important;         }       }       @media only screen and (max-width: 480px) {         .title_center {           text-align: center;         }         .address_item {           text-align: center;           display: block;         }         .em_main_table {           width: 100% !important;         }         .em_wrapper {           width: 100% !important;         }         .em_aside {           padding: 0px 20px !important;         }         .em_hide {           display: none !important;         }         .em_full_img img {           width: 100% !important;           height: auto !important;           max-width: none !important;         }         .icon-center {           text-align: center;           text-align: -webkit-center;         }         .icon-center img {           padding-bottom: 10px;         }         .em_align_cent {           text-align: center !important;         }         .em_height {           height: 20px !important;           font-size: 1px !important;           line-height: 1px !important;         }         .em_pad_top {           padding-top: 20px !important;         }         .em_spacer {           width: 10px !important;         }         .em_pad_bottom {           padding-bottom: 20px !important;         }         .em_hauto {           height: auto !important;         }         span[class="em_divhide"] {           display: none !important;         }       }   a {text-decoration: none;}    </style>  <!--[if gte mso 9]>       <xml>         <o:OfficeDocumentSettings>           <o:AllowPNG />           <o:PixelsPerInch>96</o:PixelsPerInch>         </o:OfficeDocumentSettings>       </xml>     <![endif]-->   </head>   <body bgcolor="#f7f5f5" style="margin: 0px; padding: 0px">     <table       bgcolor="#f7f5f5"       border="0"       cellpadding="0"       cellspacing="0"       width="100%"     >       <tbody>         <tr>           <td align="center">             <table               align="center"               bgcolor="#ffffff"               border="0"               cellpadding="0"               cellspacing="0"               class="em_main_table"               style="table-layout: fixed; width: 700px"               width="700"             >' +
+      '<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html   xmlns="http://www.w3.org/1999/xhtml"   xmlns:o="urn:schemas-microsoft-com:office:office"   xmlns:v="urn:schemas-microsoft-com:vml" >   <head>     <title>ARC</title>     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />     <meta http-equiv="X-UA-Compatible" content="IE=edge" />     <meta name="viewport" content="width=device-width, initial-scale=1.0 " />     <meta name="format-detection" content="telephone=no" />     <link       href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900"       rel="stylesheet"     />     <style type="text/css">       body {         margin: 0 !important;         padding: 0 !important;         -webkit-text-size-adjust: 100% !important;         -ms-text-size-adjust: 100% !important;         -webkit-font-smoothing: antialiased !important;       }       img {         border: 0 !important;         outline: none !important;       }       p {         margin: 0px !important;         padding: 0px !important;       }       table {         border-collapse: collapse;         mso-table-lspace: 0px;         mso-table-rspace: 0px;       }       td,       a,       span {         border-collapse: collapse;         mso-line-height-rule: exactly;       }       .ExternalClass * {         line-height: 100%;       }       .em_defaultlink a {         color: inherit !important;         text-decoration: none !important;       }       span.MsoHyperlink {         mso-style-priority: 99;         color: inherit;       }       span.MsoHyperlinkFollowed {         mso-style-priority: 99;         color: inherit;       }       @media only screen and (min-width: 481px) and (max-width: 699px) {         .title_center {           text-align: center;         }         .em_main_table {           width: 100% !important;         }         .em_wrapper {           width: 100% !important;         }         .em_aside {           padding: 0px 20px !important;         }         .em_hide {           display: none !important;         }         .em_full_img img {           width: 100% !important;           height: auto !important;           max-width: none !important;         }         .em_align_cent {           text-align: center !important;         }         .em_height {           height: 20px !important;           font-size: 1px !important;           line-height: 1px !important;         }         .em_pad_top {           padding-top: 20px !important;         }         .em_spacer {           width: 10px !important;         }         .em_pad_bottom {           padding-bottom: 20px !important;         }         .em_hauto {           height: auto !important;         }         span[class="em_divhide"] {           display: none !important;         }       }       @media only screen and (max-width: 480px) {         .title_center {           text-align: center;         }         .address_item {           text-align: center;           display: block;         }         .em_main_table {           width: 100% !important;         }         .em_wrapper {           width: 100% !important;         }         .em_aside {           padding: 0px 20px !important;         }         .em_hide {           display: none !important;         }         .em_full_img img {           width: 100% !important;           height: auto !important;           max-width: none !important;         }         .icon-center {           text-align: center;           text-align: -webkit-center;         }         .icon-center img {           padding-bottom: 10px;         }         .em_align_cent {           text-align: center !important;         }         .em_height {           height: 20px !important;           font-size: 1px !important;           line-height: 1px !important;         }         .em_pad_top {           padding-top: 20px !important;         }         .em_spacer {           width: 10px !important;         }         .em_pad_bottom {           padding-bottom: 20px !important;         }         .em_hauto {           height: auto !important;         }         span[class="em_divhide"] {           display: none !important;         }       }   a {text-decoration: none;}    </style>  <!--[if gte mso 9]>       <xml>         <o:OfficeDocumentSettings>           <o:AllowPNG />           <o:PixelsPerInch>96</o:PixelsPerInch>         </o:OfficeDocumentSettings>       </xml>     <![endif]-->   </head>   <body bgcolor="' +
+        (emailbackgroundColor ? emailbackgroundColor : "#f5f5f5") +
+        '" style="margin: 0px; padding: 0px">     <table       bgcolor="' +
+        (emailbackgroundColor ? emailbackgroundColor : "#f5f5f5") +
+        '"       border="0"       cellpadding="0"       cellspacing="0"       width="100%"     >       <tbody>         <tr>           <td align="center">             <table               align="center"               bgcolor="#ffffff"               border="0"               cellpadding="0"               cellspacing="0"               class="em_main_table"               style="table-layout: fixed; width: 700px"               width="700"             >' +
         ReactDOMServer.renderToStaticMarkup(email) +
-        '</table> </td> </tr> <tr> <td align="center"> <table align="center" bgcolor="#f7f5f5" border="0" cellpadding="0" cellspacing="0" class="em_main_table" style="table-layout: fixed; width: 700px" width="700" > <tbody>' +
+        '</table> </td> </tr> <tr> <td align="center"> <table align="center" bgcolor="' +
+        (emailbackgroundColor ? emailbackgroundColor : "#f5f5f5") +
+        '" border="0" cellpadding="0" cellspacing="0" class="em_main_table" style="table-layout: fixed; width: 700px" width="700" > <tbody>' +
         ReactDOMServer.renderToStaticMarkup(
           <ARCFooter footer={footerSelection} unsub={unsubSelection} />
         ) +
@@ -503,6 +529,8 @@ function App() {
       ];
     } else if (blockName == "Standard Header") {
       newItem.componentSave = ["StandardHeader", { color: "teal" }];
+    } else if (blockName == "ETC Header") {
+      newItem.componentSave = ["ETCHeader", { color: "teal" }];
     } else if (blockName == "Address Footer") {
       newItem.componentSave = ["AddressSection", { color: "teal" }];
     } else if (blockName == "Aerogram Header") {
@@ -637,7 +665,7 @@ function App() {
                     },
                     { title: "Heading 1", format: "h1" },
                     { title: "Heading 2", format: "h2" },
-                    { title: "", }
+                    { title: "" },
                   ],
                   height: 300,
                   menubar: false,
@@ -649,19 +677,33 @@ function App() {
                     "copy paste | link image inserttable | cell row column deletetable",
                   toolbar: [
                     { name: "history", items: ["undo", "redo"] },
-                    { name: "styles", items: ["styles", "fontsize", "forecolor", "align", "lineheight"] },
+                    {
+                      name: "styles",
+                      items: [
+                        "styles",
+                        "fontsize",
+                        "forecolor",
+                        "align",
+                        "lineheight",
+                      ],
+                    },
                     { name: "lists", items: ["numlist", "bullist"] },
                     { name: "indentation", items: ["outdent", "indent"] },
                     { name: "link", items: ["link"] },
                     { name: "image", items: ["image"] },
                   ],
                   color_map: [
-                    '2a2b2c', 'Black',
-                    'DDDDDD', 'Gray',
-                    'FFFFFF', 'White',
-                    '189bb0', 'Teal',
+                    "2a2b2c",
+                    "Black",
+                    "DDDDDD",
+                    "Gray",
+                    "FFFFFF",
+                    "White",
+                    "189bb0",
+                    "Teal",
                   ],
-                  font_size_formats: "8px 10px 12px 16px 14px 18px 20px 24px 36px",
+                  font_size_formats:
+                    "8px 10px 12px 16px 14px 18px 20px 24px 36px",
                   images_upload_url: "",
                   paste_preprocess: function (plugin, args) {
                     console.log(args.content);
@@ -1050,6 +1092,7 @@ function App() {
                     <option value="operational">Operational</option>
                     <option value="aerogram">AeroGram</option>
                     <option value="webinar">Webinar</option>
+                    <option value="etc">E+TC</option>
                   </select>
                 </div>
                 <div style={{ margin: "0 30px", justifyContent: "center" }}>
@@ -1063,6 +1106,19 @@ function App() {
                     <option value="long">Long</option>
                     <option value="aerogram">Aerogram</option>
                     <option value="operational">Operational</option>
+                    <option value="etc">E+TC</option>
+                  </select>
+                </div>
+                <div style={{ margin: "0 30px", justifyContent: "center" }}>
+                  <p style={{ color: "#fff" }}>Change Email Background Color</p>
+                  <select
+                    name="emailbackgroundColor"
+                    value={emailbackgroundColor}
+                    onChange={(e) => setEmailbackgroundColor(e.target.value)}
+                  >
+                    <option value="#189bb0">Teal</option>
+                    <option value="#f5f5f5">Gray</option>
+                    <option value="#212A76">ETC Purple</option>
                   </select>
                 </div>
                 <div style={{ margin: "0 30px", justifyContent: "center" }}>

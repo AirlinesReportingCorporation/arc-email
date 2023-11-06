@@ -29,139 +29,256 @@ export default function ARCFooter(props) {
                         &nbsp;
                       </td>
                     </tr>
-                    <tr>
-                      <td
-                        align="center"
-                        valign="top"
-                        style={{ textAlign: "center" }}
-                      >
-                        <a
-                          href="https://www.linkedin.com/company/arc"
-                          style={{ textDecoration: "none" }}
-                          target="_blank"
+
+                    {props.footer != "etc" ? (
+                      <tr>
+                        <td
+                          align="center"
+                          valign="top"
+                          style={{ textAlign: "center" }}
                         >
+                          <a
+                            href="https://www.linkedin.com/company/arc"
+                            style={{ textDecoration: "none" }}
+                            target="_blank"
+                          >
+                            <img
+                              alt="IN"
+                              height="25"
+                              name="in4.png"
+                              src="https://www2.arccorp.com/globalassets/email-parts/icons/linkedin_logo.png"
+                              style={{
+                                display: "block",
+                                border: "none",
+                                fontFamily: "Arial, sans-serif",
+                                fontSize: "12px",
+                                lineHeight: "18px",
+                                color: "#000000",
+                              }}
+                              title="IN"
+                              width="25"
+                            />
+                          </a>
+                        </td>
+                        <td width="5">
                           <img
-                            alt="IN"
-                            height="25"
-                            name="in4.png"
-                            src="https://www2.arccorp.com/globalassets/email-parts/icons/linkedin_logo.png"
-                            style={{
-                              display: "block",
-                              border: "none",
-                              fontFamily: "Arial, sans-serif",
-                              fontSize: "12px",
-                              lineHeight: "18px",
-                              color: "#000000",
-                            }}
-                            title="IN"
-                            width="25"
+                            alt=""
+                            height="1"
+                            name="Cont_0"
+                            src="https://www2.arccorp.com/globalassets/email/spacer.gif"
+                            style={{ display: "block", border: "none" }}
+                            width="1"
                           />
-                        </a>
-                      </td>
-                      <td width="5">
-                        <img
-                          alt=""
-                          height="1"
-                          name="Cont_0"
-                          src="https://www2.arccorp.com/globalassets/email/spacer.gif"
-                          style={{ display: "block", border: "none" }}
-                          width="1"
-                        />
-                      </td>
-                      <td align="center" valign="top">
-                        <a
-                          href="https://twitter.com/ARCtalk"
-                          style={{ textDecoration: "none" }}
-                          target="_blank"
-                          xt="SPCLICK"
+                        </td>
+                        <td align="center" valign="top">
+                          <a
+                            href="https://twitter.com/ARCtalk"
+                            style={{ textDecoration: "none" }}
+                            target="_blank"
+                            xt="SPCLICK"
+                          >
+                            <img
+                              height="25"
+                              name="tw5.png"
+                              src="https://www2.arccorp.com/globalassets/email-parts/icons/twitter_logo.png"
+                              style={{
+                                display: "block",
+                                border: "none",
+                                fontFamily: "Arial, sans-serif",
+                                fontSize: "12px",
+                                lineHeight: "18px",
+                                color: "#000000",
+                              }}
+                              width="25"
+                            />
+                          </a>
+                        </td>
+                        <td width="5">
+                          <img
+                            alt=""
+                            height="1"
+                            name="Cont_0"
+                            src="https://www2.arccorp.com/globalassets/email/spacer.gif"
+                            style={{ display: "block", border: "none" }}
+                            width="1"
+                          />
+                        </td>
+                        <td align="center" valign="top">
+                          <a
+                            href="https://www.facebook.com/ARCtalk"
+                            style={{ textDecoration: "none" }}
+                            target="_blank"
+                            xt="SPCLICK"
+                          >
+                            <img
+                              height="25"
+                              name="fb3.png"
+                              src="https://www2.arccorp.com/globalassets/email-parts/icons/facebook_logo.png"
+                              style={{
+                                display: "block",
+                                border: "none",
+                                fontFamily: "Arial, sans-serif",
+                                fontSize: "12px",
+                                lineHeight: "18px",
+                                color: "#000000",
+                              }}
+                              title="FB"
+                              width="25"
+                            />
+                          </a>
+                        </td>
+                        <td width="5">
+                          <img
+                            alt=""
+                            height="1"
+                            name="Cont_0"
+                            src="https://www2.arccorp.com/globalassets/email/spacer.gif"
+                            style={{ display: "block", border: "none" }}
+                            width="1"
+                          />
+                        </td>
+                        <td align="center" valign="top">
+                          <a
+                            href="https://www.youtube.com/channel/UCWHZsoCDNhjorop892EVETw/"
+                            name="youtube_social"
+                            style={{ textDecoration: "none" }}
+                            target="_blank"
+                            xt="SPCLICK"
+                          >
+                            <img
+                              alt="YouTube"
+                              height="25"
+                              name="youtube4.png"
+                              src="https://www2.arccorp.com/globalassets/email-parts/icons/youtube_logo.png"
+                              style={{
+                                display: "block",
+                                border: "none",
+                                fontFamily: "Arial, sans-serif",
+                                fontSize: "12px",
+                                lineHeight: "18px",
+                                color: "#000000",
+                              }}
+                              title="YouTube"
+                              width="25"
+                            />
+                          </a>
+                        </td>
+                      </tr>
+                    ) : (
+                      ""
+                    )}
+
+                    {props.footer == "etc" ? (
+                      <tr>
+                        <td
+                          align="center"
+                          valign="top"
                         >
+                          <a
+                            href="https://www.linkedin.com/company/arc"
+                            style={{ textDecoration: "none" }}
+                            target="_blank"
+                          >
+                            <img
+                              alt="IN"
+                              height="35"
+                              name="in4.png"
+                              src="https://www2.arccorp.com/globalassets/email/etc/linkedin.png"
+                              style={{
+                                display: "block",
+                                border: "none",
+                                fontFamily: "Arial, sans-serif",
+                                fontSize: "12px",
+                                lineHeight: "35px",
+                                color: "#000000",
+                              }}
+                              title="IN"
+                              width="35"
+                            />
+                          </a>
+                        </td>
+                        <td width="5">
                           <img
-                            height="25"
-                            name="tw5.png"
-                            src="https://www2.arccorp.com/globalassets/email-parts/icons/twitter_logo.png"
-                            style={{
-                              display: "block",
-                              border: "none",
-                              fontFamily: "Arial, sans-serif",
-                              fontSize: "12px",
-                              lineHeight: "18px",
-                              color: "#000000",
-                            }}
-                            width="25"
+                            alt=""
+                            height="1"
+                            name="Cont_0"
+                            src="https://www2.arccorp.com/globalassets/email/spacer.gif"
+                            style={{ display: "block", border: "none" }}
+                            width="1"
                           />
-                        </a>
-                      </td>
-                      <td width="5">
-                        <img
-                          alt=""
-                          height="1"
-                          name="Cont_0"
-                          src="https://www2.arccorp.com/globalassets/email/spacer.gif"
-                          style={{ display: "block", border: "none" }}
-                          width="1"
-                        />
-                      </td>
-                      <td align="center" valign="top">
-                        <a
-                          href="https://www.facebook.com/ARCtalk"
-                          style={{ textDecoration: "none" }}
-                          target="_blank"
-                          xt="SPCLICK"
-                        >
+                        </td>
+                        <td align="center" valign="top">
+                          <a
+                            href="https://twitter.com/ARCtalk"
+                            style={{ textDecoration: "none" }}
+                            target="_blank"
+                            xt="SPCLICK"
+                          >
+                            <img
+                              height="35"
+                              name="tw5.png"
+                              src="https://www2.arccorp.com/globalassets/email/etc/twitter.png"
+                              style={{
+                                display: "block",
+                                border: "none",
+                                fontFamily: "Arial, sans-serif",
+                                fontSize: "12px",
+                                lineHeight: "35px",
+                                color: "#000000",
+                              }}
+                              width="35"
+                            />
+                          </a>
+                        </td>
+                        <td width="5">
                           <img
-                            height="25"
-                            name="fb3.png"
-                            src="https://www2.arccorp.com/globalassets/email-parts/icons/facebook_logo.png"
-                            style={{
-                              display: "block",
-                              border: "none",
-                              fontFamily: "Arial, sans-serif",
-                              fontSize: "12px",
-                              lineHeight: "18px",
-                              color: "#000000",
-                            }}
-                            title="FB"
-                            width="25"
+                            alt=""
+                            height="1"
+                            name="Cont_0"
+                            src="https://www2.arccorp.com/globalassets/email/spacer.gif"
+                            style={{ display: "block", border: "none" }}
+                            width="1"
                           />
-                        </a>
-                      </td>
-                      <td width="5">
-                        <img
-                          alt=""
-                          height="1"
-                          name="Cont_0"
-                          src="https://www2.arccorp.com/globalassets/email/spacer.gif"
-                          style={{ display: "block", border: "none" }}
-                          width="1"
-                        />
-                      </td>
-                      <td align="center" valign="top">
-                        <a
-                          href="https://www.youtube.com/channel/UCWHZsoCDNhjorop892EVETw/"
-                          name="youtube_social"
-                          style={{ textDecoration: "none" }}
-                          target="_blank"
-                          xt="SPCLICK"
-                        >
+                        </td>
+                        <td align="center" valign="top">
+                          <a
+                            href="https://www.facebook.com/ARCtalk"
+                            style={{ textDecoration: "none" }}
+                            target="_blank"
+                            xt="SPCLICK"
+                          >
+                            <img
+                              height="35"
+                              name="fb3.png"
+                              src="https://www2.arccorp.com/globalassets/email/etc/facebook.png"
+                              style={{
+                                display: "block",
+                                border: "none",
+                                fontFamily: "Arial, sans-serif",
+                                fontSize: "12px",
+                                lineHeight: "35px",
+                                color: "#000000",
+                              }}
+                              title="FB"
+                              width="35"
+                            />
+                          </a>
+                        </td>
+                        <td width="5">
                           <img
-                            alt="YouTube"
-                            height="25"
-                            name="youtube4.png"
-                            src="https://www2.arccorp.com/globalassets/email-parts/icons/youtube_logo.png"
-                            style={{
-                              display: "block",
-                              border: "none",
-                              fontFamily: "Arial, sans-serif",
-                              fontSize: "12px",
-                              lineHeight: "18px",
-                              color: "#000000",
-                            }}
-                            title="YouTube"
-                            width="25"
+                            alt=""
+                            height="1"
+                            name="Cont_0"
+                            src="https://www2.arccorp.com/globalassets/email/spacer.gif"
+                            style={{ display: "block", border: "none" }}
+                            width="1"
                           />
-                        </a>
-                      </td>
-                    </tr>
+                        </td>
+                        
+                      </tr>
+                    ) : (
+                      ""
+                    )}
                     <tr>
                       <td className="em_height" style={{ height: "10" }}>
                         &nbsp;
@@ -383,7 +500,7 @@ export default function ARCFooter(props) {
                       </>
                     )}
 
-{props.footer == "operational" && (
+                    {props.footer == "operational" && (
                       <>
                         <tr>
                           <td
@@ -411,7 +528,6 @@ export default function ARCFooter(props) {
                             >
                               <strong>www.arccorp.com</strong>
                             </a>
-                            
                           </td>
                         </tr>
                         <tr>
@@ -440,6 +556,33 @@ export default function ARCFooter(props) {
                           </td>
                         </tr>
                       </>
+                    )}
+
+                    {props.footer === "etc" && (
+                      <tr>
+                        <td
+                          align="center"
+                          style={{
+                            fontFamily: "Arial, sans-serif",
+                            fontSize: "11px",
+                            color: "#a2a3a5",
+                            lineHeight: "14px",
+                          }}
+                          valign="top"
+                        >
+                          ARC&nbsp;&nbsp;&nbsp;&nbsp;3000 Wilson Blvd., Suite
+                          300&nbsp;&nbsp;&nbsp;&nbsp;Arlington, VA
+                          22201&nbsp;&nbsp;&nbsp;&nbsp;USA&nbsp;&nbsp;&nbsp;&nbsp;
+                          <a
+                            href="https://www.arccorp.com"
+                            name="www_arccorp_com"
+                            style={{ color: "#189bb0", textDecoration: "none" }}
+                            xt="SPCLICK"
+                          >
+                            <strong>www.arccorp.com</strong>
+                          </a>
+                        </td>
+                      </tr>
                     )}
                     {/* copyright */}
                     <tr>
