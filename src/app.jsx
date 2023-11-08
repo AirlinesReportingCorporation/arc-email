@@ -1093,6 +1093,9 @@ function App() {
                     <option value="aerogram">AeroGram</option>
                     <option value="webinar">Webinar</option>
                     <option value="etc">E+TC</option>
+                    <option value="directconnect-interested">Direct Connect - Still Interested</option>
+                    <option value="directconnect-whyjoin">Direct Connect - Why Join</option>
+                    
                   </select>
                 </div>
                 <div style={{ margin: "0 30px", justifyContent: "center" }}>
@@ -1107,6 +1110,7 @@ function App() {
                     <option value="aerogram">Aerogram</option>
                     <option value="operational">Operational</option>
                     <option value="etc">E+TC</option>
+                    <option value="none">None</option>
                   </select>
                 </div>
                 <div style={{ margin: "0 30px", justifyContent: "center" }}>

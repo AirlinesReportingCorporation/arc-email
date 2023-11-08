@@ -1,7 +1,9 @@
 import React from "react";
 
 export default function ARCFooter(props) {
-  return (
+  return props.footer == "none" ? (
+    ""
+  ) : (
     <tr>
       <td align="center" valign="top">
         <table role="presentation" border="0" cellpadding="0" cellspacing="0">
@@ -170,10 +172,7 @@ export default function ARCFooter(props) {
 
                     {props.footer == "etc" ? (
                       <tr>
-                        <td
-                          align="center"
-                          valign="top"
-                        >
+                        <td align="center" valign="top">
                           <a
                             href="https://www.linkedin.com/company/arc"
                             style={{ textDecoration: "none" }}
@@ -274,7 +273,6 @@ export default function ARCFooter(props) {
                             width="1"
                           />
                         </td>
-                        
                       </tr>
                     ) : (
                       ""
