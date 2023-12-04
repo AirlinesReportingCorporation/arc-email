@@ -255,6 +255,10 @@ function App() {
     "#f5f5f5"
   );
   const [unsubSelection, setUnsubSelection] = useState("");
+  const [viewInBrowser, setViewInBrowser] = useLocalStorage(
+    "viewInBrowser",
+    true
+  );
 
   const getTemplate = (event) => {
     var prevTemplateSelection = templateSelection;
@@ -292,13 +296,18 @@ function App() {
   const changeFooter = (event) => {
     setFooter(event.target.value);
     setFooterSelection(event.target.value);
-    console.log(event.target.value);
+    //console.log(event.target.value);
   };
 
   const changeUnsub = (event) => {
     setUnsub(event.target.value);
     setUnsubSelection(event.target.value);
-    console.log(event.target.value);
+    //console.log(event.target.value);
+  };
+
+  const changeViewInBrowser = (event) => {
+    var val = event.target.value === "true";
+    setViewInBrowser(val);
   };
 
   //console.log(items[1].component.props);
@@ -325,7 +334,7 @@ function App() {
   // Function to run when clicked
   const toggleView = () => {
     toggle(!isToggled);
-    console.log(isToggled);
+    //console.log(isToggled);
   };
 
   const handleCloseModify = () => setShowModify(false);
@@ -377,7 +386,11 @@ function App() {
         (emailbackgroundColor ? emailbackgroundColor : "#f5f5f5") +
         '" style="margin: 0px; padding: 0px">     <table       bgcolor="' +
         (emailbackgroundColor ? emailbackgroundColor : "#f5f5f5") +
-        '"       border="0"       cellpadding="0"       cellspacing="0"       width="100%"     >       <tbody>         <tr>           <td align="center">             <table               align="center"               bgcolor="#ffffff"               border="0"               cellpadding="0"               cellspacing="0"               class="em_main_table"               style="table-layout: fixed; width: 700px"               width="700"             >' +
+        '"       border="0"       cellpadding="0"       cellspacing="0"       width="100%"     >       <tbody> ' +
+        (viewInBrowser
+          ? '<tr key="'+viewInBrowser+'"><td><table align="center" bgcolor="#f5f5f5" border="0" cellpadding="0" cellspacing="0" class="em_main_table" style="table-layout: fixed; width: 700px" width="700; "><tr><td align="center" style="line-height: 35px; font-size: 12px; font-family: Arial, helvetica, sans-serif;">If you are unable to see the message below, <a href="{{View_Online}}" style="color: #189bb0; textDecoration: none;"> click here to view</a>.</td></tr></table></td></tr>'
+          : "") +
+        '<tr>           <td align="center">             <table               align="center"               bgcolor="#ffffff"               border="0"               cellpadding="0"               cellspacing="0"               class="em_main_table"               style="table-layout: fixed; width: 700px"               width="700"             >' +
         ReactDOMServer.renderToStaticMarkup(email) +
         '</table> </td> </tr> <tr> <td align="center"> <table align="center" bgcolor="' +
         (emailbackgroundColor ? emailbackgroundColor : "#f5f5f5") +
@@ -409,14 +422,14 @@ function App() {
     emlContent += "" + "\n";
     emlContent += markup.replace(/\n/g, "");
 
-    console.log(emlContent);
+    //console.log(emlContent);
 
     var textFile = {};
     var data = new Blob([emlContent], { type: "text/html" });
     textFile = window.URL.createObjectURL(data);
 
     var encodedUri = textFile; //encode spaces etc like a url
-    console.log(encodedUri);
+    //console.log(encodedUri);
     var a = document.createElement("a"); //make a link in document
     var linkText = document.createTextNode("fileLink");
     a.appendChild(linkText);
@@ -441,14 +454,14 @@ function App() {
     emlContent += "" + "\n";
     emlContent += markup.replace(/\n/g, "");
 
-    console.log(emlContent);
+    //console.log(emlContent);
 
     var textFile = {};
     var data = new Blob([emlContent], { type: "text/html" });
     textFile = window.URL.createObjectURL(data);
 
     var encodedUri = textFile; //encode spaces etc like a url
-    console.log(encodedUri);
+    //console.log(encodedUri);
     var a = document.createElement("a"); //make a link in document
     var linkText = document.createTextNode("fileLink");
     a.appendChild(linkText);
@@ -614,7 +627,7 @@ function App() {
 
       for (let i = 0; i < propList.length; i++) {
         const element = propList[i][0];
-        console.log(element);
+        //console.log(element);
         tempFormProps[element] = items[activeIndex].componentSave[1][element];
       }
     }
@@ -627,7 +640,6 @@ function App() {
       ].props.map((item, i) => (
         <>
           <label key={i}>{item[0]}</label>
-          {console.log(item)}
 
           {item[1] === "text" ? (
             <input
@@ -1093,9 +1105,12 @@ function App() {
                     <option value="aerogram">AeroGram</option>
                     <option value="webinar">Webinar</option>
                     <option value="etc">E+TC</option>
-                    <option value="directconnect-interested">Direct Connect - Still Interested</option>
-                    <option value="directconnect-whyjoin">Direct Connect - Why Join</option>
-                    
+                    <option value="directconnect-interested">
+                      Direct Connect - Still Interested
+                    </option>
+                    <option value="directconnect-whyjoin">
+                      Direct Connect - Why Join
+                    </option>
                   </select>
                 </div>
                 <div style={{ margin: "0 30px", justifyContent: "center" }}>
@@ -1134,6 +1149,19 @@ function App() {
                   >
                     <option value="true">Yes</option>
                     <option value="false">No</option>
+                  </select>
+                </div>
+                <div style={{ margin: "0 30px", justifyContent: "center" }}>
+                  <p style={{ color: "#fff" }}>
+                    Display View In Browser Link for Salesforce
+                  </p>
+                  <select
+                    name="viewInBrowser"
+                    value={viewInBrowser}
+                    onChange={changeViewInBrowser}
+                  >
+                    <option value={true}>Yes</option>
+                    <option value={false}>No</option>
                   </select>
                 </div>
               </div>

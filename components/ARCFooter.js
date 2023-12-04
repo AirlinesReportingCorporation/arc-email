@@ -293,7 +293,7 @@ export default function ARCFooter(props) {
                     {/* Unsub  */}
 
                     {props.unsub == "true" ? (
-                      console.log(props.unsub)
+                      ""
                     ) : (
                       <tr>
                         <td
