@@ -23,7 +23,7 @@ export default function TACJumbo(props) {
               src={
                 props.jumbobackground
                   ? props.jumbobackground
-                  : "https://www2.arccorp.com/globalassets/email-parts/header/header-012x.jpg"
+                  : "https://www2.arccorp.com/globalassets/email-parts/header/tac-header-dec2023.png"
               }
             />
           </a>{" "}

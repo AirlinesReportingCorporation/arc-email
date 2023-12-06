@@ -40,6 +40,7 @@ const emailTemplates = [
         componentSave: [
           "TACLink",
           {
+            icon: "fraud",
             link: "https://www2.arccorp.com/articles-trends/agency-communications/travel-agent-communications/",
             title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
           },

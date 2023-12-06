@@ -834,6 +834,7 @@ function App() {
                 <option value="holidays">Holidays</option>
                 <option value="newairline">New Airline</option>
                 <option value="scheduled">Scheduled</option>
+                <option value="fraud">Fraud</option>
               </select>
             ) : (
               ""
@@ -868,6 +869,9 @@ function App() {
                 value={formProps[i]}
                 onChange={handleInputChange}
               >
+                <option value="https://www2.arccorp.com/globalassets/email-parts/header/tac-header-dec2023.png">
+                  Short 1
+                </option>
                 <option value="https://www2.arccorp.com/globalassets/email-parts/header/header-012x.jpg">
                   1
                 </option>
