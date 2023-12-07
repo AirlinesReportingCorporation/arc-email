@@ -397,7 +397,11 @@ function App() {
         (viewInBrowser
           ? '<tr key="' +
             viewInBrowser +
-            '"><td><table align="center" bgcolor="#f5f5f5" border="0" cellpadding="0" cellspacing="0" class="em_main_table" style="table-layout: fixed; width: 700px" width="700; "><tr><td align="center" style="line-height: 35px; font-size: 12px; font-family: Arial, helvetica, sans-serif;">If you are unable to see the message below, <a href="{{View_Online}}" style="color: #189bb0; textDecoration: none;"> click here to view</a>.</td></tr></table></td></tr>'
+            '"><td><table align="center" bgcolor="' +
+            (emailbackgroundColor ? emailbackgroundColor : "#f5f5f5") +
+            '" border="0" cellpadding="0" cellspacing="0" class="em_main_table" style="table-layout: fixed; width: 700px" width="700; "><tr><td align="center" style="line-height: 35px; font-size: 12px; font-family: Arial, helvetica, sans-serif; color:' +
+            (emailbackgroundColor == "#f5f5f5" ? "#000000;" : "#ffffff;") +
+            '">If you are unable to see the message below, <a href="{{View_Online}}" style="color: #189bb0; textDecoration: none;"> click here to view</a>.</td></tr></table></td></tr>'
           : "") +
         '<tr>           <td align="center">             <table               align="center"               bgcolor="#ffffff"               border="0"               cellpadding="0"               cellspacing="0"               class="em_main_table"               style="table-layout: fixed; width: 700px"               width="700"             >' +
         ReactDOMServer.renderToStaticMarkup(email) +
