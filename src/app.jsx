@@ -250,6 +250,8 @@ function App() {
   const [templateSelection, setTemplateSelection] = useState("");
   const [footerSelection, setFooterSelection] = useState("");
 
+  const [preText, setPreText] = useState("");
+
   const [emailbackgroundColor, setEmailbackgroundColor] = useLocalStorage(
     "emailBackgroundColor",
     "#f5f5f5"
@@ -264,6 +266,7 @@ function App() {
     var prevTemplateSelection = templateSelection;
     var selectedTemplate = event.target.value;
     console.log(emailTemplates);
+    console.log(preText);
     var choice = confirm(
       "Do you want to continue? Any changes will not be saved"
     );
@@ -276,7 +279,6 @@ function App() {
         if (element.id === selectedTemplate) {
           setItems(element.template);
           setTemplateSelection(element.id);
-
           element.footer ? setFooter(element.footer) : setFooter("short");
           setFooterSelection(
             element.footer ? setFooter(element.footer) : setFooter("short")
@@ -387,8 +389,15 @@ function App() {
         '" style="margin: 0px; padding: 0px">     <table       bgcolor="' +
         (emailbackgroundColor ? emailbackgroundColor : "#f5f5f5") +
         '"       border="0"       cellpadding="0"       cellspacing="0"       width="100%"     >       <tbody> ' +
+        (preText
+          ? '<div style="display: none; max-height: 0px; overflow: hidden;">' +
+            preText +
+            '</div><div style="display: none; max-height: 0px; overflow: hidden;">͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­­</div><div style="display: none; max-height: 0px; overflow: hidden;">͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­­</div><div style="display: none; max-height: 0px; overflow: hidden;">͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­­</div><div style="display: none; max-height: 0px; overflow: hidden;">͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­­</div><div style="display: none; max-height: 0px; overflow: hidden;">͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­­</div><!--End Hidden Preview Text-->'
+          : '<div style="display: none; max-height: 0px; overflow: hidden;">THE INTELLIGENCE BEHIND AIR TRAVEL</div><div style="display: none; max-height: 0px; overflow: hidden;">͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­­</div><div style="display: none; max-height: 0px; overflow: hidden;">͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­­</div><div style="display: none; max-height: 0px; overflow: hidden;">͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­­</div><div style="display: none; max-height: 0px; overflow: hidden;">͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­­</div><div style="display: none; max-height: 0px; overflow: hidden;">͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­ ͏ ‌ &nbsp;   ­­</div><!--End Hidden Preview Text-->') +
         (viewInBrowser
-          ? '<tr key="'+viewInBrowser+'"><td><table align="center" bgcolor="#f5f5f5" border="0" cellpadding="0" cellspacing="0" class="em_main_table" style="table-layout: fixed; width: 700px" width="700; "><tr><td align="center" style="line-height: 35px; font-size: 12px; font-family: Arial, helvetica, sans-serif;">If you are unable to see the message below, <a href="{{View_Online}}" style="color: #189bb0; textDecoration: none;"> click here to view</a>.</td></tr></table></td></tr>'
+          ? '<tr key="' +
+            viewInBrowser +
+            '"><td><table align="center" bgcolor="#f5f5f5" border="0" cellpadding="0" cellspacing="0" class="em_main_table" style="table-layout: fixed; width: 700px" width="700; "><tr><td align="center" style="line-height: 35px; font-size: 12px; font-family: Arial, helvetica, sans-serif;">If you are unable to see the message below, <a href="{{View_Online}}" style="color: #189bb0; textDecoration: none;"> click here to view</a>.</td></tr></table></td></tr>'
           : "") +
         '<tr>           <td align="center">             <table               align="center"               bgcolor="#ffffff"               border="0"               cellpadding="0"               cellspacing="0"               class="em_main_table"               style="table-layout: fixed; width: 700px"               width="700"             >' +
         ReactDOMServer.renderToStaticMarkup(email) +
@@ -1096,6 +1105,16 @@ function App() {
                 </DndContext>
                 <br />
                 <hr />
+                <div style={{ margin: "0 30px", justifyContent: "center" }}>
+                  <p style={{ color: "#fff" }}>Set Email PreText (This is by default: THE INTELLIGENCE BEHIND AIR TRAVEL) </p>
+                  <input
+                    style={{maxWidth: "450px", width: "100%", marginBottom: "20px"}}
+                    name="pretext"
+                    onChange={(e)=> setPreText(e.target.value)}
+                    placeholder="THE INTELLIGENCE BEHIND AIR TRAVEL"
+                  >
+                  </input>
+                </div>
                 <div style={{ margin: "0 30px", justifyContent: "center" }}>
                   <p style={{ color: "#fff" }}>Choose a template</p>
                   <select
