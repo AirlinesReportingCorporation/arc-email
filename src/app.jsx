@@ -686,7 +686,7 @@ function App() {
                     },
                     { title: "Heading 1", format: "h1" },
                     { title: "Heading 2", format: "h2" },
-                    { title: "" },
+                    { title: "Heading 3", format: "h3" },
                   ],
                   height: 300,
                   menubar: false,
