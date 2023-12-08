@@ -461,7 +461,7 @@ function App() {
     } else if (blockName == "Text Block") {
       newItem.componentSave = [
         "TextBlock",
-        { text: "<p>Lorem Ipsum</p>", padding: "25px" },
+        { text: "<p>Lorem Ipsum</p>", padding: "50px" },
       ];
     } else if (blockName == "ARC Logo Header") {
       newItem.componentSave = ["ARCLogo", { color: "teal" }];
@@ -688,7 +688,6 @@ function App() {
                 value={formProps[i]}
                 onChange={handleInputChange}
               >
-                <option value="25px">25px</option>
                 <option value="50px">50px</option>
               </select>
             ) : (

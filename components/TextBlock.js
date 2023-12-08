@@ -16,7 +16,7 @@ export default function TextBlock(props) {
                 >
                   <tbody>
                     <tr>
-                      <td style={{ paddingLeft: props.padding, paddingRight: props.padding, fontFamily: "Arial, helvetica,sans-serif" }} dangerouslySetInnerHTML={{ __html: props.text }}></td>
+                      <td style={{ paddingLeft: "50px", paddingRight: "50px", fontFamily: "Arial, helvetica,sans-serif" }} dangerouslySetInnerHTML={{ __html: props.text }}></td>
                     </tr>
                   </tbody>
                 </table>
