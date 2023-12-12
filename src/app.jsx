@@ -243,10 +243,11 @@ function App() {
 
   const getTemplate = (event) => {
     var prevTemplateSelection = templateSelection;
-    var selectedTemplate = event.target.value;
+    
+    var selectedTemplate = event.target ? event.target.value : event;
     console.log(emailTemplates);
     var choice = confirm(
-      "Do you want to continue? Any changes will not be saved"
+      "Do you want to reset the template? Any changes will not be saved"
     );
     if (choice == false) {
       event.preventDefault();
@@ -616,17 +617,18 @@ function App() {
                   ],
                   font_size_formats: "8px 10px 12px 16px 14px 18px 24px 36px",
                   images_upload_url: "",
-                  paste_preprocess: function(plugin, args) {
+                  paste_preprocess: function (plugin, args) {
                     console.log(args.content);
-                    var str = args.content.replace(/<p>/g, "").replace(/<\/p>/g, "<br/>");
+                    var str = args.content
+                      .replace(/<p>/g, "")
+                      .replace(/<\/p>/g, "<br/>");
                     console.log(str);
                     args.content = str;
                   },
                   force_br_newlines: true,
                   force_p_newlines: false,
-                  convert_newlines_to_brs : true,
+                  convert_newlines_to_brs: true,
                   newline_behavior: "linebreak",
-                  
                 }}
                 onEditorChange={(value) => handleTinyMCE(value, item[0])}
               />
@@ -1004,6 +1006,14 @@ function App() {
                     ))}
                   </SortableContext>
                 </DndContext>
+                <div class="arc-email-sidebar-instructions mt-3">
+                  <h3>Reset Template</h3>
+                  <p>
+                    Click the button below to reset the template. This will
+                    clear your work and return it back to default.
+                  </p>
+                  <input type="submit" value="Reset" onClick={() => getTemplate("board-template")} />
+                </div>
 
                 <div class="arc-email-sidebar-instructions mt-3">
                   <h3>Download Email</h3>

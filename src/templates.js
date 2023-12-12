@@ -6,13 +6,15 @@ const emailTemplates = [
       {
         id: "1",
         name: "Image",
-        componentSave: ["Image", { height: "268", link: "https://www2.arccorp.com/globalassets/email-parts/board/board-header23.png", url: "https://www2.arccorp.com"}],
+        componentSave: [
+          "Image",
+          {
+            height: "268",
+            link: "https://www2.arccorp.com/globalassets/email-parts/board/board-header23-holiday.jpg",
+          },
+        ],
       },
-      {
-        id: "2",
-        name: "Spacer",
-        componentSave: ["Spacer", { height: "30" }],
-      },
+      { id: "2", name: "Spacer", componentSave: ["Spacer", { height: "30" }] },
       {
         id: "3",
         name: "Text Block",
@@ -25,15 +27,16 @@ const emailTemplates = [
         ],
       },
       {
-        "id": 4,
-        "name": "Twocolumn",
-        "componentSave": [
+        id: 4,
+        name: "Twocolumn",
+        componentSave: [
           "Twocolumn",
           {
-            "text": "<p><img src=\"https://www2.arccorp.com/globalassets/email/rb_headshot.png\" alt=\"\" width=\"318\" height=\"318\"></p>",
-            "text2": "<h2>Board Director News</h2>\n<p>We are pleased to formally announce the appointment of Rob Brown, Managing Director, B2B Strategy &amp; Services, Southwest Airlines, to ARC&rsquo;s Board. Rob brings a wealth of industry experience across key areas within the Board&rsquo;s purview&ndash;strategy, risk, and operational oversight.<br>Welcome Rob!</p>"
-          }
-        ]
+            text: '<p><img src="https://www2.arccorp.com/globalassets/email/rb_headshot.png" alt="" width="318" height="318"></p>',
+            text2:
+              "<h2>Board Director News</h2>\n<p>We are pleased to formally announce the appointment of Rob Brown, Managing Director, B2B Strategy &amp; Services, Southwest Airlines, to ARC&rsquo;s Board. Rob brings a wealth of industry experience across key areas within the Board&rsquo;s purview&ndash;strategy, risk, and operational oversight.<br>Welcome Rob!</p>",
+          },
+        ],
       },
       {
         id: "5",
