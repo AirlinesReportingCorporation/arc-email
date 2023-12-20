@@ -1110,16 +1110,6 @@ function App() {
                 <br />
                 <hr />
                 <div style={{ margin: "0 30px", justifyContent: "center" }}>
-                  <p style={{ color: "#fff" }}>Set Email PreText (This is by default: THE INTELLIGENCE BEHIND AIR TRAVEL) </p>
-                  <input
-                    style={{maxWidth: "450px", width: "100%", marginBottom: "20px"}}
-                    name="pretext"
-                    onChange={(e)=> setPreText(e.target.value)}
-                    placeholder="THE INTELLIGENCE BEHIND AIR TRAVEL"
-                  >
-                  </input>
-                </div>
-                <div style={{ margin: "0 30px", justifyContent: "center" }}>
                   <p style={{ color: "#fff" }}>Choose a template</p>
                   <select
                     name="template"
@@ -1192,6 +1182,16 @@ function App() {
                   </select>
                 </div>
               </div>
+              <div style={{ margin: "0 30px", justifyContent: "center" }}>
+                  <p style={{ color: "#fff" }}>Set Email PreText (This is by default: THE INTELLIGENCE BEHIND AIR TRAVEL) </p>
+                  <input
+                    style={{maxWidth: "450px", width: "100%", marginBottom: "20px"}}
+                    name="pretext"
+                    onChange={(e)=> setPreText(e.target.value)}
+                    placeholder="THE INTELLIGENCE BEHIND AIR TRAVEL"
+                  >
+                  </input>
+                </div>
               <div
                 className="arc-email-sidebar-download-container"
                 style={{
