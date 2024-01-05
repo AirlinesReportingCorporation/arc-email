@@ -574,7 +574,62 @@ export default function ARCFooter(props) {
                               for your travel agency's participation with ARC.
                               To manage your communication preferences,
                               including unsubscribing from promotional emails
-                              from ARC, please click here.
+                              from ARC, please  <a  style={{
+                                  color: "#189bb0",
+                                  textDecoration: "none",
+                                }} href="{{Unsubscribe}}">click here</a>.
+                            </td>
+                          </tr>
+                        </>
+                      )}
+
+                      {props.footer == "airline" && (
+                        <>
+                          <tr>
+                            <td
+                              align="center"
+                              style={{
+                                fontFamily: "Arial, sans-serif",
+                                fontSize: "11px",
+                                color: "#a2a3a5",
+                                lineHeight: "14px",
+                                width: "650px",
+                              }}
+                              valign="top"
+                            >
+                              ARC&nbsp;&nbsp;&nbsp;&nbsp;3000 Wilson Blvd.,
+                              Suite 300&nbsp;&nbsp;&nbsp;&nbsp;Arlington, VA
+                              22201&nbsp;&nbsp;&nbsp;&nbsp;USA&nbsp;&nbsp;&nbsp;&nbsp;
+                              <a
+                                href="https://www.arccorp.com"
+                                name="www_arccorp_com"
+                                style={{
+                                  color: "#189bb0",
+                                  textDecoration: "none",
+                                }}
+                                xt="SPCLICK"
+                              >
+                                <strong>www.arccorp.com</strong>
+                              </a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td
+                              align="center"
+                              style={{
+                                fontFamily: "Arial, sans-serif",
+                                fontSize: "11px",
+                                color: "#a2a3a5",
+                                lineHeight: "14px",
+                                width: "650px",
+                              }}
+                              valign="top"
+                            >
+                              <br />
+                              This is an Airlines Reporting Corporation (ARC) operations email regarding your airline's participation with ARC. Even if you are opted out of ARC marketing, you may still receive operations emails on occasion regarding necessary updates or changes that are important for your airline's participation with ARC. To manage your communication preferences, including unsubscribing from promotional emails from ARC, please <a  style={{
+                                  color: "#189bb0",
+                                  textDecoration: "none",
+                                }} href="{{Unsubscribe}}">click here</a>.
                             </td>
                           </tr>
                         </>

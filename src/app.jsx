@@ -1119,6 +1119,7 @@ function App() {
                     <option>-- Choose a template --</option>
                     <option value="tac-template">TAC</option>
                     <option value="operational">Operational</option>
+                    <option value="arc-pay">ARC Pay</option>
                     <option value="aerogram">AeroGram</option>
                     <option value="webinar">Webinar</option>
                     <option value="etc">E+TC</option>
@@ -1141,6 +1142,7 @@ function App() {
                     <option value="long">Long</option>
                     <option value="aerogram">Aerogram</option>
                     <option value="operational">Operational</option>
+                    <option value="airline">Operational Airline</option>
                     <option value="etc">E+TC</option>
                     <option value="none">None</option>
                   </select>
