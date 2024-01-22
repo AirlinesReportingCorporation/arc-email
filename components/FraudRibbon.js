@@ -77,6 +77,7 @@ export default function FraudRibbon(props) {
                     padding: "0",
                     margin: "0",
                     display: "block",
+                    textDecoration: "none !important"
                   }}
                   href={
                     props.Fraud_Link
