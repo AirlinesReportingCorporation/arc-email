@@ -94,26 +94,7 @@ export default function TACJumbo(props) {
           </table>
         </td>
       </tr>
-      <tr>
-        <td
-          style={{
-            paddingLeft: "25px",
-            paddingRight: "25px",
-          }}
-        >
-          <table
-            align="center"
-            border="0"
-            cellpadding="0"
-            cellspacing="0"
-            width="100%"
-          >
-            <tr>
-              <td style={{ height:"35px", borderBottom: "1px solid #2a2b2d" }}>&nbsp;</td>
-            </tr>
-          </table>
-        </td>
-      </tr>
+      
     </>
   );
 }

@@ -21,6 +21,7 @@ import Image from "../components/Image";
 import Webinar from "../components/Webinar";
 import Twocolumn from "../components/Twocolumn";
 import HTML from "../components/HTML";
+import FraudRibbon from "../components/FraudRibbon";
 
 import emailTemplates from "./templates";
 
@@ -69,6 +70,7 @@ var componentsMap = {
   Twocolumn: Twocolumn,
   ETCHeader: ETCHeader,
   HTML: HTML,
+  FraudRibbon: FraudRibbon,
 };
 
 function alertMe(items, activeAdd) {
@@ -140,6 +142,17 @@ function App() {
         ["title", "text"],
         ["link", "text"],
         ["cta", "text"],
+      ],
+    },
+    {
+      name: "Fraud Ribbon",
+      icon: <i className="far fa-newspaper"></i>,
+      component: <FraudRibbon />,
+      props: [
+        ["Fraud_Link", "text"],
+        ["Fraud_Title", "text"],
+        ["Fraud_Subtitle", "text"],
+        //["cta", "text"],
       ],
     },
     {
@@ -543,8 +556,7 @@ function App() {
           TIP_Link:
             "https://www2.arccorp.com/articles-trends/agency-communications/travel-agent-communications/",
           Training_Title: "Events and Trainings",
-          Training_Text:
-            "Stay up to date with the latest industry knowledge.",
+          Training_Text: "Stay up to date with the latest industry knowledge.",
           Training_Link: "https://www2.arccorp.com/about-us/events/",
           Fraud_Title: "Fraud Alert",
           Fraud_Text:
@@ -589,6 +601,16 @@ function App() {
         "HTML",
         {
           data: "<h2>Title 1</h2><p>Lorem Ipsum</p>",
+        },
+      ];
+    } else if (blockName == "Fraud Ribbon") {
+      newItem.componentSave = [
+        "FraudRibbon",
+        {
+          Fraud_Link:
+            "https://www2.arccorp.com/support-training/fraud-prevention/schemes/",
+          Fraud_Title: "Important Fraud Alert",
+          Fraud_Subtitle: "Latest Updates",
         },
       ];
     }
@@ -1185,15 +1207,21 @@ function App() {
                 </div>
               </div>
               <div style={{ margin: "0 30px", justifyContent: "center" }}>
-                  <p style={{ color: "#fff" }}>Set Email PreText (This is by default: THE INTELLIGENCE BEHIND AIR TRAVEL) </p>
-                  <input
-                    style={{maxWidth: "450px", width: "100%", marginBottom: "20px"}}
-                    name="pretext"
-                    onChange={(e)=> setPreText(e.target.value)}
-                    placeholder="THE INTELLIGENCE BEHIND AIR TRAVEL"
-                  >
-                  </input>
-                </div>
+                <p style={{ color: "#fff" }}>
+                  Set Email PreText (This is by default: THE INTELLIGENCE BEHIND
+                  AIR TRAVEL){" "}
+                </p>
+                <input
+                  style={{
+                    maxWidth: "450px",
+                    width: "100%",
+                    marginBottom: "20px",
+                  }}
+                  name="pretext"
+                  onChange={(e) => setPreText(e.target.value)}
+                  placeholder="THE INTELLIGENCE BEHIND AIR TRAVEL"
+                ></input>
+              </div>
               <div
                 className="arc-email-sidebar-download-container"
                 style={{
