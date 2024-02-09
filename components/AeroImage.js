@@ -9,9 +9,10 @@ export default function AeroImage(props) {
           target="_blank"
         >
           <img
+          width="700"
             class="em_full_img"
             style={{
-              maxWidth: "700px",
+              width: "700px",
               display: "block",
             }}
             src={

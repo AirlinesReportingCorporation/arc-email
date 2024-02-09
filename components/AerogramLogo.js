@@ -3,62 +3,47 @@ import React from "react";
 export default function AerogramLogo(props) {
   return (
     <tr>
-      <td width="478" align="center" valign="top">
+      <td
+        width="650"
+        style={{ paddingLeft: "25px", paddingRight: "25px", width: "650px" }}
+        align="center"
+        valign="top"
+      >
         <table
-          align="left"
+          width="100%"
+          style={{ width: "100%" }}
+          role="presentation"
           border="0"
           cellpadding="0"
           cellspacing="0"
-          className="em_wrapper"
-          style={{ width: "96px" }}
-          width="96"
         >
           <tbody>
-            <tr>
-              <td align="center" className="em_pad_bottom" valign="top">
-                <a
-                  href="https://www2.arccorp.com/"
-                  name="www2_arccorp_com_"
-                  style={{ textDecoration: "none" }}
-                  target="_blank"
-                >
-                  <img
-                    alt="ARC"
-                    height="23"
-                    name="ARC-logo-header"
-                    src="https://www2.arccorp.com/globalassets/email/aerogram-icon.png"
-                    style={{
-                      display: "block",
-                      border: "none",
-                      fontFamily: "Arial, sans-serif",
-                      fontSize: "16px",
-                      lineHeight: "27px",
-                      color: "#000000",
-                      paddingLeft: "25px",
-                      paddingTop: "25px"
-                    }}
-                    title="ARC"
-                    width="148"
-                  ></img>
-                </a>
-              </td>
-              <td className="em_hide" width="25">
+            <tr
+              style={{
+                backgroundColor: "#fff",
+              }}
+            >
+              <td
+                colSpan="2"
+                class="em_height"
+                align="left"
+                valign="top"
+                width="100%"
+                height="25px"
+                style={{
+                  "border-collapse": "collapse",
+                  "mso-table-lspace": "0pt",
+                  "mso-table-rspace": "0pt",
+                  "mso-line-height-rule": "exactly",
+                  "line-height": "25px",
+                }}
+              >
                 &nbsp;
               </td>
             </tr>
-          </tbody>
-        </table>
 
-        <table
-          align="right"
-          border="0"
-          cellpadding="0"
-          cellspacing="0"
-          className="em_wrapper"
-        >
-          <tbody>
             <tr>
-              <td align="center" className="em_pad_bottom" valign="top">
+              <td valign="middle">
                 <a
                   href="https://www2.arccorp.com/"
                   name="www2_arccorp_com_"
@@ -66,23 +51,47 @@ export default function AerogramLogo(props) {
                   target="_blank"
                 >
                   <img
-                    alt="ARC"
-                    height="75"
-                    name="ARC-logo-header"
-                    src="https://www2.arccorp.com/globalassets/email/aerogram-arc.jpg"
-                    style={{
-                      display: "block",
-                      border: "none",
-                      fontFamily: "Arial, sans-serif",
-                      fontSize: "16px",
-                      lineHeight: "27px",
-                      color: "#000000",
-                      paddingRight: "25px",
-                    }}
-                    title="ARC"
-                    width="40"
-                  ></img>
+                    height="23"
+                    src="https://www2.arccorp.com/globalassets/email/aerogram-icon.png"
+                  />
                 </a>
+              </td>
+              <td valign="middle" align="right">
+                <a
+                  href="https://www2.arccorp.com/"
+                  name="www2_arccorp_com_"
+                  style={{ textDecoration: "none" }}
+                  target="_blank"
+                >
+                  <img
+                    height="18"
+                    src="https://www2.arccorp.com/globalassets/arc-logos/corporate-logos/arc-logo-l-black.png"
+                  />
+                </a>
+              </td>
+            </tr>
+
+            <tr
+              style={{
+                backgroundColor: "#fff",
+              }}
+            >
+              <td
+                colSpan="2"
+                class="em_height"
+                align="left"
+                valign="top"
+                width="100%"
+                height="25px"
+                style={{
+                  "border-collapse": "collapse",
+                  "mso-table-lspace": "0pt",
+                  "mso-table-rspace": "0pt",
+                  "mso-line-height-rule": "exactly",
+                  "line-height": "25px",
+                }}
+              >
+                &nbsp;
               </td>
             </tr>
           </tbody>

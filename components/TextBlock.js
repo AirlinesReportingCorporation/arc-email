@@ -7,7 +7,7 @@ export default function TextBlock(props) {
         backgroundColor: props.color == "teal" ? "#189bb0" : props.color,
       }}
     >
-      <td>
+      <td width="700">
         <table role="presentation" border="0" cellpadding="0" cellspacing="0">
           <tbody>
             <tr>
