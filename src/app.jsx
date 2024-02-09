@@ -21,6 +21,7 @@ import Image from "../components/Image";
 import Webinar from "../components/Webinar";
 import Twocolumn from "../components/Twocolumn";
 import HTML from "../components/HTML";
+import FraudRibbon from "../components/FraudRibbon";
 
 import emailTemplates from "./templates";
 
@@ -69,6 +70,7 @@ var componentsMap = {
   Twocolumn: Twocolumn,
   ETCHeader: ETCHeader,
   HTML: HTML,
+  FraudRibbon: FraudRibbon,
 };
 
 function alertMe(items, activeAdd) {
@@ -140,6 +142,17 @@ function App() {
         ["title", "text"],
         ["link", "text"],
         ["cta", "text"],
+      ],
+    },
+    {
+      name: "Fraud Ribbon",
+      icon: <i className="far fa-newspaper"></i>,
+      component: <FraudRibbon />,
+      props: [
+        ["Fraud_Link", "text"],
+        ["Fraud_Title", "text"],
+        ["Fraud_Subtitle", "text"],
+        //["cta", "text"],
       ],
     },
     {
@@ -384,7 +397,7 @@ function App() {
     //console.log(sensors);
 
     setMarkup(
-      '<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html   xmlns="http://www.w3.org/1999/xhtml"   xmlns:o="urn:schemas-microsoft-com:office:office"   xmlns:v="urn:schemas-microsoft-com:vml" >   <head>     <title>ARC</title>     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />     <meta http-equiv="X-UA-Compatible" content="IE=edge" />     <meta name="viewport" content="width=device-width, initial-scale=1.0 " />     <meta name="format-detection" content="telephone=no" />       <style type="text/css">       body {         margin: 0 !important;         padding: 0 !important;         -webkit-text-size-adjust: 100% !important;         -ms-text-size-adjust: 100% !important;         -webkit-font-smoothing: antialiased !important;       }       img {         border: 0 !important;         outline: none !important;       }       p {         margin: 0px !important;         padding: 0px !important;       }       table {         border-collapse: collapse;         mso-table-lspace: 0px;         mso-table-rspace: 0px;       }       td,       a,       span {         border-collapse: collapse;         mso-line-height-rule: exactly;       }       .ExternalClass * {         line-height: 100%;       }       .em_defaultlink a {         color: inherit !important;         text-decoration: none !important;       }       span.MsoHyperlink {         mso-style-priority: 99;         color: inherit;       }       span.MsoHyperlinkFollowed {         mso-style-priority: 99;         color: inherit;       }       @media only screen and (min-width: 481px) and (max-width: 699px) {         .title_center {           text-align: center;         }         .em_main_table {           width: 100% !important;         }         .em_wrapper {           width: 100% !important;         }         .em_aside {           padding: 0px 20px !important;         }         .em_hide {           display: none !important;         }         .em_full_img img {           width: 100% !important;           height: auto !important;           max-width: none !important;         }         .em_align_cent {           text-align: center !important;         }         .em_height {           height: 20px !important;           font-size: 1px !important;           line-height: 1px !important;         }         .em_pad_top {           padding-top: 20px !important;         }         .em_spacer {           width: 10px !important;         }         .em_pad_bottom {           padding-bottom: 20px !important;         }         .em_hauto {           height: auto !important;         }         span[class="em_divhide"] {           display: none !important;         }       }       @media only screen and (max-width: 480px) {         .title_center {           text-align: center;         }         .address_item {           text-align: center;           display: block;         }         .em_main_table {           width: 100% !important;         }         .em_wrapper {           width: 100% !important;         }         .em_aside {           padding: 0px 20px !important;         }         .em_hide {           display: none !important;         }         .em_full_img img {           width: 100% !important;           height: auto !important;           max-width: none !important;         }         .icon-center {           text-align: center;           text-align: -webkit-center;         }         .icon-center img {           padding-bottom: 10px;         }         .em_align_cent {           text-align: center !important;         }         .em_height {           height: 20px !important;           font-size: 1px !important;           line-height: 1px !important;         }         .em_pad_top {           padding-top: 20px !important;         }         .em_spacer {           width: 10px !important;         }         .em_pad_bottom {           padding-bottom: 20px !important;         }         .em_hauto {           height: auto !important;         }         span[class="em_divhide"] {           display: none !important;         }       }   a {text-decoration: none;}    </style>  <!--[if gte mso 9]>       <xml>         <o:OfficeDocumentSettings>           <o:AllowPNG />           <o:PixelsPerInch>96</o:PixelsPerInch>         </o:OfficeDocumentSettings>       </xml>     <![endif]-->   </head>   <body bgcolor="' +
+      '<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html   xmlns="http://www.w3.org/1999/xhtml"   xmlns:o="urn:schemas-microsoft-com:office:office"   xmlns:v="urn:schemas-microsoft-com:vml" >   <head>     <title>ARC</title>     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />     <meta http-equiv="X-UA-Compatible" content="IE=edge" />     <meta name="viewport" content="width=device-width, initial-scale=1.0 " />     <meta name="format-detection" content="telephone=no" />       <style type="text/css">       body {         margin: 0 !important;         padding: 0 !important;         -webkit-text-size-adjust: 100% !important;         -ms-text-size-adjust: 100% !important;         -webkit-font-smoothing: antialiased !important;       }       img {         border: 0 !important;         outline: none !important;       }       p {         margin: 0px !important;         padding: 0px !important;       }       table {         border-collapse: collapse;         mso-table-lspace: 0px;         mso-table-rspace: 0px;       }       td,       a,       span {         border-collapse: collapse;         mso-line-height-rule: exactly;       }       .ExternalClass * {         line-height: 100%;       }       a, a:link {                text-decoration:none !important; text-decoration:none;       }       span.MsoHyperlink {         mso-style-priority: 99;         color: inherit;       }       span.MsoHyperlinkFollowed {         mso-style-priority: 99;         color: inherit;       }       @media only screen and (min-width: 481px) and (max-width: 699px) {         .title_center {           text-align: center;         }         .em_main_table {           width: 100% !important;         }         .em_wrapper {           width: 100% !important;         }         .em_aside {           padding: 0px 20px !important;         }         .em_hide {           display: none !important;         }         .em_full_img img {           width: 100% !important;           height: auto !important;           max-width: none !important;         }         .em_align_cent {           text-align: center !important;         }         .em_height {           height: 20px !important;           font-size: 1px !important;           line-height: 1px !important;         }         .em_pad_top {           padding-top: 20px !important;         }         .em_spacer {           width: 10px !important;         }         .em_pad_bottom {           padding-bottom: 20px !important;         }         .em_hauto {           height: auto !important;         }         span[class="em_divhide"] {           display: none !important;         }       }       @media only screen and (max-width: 480px) {         .title_center {           text-align: center;         }         .address_item {           text-align: center;           display: block;         }         .em_main_table {           width: 100% !important;         }         .em_wrapper {           width: 100% !important;         }         .em_aside {           padding: 0px 20px !important;         }         .em_hide {           display: none !important;         }         .em_full_img img {           width: 100% !important;           height: auto !important;           max-width: none !important;         }         .icon-center {           text-align: center;           text-align: -webkit-center;         }         .icon-center img {           padding-bottom: 10px;         }         .em_align_cent {           text-align: center !important;         }         .em_height {           height: 20px !important;           font-size: 1px !important;           line-height: 1px !important;         }         .em_pad_top {           padding-top: 20px !important;         }         .em_spacer {           width: 10px !important;         }         .em_pad_bottom {           padding-bottom: 20px !important;         }         .em_hauto {           height: auto !important;         }         span[class="em_divhide"] {           display: none !important;         }       }   a {text-decoration: none;}    </style>  <!--[if gte mso 9]>       <xml>         <o:OfficeDocumentSettings>           <o:AllowPNG />           <o:PixelsPerInch>96</o:PixelsPerInch>         </o:OfficeDocumentSettings>       </xml>     <![endif]-->   </head>   <body bgcolor="' +
         (emailbackgroundColor ? emailbackgroundColor : "#f5f5f5") +
         '" style="margin: 0px; padding: 0px">     <table       bgcolor="' +
         (emailbackgroundColor ? emailbackgroundColor : "#f5f5f5") +
@@ -543,8 +556,7 @@ function App() {
           TIP_Link:
             "https://www2.arccorp.com/articles-trends/agency-communications/travel-agent-communications/",
           Training_Title: "Events and Trainings",
-          Training_Text:
-            "Stay up to date with the latest industry knowledge.",
+          Training_Text: "Stay up to date with the latest industry knowledge.",
           Training_Link: "https://www2.arccorp.com/about-us/events/",
           Fraud_Title: "Fraud Alert",
           Fraud_Text:
@@ -589,6 +601,16 @@ function App() {
         "HTML",
         {
           data: "<h2>Title 1</h2><p>Lorem Ipsum</p>",
+        },
+      ];
+    } else if (blockName == "Fraud Ribbon") {
+      newItem.componentSave = [
+        "FraudRibbon",
+        {
+          Fraud_Link:
+            "https://www2.arccorp.com/support-training/fraud-prevention/schemes/",
+          Fraud_Title: "Important Fraud Alert",
+          Fraud_Subtitle: "Latest Updates",
         },
       ];
     }
@@ -1185,15 +1207,21 @@ function App() {
                 </div>
               </div>
               <div style={{ margin: "0 30px", justifyContent: "center" }}>
-                  <p style={{ color: "#fff" }}>Set Email PreText (This is by default: THE INTELLIGENCE BEHIND AIR TRAVEL) </p>
-                  <input
-                    style={{maxWidth: "450px", width: "100%", marginBottom: "20px"}}
-                    name="pretext"
-                    onChange={(e)=> setPreText(e.target.value)}
-                    placeholder="THE INTELLIGENCE BEHIND AIR TRAVEL"
-                  >
-                  </input>
-                </div>
+                <p style={{ color: "#fff" }}>
+                  Set Email PreText (This is by default: THE INTELLIGENCE BEHIND
+                  AIR TRAVEL){" "}
+                </p>
+                <input
+                  style={{
+                    maxWidth: "450px",
+                    width: "100%",
+                    marginBottom: "20px",
+                  }}
+                  name="pretext"
+                  onChange={(e) => setPreText(e.target.value)}
+                  placeholder="THE INTELLIGENCE BEHIND AIR TRAVEL"
+                ></input>
+              </div>
               <div
                 className="arc-email-sidebar-download-container"
                 style={{
