@@ -313,6 +313,233 @@ const emailTemplates = [
     backgroundColor: "#212A76",
   },
   {
+    name: "ETC Book Hotel",
+    id: "etc-hotel",
+    footer: "etc",
+    backgroundColor: "#212A76",
+    template: [
+      {
+        id: 6,
+        name: "ETC Header",
+        componentSave: ["ETCHeader", { color: "teal" }],
+      },
+      {
+        id: 1,
+        name: "Image",
+        componentSave: [
+          "Image",
+          {
+            height: "400",
+            link: "https://www2.arccorp.com/globalassets/email/etc/Feb5-Email-Header-BookStay.png",
+            ctaLink: "https://elevate-travelconnect.com/",
+            color: "#212A76",
+          },
+        ],
+      },
+      {
+        id: 1002,
+        name: "Spacer",
+        componentSave: ["Spacer", { height: "60px", color: "White" }],
+      },
+      {
+        id: 1001,
+        name: "Text Block",
+        componentSave: [
+          "TextBlock",
+          {
+            text: '<p>Hi [FirstName],&nbsp;<br>&nbsp;</p>\n<div class="OutlineElement Ltr SCXW94069915 BCX0">\n<p class="Paragraph SCXW94069915 BCX0"><span class="TextRun SCXW94069915 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW94069915 BCX0">Now that </span><span class="NormalTextRun SCXW94069915 BCX0">you&rsquo;re</span><span class="NormalTextRun SCXW94069915 BCX0"> successfully registered to attend Elevate + </span><span class="NormalTextRun SCXW94069915 BCX0">TravelConnect</span><span class="NormalTextRun SCXW94069915 BCX0"> 2024, </span><span class="NormalTextRun SCXW94069915 BCX0">it&rsquo;s</span><span class="NormalTextRun SCXW94069915 BCX0"> time to</span><span class="NormalTextRun SCXW94069915 BCX0"> book your </span><span class="NormalTextRun CommentStart SCXW94069915 BCX0">stay</span><span class="NormalTextRun SCXW94069915 BCX0">. To make it easy, </span><span class="NormalTextRun SCXW94069915 BCX0">we&rsquo;ve</span><span class="NormalTextRun SCXW94069915 BCX0"> secured a </span><span class="NormalTextRun SCXW94069915 BCX0">preferred rate</span><span class="NormalTextRun SCXW94069915 BCX0"> so all you </span><span class="NormalTextRun AdvancedProofingIssueV2Themed SCXW94069915 BCX0">have to</span><span class="NormalTextRun SCXW94069915 BCX0"> do is&nbsp;</span></span><span class="TextRun SCXW94069915 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW94069915 BCX0">simply click the link below and save!</span></span><span class="EOP SCXW94069915 BCX0" data-ccp-props="{}">&nbsp;</span></p>\n</div>',
+            padding: "50px",
+            color: "white",
+          },
+        ],
+      },
+      {
+        id: 1003,
+        name: "Spacer",
+        componentSave: ["Spacer", { height: "30px", color: "White" }],
+      },
+      {
+        id: 1002,
+        name: "HTML",
+        componentSave: [
+          "HTML",
+          {
+            data: '<a href="https://elevate-travelconnect.com"><img src="https://www2.arccorp.com/globalassets/email/etc/Button-Book-Your-Stay.png" height="55"></a>',
+            align: "center",
+          },
+        ],
+      },
+      {
+        id: 9921,
+        name: "Spacer",
+        componentSave: ["Spacer", { height: "30px", color: "White" }],
+      },
+      {
+        id: 9920,
+        name: "Text Block",
+        componentSave: [
+          "TextBlock",
+          {
+            text: '<p style="text-align: left;"><span class="TextRun SCXW264063599 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW264063599 BCX0">We&nbsp;</span><span class="NormalTextRun SCXW264063599 BCX0">can&rsquo;t</span><span class="NormalTextRun SCXW264063599 BCX0"> wait to see you in Washington, DC, from April 9 &ndash; 11 and watch the whole story unfold. And </span><span class="NormalTextRun SCXW264063599 BCX0">don&rsquo;t</span><span class="NormalTextRun SCXW264063599 BCX0"> forget&ndash;we </span><span class="NormalTextRun SCXW264063599 BCX0">are always adding incredible </span></span><strong><span style="color: rgb(33, 42, 118);"><a class="Hyperlink SCXW264063599 BCX0" style="color: rgb(33, 42, 118);" href="https://elevate-travelconnect.com/agenda" target="_blank" rel="noreferrer noopener"><span class="TextRun Underlined SCXW264063599 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="none"><span class="NormalTextRun SCXW264063599 BCX0" data-ccp-charstyle="Hyperlink">new content</span></span></a></span></strong><span class="TextRun SCXW264063599 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW264063599 BCX0"> and </span></span><strong><span style="color: rgb(33, 42, 118);"><a class="Hyperlink SCXW264063599 BCX0" style="color: rgb(33, 42, 118);" href="https://elevate-travelconnect.com/speakers" target="_blank" rel="noreferrer noopener"><span class="TextRun Underlined SCXW264063599 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="none"><span class="NormalTextRun SCXW264063599 BCX0" data-ccp-charstyle="Hyperlink">industry-leading speakers</span></span></a></span></strong><span class="TextRun SCXW264063599 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW264063599 BCX0"> to the conference lineup. </span><span class="NormalTextRun SCXW264063599 BCX0">Here&rsquo;s</span><span class="NormalTextRun SCXW264063599 BCX0"> just a few of the innovative voices narrating the whole story:</span></span><span class="EOP SCXW264063599 BCX0" data-ccp-props="{}">&nbsp;<br><br><br></span></p>',
+            padding: "50px",
+            color: "white",
+          },
+        ],
+      },
+      {
+        id: 9922,
+        name: "HTML",
+        componentSave: [
+          "HTML",
+          {
+            data: '<table\n  width="600"\n  align="center"\n  bgcolor="#e5e5e5"\n  style="background: #e5e5e5; border: none"\n>\n  <tr>\n    <td colspan="3">\n      <a href="https://elevate-travelconnect.com/speakers"><img\n        src="https://www2.arccorp.com/globalassets/email/etc/Feb5-Speaker-Image.jpg"\n        alt="E+TC Speakers"\n        width="600"\n        height="219"\n      /></a>\n    </td>\n  </tr>\n  <tr\n    style="\n      padding-left: 20px;\n      padding-right: 20px;\n      width: 700px;\n      font-family: Arial, helvetica, sans-serif;\n      font-size: 14px;\n    "\n    valign="top"\n  >\n    <td\n      align="center"\n      v-align="top"\n      style="padding-right: 15px; padding-left: 15px"\n      width="33%"\n    >\n      <p>\n        <strong>Michael Edmonds</strong>\n      </p>\n      <p  style="padding-top: 5px !important">\n        SVP, Strategy, Marketing and Sales\n      </p>\n      <p  style="padding-top: 5px !important">Blue Origin</p>\n    </td>\n    <td\n      width="33%"\n      align="center"\n      style="padding-right: 15px; padding-left: 15px"\n    >\n      <p>\n        <strong>Amy Burr</strong>\n      </p>\n      <p  style="padding-top: 5px !important">President</p>\n      <p  style="padding-top: 5px !important">JetBlue Ventures</p>\n    </td>\n    <td\n      width="33%"\n      align="center"\n      style="padding-right: 15px; padding-left: 15px"\n    >\n      <p>\n        <strong>Mitra Sorrells</strong>\n      </p>\n      <p  style="padding-top: 5px !important">Editor-in-Chief</p>\n      <p  style="padding-top: 5px !important">PhocusWire</p>\n    </td>\n  </tr>\n  <tr>\n    <td\n      colspan="3"\n      class="em_height"\n      align="left"\n      valign="top"\n      width="100%"\n      height="30px"\n      style="\n        border-collapse: collapse;\n        mso-table-lspace: 0pt;\n        mso-table-rspace: 0pt;\n        mso-line-height-rule: exactly;\n        line-height: 30px;\n      "\n    >\n      &nbsp;\n    </td>\n  </tr>\n</table>\n',
+            align: "center",
+          },
+        ],
+      },
+      {
+        id: 2,
+        name: "Spacer",
+        componentSave: ["Spacer", { height: "10px", color: "White" }],
+      },
+      {
+        id: 4,
+        name: "Spacer",
+        componentSave: ["Spacer", { height: "60px", color: "White" }],
+      },
+    ],
+  },
+  {
+    name: "ETC Feb Regsiter",
+    id: "etc-feb-register",
+    footer: "etc",
+    backgroundColor: "#212A76",
+    template: [
+      {
+        id: 6,
+        name: "ETC Header",
+        componentSave: ["ETCHeader", { color: "teal" }],
+      },
+      {
+        id: 1,
+        name: "Image",
+        componentSave: [
+          "Image",
+          {
+            height: "400",
+            link: "https://www2.arccorp.com/globalassets/email/etc/Feb5-Email-Header.png",
+            ctaLink: "https://elevate-travelconnect.com/",
+            color: "#212A76",
+          },
+        ],
+      },
+      {
+        id: 1002,
+        name: "Spacer",
+        componentSave: ["Spacer", { height: "60px", color: "White" }],
+      },
+      {
+        id: 1001,
+        name: "Text Block",
+        componentSave: [
+          "TextBlock",
+          {
+            text: '<div class="OutlineElement Ltr SCXW94069915 BCX0">\n<p class="Paragraph SCXW94069915 BCX0"><span class="TextRun SCXW94069915 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW94069915 BCX0">W<span class="NormalTextRun SCXW135062354 BCX0">hat captivates</span><span class="NormalTextRun SCXW135062354 BCX0"> you </span><span class="NormalTextRun SCXW135062354 BCX0">about</span><span class="NormalTextRun SCXW135062354 BCX0"> the untold stories of the airline industry? </span><span class="NormalTextRun SCXW135062354 BCX0">Dive into these topics and more</span> <span class="NormalTextRun SCXW135062354 BCX0">in two months </span><span class="NormalTextRun SCXW135062354 BCX0">at</span><span class="NormalTextRun SCXW135062354 BCX0"> Elevate + </span><span class="NormalTextRun SCXW135062354 BCX0">TravelConnect</span> <span class="NormalTextRun SCXW135062354 BCX0">2024!</span> <span class="NormalTextRun SCXW135062354 BCX0">Register today</span><span class="NormalTextRun SCXW135062354 BCX0"> to </span><span class="NormalTextRun SCXW135062354 BCX0">share your ideas, </span><span class="NormalTextRun SCXW135062354 BCX0">open new chapters, explore </span><span class="NormalTextRun SCXW135062354 BCX0">fresh</span><span class="NormalTextRun SCXW135062354 BCX0"> perspectives, and create </span><span class="NormalTextRun SCXW135062354 BCX0">meaningful</span><span class="NormalTextRun SCXW135062354 BCX0"> connections</span><span class="NormalTextRun SCXW135062354 BCX0">!</span><span class="NormalTextRun SCXW135062354 BCX0">&nbsp;</span></span></span></p>\n</div>',
+            padding: "50px",
+            color: "white",
+          },
+        ],
+      },
+      {
+        id: 1003,
+        name: "Spacer",
+        componentSave: ["Spacer", { height: "30px", color: "White" }],
+      },
+      {
+        id: 1002,
+        name: "HTML",
+        componentSave: [
+          "HTML",
+          {
+            data: '<a href="https://elevate-travelconnect.com"><img src="https://www2.arccorp.com/globalassets/email-parts/register-now.png" height="50"></a>',
+            align: "center",
+          },
+        ],
+      },
+      {
+        id: 9921,
+        name: "Spacer",
+        componentSave: ["Spacer", { height: "30px", color: "White" }],
+      },
+      {
+        id: 9920,
+        name: "Text Block",
+        componentSave: [
+          "TextBlock",
+          {
+            text: '<h2 style="text-align: center;"><span class="EOP SCXW264063599 BCX0" data-ccp-props="{}"><span class="TextRun SCXW224527049 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW224527049 BCX0">Innovat</span><span class="NormalTextRun SCXW224527049 BCX0">ive </span><span class="NormalTextRun SCXW224527049 BCX0">speakers</span><span class="NormalTextRun SCXW224527049 BCX0"> narrating </span><span class="NormalTextRun SCXW224527049 BCX0">the whole </span><span class="NormalTextRun CommentStart SCXW224527049 BCX0">story</span></span><span class="EOP SCXW224527049 BCX0" data-ccp-props="{&quot;201341983&quot;:0,&quot;335559740&quot;:259}">&nbsp;</span></span></h2>',
+            padding: "50px",
+            color: "white",
+          },
+        ],
+      },
+      {
+        id: 2,
+        name: "Spacer",
+        componentSave: ["Spacer", { height: "10px", color: "White" }],
+      },
+      {
+        id: 9922,
+        name: "HTML",
+        componentSave: [
+          "HTML",
+          {
+            data: '<table\n  width="600"\n  align="center"\n  bgcolor="#e5e5e5"\n  style="background: #e5e5e5; border: none"\n>\n  <tr>\n    <td colspan="3">\n      <a href="https://elevate-travelconnect.com/speakers"><img\n        src="https://www2.arccorp.com/globalassets/email/etc/Feb5-Speaker-Image.jpg"\n        alt="E+TC Speakers"\n        width="600"\n        height="219"\n      /></a>\n    </td>\n  </tr>\n  <tr\n    style="\n      padding-left: 20px;\n      padding-right: 20px;\n      width: 700px;\n      font-family: Arial, helvetica, sans-serif;\n      font-size: 14px;\n    "\n    valign="top"\n  >\n    <td\n      align="center"\n      v-align="top"\n      style="padding-right: 15px; padding-left: 15px"\n      width="33%"\n    >\n      <p>\n        <strong>Michael Edmonds</strong>\n      </p>\n      <p  style="padding-top: 5px !important">\n        SVP, Strategy, Marketing and Sales\n      </p>\n      <p  style="padding-top: 5px !important">Blue Origin</p>\n    </td>\n    <td\n      width="33%"\n      align="center"\n      style="padding-right: 15px; padding-left: 15px"\n    >\n      <p>\n        <strong>Amy Burr</strong>\n      </p>\n      <p  style="padding-top: 5px !important">President</p>\n      <p  style="padding-top: 5px !important">JetBlue Ventures</p>\n    </td>\n    <td\n      width="33%"\n      align="center"\n      style="padding-right: 15px; padding-left: 15px"\n    >\n      <p>\n        <strong>Mitra Sorrells</strong>\n      </p>\n      <p  style="padding-top: 5px !important">Editor-in-Chief</p>\n      <p  style="padding-top: 5px !important">PhocusWire</p>\n    </td>\n  </tr>\n  <tr>\n    <td\n      colspan="3"\n      class="em_height"\n      align="left"\n      valign="top"\n      width="100%"\n      height="30px"\n      style="\n        border-collapse: collapse;\n        mso-table-lspace: 0pt;\n        mso-table-rspace: 0pt;\n        mso-line-height-rule: exactly;\n        line-height: 30px;\n      "\n    >\n      &nbsp;\n    </td>\n  </tr>\n</table>\n',
+            align: "center",
+          },
+        ],
+      },
+      {
+        id: 9921,
+        name: "Spacer",
+        componentSave: ["Spacer", { height: "30px", color: "White" }],
+      },
+      {
+        id: 9920,
+        name: "Text Block",
+        componentSave: [
+          "TextBlock",
+          {
+            text: '<p style="text-align: left;"><span class="TextRun SCXW102668933 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun CommentStart SCXW102668933 BCX0">Don&rsquo;t</span><span class="NormalTextRun SCXW102668933 BCX0"> miss our</span><span class="NormalTextRun SCXW102668933 BCX0"> exclusive lineup</span><span class="NormalTextRun SCXW102668933 BCX0"> and </span><span class="NormalTextRun SCXW102668933 BCX0">handpicked</span><span class="NormalTextRun SCXW102668933 BCX0"> experiences created just for you</span><span class="NormalTextRun SCXW102668933 BCX0">.</span> <span class="NormalTextRun SCXW102668933 BCX0">Explore</span> </span><strong><span style="color: rgb(33, 42, 118);"><a class="Hyperlink SCXW102668933 BCX0" style="color: rgb(33, 42, 118);" href="https://elevate-travelconnect.com/agenda" target="_blank" rel="noreferrer noopener"><span class="FieldRange SCXW102668933 BCX0"><span class="TextRun SCXW102668933 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun CommentStart SCXW102668933 BCX0">our</span></span><span class="TextRun Underlined SCXW102668933 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="none"><span class="NormalTextRun SCXW102668933 BCX0" data-ccp-charstyle="Hyperlink"> agenda</span></span></span></a></span></strong><span class="TextRun SCXW102668933 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"> <span class="NormalTextRun CommentStart SCXW102668933 BCX0">as we keep</span><span class="NormalTextRun SCXW102668933 BCX0"> adding </span><span class="NormalTextRun SCXW102668933 BCX0">more</span><span class="NormalTextRun SCXW102668933 BCX0"> speakers </span><span class="NormalTextRun SCXW102668933 BCX0">and sessions that</span><span class="NormalTextRun SCXW102668933 BCX0"> c</span><span class="NormalTextRun SCXW102668933 BCX0">over</span><span class="NormalTextRun SCXW102668933 BCX0"> everything from data </span><span class="NormalTextRun SCXW102668933 BCX0">to </span><span class="NormalTextRun SCXW102668933 BCX0">dynamic offers. </span><span class="NormalTextRun SCXW102668933 BCX0">Join</span> <span class="NormalTextRun SCXW102668933 BCX0">your</span> <span class="NormalTextRun SCXW102668933 BCX0">global </span><span class="NormalTextRun SCXW102668933 BCX0">colleagues for three incredible days hosted by two companies</span><span class="NormalTextRun SCXW102668933 BCX0">&mdash;register now!</span></span><span class="EOP SCXW102668933 BCX0" data-ccp-props="{}">&nbsp;</span></p>',
+            padding: "50px",
+            color: "white",
+          },
+        ],
+      },
+      {
+        id: 9923,
+        name: "Spacer",
+        componentSave: ["Spacer", { height: "30px", color: "White" }],
+      },
+      {
+        id: 9922,
+        name: "HTML",
+        componentSave: [
+          "HTML",
+          {
+            data: '<a href="https://elevate-travelconnect.com"><img src="https://www2.arccorp.com/globalassets/email-parts/register-now.png" height="50"></a>',
+            align: "center",
+          },
+        ],
+      },
+      {
+        id: 4,
+        name: "Spacer",
+        componentSave: ["Spacer", { height: "60px", color: "White" }],
+      },
+    ],
+  },
+  {
     name: "Direct Connect - Still Interseted",
     id: "directconnect-interested",
     template: [

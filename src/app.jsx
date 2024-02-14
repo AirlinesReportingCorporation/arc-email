@@ -326,7 +326,7 @@ function App() {
   };
 
   //console.log(items[1].component.props);
-  const [itemAddID, setItemAddID] = useState(1000);
+  const [itemAddID, setItemAddID] = useState(9919);
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -717,7 +717,7 @@ function App() {
                   height: 300,
                   menubar: false,
                   branding: false,
-                  plugins: "link lists image",
+                  plugins: "link lists image code",
                   automatic_uploads: true,
                   file_picker_types: "file image media",
                   contextmenu:
@@ -738,6 +738,7 @@ function App() {
                     { name: "indentation", items: ["outdent", "indent"] },
                     { name: "link", items: ["link"] },
                     { name: "image", items: ["image"] },
+                    { name: "code", items: ["code"] },
                   ],
                   color_map: [
                     "2a2b2c",
@@ -1145,6 +1146,8 @@ function App() {
                     <option value="aerogram">AeroGram</option>
                     <option value="webinar">Webinar</option>
                     <option value="etc">E+TC</option>
+                    <option value="etc-hotel">E+TC Book Hotel</option>
+                    <option value="etc-feb-register">E+TC Feb 5 Register</option>
                     <option value="directconnect-interested">
                       Direct Connect - Still Interested
                     </option>
@@ -1166,6 +1169,7 @@ function App() {
                     <option value="operational">Operational</option>
                     <option value="airline">Operational Airline</option>
                     <option value="etc">E+TC</option>
+                    
                     <option value="none">None</option>
                   </select>
                 </div>
