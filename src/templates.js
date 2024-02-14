@@ -93,7 +93,7 @@ const emailTemplates = [
               "https://www2.arccorp.com/articles-trends/agency-communications/travel-agent-communications/",
             Training_Title: "Events and Trainings",
             Training_Text:
-              "Stay up to date with the latest industry and knowledge.",
+              "",
             Training_Link: "https://www2.arccorp.com/about-us/events/",
             Fraud_Title: "Fraud Alert",
             Fraud_Text:
