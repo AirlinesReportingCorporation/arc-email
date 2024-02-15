@@ -24,22 +24,43 @@ export default function ARCLogo(props) {
               marginRight: "auto",
             }}
           >
-            <img
-              height="23"
-              width="58"
-              style={{
-                height: "23px",
-                width: "58px",
-                display: "block",
-                marginLeft: "auto",
-                marginRight: "auto",
-              }}
-              src={
-                "https://www2.arccorp.com/globalassets/arc-logos/corporate-logos/arc-logo-l-" +
-                (props.color ? props.color : "teal") +
-                ".png"
-              }
-            />
+            {props.logo === "arcpay" ? (
+              <img
+                height="23"
+                style={{
+                  height: "23px",
+                  display: "block",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                }}
+                src={
+                  "https://www2.arccorp.com/globalassets/products--participation/arc-pay/arc-pay-logo.png"
+                }
+              />
+            ) : (
+              ""
+            )}
+
+            {props.logo == "" ? (
+              <img
+                height="23"
+                width="58"
+                style={{
+                  height: "23px",
+                  width: "58px",
+                  display: "block",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                }}
+                src={
+                  "https://www2.arccorp.com/globalassets/arc-logos/corporate-logos/arc-logo-l-" +
+                  (props.color ? props.color : "teal") +
+                  ".png"
+                }
+              />
+            ) : (
+              ""
+            )}
           </a>
         </td>
       </tr>

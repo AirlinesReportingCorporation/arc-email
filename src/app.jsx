@@ -22,6 +22,7 @@ import Webinar from "../components/Webinar";
 import Twocolumn from "../components/Twocolumn";
 import HTML from "../components/HTML";
 import FraudRibbon from "../components/FraudRibbon";
+import InfoBox from "../components/InfoBox";
 
 import emailTemplates from "./templates";
 
@@ -71,6 +72,7 @@ var componentsMap = {
   ETCHeader: ETCHeader,
   HTML: HTML,
   FraudRibbon: FraudRibbon,
+  InfoBox: InfoBox,
 };
 
 function alertMe(items, activeAdd) {
@@ -111,6 +113,7 @@ function App() {
       component: <ARCLogo />,
       props: [
         ["link", "text"],
+        ["logo", "select"],
         ["color", "select"],
       ],
     },
@@ -153,6 +156,16 @@ function App() {
         ["Fraud_Title", "text"],
         ["Fraud_Subtitle", "text"],
         //["cta", "text"],
+      ],
+    },
+    {
+      name: "InfoBox",
+      icon: <i className="far fa-square"></i>,
+      component: <InfoBox />,
+      props: [
+        ["TIP_Title", "text"],
+        ["TIP_Text", "text"],
+        ["TIP_Link", "text"],
       ],
     },
     {
@@ -326,7 +339,7 @@ function App() {
   };
 
   //console.log(items[1].component.props);
-  const [itemAddID, setItemAddID] = useState(9919);
+  const [itemAddID, setItemAddID] = useState(Math.floor(Math.random() * 100000000));
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -537,7 +550,7 @@ function App() {
         },
       ];
     } else if (blockName == "ARC Logo Header") {
-      newItem.componentSave = ["ARCLogo", { color: "teal" }];
+      newItem.componentSave = ["ARCLogo", { color: "teal", logo: "" }];
     } else if (blockName == "Spacer") {
       newItem.componentSave = ["Spacer", { height: "60px", color: "White" }];
     } else if (blockName == "TAC Jumbo") {
@@ -611,6 +624,15 @@ function App() {
             "https://www2.arccorp.com/support-training/fraud-prevention/schemes/",
           Fraud_Title: "Important Fraud Alert",
           Fraud_Subtitle: "Latest Updates",
+        },
+      ];
+    } else if (blockName == "InfoBox") {
+      newItem.componentSave = [
+        "InfoBox",
+        {
+          TIP_Title: "Tip of the Month",
+          TIP_Text: "Lorem Ipsum Dolor Sit Amet",
+          TIP_Link: "https://www2.arccorp.com",
         },
       ];
     }
@@ -974,6 +996,23 @@ function App() {
           ) : (
             ""
           )}
+          {item[1] === "select" ? (
+            item[0] === "logo" ? (
+              <select
+                name={item[0]}
+                defaultValue={tempFormProps[item[0]]}
+                value={formProps[i]}
+                onChange={handleInputChange}
+              >
+                <option value="">ARC Default</option>
+                <option value="arcpay">ARC Pay</option>
+              </select>
+            ) : (
+              ""
+            )
+          ) : (
+            ""
+          )}
         </>
       ))
     );
@@ -1142,12 +1181,17 @@ function App() {
                     <option>-- Choose a template --</option>
                     <option value="tac-template">TAC</option>
                     <option value="operational">Operational</option>
+                    <option value="arc-pay-agencies">
+                      ARC Pay Fee Template
+                    </option>
                     <option value="arc-pay">ARC Pay</option>
                     <option value="aerogram">AeroGram</option>
                     <option value="webinar">Webinar</option>
                     <option value="etc">E+TC</option>
                     <option value="etc-hotel">E+TC Book Hotel</option>
-                    <option value="etc-feb-register">E+TC Feb 5 Register</option>
+                    <option value="etc-feb-register">
+                      E+TC Feb 5 Register
+                    </option>
                     <option value="directconnect-interested">
                       Direct Connect - Still Interested
                     </option>
@@ -1169,7 +1213,7 @@ function App() {
                     <option value="operational">Operational</option>
                     <option value="airline">Operational Airline</option>
                     <option value="etc">E+TC</option>
-                    
+
                     <option value="none">None</option>
                   </select>
                 </div>

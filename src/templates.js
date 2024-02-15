@@ -92,8 +92,7 @@ const emailTemplates = [
             TIP_Link:
               "https://www2.arccorp.com/articles-trends/agency-communications/travel-agent-communications/",
             Training_Title: "Events and Trainings",
-            Training_Text:
-              "",
+            Training_Text: "",
             Training_Link: "https://www2.arccorp.com/about-us/events/",
             Fraud_Title: "Fraud Alert",
             Fraud_Text:
@@ -139,6 +138,75 @@ const emailTemplates = [
       },
     ],
     footer: "operational",
+  },
+  {
+    name: "ARC Pay Agencies",
+    id: "arc-pay-agencies",
+    backgroundColor: "#f5f5f5",
+    footer: "operational",
+    template: [
+      {
+        id: 9921,
+        name: "ARC Logo Header",
+        componentSave: [
+          "ARCLogo",
+          {
+            link: "https://www2.arccorp.com/products-participation/products/arc-pay/",
+            logo: "arcpay",
+            color: "teal",
+          },
+        ],
+      },
+      {
+        id: 9922,
+        name: "Image",
+        componentSave: [
+          "Image",
+          {
+            height: "268",
+            link: "https://www2.arccorp.com/globalassets/email/arc-pay-email.png",
+            ctaLink:
+              "https://www2.arccorp.com/products-participation/products/arc-pay/",
+            color: "white",
+          },
+        ],
+      },
+      {
+        id: 9923,
+        name: "Spacer",
+        componentSave: ["Spacer", { height: "30px", color: "White" }],
+      },
+      {
+        id: 9924,
+        name: "Text Block",
+        componentSave: [
+          "TextBlock",
+          {
+            text: '<h1 style="text-align: left;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.&nbsp;</h1>\n<p>Curabitur vitae libero felis. Quisque ultrices vel ex ut dignissim. Aenean vestibulum mauris a ex porttitor elementum. Curabitur feugiat malesuada suscipit. Nullam in quam felis. Sed quam dolor, elementum vitae volutpat et, condimentum sit amet velit. Maecenas nibh ante, vulputate quis malesuada id, sagittis eu odio.<br><br></p>',
+            padding: "50px",
+            color: "white",
+          },
+        ],
+      },
+      {
+        id: 9925,
+        name: "Spacer",
+        componentSave: ["Spacer", { height: "30px", color: "White" }],
+      },
+      {
+        id: 9926,
+        name: "InfoBox",
+        componentSave: [
+          "InfoBox",
+          { TIP_Title: "", TIP_Text: "", TIP_Link: "" },
+        ],
+      },
+      {
+        id: 9927,
+        name: "Spacer",
+        componentSave: ["Spacer", { height: "60px", color: "White" }],
+      },
+    ],
   },
   {
     name: "AeroGram",
