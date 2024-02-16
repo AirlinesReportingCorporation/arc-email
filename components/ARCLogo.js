@@ -38,10 +38,6 @@ export default function ARCLogo(props) {
                 }
               />
             ) : (
-              ""
-            )}
-
-            {props.logo == "" ? (
               <img
                 height="23"
                 width="58"
@@ -58,8 +54,6 @@ export default function ARCLogo(props) {
                   ".png"
                 }
               />
-            ) : (
-              ""
             )}
           </a>
         </td>

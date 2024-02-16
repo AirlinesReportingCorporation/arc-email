@@ -93,18 +93,26 @@ export default function TACLink(props) {
                           fontSize: "14px",
                           lineHeight: "18px",
                           fontWeight: "Bold",
-                          color: "#189bb0",
+                          color: props.icon === "fraud" ? "#F78000" : "#189bb0",
                           textDecoration: "none",
                           textTransform: "uppercase",
                           verticalAlign: "middle",
                         }}
                       >
                         {props.cta ? props.cta : "READ MORE"}{" "}
-                        <img
-                          height="10"
-                          width="6.36"
-                          src="https://www2.arccorp.com/globalassets/email-parts/caret.png"
-                        />
+                        {props.icon === "fraud" ? (
+                          <img
+                            height="10"
+                            width="6.36"
+                            src="https://www2.arccorp.com/globalassets/email-parts/caret-fraud.png"
+                          />
+                        ) : (
+                          <img
+                            height="10"
+                            width="6.36"
+                            src="https://www2.arccorp.com/globalassets/email-parts/caret.png"
+                          />
+                        )}
                       </a>
                     </td>
                   </tr>
