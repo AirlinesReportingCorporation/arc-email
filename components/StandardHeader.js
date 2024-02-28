@@ -44,7 +44,7 @@ export default function StandardHeader(props) {
                 </td>
               </tr>
               <tr>
-                <td width="314" align="center" valign="top">
+                <td width="314" align="left" valign="top">
                   <table
                     align="left"
                     border="0"
