@@ -930,6 +930,15 @@ function App() {
                 <option value="https://www2.arccorp.com/globalassets/email-parts/header/tac-header-dec2023.png">
                   Short 1
                 </option>
+                <option value="https://www2.arccorp.com/globalassets/email-parts/header/tac-header-mar2024.png">
+                  Short 2
+                </option>
+                <option value="https://www2.arccorp.com/globalassets/email-parts/header/tac-header-short3.png">
+                  Short 3
+                </option>
+                <option value="https://www2.arccorp.com/globalassets/email-parts/header/tac-header-short4.png">
+                  Short 4
+                </option>
                 <option value="https://www2.arccorp.com/globalassets/email-parts/header/header-012x.jpg">
                   1
                 </option>
