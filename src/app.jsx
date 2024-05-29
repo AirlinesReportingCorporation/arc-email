@@ -243,7 +243,7 @@ function App() {
 
   const getTemplate = (event) => {
     var prevTemplateSelection = templateSelection;
-    
+
     var selectedTemplate = event.target ? event.target.value : event;
     console.log(emailTemplates);
     var choice = confirm(
@@ -274,7 +274,9 @@ function App() {
   };
 
   //console.log(items[1].component.props);
-  const [itemAddID, setItemAddID] = useState(1000);
+  const [itemAddID, setItemAddID] = useState(
+    Math.floor(Math.random() * 100000000)
+  );
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -607,14 +609,24 @@ function App() {
                   file_picker_types: "file image media",
                   contextmenu:
                     "copy paste | link image inserttable | cell row column deletetable",
-                  toolbar: [
-                    { name: "history", items: ["undo", "redo"] },
-                    { name: "styles", items: ["styles", "fontsize"] },
-                    { name: "lists", items: ["numlist", "bullist"] },
-                    { name: "indentation", items: ["outdent", "indent"] },
-                    { name: "link", items: ["link"] },
-                    { name: "image", items: ["image"] },
-                  ],
+                    toolbar: [
+                      { name: "history", items: ["undo", "redo"] },
+                      {
+                        name: "styles",
+                        items: [
+                          "styles",
+                          "fontsize",
+                          "forecolor",
+                          "align",
+                          "lineheight",
+                        ],
+                      },
+                      { name: "lists", items: ["numlist", "bullist"] },
+                      { name: "indentation", items: ["outdent", "indent"] },
+                      { name: "link", items: ["link"] },
+                      { name: "image", items: ["image"] },
+                      { name: "code", items: ["code"] },
+                    ],
                   font_size_formats: "8px 10px 12px 16px 14px 18px 24px 36px",
                   images_upload_url: "",
                   paste_preprocess: function (plugin, args) {
@@ -1012,7 +1024,11 @@ function App() {
                     Click the button below to reset the template. This will
                     clear your work and return it back to default.
                   </p>
-                  <input type="submit" value="Reset" onClick={() => getTemplate("board-template")} />
+                  <input
+                    type="submit"
+                    value="Reset"
+                    onClick={() => getTemplate("board-template")}
+                  />
                 </div>
 
                 <div class="arc-email-sidebar-instructions mt-3">
